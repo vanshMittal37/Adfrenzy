@@ -61,8 +61,8 @@ export function GrowthLoop() {
   // Active stage coordinates for the dynamic connector line
   const activeAngle = (activeStage * 360) / loopStages.length - 90;
   const activeRad = (activeAngle * Math.PI) / 180;
-  const activeNodeX = (192 + 135 * Math.cos(activeRad)).toFixed(3);
-  const activeNodeY = (192 + 135 * Math.sin(activeRad)).toFixed(3);
+  const activeNodeX = 192 + 135 * Math.cos(activeRad);
+  const activeNodeY = 192 + 135 * Math.sin(activeRad);
 
   return (
     <section className="py-24 bg-background border-b border-border-subtle relative overflow-hidden">
@@ -141,7 +141,7 @@ export function GrowthLoop() {
 
                 {/* Desktop: Animated Dotted Connector Line pointing from active node to the card (extending past the circle to x=480) */}
                 <path
-                  d={`M ${activeNodeX} ${activeNodeY} C ${(activeNodeX + 480) / 2} ${activeNodeY}, ${(activeNodeX + 480) / 2} 192, 480 192`}
+                  d={`M ${activeNodeX.toFixed(3)} ${activeNodeY.toFixed(3)} C ${((activeNodeX + 480) / 2).toFixed(3)} ${activeNodeY.toFixed(3)}, ${((activeNodeX + 480) / 2).toFixed(3)} 192, 480 192`}
                   fill="none"
                   stroke="var(--accent)"
                   strokeWidth="2"
@@ -156,7 +156,7 @@ export function GrowthLoop() {
 
                 {/* Mobile/Tablet: Animated Dotted Connector Line pointing from active node downwards to the card (extending past the circle to y=420) */}
                 <path
-                  d={`M ${activeNodeX} ${activeNodeY} C ${activeNodeX} ${(activeNodeY + 420) / 2}, 192 ${(activeNodeY + 420) / 2}, 192 420`}
+                  d={`M ${activeNodeX.toFixed(3)} ${activeNodeY.toFixed(3)} C ${activeNodeX.toFixed(3)} ${((activeNodeY + 420) / 2).toFixed(3)}, 192 ${((activeNodeY + 420) / 2).toFixed(3)}, 192 420`}
                   fill="none"
                   stroke="var(--accent)"
                   strokeWidth="2"
