@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #0A0A0A;
+    --bg-secondary: #111111;
+    --bg-card: #151515;
+    --text-primary: #FFFFFF;
+    --text-muted: #A1A1A1;
+    --accent-yellow: #FFE500;
+    --accent-red: #FF3B30;
+    --border-subtle: rgba(255, 255, 255, 0.10);
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Typography Helpers */
+.font-serif-italic {
+  font-family: var(--font-serif), 'Playfair Display', 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.font-sans-primary {
+  font-family: var(--font-sans), 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+}
+
+/* Glassmorphism Card Style */
+.glass-card {
+  background-color: #151515;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 12px;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 229, 0, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Yellow Action Button */
+.btn-yellow {
+  background-color: #FFE500;
+  color: #0A0A0A;
+  font-weight: 700;
+  border-radius: 6px;
+  box-shadow: 3px 3px 0px 0px #0A0A0A;
+  border: 1px solid #0A0A0A;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-yellow:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px 0px #0A0A0A;
+  background-color: #FFF04D;
+}
+
+/* Secondary Ghost Button */
+.btn-ghost {
+  background-color: transparent;
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-ghost:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Keyframe animations for vertical creative marquees */
+@keyframes rise-up {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes rise-down {
+  0% { transform: translateY(-50%); }
+  100% { transform: translateY(0); }
+}
+
+.animate-rise-up {
+  animation: rise-up 45s linear infinite;
+}
+
+.animate-rise-down {
+  animation: rise-down 55s linear infinite;
+}
+
+.animate-rise-up:hover, .animate-rise-down:hover {
+  animation-play-state: paused;
+}
