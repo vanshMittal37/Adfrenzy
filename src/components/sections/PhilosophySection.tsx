@@ -11,26 +11,26 @@ export function PhilosophySection() {
   ];
 
   return (
-    <section className="py-24 bg-[#0A0A0A] border-b border-white/10">
+    <section className="py-24 bg-background border-b border-border-subtle">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto space-y-8">
-          <span className="text-xs font-mono uppercase tracking-widest text-[#FFE500]">
+          <span className="text-xs font-mono uppercase tracking-widest text-accent">
             OUR PHILOSOPHY
           </span>
 
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-text-primary tracking-tight leading-tight">
             Creative without performance is{" "}
-            <span className="font-serif-italic font-normal italic text-slate-200">
+            <span className="font-serif-italic font-normal italic text-accent">
               guesswork
             </span>
             .<br /> Performance without creative eventually hits a{" "}
-            <span className="font-serif-italic font-normal italic text-slate-200">
+            <span className="font-serif-italic font-normal italic text-accent">
               ceiling
             </span>
             .
           </h2>
 
-          <p className="text-neutral-300 text-base sm:text-lg max-w-2xl mx-auto">
+          <p className="text-text-secondary text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
             That's why our creative strategists and media buyers work together in one loop instead of handing work off from one isolated department to another.
           </p>
 
@@ -39,11 +39,11 @@ export function PhilosophySection() {
             <div className="flex flex-wrap items-center justify-center gap-3 font-mono text-xs sm:text-sm font-bold">
               {steps.map((step, idx) => (
                 <div key={idx} className="flex items-center gap-3">
-                  <span className="px-3.5 py-2 rounded-lg bg-[#151515] border border-white/10 text-white shadow-sm">
+                  <span className="px-3.5 py-2 rounded-lg bg-surface border border-border-subtle text-text-primary shadow-sm">
                     {step}
                   </span>
                   {idx < steps.length - 1 && (
-                    <ArrowRight className="w-4 h-4 text-[#FFE500]" />
+                    <ArrowRight className="w-4 h-4 text-accent" />
                   )}
                 </div>
               ))}
