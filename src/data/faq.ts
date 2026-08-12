@@ -5,70 +5,52 @@ export interface FAQItem {
   category?: string;
 }
 
+export interface FAQItem {
+  id: string;
+  question: string;
+  answer: string;
+  category?: string;
+}
+
 export const faqData: FAQItem[] = [
   {
     id: "faq-1",
-    question: "What does SparkMedia.ad actually do?",
-    answer: "SparkMedia.ad is an integrated growth and creative agency. We combine performance marketing (Meta, Google, TikTok Ads), direct response creative production (UGC, video ads, statics), CRO & landing page development, and retention marketing (email, SMS, WhatsApp) into one unified growth system."
+    question: "What do you actually do?",
+    answer: "SparkMedia.ad is a Creative + Performance Marketing Agency. We manage paid advertising campaigns (Meta, Google, and paid social channels), produce direct-response ad creatives, design landing pages, and optimize customer funnels to scale e-commerce brands profitably."
   },
   {
     id: "faq-2",
-    question: "Who do you work with?",
-    answer: "We partner with ambitious D2C brands, E-Commerce companies, and scaling businesses that already have proven Product-Market Fit and are looking to scale profitably. If you are ready to invest in serious creative volume and performance growth, we are built for you."
+    question: "How are you different from a performance agency or creative agency?",
+    answer: "Most agencies operate in silos — creative agencies deliver assets without looking at media data, and performance agencies run campaigns without scaling creative production. We unite both: our performance data informs our creative decisions, and our high-velocity creative tests fuel our media scale."
   },
   {
     id: "faq-3",
-    question: "What makes SparkMedia different from a media or creative agency?",
-    answer: "Traditional agencies operate in silos — creative agencies make assets without performance data, while media agencies run ads without high-volume creative. We deleted the wall. Our performance data directly briefs the next creative batch, and high-converting creative powers our media scaling."
+    question: "Do I have to buy everything, or can I start with one thing?",
+    answer: "You can start where your brand has the biggest bottleneck. Whether you need high-velocity ad creative production, media buying management, or conversion rate optimization (CRO) landers, we tailor our service scope to what you need right now."
   },
   {
     id: "faq-4",
-    question: "How quickly can clients expect to see results?",
-    answer: "Initial creative testing signals and conversion improvements emerge in the first 14 to 30 days. Compounding scale and P&L efficiency typically take shape over the first 60 to 90 days as our feedback loop gathers performance data."
+    question: "How fast will we see results?",
+    answer: "Initial testing data and signal discovery on new creative hooks can be seen within the first 14 to 30 days. Compounding growth and target ROAS optimization typically take shape over 60 to 90 days as the loop collects performance metrics."
   },
   {
     id: "faq-5",
-    question: "Do you offer individual services or only full growth solutions?",
-    answer: "You can start wherever your biggest bottleneck is — whether that is performance creative volume, paid media management, or landing page CRO. However, most brands that start with one pillar end up plugging into our full growth engine once they see the results."
+    question: "What size brands do you work with?",
+    answer: "We work with ambitious e-commerce and D2C brands that have a validated product-market fit and are ready to scale their advertising budgets. Our growth loop is designed to support both rising challengers and established category leaders."
   },
   {
     id: "faq-6",
-    question: "Do you provide complete growth solutions?",
-    answer: "Yes, our flagship service is the Full Growth System, where we take complete end-to-end accountability for paid acquisition, creative production, CRO landing pages, and email/SMS retention."
+    question: "How many creatives do we get?",
+    answer: "Creative output is customized and scaled according to your campaign requirements, ad spend, and creative testing roadmap. We build a high-velocity UGC and visual ad pipeline designed to combat ad fatigue."
   },
   {
     id: "faq-7",
-    question: "How does onboarding work?",
-    answer: "Onboarding begins with a deep-dive audit of your historical ad data, customer economics, and creative assets. We set up tracking, align on North-Star metrics, and ship our first 90-day growth roadmap within 7 to 10 days."
+    question: "Are we locked into a long contract?",
+    answer: "No, we believe in earning your business month-to-month. Our agreements are flexible to ensure complete alignment on growth goals without locking you into long contracts."
   },
   {
     id: "faq-8",
-    question: "Do you provide transparent reporting?",
-    answer: "Yes. We track contribution margin, customer acquisition costs (CAC), blended ROAS, and marketing efficiency ratio (MER). You will receive custom daily/weekly performance dashboards and clear action-oriented video updates."
-  },
-  {
-    id: "faq-9",
-    question: "Do you create all the ad creatives in-house?",
-    answer: "Yes. Our team handles scriptwriting, creator sourcing, video editing, motion graphics, static ad design, and visual direction. You never have to chase external creator vendors."
-  },
-  {
-    id: "faq-10",
-    question: "Do you work with international clients?",
-    answer: "Yes. We manage growth campaigns and creative assets for brands operating across North America, Europe, Australia, India, and global markets."
-  },
-  {
-    id: "faq-11",
-    question: "Do you require long-term lock-in contracts?",
-    answer: "No long-term handcuffs. We earn the next month with this month's results. Our alignment is built around performance outcomes, not contractual clauses."
-  },
-  {
-    id: "faq-12",
-    question: "What minimum budget do we need to work with SparkMedia?",
-    answer: "Our retainers and creative throughput systems are structured for brands actively spending or ready to spend at least ₹1L–₹5L+ ($2k–$10k+) monthly on paid acquisition."
-  },
-  {
-    id: "faq-13",
-    question: "How do I get started?",
-    answer: "Click 'Book a Strategy Call' to select a convenient time on our calendar. We will review your current marketing setup and identify the biggest immediate growth levers for your brand."
+    question: "How involved do I need to be?",
+    answer: "We act as your complete creative and performance department, handling assets and campaigns end-to-end. However, we maintain active lines of communication for brand guidelines, stock availability, and weekly performance reviews."
   }
 ];

@@ -23,22 +23,15 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <CreativeMarquee />
-      <TrustBar />
-      <MetricsTicker />
+      <ClientLogoWall />
       <ProblemSection />
       <GrowthLoop />
-      <ComparisonTable />
       <ServicesGrid />
-      <TwoGrowthProblems />
-      <ProcessTimeline />
-      <PortfolioSection />
       <ResultsSection />
+      <PortfolioSection />
+      <CreativeMarquee />
+      <ProcessTimeline />
       <Testimonials />
-      <ClientLogoWall />
-      <AboutSection />
-      <TeamGrid />
-      <PhilosophySection />
       <FAQAccordion />
       <StrategyCallSection />
       <FinalCTA />

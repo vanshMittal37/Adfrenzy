@@ -20,61 +20,60 @@ export interface CaseStudy {
   testimonialQuote?: string;
   testimonialAuthor?: string;
   heroImage: string;
+  videoUrl?: string;
 }
 
 export const caseStudiesData: Record<string, CaseStudy> = {
-  "apparel-dtc-growth": {
-    slug: "apparel-dtc-growth",
-    clientName: "[D2C Fashion Brand]",
-    industry: "Apparel & Accessories",
-    title: "Scaling Direct Response Video Ads for Premium Apparel",
-    tagline: "How an integrated creative + media loop unlocked profitable scaling on Meta & TikTok.",
-    challenge: "The brand hit a revenue wall due to severe ad fatigue. Existing static creative was driving high Customer Acquisition Costs (CAC), preventing profitable scaling beyond initial budgets.",
+  "zazu-growth": {
+    slug: "zazu-growth",
+    clientName: "ZAZU",
+    industry: "E-commerce & Fashion",
+    title: "How SparkMedia helped generate ₹3.1Cr in sales for ZAZU",
+    tagline: "Unlocking scaling bottlenecks through high-velocity creative testing and performance marketing alignment.",
+    challenge: "Scaling sales profitably while maintaining a healthy ROAS target. The brand needed creative tailoring according to their specific requirements and expectations.",
     strategy: [
-      "Built a high-velocity UGC video testing framework with 20+ hooks per month.",
-      "Restructured Meta ad accounts into ABO testing and CBO scaling campaigns.",
-      "Optimised product pages for mobile conversion and cart bundle incentives."
+      "Aligned account structure to target desired ROAS with dedicated ad sets.",
+      "Tailored creative assets to fit the brand's aesthetic and product expectations.",
+      "Analyzed customer behavior data to continuously optimize the acquisition funnel."
     ],
     execution: {
-      creative: "Produced 30+ vertical UGC videos, unboxing reels, and direct response benefit-focused ads.",
-      media: "Consolidated Meta & TikTok campaigns, isolating winning creative hooks for scaled spend.",
-      cro: "Implemented dynamic offer popups, sticky add-to-cart buttons, and bundle discounts.",
-      retention: "Set up 4-part post-purchase Klaviyo flow and win-back automation."
+      creative: "Produced high-velocity ad concepts aligned directly with ZAZU's product catalogue and aesthetics.",
+      media: "Restructured campaign layout for focused scaling on high-performing segments.",
+      cro: "Analyzed funnel metrics to improve lander engagement and reduce drop-offs.",
+      retention: "Implemented email and SMS automation sequences to capture repeat purchases."
     },
     results: {
-      metric1: { label: "Blended ROAS", value: "[XX.Xx]" },
-      metric2: { label: "YoY Revenue Growth", value: "+[XX]%" },
-      metric3: { label: "Reduction in CAC", value: "-[XX]%" }
+      metric1: { label: "Sales Generated", value: "₹3.1Cr" },
+      metric2: { label: "Partnership Duration", value: "8 Months" },
+      metric3: { label: "Campaign Focus", value: "ROAS Optimization" }
     },
-    testimonialQuote: "SparkMedia aligned creative production directly with media buying data. The feedback loop was seamless.",
-    testimonialAuthor: "[CMO, D2C Apparel Brand]",
-    heroImage: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop"
+    testimonialQuote: "The team is diligent, hardworking, and understands the brand. Campaigns are tailored according to expectations with a focus on desired ROAS.",
+    testimonialAuthor: "Omair, Founder at ZAZU",
+    heroImage: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop",
+    videoUrl: "https://res.cloudinary.com/dmm8lfc3x/video/upload/v1786560176/o7txvg8disgd61bya8no.mp4"
   },
-  "skincare-ugc-funnel": {
-    slug: "skincare-ugc-funnel",
-    clientName: "[Beauty & Skincare]",
-    industry: "Beauty & Wellness",
-    title: "UGC & Interactive Landing Page Engine for Beauty Brand",
-    tagline: "Combining authentic creator content with dedicated conversion landers.",
-    challenge: "High traffic bounce rates on default store pages and low initial conversion rates were eroding paid ad profitability.",
+  "kaftanize-scaling": {
+    slug: "kaftanize-scaling",
+    clientName: "Kaftanize",
+    industry: "Fashion & Lifestyle",
+    title: "TOF Funnel Optimization for Kaftanize E-Commerce",
+    tagline: "Top of Funnel (TOF) catalog and link-click campaign scaling.",
+    challenge: "Reaching new audience segments and driving high-intent link clicks at low cost.",
     strategy: [
-      "Designed dedicated, fast-loading direct-response advertorial landing pages.",
-      "Recruited and managed a specialized network of beauty creators for UGC.",
-      "Implemented Klaviyo email and SMS welcome sequences."
+      "Launched target Top of Funnel (TOF) campaigns focusing on core lifestyle collections.",
+      "Optimized link-click campaigns using highly visual catalog creatives."
     ],
     execution: {
-      creative: "Captured raw before-and-after footage, texture close-ups, and routine tutorials.",
-      media: "Deployed Meta CAPI tracking and scaled retargeting with customer testimonials.",
-      cro: "Built high-speed Next.js landing pages with embedded social proof.",
-      retention: "Automated replenishment reminders at 30-day customer usage intervals."
+      creative: "Created catalog cards and collection slideshow ads.",
+      media: "Deployed TOF link-click and full-stock catalog optimization campaigns.",
+      cro: "Details coming soon",
+      retention: "Details coming soon"
     },
     results: {
-      metric1: { label: "Conversion Rate Uplift", value: "+[XX]%" },
-      metric2: { label: "Peak ROAS", value: "[XX.Xx]" },
-      metric3: { label: "LTV Expansion", value: "+[XX]%" }
+      metric1: { label: "Campaign Focus", value: "TOF Catalog" },
+      metric2: { label: "Optimization Type", value: "Link Click" },
+      metric3: { label: "Target Segment", value: "New Audiences" }
     },
-    testimonialQuote: "The landing pages transformed our traffic into actual profitable customers.",
-    testimonialAuthor: "[Founder, Skincare Brand]",
     heroImage: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=1200&auto=format&fit=crop"
   }
 };

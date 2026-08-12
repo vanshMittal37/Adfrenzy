@@ -14,11 +14,15 @@
 }
 
 @layer base {
+  html {
+    font-size: 17px;
+  }
+
   :root {
     /* Dark Theme Tokens (Premium Yellow × Black) */
     --background: #050505;
-    --surface: #111111;
-    --surface-secondary: #171717;
+    --surface: #141416;
+    --surface-secondary: #1C1C1E;
     --text-primary: #FFFFFF;
     --text-secondary: #A1A1A1;
     --border: rgba(255, 255, 255, 0.25);
@@ -28,7 +32,7 @@
     --accent-dark: #E5A900;
 
     /* Card Specific design variables */
-    --card-bg: #111111;
+    --card-bg: #141416;
     --card-border: rgba(255, 200, 0, 0.20);
     --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
     --card-icon-bg: rgba(255, 200, 0, 0.10);

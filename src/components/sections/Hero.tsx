@@ -128,37 +128,44 @@ export function Hero() {
               </Link>
             </div>
 
-            {/* Monochromatic Trust Badge Row */}
+            {/* Colorized Trust Badge Row */}
             <div className="space-y-4 pt-6 border-t border-border-subtle">
-              <p className="text-[11px] text-text-secondary font-mono tracking-widest uppercase">
-                ⚡ TRUSTED SCALE PARTNERS
+              <p className="text-[12px] sm:text-[13px] text-text-primary font-mono tracking-widest uppercase font-bold flex items-center gap-1.5">
+                <span className="text-accent">⚡</span> TRUSTED SCALE PARTNERS
               </p>
               
-              <div className="flex flex-wrap items-center gap-3 opacity-90">
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border-subtle bg-surface-secondary/50 text-[9px] sm:text-[10px] font-bold text-text-secondary">
-                  <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M16.48 7.37c-1.12 0-2.18.52-2.88 1.41a4.29 4.29 0 00-2.88-1.41c-2.43 0-4.43 1.94-4.43 4.33s2 4.33 4.43 4.33c1.12 0 2.18-.52 2.88-1.41a4.29 4.29 0 002.88 1.41c2.43 0 4.43-1.94 4.43-4.33s-2-4.33-4.43-4.33zm-4.78 4.33c0-1.28.98-2.31 2.21-2.31s2.21 1.03 2.21 2.31-.98 2.31-2.21 2.31-2.21-1.03-2.21-2.31zm6.98 0c0 1.28-.98 2.31-2.21 2.31s-2.21-1.03-2.21-2.31.98-2.31 2.21-2.31 2.21 1.03 2.21 2.31z"/>
+              <div className="flex flex-wrap items-center gap-3">
+                {/* Meta */}
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border-subtle bg-surface-secondary/60 text-[10px] sm:text-[11px] font-bold text-text-primary hover:border-[#0064E0]/45 hover:shadow-[0_2px_12px_rgba(0,100,224,0.15)] transition-all duration-300">
+                  <svg className="w-3.5 h-3.5 text-[#0064E0] fill-current" viewBox="0 0 24 24">
+                    <path d="M16.48 7.37c-1.12 0-2.18.52-2.88 1.41a4.29 4.29 0 00-2.88-1.41c-2.43 0-4.43 1.94-4.43 4.33s2 4.33 4.43 4.33c1.12 0 2.18-.52 2.88-1.41a4.29 4.29 0 002.88 1.41c2.43 0 4.43-1.94 4.43-4.33s-2-4.33-4.43-4.33zm-4.78 4.33c0-1.28.98-2.31(2.21-2.31s2.21 1.03 2.21 2.31-.98 2.31-2.21 2.31-2.21-1.03-2.21-2.31zm6.98 0c0 1.28-.98 2.31-2.21 2.31s-2.21-1.03-2.21-2.31.98-2.31 2.21-2.31 2.21 1.03 2.21 2.31z" />
                   </svg>
                   <span>Meta Business Partner</span>
                 </div>
                 
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border-subtle bg-surface-secondary/50 text-[9px] sm:text-[10px] font-bold text-text-secondary">
-                  <svg className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12.24 10.285V14.4h6.887c-.648 2.41-2.519 4.2-5.147 4.2a5.456 5.456 0 01-5.46-5.457 5.456 5.456 0 015.46-5.456c2.43 0 4.29 1.05 5.22 1.94l3.19-3.19C20.48 4.54 16.71 2.5 12.24 2.5 6.81 2.5 2.5 6.81 2.5 12.24s4.31 9.74 9.74 9.74c6.26 0 10.1-4.4 10.1-10.24 0-.6-.05-1.05-.15-1.455H12.24z"/>
+                {/* Google */}
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border-subtle bg-surface-secondary/60 text-[10px] sm:text-[11px] font-bold text-text-primary hover:border-[#4285F4]/45 hover:shadow-[0_2px_12px_rgba(66,133,244,0.15)] transition-all duration-300">
+                  <svg className="w-3.5 h-3.5" viewBox="0 0 24 24">
+                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" />
+                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
                   </svg>
                   <span>Google Partner</span>
                 </div>
 
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border-subtle bg-surface-secondary/50 text-[9px] sm:text-[10px] font-bold text-text-secondary">
-                  <svg className="w-3 h-3.5" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12z"/>
+                {/* Shopify */}
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border-subtle bg-surface-secondary/60 text-[10px] sm:text-[11px] font-bold text-text-primary hover:border-[#95BF47]/45 hover:shadow-[0_2px_12px_rgba(149,191,71,0.15)] transition-all duration-300">
+                  <svg className="w-3.5 h-3.5 text-[#95BF47] fill-current" viewBox="0 0 24 24">
+                    <path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12z" />
                   </svg>
                   <span>Shopify Partner</span>
                 </div>
 
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border-subtle bg-surface-secondary/50 text-[9px] sm:text-[10px] font-bold text-text-secondary">
-                  <svg className="w-2.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M19 9h-6l2.35-8.31a.5.5 0 00-.81-.46l-10 12.5a.5.5 0 00.39.81h6l-2.35 8.31a.5.5 0 00.81.46l10-12.5a.5.5 0 00-.39-.81z"/>
+                {/* GoKwik */}
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border-subtle bg-surface-secondary/60 text-[10px] sm:text-[11px] font-bold text-text-primary hover:border-[#FF6B00]/45 hover:shadow-[0_2px_12px_rgba(255,107,0,0.15)] transition-all duration-300">
+                  <svg className="w-2.5 h-3.5 text-[#FF6B00] fill-current" viewBox="0 0 24 24">
+                    <path d="M19 9h-6l2.35-8.31a.5.5 0 00-.81-.46l-10 12.5a.5.5 0 00.39.81h6l-2.35 8.31a.5.5 0 00.81.46l10-12.5a.5.5 0 00-.39-.81z" />
                   </svg>
                   <span>GoKwik Partner</span>
                 </div>

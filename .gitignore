@@ -10,6 +10,11 @@
 !.yarn/releases
 !.yarn/versions
 
+# Ignore local video files
+public/*.mp4
+public/*.MP4
+
+
 # testing
 /coverage
 

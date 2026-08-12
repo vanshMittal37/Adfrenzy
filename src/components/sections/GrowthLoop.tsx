@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Sparkles, RefreshCw, BarChart3, Rocket, Target } from "lucide-react";
+import { Search, Sparkles, Rocket, BarChart3, RefreshCw, Target } from "lucide-react";
 
 export function GrowthLoop() {
   const [activeStage, setActiveStage] = useState(0);
@@ -9,32 +9,38 @@ export function GrowthLoop() {
   const loopStages = [
     {
       num: "01",
-      title: "CREATE",
-      desc: "Produce high-velocity direct-response video ads, UGC, statics, and landers.",
-      icon: Sparkles
+      title: "STRATEGY",
+      desc: "Deep dive audit of accounts, funnel, and creative to find conversion leaks.",
+      icon: Search
     },
     {
       num: "02",
-      title: "LAUNCH",
-      desc: "Deploy campaigns live fast across Meta, Google, and TikTok paid acquisition.",
-      icon: Rocket
+      title: "CREATIVE",
+      desc: "Produce high-velocity direct-response video ads, UGC, and static content.",
+      icon: Sparkles
     },
     {
       num: "03",
-      title: "LEARN",
-      desc: "Separate signal from noise in performance data, attribution, and CAC metrics.",
-      icon: BarChart3
+      title: "LAUNCH",
+      desc: "Deploy campaigns live across paid channels fast and efficiently.",
+      icon: Rocket
     },
     {
       num: "04",
-      title: "OPTIMISE",
-      desc: "Cut failing assets immediately and double down on winning creative hooks.",
-      icon: RefreshCw
+      title: "LEARN",
+      desc: "Read performance signal, analyze customer metrics, and find winning hooks.",
+      icon: BarChart3
     },
     {
       num: "05",
+      title: "OPTIMISE",
+      desc: "Cut failing assets immediately and double down on creative winners.",
+      icon: RefreshCw
+    },
+    {
+      num: "06",
       title: "SCALE",
-      desc: "Compound winning ad creative and landing pages into profitable revenue growth.",
+      desc: "Scale media budget and compound winning concepts for profitable growth.",
       icon: Target
     }
   ];
@@ -45,7 +51,7 @@ export function GrowthLoop() {
       setActiveStage((prev) => (prev + 1) % loopStages.length);
     }, 3000);
     return () => clearInterval(timer);
-  }, [activeStage]);
+  }, [activeStage, loopStages.length]);
 
   // Helper to generate coordinates for flow arcs
   const getArcPath = (startAngle: number, endAngle: number, radius: number) => {
@@ -65,14 +71,14 @@ export function GrowthLoop() {
   const activeNodeY = 192 + 135 * Math.sin(activeRad);
 
   return (
-    <section className="py-24 bg-background border-b border-border-subtle relative overflow-hidden">
+    <section className="py-24 bg-background border-b border-border-subtle relative overflow-hidden" id="about">
       {/* Background radial glow */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <span className="text-xs font-mono uppercase tracking-widest text-accent">
+          <span className="text-xs font-mono uppercase tracking-widest text-accent font-bold">
             OUR APPROACH
           </span>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-text-primary tracking-tight">
@@ -88,7 +94,7 @@ export function GrowthLoop() {
         </div>
 
         {/* Interactive Growth Loop Container */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center max-w-5xl mx-auto">
           {/* Loop Diagram */}
           <div className="lg:col-span-7 flex justify-center py-6 relative">
             <div className="relative w-72 h-72 sm:w-96 sm:h-96 rounded-full border border-dashed border-accent/20 flex items-center justify-center">
@@ -122,8 +128,8 @@ export function GrowthLoop() {
 
                 {/* Clockwise flow dotted arcs connecting the stages */}
                 {loopStages.map((_, idx) => {
-                  const startAngle = (idx * 360) / loopStages.length - 90 + 24;
-                  const endAngle = ((idx + 1) * 360) / loopStages.length - 90 - 24;
+                  const startAngle = (idx * 360) / loopStages.length - 90 + 20;
+                  const endAngle = ((idx + 1) * 360) / loopStages.length - 90 - 20;
                   const arcPath = getArcPath(startAngle, endAngle, 135);
                   return (
                     <path
@@ -139,7 +145,7 @@ export function GrowthLoop() {
                   );
                 })}
 
-                {/* Desktop: Animated Dotted Connector Line pointing from active node to the card (extending past the circle to x=480) */}
+                {/* Desktop: Animated Dotted Connector Line pointing from active node to the card */}
                 <path
                   d={`M ${activeNodeX.toFixed(3)} ${activeNodeY.toFixed(3)} C ${((activeNodeX + 480) / 2).toFixed(3)} ${activeNodeY.toFixed(3)}, ${((activeNodeX + 480) / 2).toFixed(3)} 192, 480 192`}
                   fill="none"
@@ -154,7 +160,7 @@ export function GrowthLoop() {
                   }}
                 />
 
-                {/* Mobile/Tablet: Animated Dotted Connector Line pointing from active node downwards to the card (extending past the circle to y=420) */}
+                {/* Mobile/Tablet: Animated Dotted Connector Line pointing from active node downwards to the card */}
                 <path
                   d={`M ${activeNodeX.toFixed(3)} ${activeNodeY.toFixed(3)} C ${activeNodeX.toFixed(3)} ${((activeNodeY + 420) / 2).toFixed(3)}, 192 ${((activeNodeY + 420) / 2).toFixed(3)}, 192 420`}
                   fill="none"
@@ -171,14 +177,14 @@ export function GrowthLoop() {
               </svg>
 
               {/* Center Core */}
-              <div className="w-36 h-36 sm:w-44 sm:h-44 rounded-full bg-surface border border-accent/40 flex flex-col items-center justify-center p-4 text-center shadow-2xl z-10">
-                <span className="text-xs font-mono text-accent uppercase font-bold tracking-wider">
+              <div className="w-34 h-34 sm:w-44 sm:h-44 rounded-full bg-surface border border-accent/40 flex flex-col items-center justify-center p-4 text-center shadow-2xl z-10">
+                <span className="text-[10px] sm:text-xs font-mono text-accent uppercase font-bold tracking-wider">
                   SPARKMEDIA
                 </span>
-                <span className="text-sm font-extrabold text-text-primary">
+                <span className="text-xs sm:text-sm font-extrabold text-text-primary uppercase tracking-tight">
                   GROWTH LOOP
                 </span>
-                <span className="text-[10px] text-text-secondary mt-1 font-mono">
+                <span className="text-[8px] sm:text-[10px] text-text-secondary mt-1 font-mono">
                   ONE TEAM · NO SILOS
                 </span>
               </div>
@@ -186,7 +192,7 @@ export function GrowthLoop() {
               {/* Node Buttons around Circle */}
               {loopStages.map((stage, idx) => {
                 const angle = (idx * 360) / loopStages.length - 90;
-                const radius = 135; // px radius for sm screens
+                const radius = 135; 
                 const x = (radius * Math.cos((angle * Math.PI) / 180)).toFixed(3);
                 const y = (radius * Math.sin((angle * Math.PI) / 180)).toFixed(3);
                 const isSelected = activeStage === idx;
@@ -199,7 +205,7 @@ export function GrowthLoop() {
                     style={{
                       transform: `translate(${x}px, ${y}px)`
                     }}
-                    className={`absolute w-12 h-12 sm:w-14 sm:h-14 rounded-full flex flex-col items-center justify-center text-[10px] sm:text-xs font-bold transition-all duration-300 z-20 ${
+                    className={`absolute w-12 h-12 sm:w-14 sm:h-14 rounded-full flex flex-col items-center justify-center text-[10px] sm:text-xs font-bold transition-all duration-300 z-20 cursor-pointer ${
                       isSelected
                         ? "bg-accent text-[var(--btn-text-primary)] shadow-lg shadow-accent/30 scale-110 border-2 border-surface"
                         : "bg-surface text-text-secondary border border-border-subtle hover:border-accent"
@@ -219,7 +225,7 @@ export function GrowthLoop() {
               <div className="absolute top-0 right-0 w-24 h-24 bg-accent/5 rounded-bl-full pointer-events-none" />
               <div className="flex items-center justify-between">
                 <span className="text-xs font-mono text-accent font-bold">
-                  STAGE {loopStages[activeStage].num} OF 05
+                  STAGE {loopStages[activeStage].num} OF 06
                 </span>
                 <span className="text-[10px] font-mono text-text-secondary">AUTO-ROTATING</span>
               </div>
@@ -234,7 +240,7 @@ export function GrowthLoop() {
                   <button
                     key={idx}
                     onClick={() => setActiveStage(idx)}
-                    className={`h-1.5 rounded-full transition-all ${
+                    className={`h-1.5 rounded-full transition-all cursor-pointer ${
                       activeStage === idx ? "w-8 bg-accent" : "w-3 bg-border-subtle"
                     }`}
                   />
@@ -243,6 +249,25 @@ export function GrowthLoop() {
             </div>
           </div>
         </div>
+
+        {/* Mobile-Only Vertical arranged list for clarity */}
+        <div className="mt-16 block sm:hidden space-y-4">
+          <div className="p-4 rounded-xl border border-border-subtle bg-surface">
+            <h4 className="text-xs font-mono uppercase text-accent font-bold mb-3">Growth Loop Sequence</h4>
+            <div className="space-y-3">
+              {loopStages.map((stage, idx) => (
+                <div key={idx} className="flex gap-3 items-start">
+                  <span className="text-xs font-mono text-accent font-bold">{stage.num}</span>
+                  <div>
+                    <h5 className="text-sm font-bold text-text-primary">{stage.title}</h5>
+                    <p className="text-xs text-text-secondary">{stage.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );

@@ -17,129 +17,208 @@ export interface PortfolioItem {
   shortDescription: string;
 }
 
+export interface PortfolioItem {
+  id: string;
+  slug: string;
+  title: string;
+  clientName: string;
+  category: "ADS" | "UGC" | "SOCIAL" | "VIDEO" | "LANDING PAGES" | "EMAIL" | "BRANDING" | "WEB";
+  industry: string;
+  thumbnail: string;
+  videoUrl?: string;
+  metrics: {
+    roas?: string;
+    revenueGrowth?: string;
+    cacReduction?: string;
+    cvrUplift?: string;
+  };
+  featured: boolean;
+  shortDescription: string;
+}
+
 export const portfolioData: PortfolioItem[] = [
   {
-    id: "work-1",
-    slug: "apparel-dtc-growth",
-    title: "Scaling Direct Response Video Ads for Premium Apparel",
-    clientName: "[D2C Fashion Brand]",
+    id: "zazu",
+    slug: "zazu-growth",
+    title: "Generating ₹3.1Cr in Sales through Tailored Performance Marketing",
+    clientName: "ZAZU",
+    category: "ADS",
+    industry: "Fashion & E-Commerce",
+    thumbnail: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800&auto=format&fit=crop",
+    videoUrl: "/testimonial2.mp4",
+    metrics: {
+      roas: "Focused ROAS",
+      revenueGrowth: "₹3.1Cr Sales"
+    },
+    featured: true,
+    shortDescription: "High-performance marketing campaigns built around desired ROAS goals and tailored creative assets."
+  },
+  {
+    id: "kaftanize",
+    slug: "kaftanize-scaling",
+    title: "TOF catalog & Link Click Campaigns",
+    clientName: "Kaftanize",
     category: "ADS",
     industry: "Fashion & Lifestyle",
-    thumbnail: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800&auto=format&fit=crop",
-    metrics: {
-      roas: "[XX.Xx] ROAS",
-      revenueGrowth: "+[XX]% MoM",
-      cacReduction: "-[XX]% CAC"
-    },
-    featured: true,
-    shortDescription: "High-velocity UGC and PAS video creative framework deployed on Meta and TikTok."
-  },
-  {
-    id: "work-2",
-    slug: "skincare-ugc-funnel",
-    title: "UGC & Interactive Landing Page Engine for Beauty Brand",
-    clientName: "[Beauty & Skincare]",
-    category: "UGC",
-    industry: "Beauty & Wellness",
     thumbnail: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=800&auto=format&fit=crop",
     metrics: {
-      roas: "[XX.Xx] ROAS",
-      cvrUplift: "+[XX]% CVR",
-      revenueGrowth: "+[XX]% Revenue"
+      roas: "TOF | Link Click"
     },
     featured: true,
-    shortDescription: "Authentic creator unboxing videos linked to speed-optimized Shopify landing pages."
+    shortDescription: "Advantage+ shopping catalogs and custom top-of-funnel campaign structures."
   },
   {
-    id: "work-3",
-    slug: "ecommerce-web-redesign",
-    title: "Conversion-First Shopify Redesign for Home Decor",
-    clientName: "[Home Decor Brand]",
-    category: "WEB",
-    industry: "Home & Furniture",
+    id: "fig-living",
+    slug: "fig-living",
+    title: "Premium Home Decor & Visual Curation",
+    clientName: "FIG Living",
+    category: "BRANDING",
+    industry: "Home & Lifestyle",
     thumbnail: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=800&auto=format&fit=crop",
     metrics: {
-      cvrUplift: "+[XX]% CVR",
-      revenueGrowth: "+[XX]% AOV",
-      roas: "[XX.Xx] MER"
+      revenueGrowth: "Visual Curation"
     },
     featured: true,
-    shortDescription: "Complete Shopify store overhaul focused on mobile UX, fast load times, and frictionless checkout."
+    shortDescription: "Showcasing premium aesthetics and digital identity for high-end home decor."
   },
   {
-    id: "work-4",
-    slug: "klaviyo-retention-system",
-    title: "Automated Lifecycle Email & SMS Revenue Machine",
-    clientName: "[Wellness Brand]",
-    category: "EMAIL",
-    industry: "Health & Nutrition",
-    thumbnail: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800&auto=format&fit=crop",
+    id: "sanctuary-living",
+    slug: "sanctuary-living",
+    title: "Lifestyle Curation & Product Showcase",
+    clientName: "Sanctuary Living",
+    category: "WEB",
+    industry: "Home & Decor",
+    thumbnail: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800&auto=format&fit=crop",
     metrics: {
-      revenueGrowth: "+[XX]% Email Rev",
-      cvrUplift: "+[XX]% LTV",
-      cacReduction: "-[XX]% Churn"
+      cvrUplift: "Creative Showcase"
     },
     featured: true,
-    shortDescription: "12-stage Klaviyo email flows and SMS broadcast campaign driving 35%+ repeat purchase revenue."
+    shortDescription: "Bringing design elegance and premium lifestyle products to life online."
   },
   {
-    id: "work-5",
-    slug: "high-ticket-lander-cro",
-    title: "Direct Response Landing Page for High-Ticket SaaS",
-    clientName: "[B2B Tech Brand]",
-    category: "LANDING PAGES",
-    industry: "SaaS & Technology",
-    thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+    id: "panila-fashion",
+    slug: "panila-fashion",
+    title: "Creative Showcasing for Fashion Collections",
+    clientName: "Panila Fashion",
+    category: "UGC",
+    industry: "Apparel & Fashion",
+    thumbnail: "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=800&auto=format&fit=crop",
     metrics: {
-      cvrUplift: "+[XX]% Lead Rate",
-      cacReduction: "-[XX]% CPL"
+      roas: "E-comm Portfolio"
     },
     featured: false,
-    shortDescription: "Dark-mode, high-converting landing page built with Next.js and integrated booking funnels."
+    shortDescription: "Scroll-stopping direct response creative assets customized for premium e-commerce apparel."
   },
   {
-    id: "work-6",
-    slug: "luxury-brand-identity",
-    title: "Visual Identity & Product Launch Film for Accessories",
-    clientName: "[Luxury Accessories]",
-    category: "BRANDING",
-    industry: "Jewelry & Luxury",
-    thumbnail: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=800&auto=format&fit=crop",
-    metrics: {
-      revenueGrowth: "+[XX]% Launch Rev",
-      roas: "[XX.Xx] ROAS"
-    },
-    featured: false,
-    shortDescription: "Cinematic ad film and distinctive visual identity system for a premium product launch."
-  },
-  {
-    id: "work-7",
-    slug: "social-first-reels-engine",
-    title: "Organic Social Media & Short-Form Video Strategy",
-    clientName: "[Fitness Brand]",
+    id: "etiquette-apparel",
+    slug: "etiquette-apparel",
+    title: "Brand Strategy and Lifestyle Content Creation",
+    clientName: "Etiquette Apparel",
     category: "SOCIAL",
-    industry: "Sports & Fitness",
-    thumbnail: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=800&auto=format&fit=crop",
+    industry: "Apparel & Fashion",
+    thumbnail: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=800&auto=format&fit=crop",
     metrics: {
-      revenueGrowth: "+[XX]% Engagement",
-      roas: "[XX.Xx] Organic Reach"
+      revenueGrowth: "Lifestyle Ads"
     },
     featured: false,
-    shortDescription: "Daily Instagram Reels and TikTok viral content strategy driving high organic brand recall."
+    shortDescription: "Fashion-first content creation optimized for social proof and conversion loops."
   },
   {
-    id: "work-8",
-    slug: "pmax-google-scaling",
-    title: "Full-Funnel Google Performance Max & Search Scale",
-    clientName: "[Consumer Goods]",
-    category: "VIDEO",
-    industry: "Consumer Electronics",
-    thumbnail: "https://images.unsplash.com/photo-1526738549149-8e07eca6c147?q=80&w=800&auto=format&fit=crop",
+    id: "bhama-designs",
+    slug: "bhama-designs",
+    title: "Traditional Aesthetics Meet Modern Growth Loops",
+    clientName: "Bhama Designs",
+    category: "EMAIL",
+    industry: "Fashion & Apparel",
+    thumbnail: "https://images.unsplash.com/photo-1544441893-675973e31985?q=80&w=800&auto=format&fit=crop",
     metrics: {
-      roas: "[XX.Xx] ROAS",
-      revenueGrowth: "+[XX]% Sales"
+      cvrUplift: "Fashion Portfolio"
     },
     featured: false,
-    shortDescription: "High-intent Google Shopping and YouTube video ad strategy with automated bidding."
+    shortDescription: "Scaling ethnic fashion and premium designs with data-backed media placements."
+  },
+  {
+    id: "iyka",
+    slug: "iyka",
+    title: "Modern Minimalist Fashion Ads & Placement",
+    clientName: "IYKA",
+    category: "ADS",
+    industry: "Apparel & Fashion",
+    thumbnail: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=800&auto=format&fit=crop",
+    metrics: {
+      roas: "Conversion Testing"
+    },
+    featured: false,
+    shortDescription: "Clean, high-performance visual catalog ads built for the modern shopper."
+  },
+  {
+    id: "the-episode",
+    slug: "the-episode",
+    title: "Dynamic Storytelling & Digital Showroom",
+    clientName: "The Episode",
+    category: "VIDEO",
+    industry: "Fashion & Lifestyle",
+    thumbnail: "https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=800&auto=format&fit=crop",
+    metrics: {
+      revenueGrowth: "Storytelling Video"
+    },
+    featured: false,
+    shortDescription: "Cinematic, high-velocity creative campaigns tailored to drive customer acquisitions."
+  },
+  {
+    id: "femi9-by-as",
+    slug: "femi9-by-as",
+    title: "Empowering Fashion Branding & Acquisition",
+    clientName: "Femi9 by AS",
+    category: "BRANDING",
+    industry: "Apparel & Fashion",
+    thumbnail: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800&auto=format&fit=crop",
+    metrics: {
+      roas: "Scale Ready"
+    },
+    featured: false,
+    shortDescription: "Tailoring digital creatives to appeal directly to highly-engaged demographics."
+  },
+  {
+    id: "fashion-floor-india",
+    slug: "fashion-floor-india",
+    title: "Broad Catalog Performance Campaigns",
+    clientName: "Fashion Floor India",
+    category: "ADS",
+    industry: "E-Commerce Fashion",
+    thumbnail: "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=800&auto=format&fit=crop",
+    metrics: {
+      cvrUplift: "Broad Targeting"
+    },
+    featured: false,
+    shortDescription: "Deploying high-velocity Advantage+ catalogs to lower overall cost per acquisition."
+  },
+  {
+    id: "wild-cherry",
+    slug: "wild-cherry",
+    title: "Bold Creative Testing & Ad Scaling",
+    clientName: "Wild Cherry",
+    category: "UGC",
+    industry: "Fashion & E-Commerce",
+    thumbnail: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=800&auto=format&fit=crop",
+    metrics: {
+      roas: "High Velocity"
+    },
+    featured: false,
+    shortDescription: "Vibrant creative design and visual product advertising to expand market reach."
+  },
+  {
+    id: "muddnme",
+    slug: "muddnme",
+    title: "Clean Aesthetics for Lifestyle E-Commerce",
+    clientName: "MuddnMe",
+    category: "WEB",
+    industry: "Lifestyle & Apparel",
+    thumbnail: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=800&auto=format&fit=crop",
+    metrics: {
+      revenueGrowth: "Lifestyle Design"
+    },
+    featured: false,
+    shortDescription: "Highlighting organic lifestyles and minimal design aesthetic to drive high purchase value."
   }
 ];
