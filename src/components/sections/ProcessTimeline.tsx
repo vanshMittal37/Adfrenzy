@@ -1,3 +1,5 @@
+"use client";
+
 export function ProcessTimeline() {
   const steps = [
     {
@@ -33,47 +35,51 @@ export function ProcessTimeline() {
   ];
 
   return (
-    <section className="py-24 bg-[#0D0D0D] border-b border-white/10" id="process">
+    <section className="py-24 bg-background border-b border-border-subtle text-text-primary transition-colors duration-300" id="process">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <span className="text-xs font-mono uppercase tracking-widest text-[#FFE500]">
+          <span className="text-xs font-mono uppercase tracking-widest text-accent font-bold">
             HOW WE WORK
           </span>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-text-primary tracking-tight">
             From strategy to execution —{" "}
-            <span className="font-serif-italic font-normal italic text-slate-200">
+            <span className="font-serif-italic font-normal italic text-accent">
               without unnecessary layers
             </span>
             .
           </h2>
-          <p className="text-neutral-300 text-base sm:text-lg">
+          <p className="text-text-secondary text-base sm:text-lg">
             No middle managers. No 40-page decks that sit on a shelf. Just senior operators executing around the numbers that move your business.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Steps Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {steps.map((step, idx) => (
             <div
               key={idx}
-              className="glass-card p-8 relative flex flex-col justify-between group hover:border-[#FFE500]/50"
+              className="glass-card p-5.5 sm:p-6 relative flex flex-col justify-between group hover:border-accent/50 rounded-2xl sm:rounded-3xl shadow-sm transition-all duration-300"
             >
               <div>
-                <span className="font-mono text-3xl font-bold text-[#FFE500] mb-4 block">
+                <span className="font-mono text-2xl font-bold text-accent mb-3 block">
                   {step.num}
                 </span>
-                <h3 className="text-xl font-extrabold text-white mb-2 tracking-wide">
+                <h3 className="text-base font-bold text-text-primary mb-2 tracking-wide uppercase">
                   {step.title}
                 </h3>
-                <p className="text-neutral-400 text-sm leading-relaxed">
+                <p className="text-text-secondary text-xs sm:text-sm leading-relaxed">
                   {step.desc}
                 </p>
               </div>
-              <div className="w-full h-1 bg-white/10 rounded-full mt-6 overflow-hidden">
-                <div className="h-full bg-[#FFE500] w-0 group-hover:w-full transition-all duration-500" />
+              <div className="w-full h-1 bg-border-subtle rounded-full mt-5 overflow-hidden">
+                <div className="h-full bg-accent w-0 group-hover:w-full transition-all duration-500" />
               </div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

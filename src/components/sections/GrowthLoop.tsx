@@ -221,27 +221,27 @@ export function GrowthLoop() {
 
           {/* Active Stage Card */}
           <div className="lg:col-span-5">
-            <div className="glass-card p-8 border-l-4 border-l-accent space-y-4 relative overflow-hidden transition-all duration-300">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-accent/5 rounded-bl-full pointer-events-none" />
+            <div className="glass-card p-5 sm:p-6 border-l-4 border-l-accent space-y-2.5 relative overflow-hidden transition-all duration-300">
+              <div className="absolute top-0 right-0 w-20 h-20 bg-accent/5 rounded-bl-full pointer-events-none" />
               <div className="flex items-center justify-between">
-                <span className="text-xs font-mono text-accent font-bold">
+                <span className="text-[10px] font-mono text-accent font-extrabold">
                   STAGE {loopStages[activeStage].num} OF 06
                 </span>
-                <span className="text-[10px] font-mono text-text-secondary">AUTO-ROTATING</span>
+                <span className="text-[9px] font-mono text-text-secondary">AUTO-ROTATING</span>
               </div>
-              <h3 className="text-2xl font-extrabold text-text-primary flex items-center gap-3">
+              <h3 className="text-xl font-bold text-text-primary flex items-center gap-2">
                 <span>{loopStages[activeStage].title}</span>
               </h3>
-              <p className="text-text-secondary text-sm leading-relaxed min-h-[60px]">
+              <p className="text-text-secondary text-xs sm:text-sm leading-relaxed min-h-[50px]">
                 {loopStages[activeStage].desc}
               </p>
-              <div className="pt-4 flex gap-2">
+              <div className="pt-2 flex gap-1.5">
                 {loopStages.map((_, idx) => (
                   <button
                     key={idx}
                     onClick={() => setActiveStage(idx)}
                     className={`h-1.5 rounded-full transition-all cursor-pointer ${
-                      activeStage === idx ? "w-8 bg-accent" : "w-3 bg-border-subtle"
+                      activeStage === idx ? "w-6 bg-accent" : "w-2.5 bg-border-subtle"
                     }`}
                   />
                 ))}

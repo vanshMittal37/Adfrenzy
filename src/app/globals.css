@@ -114,7 +114,7 @@
 .glass-card {
   background-color: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 20px;
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -124,12 +124,21 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 }
 
+/* Scrollbar hiding utilities */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 /* Primary Button (.btn-yellow for compatibility) */
 .btn-yellow {
   background-color: var(--accent);
   color: var(--btn-text-primary);
   font-weight: 700;
-  border-radius: 6px;
+  border-radius: 9999px;
   border: 1px solid var(--btn-border);
   box-shadow: 0 4px 12px var(--btn-shadow-color);
   transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
@@ -146,7 +155,7 @@
   background-color: transparent;
   color: var(--text-primary);
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: 9999px;
   font-weight: 600;
   transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
 }
@@ -401,4 +410,39 @@ html.light footer h3, html.light footer span, html.light footer p {
 /* Specific theme text color overrides for better readability */
 html.light .font-serif-italic {
   color: var(--accent) !important;
+}
+
+@keyframes marquee-rtl {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee-rtl {
+  display: flex;
+  width: max-content;
+  animation: marquee-rtl 40s linear infinite;
+}
+
+.animate-marquee-rtl:hover {
+  animation-play-state: paused;
+}
+
+/* Custom Scrollbar for horizontal scrolling zones */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-hover);
+}
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) rgba(0, 0, 0, 0.1);
 }

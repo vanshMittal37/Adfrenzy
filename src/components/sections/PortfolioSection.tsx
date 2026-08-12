@@ -4,16 +4,26 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { portfolioData, PortfolioItem } from "@/data/portfolio";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ChevronDown, ChevronUp } from "lucide-react";
 
 export function PortfolioSection() {
   const [activeCategory, setActiveCategory] = useState<string>("ALL");
+  const [showAll, setShowAll] = useState<boolean>(false);
 
   const categories = ["ALL", "ADS", "UGC", "SOCIAL", "VIDEO", "LANDING PAGES", "EMAIL", "BRANDING", "WEB"];
 
   const filteredItems = activeCategory === "ALL"
     ? portfolioData
     : portfolioData.filter((item) => item.category === activeCategory);
+
+  // Determine items to display (only 3 if showAll is false)
+  const displayedItems = showAll ? filteredItems : filteredItems.slice(0, 3);
+
+  // Reset showAll when activeCategory changes to avoid weird state issues
+  const handleCategoryChange = (cat: string) => {
+    setActiveCategory(cat);
+    setShowAll(false);
+  };
 
   return (
     <section className="py-24 bg-background border-b border-border-subtle" id="work">
@@ -41,7 +51,7 @@ export function PortfolioSection() {
           {categories.map((cat) => (
             <button
               key={cat}
-              onClick={() => setActiveCategory(cat)}
+              onClick={() => handleCategoryChange(cat)}
               className={`px-5 py-2.5 text-sm sm:text-base font-extrabold font-mono rounded-full border transition-all duration-300 cursor-pointer ${
                 activeCategory === cat
                   ? "bg-accent text-background border-accent shadow-[0_4px_16px_var(--accent-soft)] scale-105"
@@ -55,14 +65,14 @@ export function PortfolioSection() {
 
         {/* Portfolio Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredItems.map((item: PortfolioItem) => (
+          {displayedItems.map((item: PortfolioItem) => (
             <Link
               key={item.id}
               href={`/work/${item.slug}`}
-              className="glass-card overflow-hidden group flex flex-col justify-between shadow-md hover:shadow-xl transition-all duration-300"
+              className="glass-card overflow-hidden group flex flex-col justify-between aspect-square shadow-md hover:shadow-xl transition-all duration-300 w-full"
             >
-              {/* Media Container */}
-              <div className="relative aspect-[4/3] w-full overflow-hidden bg-surface-secondary border-b border-border-subtle">
+              {/* Media Container (45% height) */}
+              <div className="relative h-[45%] w-full overflow-hidden bg-surface-secondary border-b border-border-subtle">
                 <Image
                   src={item.thumbnail}
                   alt={item.title}
@@ -74,45 +84,45 @@ export function PortfolioSection() {
                 {/* Dark Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60" />
 
-                {/* Tags */}
-                <div className="absolute top-4 left-4 bg-background/90 backdrop-blur-md px-4 py-1.5 rounded-full text-xs sm:text-sm font-extrabold font-mono text-accent uppercase border border-accent/30 shadow-[0_2px_10px_var(--accent-soft)]">
+                {/* Tags (slightly smaller text for balance) */}
+                <div className="absolute top-3 left-3 bg-background/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] sm:text-xs font-extrabold font-mono text-accent uppercase border border-accent/30 shadow-[0_2px_8px_var(--accent-soft)]">
                   {item.category}
                 </div>
                 
                 {/* Arrow Icon */}
-                <div className="absolute top-4 right-4 bg-accent text-background p-2 rounded-full opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 shadow-md">
-                  <ArrowUpRight className="w-4 h-4 text-black stroke-[2.5]" />
+                <div className="absolute top-3 right-3 bg-accent text-background p-1.5 rounded-full opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 shadow-md">
+                  <ArrowUpRight className="w-3.5 h-3.5 text-black stroke-[2.5]" />
                 </div>
               </div>
 
-              {/* Text Info */}
-              <div className="p-6 space-y-3 flex-grow flex flex-col justify-between">
-                <div className="space-y-2">
-                  <div className="text-xs font-mono text-text-secondary uppercase tracking-wider">
+              {/* Text Info (55% height) */}
+              <div className="p-4.5 space-y-2.5 h-[55%] flex flex-col justify-between overflow-hidden">
+                <div className="space-y-1.5 overflow-hidden">
+                  <div className="text-[10px] font-mono text-text-secondary uppercase tracking-wider">
                     {item.clientName} · {item.industry}
                   </div>
-                  <h3 className="text-lg font-bold text-text-primary group-hover:text-accent transition-colors leading-snug">
+                  <h3 className="text-sm sm:text-base font-bold text-text-primary group-hover:text-accent transition-colors leading-snug line-clamp-2">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-text-secondary line-clamp-2 leading-relaxed">
+                  <p className="text-[11px] sm:text-xs text-text-secondary line-clamp-2 leading-relaxed">
                     {item.shortDescription}
                   </p>
                 </div>
 
-                {/* Metrics Badges */}
-                <div className="pt-4 mt-4 border-t border-border-subtle flex flex-wrap gap-2 text-xs sm:text-sm font-mono font-extrabold">
+                {/* Metrics Badges (smaller) */}
+                <div className="pt-2 border-t border-border-subtle flex flex-wrap gap-1.5 text-[9px] sm:text-[10px] font-mono font-extrabold">
                   {item.metrics.roas && (
-                    <span className="bg-accent/10 text-accent px-3.5 py-1.5 rounded-full border border-accent/25 shadow-[0_2px_8px_var(--accent-soft)]">
+                    <span className="bg-accent/10 text-accent px-2.5 py-1 rounded-full border border-accent/25">
                       {item.metrics.roas}
                     </span>
                   )}
                   {item.metrics.revenueGrowth && (
-                    <span className="bg-emerald-500/10 text-emerald-500 dark:text-emerald-400 px-3.5 py-1.5 rounded-full border border-emerald-500/25">
+                    <span className="bg-emerald-500/10 text-emerald-500 dark:text-emerald-400 px-2.5 py-1 rounded-full border border-emerald-500/25">
                       {item.metrics.revenueGrowth}
                     </span>
                   )}
                   {item.metrics.cacReduction && (
-                    <span className="bg-sky-500/10 text-sky-500 dark:text-sky-400 px-3.5 py-1.5 rounded-full border border-sky-500/25">
+                    <span className="bg-sky-500/10 text-sky-500 dark:text-sky-400 px-2.5 py-1 rounded-full border border-sky-500/25">
                       {item.metrics.cacReduction}
                     </span>
                   )}
@@ -121,6 +131,20 @@ export function PortfolioSection() {
             </Link>
           ))}
         </div>
+
+        {/* See More / See Less Actions */}
+        {filteredItems.length > 3 && (
+          <div className="mt-16 text-center">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="btn-yellow px-6 py-3 text-sm font-extrabold rounded-full inline-flex items-center gap-2 cursor-pointer shadow-md"
+            >
+              <span>{showAll ? "See Less" : "See More"}</span>
+              {showAll ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+            </button>
+          </div>
+        )}
+
       </div>
     </section>
   );
