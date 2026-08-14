@@ -49,7 +49,7 @@ export const caseStudiesData: Record<string, CaseStudy> = {
     },
     testimonialQuote: "The team is diligent, hardworking, and understands the brand. Campaigns are tailored according to expectations with a focus on desired ROAS.",
     testimonialAuthor: "Omair, Founder at ZAZU",
-    heroImage: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop",
+    heroImage: "/assets/brand-analytics-sales.jpg",
     videoUrl: "https://res.cloudinary.com/dmm8lfc3x/video/upload/v1786560176/o7txvg8disgd61bya8no.mp4"
   },
   "kaftanize-scaling": {
@@ -74,6 +74,6 @@ export const caseStudiesData: Record<string, CaseStudy> = {
       metric2: { label: "Optimization Type", value: "Link Click" },
       metric3: { label: "Target Segment", value: "New Audiences" }
     },
-    heroImage: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=1200&auto=format&fit=crop"
+    heroImage: "/assets/kaftanize.jpeg"
   }
 };

@@ -1,24 +1,24 @@
 import Image from "next/image";
 
 const marqueeItemsCol1 = [
-  { type: "image", url: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=500&auto=format&fit=crop", title: "Luxury Product Shoot" },
-  { type: "image", url: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=500&auto=format&fit=crop", title: "Skincare UGC Reel" },
-  { type: "image", url: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=500&auto=format&fit=crop", title: "Apparel Motion Graphic" },
-  { type: "image", url: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=500&auto=format&fit=crop", title: "Shopify Store UI" },
+  { type: "image", url: "/assets/kaftanize.jpeg", title: "Kaftanize Fashion Campaign" },
+  { type: "image", url: "/assets/fashionfloorindia.jpeg", title: "Fashion Floor India Catalog" },
+  { type: "image", url: "/assets/figLiving.jpeg", title: "FIG Living Design Curation" },
+  { type: "image", url: "/assets/iyka.jpeg", title: "IYKA Minimalist Apparel" },
 ];
 
 const marqueeItemsCol2 = [
-  { type: "image", url: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=500&auto=format&fit=crop", title: "Klaviyo Email Flow" },
-  { type: "image", url: "https://images.unsplash.com/photo-1526738549149-8e07eca6c147?q=80&w=500&auto=format&fit=crop", title: "Google Ad Campaign" },
-  { type: "image", url: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=500&auto=format&fit=crop", title: "CRO Landing Page" },
-  { type: "image", url: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=500&auto=format&fit=crop", title: "Fitness Brand Reel" },
+  { type: "image", url: "/assets/panillafashion.jpeg", title: "Panilla Fashion Visual Ad" },
+  { type: "image", url: "/assets/sanctuaryliving.jpeg", title: "Sanctuary Living Portfolio" },
+  { type: "image", url: "/assets/theepisode.jpeg", title: "The Episode Brand Motion" },
+  { type: "image", url: "/assets/wildcherry.jpeg", title: "Wild Cherry Direct Response" },
 ];
 
 const marqueeItemsCol3 = [
-  { type: "image", url: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=500&auto=format&fit=crop", title: "Sneaker Ad Creative" },
-  { type: "image", url: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=500&auto=format&fit=crop", title: "Headphone Product Video" },
-  { type: "image", url: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=500&auto=format&fit=crop", title: "Smartwatch Ad Campaign" },
-  { type: "image", url: "https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=500&auto=format&fit=crop", title: "Social Content Reel" },
+  { type: "image", url: "/assets/muddnme.jpeg", title: "MuddnMe Lifestyle Web" },
+  { type: "image", url: "/assets/etiquetteapperel.jpeg", title: "Etiquette Apparel Strategy" },
+  { type: "image", url: "/assets/kaftanize-campaign.jpg", title: "Kaftanize Paid Media" },
+  { type: "image", url: "/assets/brand-analytics-sales.jpg", title: "Zazu Campaign Analytics" },
 ];
 
 export function CreativeMarquee() {

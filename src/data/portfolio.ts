@@ -44,7 +44,7 @@ export const portfolioData: PortfolioItem[] = [
     clientName: "ZAZU",
     category: "ADS",
     industry: "Fashion & E-Commerce",
-    thumbnail: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800&auto=format&fit=crop",
+    thumbnail: "/assets/brand-analytics-sales.jpg",
     videoUrl: "/testimonial2.mp4",
     metrics: {
       roas: "Focused ROAS",
@@ -60,7 +60,7 @@ export const portfolioData: PortfolioItem[] = [
     clientName: "Kaftanize",
     category: "ADS",
     industry: "Fashion & Lifestyle",
-    thumbnail: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=800&auto=format&fit=crop",
+    thumbnail: "/assets/kaftanize.jpeg",
     metrics: {
       roas: "TOF | Link Click"
     },
@@ -74,7 +74,7 @@ export const portfolioData: PortfolioItem[] = [
     clientName: "FIG Living",
     category: "BRANDING",
     industry: "Home & Lifestyle",
-    thumbnail: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=800&auto=format&fit=crop",
+    thumbnail: "/assets/figLiving.jpeg",
     metrics: {
       revenueGrowth: "Visual Curation"
     },
@@ -88,7 +88,7 @@ export const portfolioData: PortfolioItem[] = [
     clientName: "Sanctuary Living",
     category: "WEB",
     industry: "Home & Decor",
-    thumbnail: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800&auto=format&fit=crop",
+    thumbnail: "/assets/sanctuaryliving.jpeg",
     metrics: {
       cvrUplift: "Creative Showcase"
     },
@@ -102,7 +102,7 @@ export const portfolioData: PortfolioItem[] = [
     clientName: "Panila Fashion",
     category: "UGC",
     industry: "Apparel & Fashion",
-    thumbnail: "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=800&auto=format&fit=crop",
+    thumbnail: "/assets/panillafashion.jpeg",
     metrics: {
       roas: "E-comm Portfolio"
     },
@@ -116,7 +116,7 @@ export const portfolioData: PortfolioItem[] = [
     clientName: "Etiquette Apparel",
     category: "SOCIAL",
     industry: "Apparel & Fashion",
-    thumbnail: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=800&auto=format&fit=crop",
+    thumbnail: "/assets/etiquetteapperel.jpeg",
     metrics: {
       revenueGrowth: "Lifestyle Ads"
     },
@@ -130,7 +130,7 @@ export const portfolioData: PortfolioItem[] = [
     clientName: "Bhama Designs",
     category: "EMAIL",
     industry: "Fashion & Apparel",
-    thumbnail: "https://images.unsplash.com/photo-1544441893-675973e31985?q=80&w=800&auto=format&fit=crop",
+    thumbnail: "/assets/kaftanize.jpeg",
     metrics: {
       cvrUplift: "Fashion Portfolio"
     },
@@ -144,7 +144,7 @@ export const portfolioData: PortfolioItem[] = [
     clientName: "IYKA",
     category: "ADS",
     industry: "Apparel & Fashion",
-    thumbnail: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=800&auto=format&fit=crop",
+    thumbnail: "/assets/iyka.jpeg",
     metrics: {
       roas: "Conversion Testing"
     },
@@ -158,7 +158,7 @@ export const portfolioData: PortfolioItem[] = [
     clientName: "The Episode",
     category: "VIDEO",
     industry: "Fashion & Lifestyle",
-    thumbnail: "https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=800&auto=format&fit=crop",
+    thumbnail: "/assets/theepisode.jpeg",
     metrics: {
       revenueGrowth: "Storytelling Video"
     },
@@ -172,7 +172,7 @@ export const portfolioData: PortfolioItem[] = [
     clientName: "Femi9 by AS",
     category: "BRANDING",
     industry: "Apparel & Fashion",
-    thumbnail: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800&auto=format&fit=crop",
+    thumbnail: "/assets/panillafashion.jpeg",
     metrics: {
       roas: "Scale Ready"
     },
@@ -186,7 +186,7 @@ export const portfolioData: PortfolioItem[] = [
     clientName: "Fashion Floor India",
     category: "ADS",
     industry: "E-Commerce Fashion",
-    thumbnail: "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=800&auto=format&fit=crop",
+    thumbnail: "/assets/fashionfloorindia.jpeg",
     metrics: {
       cvrUplift: "Broad Targeting"
     },
@@ -200,7 +200,7 @@ export const portfolioData: PortfolioItem[] = [
     clientName: "Wild Cherry",
     category: "UGC",
     industry: "Fashion & E-Commerce",
-    thumbnail: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=800&auto=format&fit=crop",
+    thumbnail: "/assets/wildcherry.jpeg",
     metrics: {
       roas: "High Velocity"
     },
@@ -214,7 +214,7 @@ export const portfolioData: PortfolioItem[] = [
     clientName: "MuddnMe",
     category: "WEB",
     industry: "Lifestyle & Apparel",
-    thumbnail: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=800&auto=format&fit=crop",
+    thumbnail: "/assets/muddnme.jpeg",
     metrics: {
       revenueGrowth: "Lifestyle Design"
     },

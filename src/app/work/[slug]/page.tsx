@@ -4,7 +4,8 @@ import { notFound } from "next/navigation";
 import { caseStudiesData, CaseStudy } from "@/data/caseStudies";
 import { portfolioData, PortfolioItem } from "@/data/portfolio";
 import { FinalCTA } from "@/components/sections/FinalCTA";
-import { ArrowLeft, CheckCircle2, Globe, TrendingUp, Sparkles, Zap } from "lucide-react";
+import { Lightbox } from "@/components/sections/Lightbox";
+import { ArrowLeft, CheckCircle2, TrendingUp, Sparkles, Zap } from "lucide-react";
 
 interface CaseStudyPageProps {
   params: Promise<{ slug: string }>;
@@ -18,6 +19,83 @@ export async function generateStaticParams() {
   ]);
   return Array.from(slugs).map((slug) => ({ slug }));
 }
+
+// Map slug to screenshot path and descriptive section details
+const SCREENSHOT_MAP: Record<
+  string,
+  {
+    src: string;
+    sectionEyebrow: string;
+    sectionTitle: string;
+    sectionDesc: string;
+    alt: string;
+  }
+> = {
+  // /work/zazu -> brand-analytics-sales.jpg
+  "zazu-growth": {
+    src: "/assets/brand-analytics-sales.jpg",
+    sectionEyebrow: "CAMPAIGN ANALYTICS",
+    sectionTitle: "Sales & Performance Snapshot",
+    sectionDesc: "A visual demonstration of campaign sales generation, scaling trajectory, and daily performance metrics.",
+    alt: "Zazu Campaign Sales Analytics Snapshot"
+  },
+  // /work/rustic-radiance -> brand-analytics-visitors.jpg
+  "rustic-radiance": {
+    src: "/assets/brand-analytics-visitors.jpg",
+    sectionEyebrow: "TRAFFIC & VISITOR ANALYTICS",
+    sectionTitle: "Visitor Acquisition Snapshot",
+    sectionDesc: "A visual look at traffic distribution, daily active visitor counts, and source-level channels.",
+    alt: "Rustic Radiance Visitor Acquisition Snapshot"
+  },
+  // /work/kaftanize -> kaftanize-campaign.jpg
+  "kaftanize-scaling": {
+    src: "/assets/kaftanize-campaign.jpg",
+    sectionEyebrow: "CAMPAIGN ARCHITECTURE",
+    sectionTitle: "Creative Performance Optimization",
+    sectionDesc: "An example overview of visual catalog setups, asset grouping, and campaign performance testing.",
+    alt: "Kaftanize Creative Campaign Performance Snapshot"
+  },
+  // /work/fig-living -> brand-meta-performance-01.jpg
+  "fig-living": {
+    src: "/assets/brand-meta-performance-01.jpg",
+    sectionEyebrow: "PAID MEDIA PERFORMANCE",
+    sectionTitle: "Performance Marketing Showcase",
+    sectionDesc: "A snapshot illustrating ad creative response, engagement indices, and performance distribution.",
+    alt: "FIG Living Performance Marketing Snapshot"
+  },
+  // /work/sanctuary-living -> brand-meta-performance-02.jpg
+  "sanctuary-living": {
+    src: "/assets/brand-meta-performance-02.jpg",
+    sectionEyebrow: "CAMPAIGN OPTIMIZATION",
+    sectionTitle: "Paid Media Execution Snapshot",
+    sectionDesc: "An execution benchmark demonstrating campaign ad delivery, reach structure, and optimization patterns.",
+    alt: "Sanctuary Living Paid Media Execution Snapshot"
+  },
+  // /work/pantila -> kaftanize-performance-01.jpg
+  "panila-fashion": {
+    src: "/assets/kaftanize-performance-01.jpg",
+    sectionEyebrow: "PERFORMANCE MARKETING EXAMPLE",
+    sectionTitle: "Campaign Structuring Example",
+    sectionDesc: "A reference layout of direct response targeting setups and performance allocation.",
+    alt: "Panila Fashion Performance Marketing Structuring Example"
+  },
+  // /work/fashion-floor-india -> kaftanize-performance-02.jpg
+  "fashion-floor-india": {
+    src: "/assets/kaftanize-performance-02.jpg",
+    sectionEyebrow: "PAID MEDIA CHANNELS",
+    sectionTitle: "Campaign Delivery Snapshot",
+    sectionDesc: "An operational snapshot detailing Advantage+ placements and creative delivery metrics.",
+    alt: "Fashion Floor India Campaign Delivery Snapshot"
+  },
+  // /work/meld-cheary -> kaftanize-performance-03.jpg
+  "wild-cherry": {
+    src: "/assets/kaftanize-performance-03.jpg",
+    sectionEyebrow: "CAMPAIGN OPTIMIZATION",
+    sectionTitle: "Direct Response Snapshot",
+    sectionDesc: "A performance snapshot of visual media structures and creative optimization testing.",
+    alt: "Wild Cherry Direct Response Optimization Snapshot"
+  }
+};
 
 export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
   const { slug } = await params;
@@ -69,6 +147,9 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
       videoUrl: portfolioItem.videoUrl
     };
   }
+
+  // Get screenshot info for the slug
+  const screenshotInfo = SCREENSHOT_MAP[slug];
 
   return (
     <div className="pt-28 pb-16 bg-background border-b border-border-subtle text-text-primary transition-colors duration-300">
@@ -177,6 +258,17 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                 </div>
               </div>
             </div>
+
+            {/* Premium Campaign Performance Section */}
+            {screenshotInfo && (
+              <Lightbox
+                src={screenshotInfo.src}
+                alt={screenshotInfo.alt}
+                sectionEyebrow={screenshotInfo.sectionEyebrow}
+                sectionTitle={screenshotInfo.sectionTitle}
+                sectionDesc={screenshotInfo.sectionDesc}
+              />
+            )}
           </div>
 
           {/* Sidebar Testimonial */}
