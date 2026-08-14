@@ -75,7 +75,7 @@ export function PortfolioSection() {
               <div className="relative h-[45%] w-full overflow-hidden bg-surface-secondary border-b border-border-subtle">
                 <Image
                   src={item.thumbnail}
-                  alt={item.title}
+                  alt={`${item.clientName} - ${item.title}`}
                   fill
                   className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

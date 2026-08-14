@@ -3,9 +3,12 @@ import { TeamGrid } from "@/components/sections/TeamGrid";
 import { PhilosophySection } from "@/components/sections/PhilosophySection";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 
-export const metadata = {
-  title: "About Us — SparkMedia.ad",
-  description: "We are an integrated growth and creative agency helping ambitious brands turn attention into measurable business results."
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About SparkMedia",
+  description:
+    "Learn about SparkMedia, a creative and performance marketing agency helping ambitious e-commerce brands grow through creative, media and conversion strategy.",
 };
 
 export default function AboutPage() {

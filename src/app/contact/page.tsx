@@ -1,8 +1,11 @@
 import { StrategyCallSection } from "@/components/sections/StrategyCallSection";
 
-export const metadata = {
-  title: "Contact Us — SparkMedia.ad",
-  description: "Get in touch with the SparkMedia team or book a growth strategy call."
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact SparkMedia",
+  description:
+    "Contact SparkMedia in Pune, Maharashtra to discuss performance marketing, creative, CRO, web development and e-commerce growth.",
 };
 
 export default function ContactPage() {

@@ -1,9 +1,12 @@
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 
-export const metadata = {
-  title: "Frequently Asked Questions — SparkMedia.ad",
-  description: "Straightforward answers to questions about our growth services, creative throughput, and pricing models."
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Performance Marketing FAQ",
+  description:
+    "Find answers to common questions about SparkMedia's performance marketing, creative production, CRO, e-commerce growth and strategy services.",
 };
 
 export default function FAQPage() {

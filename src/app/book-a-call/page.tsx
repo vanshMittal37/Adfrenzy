@@ -1,8 +1,11 @@
 import { CalendlyEmbed } from "@/components/calendly/CalendlyEmbed";
 
-export const metadata = {
-  title: "Book a Strategy Call — SparkMedia.ad",
-  description: "Select a convenient time on our calendar to discuss your brand's growth levers."
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Book a Strategy Call",
+  description:
+    "Book a strategy call with SparkMedia to discuss your marketing, creative, conversion and e-commerce growth opportunities.",
 };
 
 export default function BookACallPage() {

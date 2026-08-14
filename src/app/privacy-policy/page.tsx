@@ -27,7 +27,7 @@ export default function PrivacyPolicyPage() {
           </p>
           <h3 className="text-lg font-bold text-white pt-2">4. Contact Us</h3>
           <p>
-            For questions regarding this privacy policy, please contact us at <a href="mailto:hello@sparkmedia.ad" className="text-[#FFE500] underline">hello@sparkmedia.ad</a>.
+            For questions regarding this privacy policy, please contact us at <a href="mailto:Sparkmedia.bs@gmail.com" className="text-[#FFE500] underline">Sparkmedia.bs@gmail.com</a>.
           </p>
         </div>
       </div>

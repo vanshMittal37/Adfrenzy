@@ -7,7 +7,6 @@ import { GrowthLoop } from "@/components/sections/GrowthLoop";
 import { ComparisonTable } from "@/components/sections/ComparisonTable";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
 import { TwoGrowthProblems } from "@/components/sections/TwoGrowthProblems";
-import { ProcessTimeline } from "@/components/sections/ProcessTimeline";
 import { PortfolioSection } from "@/components/sections/PortfolioSection";
 import { ResultsSection } from "@/components/sections/ResultsSection";
 import { Testimonials } from "@/components/sections/Testimonials";
@@ -30,7 +29,6 @@ export default function HomePage() {
       <ResultsSection />
       <PortfolioSection />
       <CreativeMarquee />
-      <ProcessTimeline />
       <Testimonials />
       <FAQAccordion />
       <StrategyCallSection />

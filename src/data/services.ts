@@ -62,31 +62,6 @@ export const servicesData: ServiceItem[] = [
     highlightText: "Continuous creative velocity so your ad accounts never hit creative fatigue."
   },
   {
-    id: "social-media",
-    slug: "social-media",
-    title: "Social Media",
-    tagline: "Socials that build brand equity and organic demand.",
-    description: "Consistent content shouldn't just fill your feed — it should build brand recognition, customer trust, and long-term organic demand.",
-    features: [
-      "Organic Social Media Strategy",
-      "Monthly Content Calendar & Production",
-      "Instagram & TikTok Feed Management",
-      "Short-Form Vertical Video (Reels & Shorts)",
-      "Founder Branding & Thought Leadership",
-      "Community Engagement & Management",
-      "Viral Concepting & Trend Hijacking",
-      "Social Brand Guidelines"
-    ],
-    deliverables: [
-      "Monthly Content Publishing",
-      "Design Assets & Video Edits",
-      "Captioning & Hashtag Strategy",
-      "Monthly Reach & Engagement Reports"
-    ],
-    icon: "Share2",
-    highlightText: "Content that sticks in minds and compounds brand recall over time."
-  },
-  {
     id: "cro",
     slug: "cro",
     title: "CRO & Landing Pages",
@@ -112,31 +87,6 @@ export const servicesData: ServiceItem[] = [
     highlightText: "Unlock extra revenue from existing ad traffic before scaling spend."
   },
   {
-    id: "email-sms",
-    slug: "email-sms",
-    title: "Email / SMS / WhatsApp",
-    tagline: "Turn one-time buyers into repeat relationships.",
-    description: "Paid acquisition gets customers through the door; lifecycle retention turns them into loyal repeat buyers with high Lifetime Value (LTV).",
-    features: [
-      "Klaviyo Automated Email Flows",
-      "SMS & WhatsApp Lifecycle Marketing",
-      "Welcome Series & First Purchase Nurture",
-      "Abandoned Cart & Browse Abandonment",
-      "Post-Purchase Review & Cross-sell Sequences",
-      "Win-Back & Customer Reactivation",
-      "VIP Loyalty & Product Launch Broadcasts",
-      "List Segmentation & Predictive Analytics"
-    ],
-    deliverables: [
-      "Custom Graphic Email Templates",
-      "Copywriting & Sequence Setup",
-      "SMS/WhatsApp Automation Workflows",
-      "Monthly LTV & Retention Reports"
-    ],
-    icon: "Mail",
-    highlightText: "Compounding your revenue without increasing acquisition ad spend."
-  },
-  {
     id: "web-design",
     slug: "web-design",
     title: "Web Design & Development",
@@ -160,31 +110,6 @@ export const servicesData: ServiceItem[] = [
     ],
     icon: "Layout",
     highlightText: "Stunning aesthetics paired with conversion-tested UX architecture."
-  },
-  {
-    id: "branding",
-    slug: "branding",
-    title: "Brand & Campaigns",
-    tagline: "Build a brand identity people remember and talk about.",
-    description: "Move past generic marketing. We craft distinctive visual identities, launch campaign concepts, and brand assets that establish premium positioning.",
-    features: [
-      "Brand Positioning & Messaging Systems",
-      "Visual Identity & Logo Design",
-      "Product Launch Campaign Concepts",
-      "Brand Films & Video Commercials",
-      "Creative Direction & Photoshoots",
-      "Packaging & Collateral Design",
-      "Typography & Color Systems",
-      "Brand Voice & Style Guides"
-    ],
-    deliverables: [
-      "Complete Brand Identity Guidelines",
-      "Vector & Raster Logo Suites",
-      "Campaign Ad Kits & Video Assets",
-      "Print & Packaging Mockups"
-    ],
-    icon: "Sparkles",
-    highlightText: "Positioning your brand as the obvious premium choice in your niche."
   },
   {
     id: "strategy",

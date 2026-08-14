@@ -2,16 +2,13 @@
 
 import Link from "next/link";
 import { servicesData } from "@/data/services";
-import { TrendingUp, Video, Share2, Zap, Mail, Layout, Sparkles, Target, ArrowRight } from "lucide-react";
+import { TrendingUp, Video, Zap, Layout, Target, ArrowRight } from "lucide-react";
 
 const iconMap: Record<string, any> = {
   TrendingUp,
   Video,
-  Share2,
   Zap,
-  Mail,
   Layout,
-  Sparkles,
   Target
 };
 
@@ -43,31 +40,37 @@ export function ServicesGrid() {
           </p>
         </div>
 
-        {/* 8 Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        {/* 5 Services Grid (One horizontal row on desktop) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4.5 mb-16">
           {servicesData.map((svc) => {
             const Icon = iconMap[svc.icon] || Target;
             return (
               <div
                 key={svc.id}
-                className="glass-card p-5 flex flex-col justify-between group hover:border-accent/60 transition-all duration-300 shadow-sm rounded-2xl"
+                className="glass-card p-4.5 flex flex-col justify-between group hover:border-accent/60 transition-all duration-300 shadow-sm rounded-2xl border border-border-subtle bg-surface"
               >
-                <div className="overflow-hidden flex flex-col justify-start h-full">
-                  <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 group-hover:scale-105 group-hover:shadow-[0_0_12px_var(--accent-soft)] transition-all duration-300">
-                    <Icon className="w-5 h-5 text-accent transition-colors duration-300" />
+                <div className="overflow-hidden flex flex-col justify-start h-full space-y-3">
+                  {/* Icon Wrapper (scaled down slightly for desktop fit) */}
+                  <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 group-hover:scale-105 group-hover:shadow-[0_0_12px_var(--accent-soft)] transition-all duration-300">
+                    <Icon className="w-4.5 h-4.5 text-accent transition-colors duration-300" />
                   </div>
-                  <h3 className="text-sm sm:text-base font-bold text-text-primary mb-1.5 group-hover:text-accent transition-colors leading-snug">
-                    {svc.title}
-                  </h3>
-                  <p className="text-[10px] sm:text-xs font-semibold text-accent mb-2">
-                    "{svc.tagline}"
-                  </p>
-                  <p className="text-text-secondary text-[11px] sm:text-xs leading-relaxed line-clamp-3">
+                  
+                  {/* Service Details */}
+                  <div className="space-y-1">
+                    <h3 className="text-sm sm:text-base font-bold text-text-primary group-hover:text-accent transition-colors leading-snug">
+                      {svc.title}
+                    </h3>
+                    <p className="text-[10px] sm:text-[11px] font-semibold text-accent leading-snug">
+                      "{svc.tagline}"
+                    </p>
+                  </div>
+
+                  <p className="text-text-secondary text-[11px] sm:text-xs leading-relaxed line-clamp-4">
                     {svc.description}
                   </p>
                 </div>
 
-                <div className="border-t border-border-subtle pt-3 mt-2">
+                <div className="border-t border-border-subtle pt-2.5 mt-3">
                   <Link
                     href={`/services/${svc.slug}`}
                     className="inline-flex items-center gap-1.5 text-[10px] sm:text-xs font-bold text-text-primary group-hover:text-accent transition-colors"
@@ -81,8 +84,8 @@ export function ServicesGrid() {
           })}
         </div>
 
-        {/* Service CTA Box (Need one service or the whole system?) */}
-        <div className="glass-card p-6 md:p-10 text-center max-w-3xl mx-auto border-accent/20 space-y-5 rounded-2xl shadow-md">
+        {/* Service CTA Box */}
+        <div className="glass-card p-6 md:p-10 text-center max-w-3xl mx-auto border border-border-subtle bg-surface space-y-5 rounded-2xl shadow-md">
           <h3 className="text-xl sm:text-2xl font-bold text-text-primary">
             Need one service or the whole system?
           </h3>

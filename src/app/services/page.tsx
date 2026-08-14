@@ -1,9 +1,12 @@
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 
-export const metadata = {
-  title: "Services — SparkMedia.ad",
-  description: "Explore our 8 integrated growth pillars: Performance Marketing, Performance Creative, Social Media, CRO, Email/SMS, Web Design, Branding, and Growth Strategy."
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Performance Marketing & Creative Services",
+  description:
+    "Explore SparkMedia's performance marketing, performance creative, CRO, web development and growth strategy services for e-commerce brands.",
 };
 
 export default function ServicesPage() {

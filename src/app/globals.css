@@ -446,3 +446,19 @@ html.light .font-serif-italic {
   scrollbar-width: thin;
   scrollbar-color: var(--accent) rgba(0, 0, 0, 0.1);
 }
+
+/* Logo visibility by theme */
+.logo-dark-theme {
+  display: block !important;
+}
+.logo-light-theme {
+  display: none !important;
+}
+
+html.light .logo-dark-theme {
+  display: none !important;
+}
+html.light .logo-light-theme {
+  display: block !important;
+}
+

@@ -2,9 +2,12 @@ import { ProcessTimeline } from "@/components/sections/ProcessTimeline";
 import { GrowthLoop } from "@/components/sections/GrowthLoop";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 
-export const metadata = {
-  title: "Growth Process — SparkMedia.ad",
-  description: "Discover our 6-step growth execution roadmap from discovery to scaling."
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Our Growth Process",
+  description:
+    "Discover SparkMedia's growth process covering strategy, creative, launch, learning, optimisation and scaling.",
 };
 
 export default function ProcessPage() {

@@ -107,7 +107,7 @@ export function Hero() {
 
             {/* Subtitle / Description */}
             <p className="text-base sm:text-lg text-text-secondary max-w-xl font-normal leading-relaxed">
-              SparkMedia.ad combines high-impact creative production, performance media buying, and conversion optimization into a single growth loop. We build compounding engines to acquire customers and scale brands profitably.
+              SparkMedia combines high-impact creative production, performance media buying, and conversion optimization into a single growth loop. We build compounding engines to acquire customers and scale brands profitably.
             </p>
 
             {/* CTA Buttons */}
@@ -119,13 +119,6 @@ export function Hero() {
                 <span>Book a Strategy Call</span>
                 <ArrowRight className="w-4.5 h-4.5" />
               </button>
-              <Link
-                href="/work"
-                className="w-full sm:w-auto btn-ghost px-6 py-3 text-sm sm:text-base font-bold inline-flex items-center justify-center gap-2"
-              >
-                <span>See Our Work</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
             </div>
 
             {/* Colorized Trust Badge Row */}
