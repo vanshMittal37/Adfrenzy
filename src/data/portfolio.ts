@@ -28,7 +28,7 @@ export const portfolioData: PortfolioItem[] = [
     industry: "E-Commerce",
     thumbnail: "/assets/brand-analytics-sales.jpg",
     metrics: {
-      primaryValue: "₹18,691,624.45",
+      primaryValue: "₹14,208,972.14",
       primaryLabel: "Gross Sales",
       bottomLabel: "Revenue Analytics"
     },
@@ -44,7 +44,7 @@ export const portfolioData: PortfolioItem[] = [
     industry: "D2C Brand",
     thumbnail: "/assets/brand-analytics-visitors.jpg",
     metrics: {
-      primaryValue: "₹17,355,213.31",
+      primaryValue: "₹15,718,792.80",
       primaryLabel: "Gross Sales",
       bottomLabel: "Customer Analytics"
     },
@@ -60,9 +60,9 @@ export const portfolioData: PortfolioItem[] = [
     industry: "Fashion Retailer",
     thumbnail: "/assets/brand-meta-performance-01.jpg",
     metrics: {
-      primaryValue: "8.30 ROAS",
+      primaryValue: "6.94 ROAS",
       primaryLabel: "Average Campaign ROAS",
-      secondaryValue: "₹2,738,166.00",
+      secondaryValue: "₹7,812,933.35",
       secondaryLabel: "Purchase Conversion Value"
     },
     featured: true,
@@ -77,9 +77,9 @@ export const portfolioData: PortfolioItem[] = [
     industry: "Consumer Goods",
     thumbnail: "/assets/brand-meta-performance-02.jpg",
     metrics: {
-      primaryValue: "8.94 ROAS",
+      primaryValue: "7.91 ROAS",
       primaryLabel: "Average Campaign ROAS",
-      secondaryValue: "₹1,911,793.40",
+      secondaryValue: "3,803,778.07",
       secondaryLabel: "Purchase Conversion Value"
     },
     featured: true,
