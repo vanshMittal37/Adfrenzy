@@ -13,9 +13,9 @@ const iconMap: Record<string, any> = {
 };
 
 export function ServicesGrid() {
-  const openCalendly = () => {
+  const openDaySchedule = () => {
     if (typeof window !== "undefined") {
-      window.dispatchEvent(new CustomEvent("open-calendly"));
+      window.dispatchEvent(new CustomEvent("open-dayschedule"));
     }
   };
 
@@ -93,7 +93,7 @@ export function ServicesGrid() {
             Start where the problem is. We'll help you build the rest.
           </p>
           <button
-            onClick={openCalendly}
+            onClick={openDaySchedule}
             className="btn-yellow px-6 py-2.5 text-xs sm:text-sm font-extrabold inline-flex items-center gap-2 cursor-pointer rounded-full"
           >
             <span>Talk to Our Team</span>

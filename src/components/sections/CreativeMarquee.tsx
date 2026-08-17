@@ -17,8 +17,8 @@ const marqueeItemsCol2 = [
 const marqueeItemsCol3 = [
   { type: "image", url: "/assets/muddnme.jpeg", title: "MuddnMe Lifestyle Web" },
   { type: "image", url: "/assets/etiquetteapperel.jpeg", title: "Etiquette Apparel Strategy" },
-  { type: "image", url: "/assets/kaftanize-campaign.jpg", title: "Kaftanize Paid Media" },
-  { type: "image", url: "/assets/brand-analytics-sales.jpg", title: "Zazu Campaign Analytics" },
+  { type: "image", url: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=600", title: "Aura Premium Watch" },
+  { type: "image", url: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=600", title: "Sonic Over-Ear Headphones" },
 ];
 
 export function CreativeMarquee() {

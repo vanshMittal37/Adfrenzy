@@ -3,9 +3,9 @@
 import { ArrowRight, AlertCircle, Sparkles } from "lucide-react";
 
 export function TwoGrowthProblems() {
-  const openCalendly = () => {
+  const openDaySchedule = () => {
     if (typeof window !== "undefined") {
-      window.dispatchEvent(new CustomEvent("open-calendly"));
+      window.dispatchEvent(new CustomEvent("open-dayschedule"));
     }
   };
 
@@ -73,7 +73,7 @@ export function TwoGrowthProblems() {
             </div>
 
             <button
-              onClick={openCalendly}
+              onClick={openDaySchedule}
               className="btn-yellow w-full py-2.5 text-xs sm:text-sm font-extrabold inline-flex items-center justify-center gap-2 cursor-pointer rounded-full"
             >
               <span>Fix My Growth</span>
@@ -121,7 +121,7 @@ export function TwoGrowthProblems() {
             </div>
 
             <button
-              onClick={openCalendly}
+              onClick={openDaySchedule}
               className="btn-yellow w-full py-2.5 text-xs sm:text-sm font-extrabold inline-flex items-center justify-center gap-2 cursor-pointer rounded-full"
             >
               <span>Build My Creative Engine</span>

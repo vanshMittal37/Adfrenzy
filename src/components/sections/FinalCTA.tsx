@@ -3,9 +3,9 @@
 import { ArrowRight } from "lucide-react";
 
 export function FinalCTA() {
-  const openCalendly = () => {
+  const openDaySchedule = () => {
     if (typeof window !== "undefined") {
-      window.dispatchEvent(new CustomEvent("open-calendly"));
+      window.dispatchEvent(new CustomEvent("open-dayschedule"));
     }
   };
 
@@ -34,7 +34,7 @@ export function FinalCTA() {
 
         <div className="flex items-center justify-center pt-4">
           <button
-            onClick={openCalendly}
+            onClick={openDaySchedule}
             className="w-full sm:w-auto btn-yellow px-8 py-4 text-base font-bold inline-flex items-center justify-center gap-3 cursor-pointer rounded-full"
           >
             <span>Book a Strategy Call</span>

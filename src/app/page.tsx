@@ -28,8 +28,8 @@ export default function HomePage() {
       <ServicesGrid />
       <ResultsSection />
       <PortfolioSection />
-      <CreativeMarquee />
       <Testimonials />
+      <CreativeMarquee />
       <FAQAccordion />
       <StrategyCallSection />
       <FinalCTA />

@@ -15,7 +15,7 @@ export default function PrivacyPolicyPage() {
           </p>
           <h3 className="text-lg font-bold text-white pt-2">1. Information We Collect</h3>
           <p>
-            We collect information provided directly by you when filling out lead intake forms, booking strategy calls via Calendly, or contacting us via email. This includes your name, work email, phone number, company website, and marketing budget preferences.
+            We collect information provided directly by you when filling out lead intake forms, booking strategy calls via DaySchedule, or contacting us via email. This includes your name, work email, phone number, company website, and marketing budget preferences.
           </p>
           <h3 className="text-lg font-bold text-white pt-2">2. How We Use Information</h3>
           <p>

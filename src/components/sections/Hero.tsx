@@ -14,9 +14,9 @@ export function Hero() {
     return () => clearInterval(timer);
   }, []);
 
-  const openCalendly = () => {
+  const openDaySchedule = () => {
     if (typeof window !== "undefined") {
-      window.dispatchEvent(new CustomEvent("open-calendly"));
+      window.dispatchEvent(new CustomEvent("open-dayschedule"));
     }
   };
 
@@ -113,7 +113,7 @@ export function Hero() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-center gap-4 pt-2">
               <button
-                onClick={openCalendly}
+                onClick={openDaySchedule}
                 className="w-full sm:w-auto btn-yellow px-6 py-3 text-sm sm:text-base font-extrabold inline-flex items-center justify-center gap-2.5 cursor-pointer"
               >
                 <span>Book a Strategy Call</span>

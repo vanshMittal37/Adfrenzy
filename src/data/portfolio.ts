@@ -3,34 +3,16 @@ export interface PortfolioItem {
   slug: string;
   title: string;
   clientName: string;
-  category: "ADS" | "UGC" | "SOCIAL" | "VIDEO" | "LANDING PAGES" | "EMAIL" | "BRANDING" | "WEB";
+  category: string;
   industry: string;
   thumbnail: string;
   videoUrl?: string;
   metrics: {
-    roas?: string;
-    revenueGrowth?: string;
-    cacReduction?: string;
-    cvrUplift?: string;
-  };
-  featured: boolean;
-  shortDescription: string;
-}
-
-export interface PortfolioItem {
-  id: string;
-  slug: string;
-  title: string;
-  clientName: string;
-  category: "ADS" | "UGC" | "SOCIAL" | "VIDEO" | "LANDING PAGES" | "EMAIL" | "BRANDING" | "WEB";
-  industry: string;
-  thumbnail: string;
-  videoUrl?: string;
-  metrics: {
-    roas?: string;
-    revenueGrowth?: string;
-    cacReduction?: string;
-    cvrUplift?: string;
+    primaryValue: string;
+    primaryLabel: string;
+    secondaryValue?: string;
+    secondaryLabel?: string;
+    bottomLabel?: string; // used for single-metric cards secondary label at the very bottom
   };
   featured: boolean;
   shortDescription: string;
@@ -38,187 +20,103 @@ export interface PortfolioItem {
 
 export const portfolioData: PortfolioItem[] = [
   {
-    id: "zazu",
-    slug: "zazu-growth",
-    title: "Generating ₹3.1Cr in Sales through Tailored Performance Marketing",
-    clientName: "ZAZU",
-    category: "ADS",
-    industry: "Fashion & E-Commerce",
+    id: "sales-performance-analytics",
+    slug: "sales-performance-analytics",
+    title: "Sales Performance Analytics",
+    clientName: "E-Commerce Retailer",
+    category: "REVENUE ANALYTICS",
+    industry: "E-Commerce",
     thumbnail: "/assets/brand-analytics-sales.jpg",
-    videoUrl: "/testimonial2.mp4",
     metrics: {
-      roas: "Focused ROAS",
-      revenueGrowth: "₹3.1Cr Sales"
+      primaryValue: "₹18,691,624.45",
+      primaryLabel: "Gross Sales",
+      bottomLabel: "Revenue Analytics"
     },
     featured: true,
-    shortDescription: "High-performance marketing campaigns built around desired ROAS goals and tailored creative assets."
+    shortDescription: "A detailed view of sales performance, revenue trends, order activity, and overall commercial performance."
   },
   {
-    id: "kaftanize",
-    slug: "kaftanize-scaling",
-    title: "TOF catalog & Link Click Campaigns",
-    clientName: "Kaftanize",
-    category: "ADS",
-    industry: "Fashion & Lifestyle",
-    thumbnail: "/assets/kaftanize.jpeg",
+    id: "customer-visitor-analytics",
+    slug: "customer-visitor-analytics",
+    title: "Customer & Visitor Analytics",
+    clientName: "Direct-to-Consumer Brand",
+    category: "CUSTOMER ANALYTICS",
+    industry: "D2C Brand",
+    thumbnail: "/assets/brand-analytics-visitors.jpg",
     metrics: {
-      roas: "TOF | Link Click"
+      primaryValue: "₹17,355,213.31",
+      primaryLabel: "Gross Sales",
+      bottomLabel: "Customer Analytics"
     },
     featured: true,
-    shortDescription: "Advantage+ shopping catalogs and custom top-of-funnel campaign structures."
+    shortDescription: "Performance insights covering visitor trends, customer behavior, sales activity, and overall store performance."
   },
   {
-    id: "fig-living",
-    slug: "fig-living",
-    title: "Premium Home Decor & Visual Curation",
-    clientName: "FIG Living",
-    category: "BRANDING",
-    industry: "Home & Lifestyle",
-    thumbnail: "/assets/figLiving.jpeg",
+    id: "campaign-performance-overview",
+    slug: "campaign-performance-overview",
+    title: "Campaign Performance Overview",
+    clientName: "Fashion & Lifestyle Brand",
+    category: "PERFORMANCE MARKETING",
+    industry: "Fashion Retailer",
+    thumbnail: "/assets/brand-meta-performance-01.jpg",
     metrics: {
-      revenueGrowth: "Visual Curation"
+      primaryValue: "8.30 ROAS",
+      primaryLabel: "Average Campaign ROAS",
+      secondaryValue: "₹2,738,166.00",
+      secondaryLabel: "Purchase Conversion Value"
     },
     featured: true,
-    shortDescription: "Showcasing premium aesthetics and digital identity for high-end home decor."
+    shortDescription: "A performance marketing dashboard showing campaign spend, purchase value, ROAS, conversions, and acquisition efficiency."
   },
   {
-    id: "sanctuary-living",
-    slug: "sanctuary-living",
-    title: "Lifestyle Curation & Product Showcase",
-    clientName: "Sanctuary Living",
-    category: "WEB",
-    industry: "Home & Decor",
-    thumbnail: "/assets/sanctuaryliving.jpeg",
+    id: "paid-media-performance",
+    slug: "paid-media-performance",
+    title: "Paid Media Performance",
+    clientName: "Lifestyle Accessories Brand",
+    category: "PAID MEDIA",
+    industry: "Consumer Goods",
+    thumbnail: "/assets/brand-meta-performance-02.jpg",
     metrics: {
-      cvrUplift: "Creative Showcase"
+      primaryValue: "8.94 ROAS",
+      primaryLabel: "Average Campaign ROAS",
+      secondaryValue: "₹1,911,793.40",
+      secondaryLabel: "Purchase Conversion Value"
     },
     featured: true,
-    shortDescription: "Bringing design elegance and premium lifestyle products to life online."
+    shortDescription: "Campaign-level performance analysis focused on advertising spend, purchase value, ROAS, and cost efficiency."
   },
   {
-    id: "panila-fashion",
-    slug: "panila-fashion",
-    title: "Creative Showcasing for Fashion Collections",
-    clientName: "Panila Fashion",
-    category: "UGC",
+    id: "catalog-campaign-strategy",
+    slug: "catalog-campaign-strategy",
+    title: "Catalog Campaign Strategy",
+    clientName: "Apparel Brand",
+    category: "CATALOG CAMPAIGN",
     industry: "Apparel & Fashion",
-    thumbnail: "/assets/panillafashion.jpeg",
+    thumbnail: "/assets/kaftanize-campaign.jpg",
     metrics: {
-      roas: "E-comm Portfolio"
+      primaryValue: "8.09 ROAS",
+      primaryLabel: "Average Campaign ROAS",
+      secondaryValue: "₹11,851,822.97",
+      secondaryLabel: "Purchase Conversion Value"
     },
-    featured: false,
-    shortDescription: "Scroll-stopping direct response creative assets customized for premium e-commerce apparel."
+    featured: true,
+    shortDescription: "A visual showcase of catalog-driven campaign execution designed around product discovery, audience engagement, and purchase intent."
   },
   {
-    id: "etiquette-apparel",
-    slug: "etiquette-apparel",
-    title: "Brand Strategy and Lifestyle Content Creation",
-    clientName: "Etiquette Apparel",
-    category: "SOCIAL",
-    industry: "Apparel & Fashion",
-    thumbnail: "/assets/etiquetteapperel.jpeg",
+    id: "performance-campaign-results",
+    slug: "performance-campaign-results",
+    title: "Performance Campaign Results",
+    clientName: "Activewear Brand",
+    category: "CAMPAIGN PERFORMANCE",
+    industry: "Athleisure",
+    thumbnail: "/assets/kaftanize-performance-01.jpg",
     metrics: {
-      revenueGrowth: "Lifestyle Ads"
+      primaryValue: "8.14 ROAS",
+      primaryLabel: "Average Campaign ROAS",
+      secondaryValue: "₹507,909.66",
+      secondaryLabel: "Total Spent"
     },
-    featured: false,
-    shortDescription: "Fashion-first content creation optimized for social proof and conversion loops."
-  },
-  {
-    id: "bhama-designs",
-    slug: "bhama-designs",
-    title: "Traditional Aesthetics Meet Modern Growth Loops",
-    clientName: "Bhama Designs",
-    category: "EMAIL",
-    industry: "Fashion & Apparel",
-    thumbnail: "/assets/kaftanize.jpeg",
-    metrics: {
-      cvrUplift: "Fashion Portfolio"
-    },
-    featured: false,
-    shortDescription: "Scaling ethnic fashion and premium designs with data-backed media placements."
-  },
-  {
-    id: "iyka",
-    slug: "iyka",
-    title: "Modern Minimalist Fashion Ads & Placement",
-    clientName: "IYKA",
-    category: "ADS",
-    industry: "Apparel & Fashion",
-    thumbnail: "/assets/iyka.jpeg",
-    metrics: {
-      roas: "Conversion Testing"
-    },
-    featured: false,
-    shortDescription: "Clean, high-performance visual catalog ads built for the modern shopper."
-  },
-  {
-    id: "the-episode",
-    slug: "the-episode",
-    title: "Dynamic Storytelling & Digital Showroom",
-    clientName: "The Episode",
-    category: "VIDEO",
-    industry: "Fashion & Lifestyle",
-    thumbnail: "/assets/theepisode.jpeg",
-    metrics: {
-      revenueGrowth: "Storytelling Video"
-    },
-    featured: false,
-    shortDescription: "Cinematic, high-velocity creative campaigns tailored to drive customer acquisitions."
-  },
-  {
-    id: "femi9-by-as",
-    slug: "femi9-by-as",
-    title: "Empowering Fashion Branding & Acquisition",
-    clientName: "Femi9 by AS",
-    category: "BRANDING",
-    industry: "Apparel & Fashion",
-    thumbnail: "/assets/panillafashion.jpeg",
-    metrics: {
-      roas: "Scale Ready"
-    },
-    featured: false,
-    shortDescription: "Tailoring digital creatives to appeal directly to highly-engaged demographics."
-  },
-  {
-    id: "fashion-floor-india",
-    slug: "fashion-floor-india",
-    title: "Broad Catalog Performance Campaigns",
-    clientName: "Fashion Floor India",
-    category: "ADS",
-    industry: "E-Commerce Fashion",
-    thumbnail: "/assets/fashionfloorindia.jpeg",
-    metrics: {
-      cvrUplift: "Broad Targeting"
-    },
-    featured: false,
-    shortDescription: "Deploying high-velocity Advantage+ catalogs to lower overall cost per acquisition."
-  },
-  {
-    id: "wild-cherry",
-    slug: "wild-cherry",
-    title: "Bold Creative Testing & Ad Scaling",
-    clientName: "Wild Cherry",
-    category: "UGC",
-    industry: "Fashion & E-Commerce",
-    thumbnail: "/assets/wildcherry.jpeg",
-    metrics: {
-      roas: "High Velocity"
-    },
-    featured: false,
-    shortDescription: "Vibrant creative design and visual product advertising to expand market reach."
-  },
-  {
-    id: "muddnme",
-    slug: "muddnme",
-    title: "Clean Aesthetics for Lifestyle E-Commerce",
-    clientName: "MuddnMe",
-    category: "WEB",
-    industry: "Lifestyle & Apparel",
-    thumbnail: "/assets/muddnme.jpeg",
-    metrics: {
-      revenueGrowth: "Lifestyle Design"
-    },
-    featured: false,
-    shortDescription: "Highlighting organic lifestyles and minimal design aesthetic to drive high purchase value."
+    featured: true,
+    shortDescription: "A campaign performance view highlighting advertising investment, purchase outcomes, ROAS, and overall campaign efficiency."
   }
 ];

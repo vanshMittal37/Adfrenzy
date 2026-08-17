@@ -33,7 +33,7 @@ export function LeadQualificationForm() {
     e.preventDefault();
     setSubmitted(true);
     if (typeof window !== "undefined") {
-      window.dispatchEvent(new CustomEvent("open-calendly"));
+      window.dispatchEvent(new CustomEvent("open-dayschedule"));
     }
   };
 
@@ -49,7 +49,7 @@ export function LeadQualificationForm() {
           <button
             onClick={() => {
               if (typeof window !== "undefined") {
-                window.dispatchEvent(new CustomEvent("open-calendly"));
+                window.dispatchEvent(new CustomEvent("open-dayschedule"));
               }
             }}
             className="btn-yellow px-5 py-2 text-xs font-extrabold mt-3 rounded-full"

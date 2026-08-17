@@ -31,69 +31,47 @@ const SCREENSHOT_MAP: Record<
     alt: string;
   }
 > = {
-  // /work/zazu -> brand-analytics-sales.jpg
-  "zazu-growth": {
+  "sales-performance-analytics": {
     src: "/assets/brand-analytics-sales.jpg",
-    sectionEyebrow: "CAMPAIGN ANALYTICS",
+    sectionEyebrow: "REVENUE PERFORMANCE",
     sectionTitle: "Sales & Performance Snapshot",
     sectionDesc: "A visual demonstration of campaign sales generation, scaling trajectory, and daily performance metrics.",
-    alt: "Zazu Campaign Sales Analytics Snapshot"
+    alt: "Sales performance analytics dashboard"
   },
-  // /work/rustic-radiance -> brand-analytics-visitors.jpg
-  "rustic-radiance": {
+  "customer-visitor-analytics": {
     src: "/assets/brand-analytics-visitors.jpg",
     sectionEyebrow: "TRAFFIC & VISITOR ANALYTICS",
     sectionTitle: "Visitor Acquisition Snapshot",
     sectionDesc: "A visual look at traffic distribution, daily active visitor counts, and source-level channels.",
-    alt: "Rustic Radiance Visitor Acquisition Snapshot"
+    alt: "Customer and visitor analytics dashboard"
   },
-  // /work/kaftanize -> kaftanize-campaign.jpg
-  "kaftanize-scaling": {
-    src: "/assets/kaftanize-campaign.jpg",
-    sectionEyebrow: "CAMPAIGN ARCHITECTURE",
-    sectionTitle: "Creative Performance Optimization",
-    sectionDesc: "An example overview of visual catalog setups, asset grouping, and campaign performance testing.",
-    alt: "Kaftanize Creative Campaign Performance Snapshot"
-  },
-  // /work/fig-living -> brand-meta-performance-01.jpg
-  "fig-living": {
+  "campaign-performance-overview": {
     src: "/assets/brand-meta-performance-01.jpg",
-    sectionEyebrow: "PAID MEDIA PERFORMANCE",
+    sectionEyebrow: "CAMPAIGN PERFORMANCE",
     sectionTitle: "Performance Marketing Showcase",
     sectionDesc: "A snapshot illustrating ad creative response, engagement indices, and performance distribution.",
-    alt: "FIG Living Performance Marketing Snapshot"
+    alt: "Campaign performance analytics dashboard"
   },
-  // /work/sanctuary-living -> brand-meta-performance-02.jpg
-  "sanctuary-living": {
+  "paid-media-performance": {
     src: "/assets/brand-meta-performance-02.jpg",
-    sectionEyebrow: "CAMPAIGN OPTIMIZATION",
+    sectionEyebrow: "PAID MEDIA PERFORMANCE",
     sectionTitle: "Paid Media Execution Snapshot",
     sectionDesc: "An execution benchmark demonstrating campaign ad delivery, reach structure, and optimization patterns.",
-    alt: "Sanctuary Living Paid Media Execution Snapshot"
+    alt: "Paid media campaign performance dashboard"
   },
-  // /work/pantila -> kaftanize-performance-01.jpg
-  "panila-fashion": {
+  "catalog-campaign-strategy": {
+    src: "/assets/kaftanize-campaign.jpg",
+    sectionEyebrow: "CAMPAIGN ARCHITECTURE",
+    sectionTitle: "Catalog Campaign Performance",
+    sectionDesc: "An example overview of visual catalog setups, asset grouping, and campaign performance testing.",
+    alt: "Catalog campaign performance screenshot"
+  },
+  "performance-campaign-results": {
     src: "/assets/kaftanize-performance-01.jpg",
-    sectionEyebrow: "PERFORMANCE MARKETING EXAMPLE",
-    sectionTitle: "Campaign Structuring Example",
-    sectionDesc: "A reference layout of direct response targeting setups and performance allocation.",
-    alt: "Panila Fashion Performance Marketing Structuring Example"
-  },
-  // /work/fashion-floor-india -> kaftanize-performance-02.jpg
-  "fashion-floor-india": {
-    src: "/assets/kaftanize-performance-02.jpg",
-    sectionEyebrow: "PAID MEDIA CHANNELS",
-    sectionTitle: "Campaign Delivery Snapshot",
-    sectionDesc: "An operational snapshot detailing Advantage+ placements and creative delivery metrics.",
-    alt: "Fashion Floor India Campaign Delivery Snapshot"
-  },
-  // /work/meld-cheary -> kaftanize-performance-03.jpg
-  "wild-cherry": {
-    src: "/assets/kaftanize-performance-03.jpg",
     sectionEyebrow: "CAMPAIGN OPTIMIZATION",
-    sectionTitle: "Direct Response Snapshot",
-    sectionDesc: "A performance snapshot of visual media structures and creative optimization testing.",
-    alt: "Wild Cherry Direct Response Optimization Snapshot"
+    sectionTitle: "Performance Campaign Results",
+    sectionDesc: "A reference layout of direct response targeting setups and performance allocation.",
+    alt: "Performance campaign results screenshot"
   }
 };
 
@@ -131,16 +109,16 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
       },
       results: {
         metric1: { 
-          label: "Performance Metric", 
-          value: portfolioItem.metrics.roas || "Scale Enabled" 
+          label: portfolioItem.metrics.primaryLabel || "Performance Metric", 
+          value: portfolioItem.metrics.primaryValue || "Scale Enabled" 
         },
         metric2: { 
-          label: "Revenue Growth", 
-          value: portfolioItem.metrics.revenueGrowth || "Optimized" 
+          label: portfolioItem.metrics.secondaryLabel || "Strategy Focus", 
+          value: portfolioItem.metrics.secondaryValue || "Optimized" 
         },
         metric3: { 
-          label: "Funnel Lift", 
-          value: portfolioItem.metrics.cacReduction || portfolioItem.metrics.cvrUplift || "Conversion Focused" 
+          label: "Tracking Scope", 
+          value: "Fully Monitored" 
         }
       },
       heroImage: portfolioItem.thumbnail,
@@ -203,7 +181,14 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               poster={cs.heroImage}
             />
           ) : (
-            <Image src={cs.heroImage} alt={cs.title} fill className="object-cover" priority />
+            <Image 
+              src={cs.heroImage} 
+              alt={cs.title} 
+              fill 
+              className="object-cover" 
+              priority 
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1000px"
+            />
           )}
         </div>
 

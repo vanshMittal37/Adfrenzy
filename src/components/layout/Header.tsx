@@ -42,9 +42,9 @@ export function Header() {
     }
   };
 
-  const openCalendly = () => {
+  const openDaySchedule = () => {
     if (typeof window !== "undefined") {
-      window.dispatchEvent(new CustomEvent("open-calendly"));
+      window.dispatchEvent(new CustomEvent("open-dayschedule"));
     }
   };
 
@@ -75,7 +75,7 @@ export function Header() {
           {/* Desktop Right Actions (CTA & Theme Toggle swapped) */}
           <div className="hidden md:flex items-center gap-4">
             <button
-              onClick={openCalendly}
+              onClick={openDaySchedule}
               className="btn-yellow px-5 py-2.5 text-sm inline-flex items-center gap-2 cursor-pointer"
             >
               <span>Book a Strategy Call</span>
@@ -117,7 +117,7 @@ export function Header() {
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
-                openCalendly();
+                openDaySchedule();
               }}
               className="w-full btn-yellow py-3 text-center text-sm font-bold inline-flex items-center justify-center gap-2 cursor-pointer"
             >

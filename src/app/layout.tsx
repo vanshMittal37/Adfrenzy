@@ -3,7 +3,8 @@ import { Plus_Jakarta_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { CalendlyModal } from "@/components/calendly/CalendlyModal";
+import { DayScheduleModal } from "@/components/dayschedule/DayScheduleModal";
+import Script from "next/script";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-sans",
@@ -158,7 +159,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${plusJakartaSans.variable} ${playfairDisplay.variable} scroll-smooth`}>
+    <html lang="en" className={`${plusJakartaSans.variable} ${playfairDisplay.variable} scroll-smooth`} data-scroll-behavior="smooth">
       <body className="bg-[#0A0A0A] text-white antialiased font-sans-primary selection:bg-[#FFE500] selection:text-black">
         <script
     type="application/ld+json"
@@ -179,10 +180,18 @@ export default function RootLayout({
       __html: JSON.stringify(localBusinessSchema),
     }}
   />
+        <Script
+          src="https://cdn.jsdelivr.net/npm/dayschedule-widget@latest/dist/dayschedule-widget.min.js"
+          strategy="beforeInteractive"
+        />
+        <link
+          href="https://cdn.jsdelivr.net/npm/dayschedule-widget@latest/dist/dayschedule-popup.css"
+          rel="stylesheet"
+        />
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
-        <CalendlyModal />
+        <DayScheduleModal />
       </body>
     </html>
   );

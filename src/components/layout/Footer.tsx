@@ -56,10 +56,6 @@ export function Footer() {
           <div className="space-y-3">
             <h4 className="text-white text-sm font-bold uppercase tracking-wider">Connect</h4>
             <ul className="space-y-2 text-sm text-neutral-400">
-              <li><a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">Instagram</a></li>
-              <li><a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">LinkedIn</a></li>
-              <li><a href="https://facebook.com" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">Facebook</a></li>
-              <li><a href="https://youtube.com" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">YouTube</a></li>
               <li><a href="mailto:Sparkmedia.bs@gmail.com" className="hover:text-white transition-colors">Sparkmedia.bs@gmail.com</a></li>
             </ul>
           </div>

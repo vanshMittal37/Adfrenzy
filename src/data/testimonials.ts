@@ -17,7 +17,7 @@ export const testimonialsData: Testimonial[] = [
     authorName: "Omair",
     authorTitle: "Founder",
     companyName: "ZAZU",
-    metricsHighlight: "₹3.1Cr Sales Generated",
+    metricsHighlight: "8.79x Average ROAS",
     videoUrl: "https://res.cloudinary.com/dmm8lfc3x/video/upload/v1786560176/o7txvg8disgd61bya8no.mp4"
   },
   {

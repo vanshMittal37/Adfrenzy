@@ -1,4 +1,4 @@
-import { CalendlyEmbed } from "@/components/calendly/CalendlyEmbed";
+import { DayScheduleEmbed } from "@/components/dayschedule/DayScheduleEmbed";
 
 import type { Metadata } from "next";
 
@@ -28,7 +28,7 @@ export default function BookACallPage() {
           </p>
         </div>
 
-        <CalendlyEmbed />
+        <DayScheduleEmbed />
       </div>
     </div>
   );
