@@ -43,8 +43,8 @@ export const caseStudiesData: Record<string, CaseStudy> = {
       retention: "Established cart abandonment flows to capture missed purchase opportunities."
     },
     results: {
-      metric1: { label: "Gross Sales", value: "₹18,691,624.45" },
-      metric2: { label: "Tracking Accuracy", value: "99.8%" },
+      metric1: { label: "Gross Sales", value: "₹14,208,972.14" },
+      metric2: { label: "Tracking Accuracy", value: "43.27%" },
       metric3: { label: "Optimization", value: "Revenue Focus" }
     },
     heroImage: "/assets/brand-analytics-sales.jpg"
@@ -68,8 +68,8 @@ export const caseStudiesData: Record<string, CaseStudy> = {
       retention: "Nurtured first-time visitors with custom welcome sequences."
     },
     results: {
-      metric1: { label: "Gross Sales", value: "₹17,355,213.31" },
-      metric2: { label: "Visitor Insights", value: "Fully Monitored" },
+      metric1: { label: "Gross Sales", value: "₹15,718,792.80" },
+      metric2: { label: "Visitor Insights", value: "24.39%" },
       metric3: { label: "Audience Growth", value: "D2C Scale" }
     },
     heroImage: "/assets/brand-analytics-visitors.jpg"
@@ -88,13 +88,13 @@ export const caseStudiesData: Record<string, CaseStudy> = {
     ],
     execution: {
       creative: "Created catalog overlays highlighting dynamic pricing and discount features.",
-      media: "Scaled high-performing campaign sets up to 8.30 ROAS benchmarks.",
+      media: "Scaled high-performing campaign sets up to 6.94 ROAS benchmarks.",
       cro: "Added quick-add-to-cart buttons directly on collection grids.",
       retention: "Re-engaged past purchasers with automatic cross-sell catalogs."
     },
     results: {
-      metric1: { label: "Ad Account ROAS", value: "8.30" },
-      metric2: { label: "Conversion Value", value: "₹2,738,166.00" },
+      metric1: { label: "Ad Account ROAS", value: "6.94" },
+      metric2: { label: "Conversion Value", value: "₹7,812,933.35" },
       metric3: { label: "Cost Efficiency", value: "Optimized" }
     },
     heroImage: "/assets/brand-meta-performance-01.jpg"
@@ -113,13 +113,13 @@ export const caseStudiesData: Record<string, CaseStudy> = {
     ],
     execution: {
       creative: "Produced high-velocity direct-response social assets.",
-      media: "Scaled media spend while sustaining a premium 8.94 ROAS performance.",
+      media: "Scaled media spend while sustaining a premium 7.91 ROAS performance.",
       cro: "Streamlined single-page checkouts to minimize purchasing friction.",
       retention: "Deployed customized post-purchase confirmation discount offers."
     },
     results: {
-      metric1: { label: "Campaign ROAS", value: "8.94" },
-      metric2: { label: "Purchase Value", value: "₹1,911,793.40" },
+      metric1: { label: "Campaign ROAS", value: "7.91" },
+      metric2: { label: "Purchase Value", value: "₹3,803,778.07" },
       metric3: { label: "Acquisition Cost", value: "Reduced" }
     },
     heroImage: "/assets/brand-meta-performance-02.jpg"

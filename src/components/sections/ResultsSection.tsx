@@ -75,8 +75,8 @@ export function ResultsSection() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="glass-card p-6 border-l-4 border-l-accent space-y-2 bg-[#121212]/85 rounded-r-xl border border-white/5">
               <span className="text-[10px] font-mono tracking-wider text-neutral-500 uppercase font-bold">SHOPIFY E-COMMERCE</span>
-              <div className="text-2xl sm:text-3xl font-extrabold text-white font-mono break-all">₹17,355,213.31</div>
-              <p className="text-xs text-neutral-400">Gross sales from the Shopify performance record with 14.4K orders.</p>
+              <div className="text-2xl sm:text-3xl font-extrabold text-white font-mono break-all">₹14,208,972.14</div>
+              <p className="text-xs text-neutral-400">Gross sales from the Shopify performance record with 8.6K orders.</p>
             </div>
 
             <div className="glass-card p-6 border-l-4 border-l-accent space-y-2 bg-[#121212]/85 rounded-r-xl border border-white/5">
@@ -87,13 +87,13 @@ export function ResultsSection() {
 
             <div className="glass-card p-6 border-l-4 border-l-accent space-y-2 bg-[#121212]/85 rounded-r-xl border border-white/5">
               <span className="text-[10px] font-mono tracking-wider text-neutral-500 uppercase font-bold">META ADS SPEND</span>
-              <div className="text-2xl sm:text-3xl font-extrabold text-white font-mono break-all">₹750,800.80</div>
+              <div className="text-2xl sm:text-3xl font-extrabold text-white font-mono break-all">₹480,718.79</div>
               <p className="text-xs text-neutral-400">Total spend across 460 campaigns.</p>
             </div>
 
             <div className="glass-card p-6 border-l-4 border-l-accent space-y-2 bg-[#121212]/85 rounded-r-xl border border-white/5">
               <span className="text-[10px] font-mono tracking-wider text-neutral-500 uppercase font-bold">PURCHASE CONVERSION VALUE</span>
-              <div className="text-2xl sm:text-3xl font-extrabold text-emerald-400 font-mono break-all">₹6,600,367</div>
+              <div className="text-2xl sm:text-3xl font-extrabold text-emerald-400 font-mono break-all">₹3,803,778.07</div>
               <p className="text-xs text-neutral-400">Total purchase conversion value shown in the latest 460-campaign Meta Ads record.</p>
             </div>
           </div>
