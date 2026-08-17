@@ -6,7 +6,15 @@ import { BarChart3, TrendingUp, ShoppingBag, Layers } from "lucide-react";
 export function ResultsSection() {
   const [activeTab, setActiveTab] = useState<"summary" | "meta" | "shopify">("summary");
 
-  const campaigns = [
+  interface CampaignItem {
+    name: string;
+    spend: string;
+    roas: string;
+    value: string;
+    isKaftanize?: boolean;
+  }
+
+  const campaigns: CampaignItem[] = [
     { name: "SM_LT_CAT_31 JUL (Run 02)", spend: "₹34,339.09", roas: "9.79x", value: "₹336,099.40" },
     { name: "SM | LLA NEW | 22 FEB (Run 02)", spend: "₹48,393.01", roas: "8.96x", value: "₹433,725.90" },
     { name: "SM_ABO_CT_4 JUNEE (Run 02)", spend: "₹186,831.29", roas: "8.89x", value: "₹1,661,650.00" },
