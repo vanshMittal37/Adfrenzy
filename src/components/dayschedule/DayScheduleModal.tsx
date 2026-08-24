@@ -12,7 +12,7 @@ declare global {
 }
 
 export function DayScheduleModal() {
-  const dayScheduleUrl = process.env.NEXT_PUBLIC_DAYSCHEDULE_URL || "https://dayschedule.com/sparkmedia/discovery";
+  const dayScheduleUrl = process.env.NEXT_PUBLIC_DAYSCHEDULE_URL || "https://sparkmedia.dayschedule.com/discovery-call";
 
   useEffect(() => {
     const handleOpen = () => {
