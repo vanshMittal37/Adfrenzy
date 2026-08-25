@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { DayScheduleModal } from "@/components/dayschedule/DayScheduleModal";
+import { MetaPixel } from "@/components/analytics/MetaPixel";
 import Script from "next/script";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -192,6 +193,7 @@ export default function RootLayout({
         <main className="min-h-screen">{children}</main>
         <Footer />
         <DayScheduleModal />
+        <MetaPixel />
       </body>
     </html>
   );

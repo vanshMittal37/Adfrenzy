@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, CheckCircle, Calendar, Sparkles } from "lucide-react";
+import { MetaPixelConversion } from "@/components/analytics/MetaPixelConversion";
 
 export const metadata: Metadata = {
   title: "Thank You — Booking Confirmed",
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
 export default function ThankYouPage() {
   return (
     <div className="pt-32 pb-24 md:pt-40 md:pb-32 bg-[#0A0A0A] text-white min-h-[85vh] flex items-center justify-center relative overflow-hidden">
+      <MetaPixelConversion />
       {/* Background glow effects */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(255,200,0,0.12)_0%,transparent_70%)] blur-[100px] pointer-events-none" />
 

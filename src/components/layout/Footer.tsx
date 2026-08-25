@@ -31,7 +31,6 @@ export function Footer() {
           <div className="space-y-3">
             <h4 className="text-white text-sm font-bold uppercase tracking-wider">Company</h4>
             <ul className="space-y-2 text-sm text-neutral-400">
-              <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
               <li><Link href="/work" className="hover:text-white transition-colors">Selected Work</Link></li>
               <li><Link href="/services" className="hover:text-white transition-colors">Services</Link></li>
               <li><Link href="/process" className="hover:text-white transition-colors">Growth Process</Link></li>
