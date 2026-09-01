@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Cookie Policy — SparkMedia.ad",
-  description: "Cookie policy and tracking details for SparkMedia.ad."
+  title: "Cookie Policy — Adfrenzy Media",
+  description: "Cookie policy and tracking details for Adfrenzy Media."
 };
 
 export default function CookiePolicyPage() {
@@ -11,7 +11,7 @@ export default function CookiePolicyPage() {
         <p className="text-xs font-mono text-neutral-400">LAST UPDATED: 2026</p>
         <div className="space-y-4 text-sm leading-relaxed border-t border-white/10 pt-6">
           <p>
-            SparkMedia.ad uses cookies and tracking technologies to optimize site performance, remember user preferences, and measure website traffic analytics.
+            Adfrenzy Media uses cookies and tracking technologies to optimize site performance, remember user preferences, and measure website traffic analytics.
           </p>
           <h3 className="text-lg font-bold text-white pt-2">Types of Cookies Used</h3>
           <ul className="list-disc pl-5 space-y-2">

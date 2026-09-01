@@ -24,154 +24,104 @@ export interface CaseStudy {
 }
 
 export const caseStudiesData: Record<string, CaseStudy> = {
-  "sales-performance-analytics": {
-    slug: "sales-performance-analytics",
-    clientName: "E-Commerce Retailer",
-    industry: "E-Commerce",
-    title: "Sales Performance Analytics",
-    tagline: "A detailed view of sales performance, revenue trends, order activity, and overall commercial performance.",
-    challenge: "Optimizing overall sales pipeline and tracking revenue distribution over complex scaling phases without attribution loss.",
+  "brand-1": {
+    slug: "brand-1",
+    clientName: "[Brand 1]",
+    industry: "[Category]",
+    title: "[Brand 1]",
+    tagline: "[8.6x ROAS at scale]",
+    challenge: "Scaling account-level spend while preserving contribution margins.",
     strategy: [
-      "Integrated precise client-side tracking to capture exact purchase value data.",
-      "Optimized scaling budgets towards high-margin collections.",
-      "Consolidated order activity metrics to streamline inventory allocation."
+      "Integrated profit-first media buying structure across Meta and Google.",
+      "Shipped weekly UGC and static creative hooks to eliminate ad fatigue.",
+      "Optimized PDP landing pages for mobile checkout speed."
     ],
     execution: {
-      creative: "Deployed high-contrast catalog assets focusing on top-selling SKUs.",
-      media: "Scaled broad search and social campaigns to capture active market demand.",
-      cro: "Improved product page checkout steps to maximize average order value.",
-      retention: "Established cart abandonment flows to capture missed purchase opportunities."
+      creative: "Weekly hook testing and high-velocity UGC assets.",
+      media: "Controlled step budget increases aligned with P&L CAC.",
+      cro: "Mobile-first store optimization and friction removal.",
+      retention: "Post-purchase sequences to increase repeat order value."
     },
     results: {
-      metric1: { label: "Gross Sales", value: "₹14,208,972.14" },
-      metric2: { label: "Tracking Accuracy", value: "43.27%" },
-      metric3: { label: "Optimization", value: "Revenue Focus" }
+      metric1: { label: "Average ROAS", value: "8.6x" },
+      metric2: { label: "Scale Benchmark", value: "Sustained" },
+      metric3: { label: "Funnel Status", value: "Optimized" }
     },
     heroImage: "/assets/brand-analytics-sales.jpg"
   },
-  "customer-visitor-analytics": {
-    slug: "customer-visitor-analytics",
-    clientName: "Direct-to-Consumer Brand",
-    industry: "D2C Brand",
-    title: "Customer & Visitor Analytics",
-    tagline: "Performance insights covering visitor trends, customer behavior, sales activity, and overall store performance.",
-    challenge: "Identifying core drop-off patterns in visitor sessions to improve the overall conversion rate of new customer acquisitions.",
+  "brand-2": {
+    slug: "brand-2",
+    clientName: "[Brand 2]",
+    industry: "[Category]",
+    title: "[Brand 2]",
+    tagline: "[Revenue 29L to 1.2Cr in 5 months]",
+    challenge: "Overcoming revenue stagnancy and scaling across core acquisition channels.",
     strategy: [
-      "Monitored hourly traffic density to structure optimal ad schedule patterns.",
-      "Segmented returning visitors from new audiences to customize lander experience.",
-      "Analyzed page response times across different devices to reduce friction."
+      "Rebuilt core landing pages for direct purchase conversion.",
+      "Deployed high-velocity creative volume testing pipeline.",
+      "Optimized contribution margin tracking."
     ],
     execution: {
-      creative: "Designed mobile-optimized direct response video creatives.",
-      media: "Allocated custom budget parameters for retargeting high-intent visitor sessions.",
-      cro: "Simplified mobile menu navigation and product search functions.",
-      retention: "Nurtured first-time visitors with custom welcome sequences."
+      creative: "Direct-response video hooks and UGC assets.",
+      media: "P&L-aligned capital allocation.",
+      cro: "PDP and checkout flow friction removal.",
+      retention: "Email & SMS flow optimization."
     },
     results: {
-      metric1: { label: "Gross Sales", value: "₹15,718,792.80" },
-      metric2: { label: "Visitor Insights", value: "24.39%" },
-      metric3: { label: "Audience Growth", value: "D2C Scale" }
+      metric1: { label: "Revenue Scale", value: "29L to 1.2Cr" },
+      metric2: { label: "Timeframe", value: "5 Months" },
+      metric3: { label: "Growth Status", value: "Compounding" }
     },
     heroImage: "/assets/brand-analytics-visitors.jpg"
   },
-  "campaign-performance-overview": {
-    slug: "campaign-performance-overview",
-    title: "Campaign Performance Overview",
-    clientName: "Fashion Retailer",
-    industry: "Fashion Retailer",
-    tagline: "A performance marketing dashboard showing campaign spend, purchase value, ROAS, conversions, and acquisition efficiency.",
-    challenge: "Scaling account-level daily budget limits without experiencing performance degradation or ROAS drops.",
+  "brand-3": {
+    slug: "brand-3",
+    clientName: "[Brand 3]",
+    industry: "[Category]",
+    title: "[Brand 3]",
+    tagline: "[CAC down 38%]",
+    challenge: "High customer acquisition costs on paid media channels.",
     strategy: [
-      "Structured ad account into clean top-of-funnel testing sets and retargeting sets.",
-      "Maintained strict bid controls to optimize cost per purchase.",
-      "Rotated catalog templates to prevent creative ad fatigue."
+      "Engineered full-funnel CRO to increase baseline conversion rates.",
+      "Refreshed static and video ad creatives before fatigue.",
+      "Optimized paid search and shopping targeting."
     ],
     execution: {
-      creative: "Created catalog overlays highlighting dynamic pricing and discount features.",
-      media: "Scaled high-performing campaign sets up to 6.94 ROAS benchmarks.",
-      cro: "Added quick-add-to-cart buttons directly on collection grids.",
-      retention: "Re-engaged past purchasers with automatic cross-sell catalogs."
+      creative: "High-contrast catalog overlays and motion graphics.",
+      media: "Targeted media buying with strict bid controls.",
+      cro: "A/B testing PDP layouts and quick buy steps.",
+      retention: "Automated repurchase reminders."
     },
     results: {
-      metric1: { label: "Ad Account ROAS", value: "6.94" },
-      metric2: { label: "Conversion Value", value: "₹7,812,933.35" },
-      metric3: { label: "Cost Efficiency", value: "Optimized" }
+      metric1: { label: "CAC Reduction", value: "-38%" },
+      metric2: { label: "Conversion Rate", value: "Improved" },
+      metric3: { label: "Blended ROAS", value: "Scaled" }
     },
     heroImage: "/assets/brand-meta-performance-01.jpg"
   },
-  "paid-media-performance": {
-    slug: "paid-media-performance",
-    title: "Paid Media Performance",
-    clientName: "Consumer Goods Brand",
-    industry: "Consumer Goods",
-    tagline: "Campaign-level performance analysis focused on advertising spend, purchase value, ROAS, and cost efficiency.",
-    challenge: "Lowering acquisition costs while scaling overall ad spend footprint across major platforms.",
+  "brand-4": {
+    slug: "brand-4",
+    clientName: "[Brand 4]",
+    industry: "[Category]",
+    title: "[Brand 4]",
+    tagline: "[Metric]",
+    challenge: "Establishing consistent acquisition loop across search and social.",
     strategy: [
-      "Utilized Advantage+ campaign targeting to unlock lower CPM markets.",
-      "Tested vertical short-form product videos against static product graphics.",
-      "Optimized bidding towards highest-volume conversion signals."
+      "Unified performance marketing and creative execution.",
+      "Technical SEO and category page optimization.",
+      "Weekly performance review and decision framework."
     ],
     execution: {
-      creative: "Produced high-velocity direct-response social assets.",
-      media: "Scaled media spend while sustaining a premium 7.91 ROAS performance.",
-      cro: "Streamlined single-page checkouts to minimize purchasing friction.",
-      retention: "Deployed customized post-purchase confirmation discount offers."
+      creative: "Tested hook bank deployment.",
+      media: "Balanced acquisition budget allocation.",
+      cro: "Mobile-first store speed tuning.",
+      retention: "Customer LTV expansion."
     },
     results: {
-      metric1: { label: "Campaign ROAS", value: "7.91" },
-      metric2: { label: "Purchase Value", value: "₹3,803,778.07" },
-      metric3: { label: "Acquisition Cost", value: "Reduced" }
+      metric1: { label: "Performance Metric", value: "[Metric]" },
+      metric2: { label: "Account Signal", value: "Stable" },
+      metric3: { label: "Growth Loop", value: "Active" }
     },
     heroImage: "/assets/brand-meta-performance-02.jpg"
-  },
-  "catalog-campaign-strategy": {
-    slug: "catalog-campaign-strategy",
-    title: "Catalog Campaign Strategy",
-    clientName: "Apparel Brand",
-    industry: "Apparel & Fashion",
-    tagline: "A visual showcase of catalog-driven campaign execution designed around product discovery, audience engagement, and purchase intent.",
-    challenge: "Presenting a vast product catalog efficiently to diverse audience segments with high commercial intent.",
-    strategy: [
-      "Implemented dynamic product group sets tailored to real-time viewer trends.",
-      "Leveraged lookalike audiences based on highest-tier purchasers.",
-      "Monitored catalog sync health daily to avoid broken landing links."
-    ],
-    execution: {
-      creative: "Curated high-resolution lifestyle product imagery for carousels.",
-      media: "Allocated performance budget to Advantage+ catalogs achieving 8.09 ROAS.",
-      cro: "Optimized storefront speed and product category filters.",
-      retention: "Programmed behavioral-based product recommendation emails."
-    },
-    results: {
-      metric1: { label: "Average ROAS", value: "8.09" },
-      metric2: { label: "Purchase Value", value: "₹11,851,822.97" },
-      metric3: { label: "Total Purchases", value: "3,104" }
-    },
-    heroImage: "/assets/kaftanize-campaign.jpg"
-  },
-  "performance-campaign-results": {
-    slug: "performance-campaign-results",
-    title: "Performance Campaign Results",
-    clientName: "Athleisure Brand",
-    industry: "Athleisure",
-    tagline: "A campaign performance view highlighting advertising investment, purchase outcomes, ROAS, and overall campaign efficiency.",
-    challenge: "Maximizing the efficiency of scale budgets and maintaining steady ROAS performance throughout seasonal changes.",
-    strategy: [
-      "Designed and tested strict budget scaling structures to prevent ad dilution.",
-      "Optimized lookalike audiences based on customer engagement metrics.",
-      "Sustained stable cost metrics across broad geographic regions."
-    ],
-    execution: {
-      creative: "Created high-impact social layouts showcasing products in motion.",
-      media: "Managed scale spend profiles achieving 8.14 average ROAS.",
-      cro: "Refined lander landing steps to boost conversion velocity.",
-      retention: "Maintained automated email flows for product replenishment cycles."
-    },
-    results: {
-      metric1: { label: "Average ROAS", value: "8.14" },
-      metric2: { label: "Total Spent", value: "₹507,909.66" },
-      metric3: { label: "Sales Conversion", value: "Scale Achieved" }
-    },
-    heroImage: "/assets/kaftanize-performance-01.jpg"
   }
 };

@@ -16,7 +16,7 @@ export function AboutSection() {
               .
             </h2>
             <p className="text-text-secondary text-base sm:text-lg leading-relaxed">
-              SparkMedia is a growth and creative agency helping ambitious brands turn attention into measurable business results.
+              Adfrenzy Media is a full-funnel growth partner helping ambitious D2C brands turn attention into measurable business results.
             </p>
             <p className="text-text-secondary/70 text-sm leading-relaxed">
               We bring strategy, creative, media, conversion and retention together so every part of the customer journey works toward the same goal. No unnecessary layers. No disconnected teams. Just smart people working together around the numbers that matter.
@@ -33,11 +33,11 @@ export function AboutSection() {
               </div>
               <div className="p-3 bg-surface rounded border border-border-subtle">
                 <span className="text-accent font-bold block">HQ:</span>
-                Pune, MH
+                Meerut, UP
               </div>
               <div className="p-3 bg-surface rounded border border-border-subtle">
-                <span className="text-accent font-bold block">FOUNDED:</span>
-                2024
+                <span className="text-accent font-bold block">FOCUS:</span>
+                D2C Scale
               </div>
             </div>
           </div>

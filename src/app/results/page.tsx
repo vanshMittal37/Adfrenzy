@@ -6,9 +6,9 @@ import { FinalCTA } from "@/components/sections/FinalCTA";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Marketing Results & Case Studies",
+  title: "Marketing Results & Selected Work",
   description:
-    "See SparkMedia's marketing results, campaign performance, ROAS, e-commerce growth and selected client case studies.",
+    "See Adfrenzy Media's marketing results, campaign performance, ROAS, D2C brand growth and selected client work.",
 };
 
 export default function ResultsPage() {

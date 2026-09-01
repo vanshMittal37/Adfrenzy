@@ -4,11 +4,10 @@ export interface MetricTickerItem {
 }
 
 export const metricsData: MetricTickerItem[] = [
-  { label: "Brands Scaled", value: "[XX]+" },
-  { label: "Campaigns Deployed", value: "[XX]+" },
-  { label: "Creatives Delivered / Mo", value: "[XX]+" },
-  { label: "Blended ROAS Average", value: "[XX.Xx]x" },
-  { label: "Client Retention Rate", value: "[XX]%" },
-  { label: "Revenue Influenced", value: "₹[XX]Cr+" },
-  { label: "Average CAC Reduction", value: "-[XX]%" }
+  { label: "D2C Brands Worldwide", value: "100+" },
+  { label: "Ad Spend Managed", value: "₹2.4 Cr+" },
+  { label: "Average ROAS", value: "8.6x" },
+  { label: "Creatives Shipped / Mo", value: "[X]" },
+  { label: "Client Retention Rate", value: "[X]%" },
+  { label: "Years Running", value: "[X]" }
 ];

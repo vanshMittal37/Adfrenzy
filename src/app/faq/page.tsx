@@ -4,9 +4,9 @@ import { FinalCTA } from "@/components/sections/FinalCTA";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Performance Marketing FAQ",
+  title: "Growth & Performance Marketing FAQ",
   description:
-    "Find answers to common questions about SparkMedia's performance marketing, creative production, CRO, e-commerce growth and strategy services.",
+    "Find answers to common questions about Adfrenzy Media's performance marketing, creative production, CRO, web development and SEO services.",
 };
 
 export default function FAQPage() {

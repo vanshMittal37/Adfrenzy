@@ -8,6 +8,7 @@ export interface ServiceItem {
   deliverables: string[];
   icon: string;
   highlightText: string;
+  tags: string[];
 }
 
 export const servicesData: ServiceItem[] = [
@@ -15,125 +16,144 @@ export const servicesData: ServiceItem[] = [
     id: "performance-marketing",
     slug: "performance-marketing",
     title: "Performance Marketing",
-    tagline: "Turn advertising spend into measurable, profitable growth.",
-    description: "Paid acquisition engineered around unit economics, contribution margin, and customer acquisition cost (CAC). We manage Meta, Google, and TikTok ads as an integrated growth strategy.",
+    tagline: "Run as a growth strategy, not a button-pushing job.",
+    description: "Meta and Google, run as a growth strategy and not a button-pushing job. We build around CAC, contribution margin and blended ROAS. Scaling decisions are made on the P&L, not on the dashboard.",
+    tags: ["Meta", "Google", "YouTube", "Demand Gen"],
     features: [
       "Meta Ads (Facebook & Instagram)",
       "Google Search & Shopping (Performance Max)",
-      "YouTube Ads & Video Action",
-      "TikTok Ads & Spark Ads",
-      "Retargeting & Multi-Touch Funnels",
-      "Conversion Tracking & CAPI Setup",
-      "Budget Allocation & Bidding Optimisation",
-      "Weekly Attribution & P&L Reporting"
+      "YouTube Ads & Demand Gen",
+      "CAC & Contribution Margin Tracking",
+      "Blended ROAS Optimization",
+      "P&L-Focused Capital Allocation"
     ],
     deliverables: [
       "Custom Campaign Architecture",
-      "Weekly Performance Reviews",
-      "Real-time Analytics Dashboard",
-      "Audience Research & Persona Mapping"
+      "Weekly Attribution Reviews",
+      "Real-Time Analytics Dashboard",
+      "P&L Growth Roadmap"
     ],
     icon: "TrendingUp",
-    highlightText: "Profit-first media buying that scales profitably without ad fatigue."
+    highlightText: "Profit-first media buying that scales around your contribution margins."
   },
   {
     id: "creative",
     slug: "creative",
-    title: "Performance Creative",
-    tagline: "Creative that earns attention and moves customers to action.",
-    description: "We don't create content just to look pretty. We produce high-velocity direct response video, UGC, motion graphics, and statics built to convert strangers into buyers.",
+    title: "Performance Creative & UGC",
+    tagline: "Ads built to sell, not to win awards.",
+    description: "Ads built to sell, not to win awards. Hooks tested weekly, UGC, statics, motion, ad films. We ship volume because volume is the only real way to find a winner.",
+    tags: ["UGC", "Statics", "Video", "Hook testing"],
     features: [
       "User Generated Content (UGC) Production",
-      "High-Converting Video Ads (PAS & Direct Response)",
-      "Static Image & Carousel Ad Design",
-      "Instagram Reels & TikTok Vertical Videos",
-      "3D Product Visualisation & Motion Graphics",
-      "Founder Story & Brand Ad Films",
-      "Creative Strategy & Hook Testing Framework",
-      "AI-Augmented Visual Assets"
+      "Direct Response High-Converting Video Ads",
+      "Static & Carousel Visual Assets",
+      "Weekly Hook Testing Engine",
+      "Motion Graphics & Ad Films",
+      "Creative Fatigue Prevention Pipeline"
     ],
     deliverables: [
-      "20–50+ New Ad Assets Monthly",
-      "Scriptwriting & Concept Development",
+      "Weekly Creative Ship Schedule",
+      "Tested Hook Bank Deployment",
       "Raw & Formatted Assets (9:16, 4:5, 1:1)",
-      "Weekly Creative Performance Analysis"
+      "Creative Performance Analysis"
     ],
     icon: "Video",
-    highlightText: "Continuous creative velocity so your ad accounts never hit creative fatigue."
+    highlightText: "High-velocity creative shipping so fatigue is solved before it hits."
+  },
+  {
+    id: "web-design",
+    slug: "web-design",
+    title: "Website Design & Development",
+    tagline: "If it doesn't help someone buy, it doesn't ship.",
+    description: "Fast, mobile-first Shopify and custom builds. Every section earns its place. If it doesn't help someone buy, it doesn't ship.",
+    tags: ["Shopify", "Custom", "Speed", "Mobile-first"],
+    features: [
+      "Custom Shopify & Shopify Plus Builds",
+      "Mobile-First Responsive Architecture",
+      "Ultra-Fast Core Web Vitals Speed Tuning",
+      "High-Converting PDP & Checkout UX",
+      "Custom App Integrations & Tech Stack",
+      "Clean Modular Codebase"
+    ],
+    deliverables: [
+      "Full Mobile-Optimized Storefront",
+      "Custom UI/UX Kit & Wireframes",
+      "Page Speed Guarantee",
+      "Handover & Management Guide"
+    ],
+    icon: "Layout",
+    highlightText: "Built specifically for high-volume conversion and mobile shopping speed."
   },
   {
     id: "cro",
     slug: "cro",
     title: "CRO & Landing Pages",
-    tagline: "More traffic isn't always the answer — convert what you have.",
-    description: "Before spending more on paid acquisition, optimize your conversion rate. We design and build high-converting landing pages and checkout flows.",
+    tagline: "Get more from the traffic you already bought.",
+    description: "Before you pay more for traffic, get more from the traffic you already bought. We rebuild PDPs, landers and checkout flows and test them properly.",
+    tags: ["Landers", "PDP", "Checkout", "A/B testing"],
     features: [
-      "Custom Direct-Response Landing Pages",
-      "Shopify & Custom Web Conversion Audits",
-      "A/B Split Testing & Multivariate Testing",
-      "Product Page (PDP) Layout Optimisation",
-      "Cart & Checkout Friction Removal",
-      "Mobile UX & Page Speed Optimisation",
-      "Heatmap & User Behavior Tracking",
-      "AOV Boosting Offer Structures"
+      "Direct Response Dedicated Landing Pages",
+      "Product Detail Page (PDP) Rebuilds",
+      "Checkout Flow & Friction Removal",
+      "A/B Split Testing & Variant Strategy",
+      "Mobile UX Optimization",
+      "AOV & Bundle Offer Architecture"
     ],
     deliverables: [
-      "High-Speed Mobile Landers",
-      "Figma UI Wireframes & Code",
+      "High-Speed Custom Landers",
+      "Figma UI Designs & Production Code",
       "A/B Test Variant Setup",
-      "Conversion Rate Growth Audits"
+      "Weekly Conversion Audits"
     ],
     icon: "Zap",
-    highlightText: "Unlock extra revenue from existing ad traffic before scaling spend."
+    highlightText: "Turn wasted clicks into revenue before spending another rupee on ads."
   },
   {
-    id: "web-design",
-    slug: "web-design",
-    title: "Web Design & Development",
-    tagline: "Websites engineered to convert visitors into customers.",
-    description: "Your website is your digital flagship storefront. We build ultra-fast, mobile-optimized Shopify stores and custom web platforms designed for growth.",
+    id: "seo",
+    slug: "seo",
+    title: "SEO & Organic Growth",
+    tagline: "The layer that keeps working after you pause the ads.",
+    description: "The layer that keeps working after you pause the ads. Technical fixes, category pages, content that ranks and blended CAC that finally comes down.",
+    tags: ["Technical", "On-page", "Content", "Local"],
     features: [
-      "Custom Shopify & Shopify Plus Stores",
-      "Modern Web Applications (Next.js / React)",
-      "Conversion-Focused UI/UX Design",
-      "Mobile-First Responsive Layouts",
-      "Custom App Integration & APIs",
-      "Core Web Vitals & Speed Tuning",
-      "SEO-Optimised Architecture",
-      "Seamless CMS Content Management"
+      "Technical SEO Audits & Fixes",
+      "Category Page Optimization",
+      "High-Intent Organic Content Strategy",
+      "Local & Brand Search Optimization",
+      "Internal Linking & Site Structure",
+      "Blended CAC Reduction Engine"
     ],
     deliverables: [
-      "Full Custom Website Development",
-      "Mobile & Desktop UI Kits",
-      "Speed & Accessibility Guarantee",
-      "CMS Training & Handover Support"
+      "Technical Health Fixes",
+      "Keyword & Intent Hierarchy",
+      "Content Publishing Pipeline",
+      "Organic Revenue Attribution Reports"
     ],
-    icon: "Layout",
-    highlightText: "Stunning aesthetics paired with conversion-tested UX architecture."
+    icon: "Target",
+    highlightText: "Build lasting organic equity to lower your blended customer acquisition cost."
   },
   {
     id: "strategy",
     slug: "strategy",
-    title: "Growth Strategy",
-    tagline: "Strategy before execution — clear roadmaps to scale.",
-    description: "We start by auditing your business economics, unit metrics, and conversion bottlenecks before recommending where to invest your growth capital.",
+    title: "Growth Consultation",
+    tagline: "For founders who need someone who has seen the next stage.",
+    description: "For founders who have a team but need someone who has seen the next stage. Audit, roadmap, unit economics, hiring plan. Sometimes you need a plan more than another vendor.",
+    tags: ["Audit", "Roadmap", "Unit economics"],
     features: [
-      "Full Funnel & Unit Economics Audit",
-      "Competitor & Market Research",
-      "Ideal Customer Profile (ICP) Mapping",
-      "Omnichannel Acquisition Roadmap",
-      "Retention & LTV Expansion Strategy",
-      "90-Day Execution Timelines",
-      "P&L & Contribution Margin Modeling",
-      "Executive Growth Advisory Calls"
+      "Full Account & Funnel Audit",
+      "90-Day Execution Growth Roadmap",
+      "Unit Economics & Margin Modeling",
+      "Marketing Hiring & Team Plan",
+      "Omnichannel Acquisition Strategy",
+      "Executive Growth Advisory Syncs"
     ],
     deliverables: [
-      "Comprehensive 90-Day Growth Blueprint",
-      "Unit Economics Calculator",
-      "Creative Briefing Frameworks",
-      "Bi-weekly Executive Strategy Syncs"
+      "90-Day Tailored Growth Blueprint",
+      "Unit Economics Model",
+      "Ad Agency & In-House Hiring Blueprint",
+      "Weekly Executive Syncs"
     ],
     icon: "Target",
-    highlightText: "Eliminating guesswork so every marketing dollar is spent strategically."
+    highlightText: "A clear, actionable plan from operators who have scaled D2C brands."
   }
 ];

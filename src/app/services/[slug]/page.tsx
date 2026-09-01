@@ -40,7 +40,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             {service.title}
           </h1>
           <p className="text-[#FFE500] text-lg font-semibold italic">
-            "{service.tagline}"
+            &quot;{service.tagline}&quot;
           </p>
           <p className="text-neutral-300 text-base sm:text-lg max-w-3xl leading-relaxed">
             {service.description}
@@ -78,7 +78,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
         {/* Highlight Banner */}
         <div className="glass-card p-8 text-center space-y-3 mb-16 border-[#FFE500]/30">
-          <span className="text-xs font-mono text-[#FFE500] font-bold uppercase">THE SPARKMEDIA EDGE</span>
+          <span className="text-xs font-mono text-[#FFE500] font-bold uppercase">THE ADFRENZY MEDIA EDGE</span>
           <p className="text-xl font-bold text-white max-w-2xl mx-auto">
             {service.highlightText}
           </p>

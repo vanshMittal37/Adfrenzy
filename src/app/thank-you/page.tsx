@@ -6,7 +6,7 @@ import { MetaPixelConversion } from "@/components/analytics/MetaPixelConversion"
 export const metadata: Metadata = {
   title: "Thank You — Booking Confirmed",
   description:
-    "Your strategy call with SparkMedia has been successfully scheduled. We look forward to speaking with you.",
+    "Your growth call with Adfrenzy Media has been successfully scheduled. We look forward to speaking with you.",
   robots: {
     index: false,
     follow: false,
@@ -36,7 +36,7 @@ export default function ThankYouPage() {
           <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
             Thank you for booking a{" "}
             <span className="font-serif-italic font-normal italic text-[#FFE500]">
-              strategy call
+              growth call
             </span>
             .
           </h1>
@@ -67,7 +67,7 @@ export default function ThankYouPage() {
             href="/"
             className="btn-yellow px-8 py-4 text-base font-extrabold inline-flex items-center justify-center gap-2.5 rounded-full cursor-pointer hover:scale-[1.02] transition-transform"
           >
-            <span>Back to SparkMedia</span>
+            <span>Back to Adfrenzy Media</span>
             <ArrowRight className="w-5 h-5" />
           </Link>
         </div>

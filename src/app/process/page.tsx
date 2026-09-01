@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Our Growth Process",
   description:
-    "Discover SparkMedia's growth process covering strategy, creative, launch, learning, optimisation and scaling.",
+    "Discover Adfrenzy Media's growth process covering deep dive, strategy, creative, launch, reading signals and scaling.",
 };
 
 export default function ProcessPage() {

@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Privacy Policy — SparkMedia.ad",
-  description: "Privacy policy and data protection practices at SparkMedia.ad."
+  title: "Privacy Policy — Adfrenzy Media",
+  description: "Privacy policy and data protection practices at Adfrenzy Media."
 };
 
 export default function PrivacyPolicyPage() {
@@ -11,11 +11,11 @@ export default function PrivacyPolicyPage() {
         <p className="text-xs font-mono text-neutral-400">LAST UPDATED: 2026</p>
         <div className="space-y-4 text-sm leading-relaxed border-t border-white/10 pt-6">
           <p>
-            SparkMedia.ad ("we", "our", or "us") values your privacy. This Privacy Policy outlines how we collect, use, and protect your personal information when you visit our website (sparkmedia.ad) or interact with our services.
+            Adfrenzy Media ("we", "our", or "us") values your privacy. This Privacy Policy outlines how we collect, use, and protect your personal information when you visit our website or interact with our services.
           </p>
           <h3 className="text-lg font-bold text-white pt-2">1. Information We Collect</h3>
           <p>
-            We collect information provided directly by you when filling out lead intake forms, booking strategy calls via DaySchedule, or contacting us via email. This includes your name, work email, phone number, company website, and marketing budget preferences.
+            We collect information provided directly by you when filling out lead intake forms, booking strategy calls, or contacting us via email. This includes your name, work email, phone number, company website, and marketing budget preferences.
           </p>
           <h3 className="text-lg font-bold text-white pt-2">2. How We Use Information</h3>
           <p>
@@ -23,11 +23,11 @@ export default function PrivacyPolicyPage() {
           </p>
           <h3 className="text-lg font-bold text-white pt-2">3. Cookies & Analytics</h3>
           <p>
-            We utilize standard web analytics (Google Analytics, Meta Pixel) to track site interaction and optimize user experience. You can modify your browser settings to disable cookies if desired.
+            We utilize standard web analytics to track site interaction and optimize user experience. You can modify your browser settings to disable cookies if desired.
           </p>
           <h3 className="text-lg font-bold text-white pt-2">4. Contact Us</h3>
           <p>
-            For questions regarding this privacy policy, please contact us at <a href="mailto:Sparkmedia.bs@gmail.com" className="text-[#FFE500] underline">Sparkmedia.bs@gmail.com</a>.
+            For questions regarding this privacy policy, please contact us via our contact channels.
           </p>
         </div>
       </div>

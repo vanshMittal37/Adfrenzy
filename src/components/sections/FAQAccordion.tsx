@@ -18,21 +18,17 @@ export function FAQAccordion() {
         {/* Header */}
         <div className="text-center mb-16 space-y-4">
           <span className="text-xs font-mono uppercase tracking-widest text-accent font-bold">
-            QUESTIONS & ANSWERS
+            QUESTIONS, ANSWERED
           </span>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-text-primary tracking-tight">
-            Frequently Asked{" "}
+            Before you{" "}
             <span className="font-serif-italic font-normal italic text-accent">
-              Questions
+              ask
             </span>
-            .
           </h2>
-          <p className="text-text-secondary text-base sm:text-lg">
-            Straightforward answers. Zero agency jargon.
-          </p>
         </div>
 
-        {/* FAQ List */}
+        {/* FAQ Accordion List */}
         <div className="space-y-3.5">
           {faqData.map((faq) => {
             const isOpen = openId === faq.id;

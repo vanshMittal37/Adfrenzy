@@ -21,42 +21,38 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sparkmediabs.com"),
+  metadataBase: new URL("https://adfrenzymedia.com"),
 
   title: {
-    default: "SparkMedia | Performance Marketing & Creative Agency",
-    template: "%s | SparkMedia",
+    default: "Adfrenzy Media | Full-Funnel Growth Partner for D2C Brands",
+    template: "%s | Adfrenzy Media",
   },
 
   description:
-    "SparkMedia is a performance marketing and creative agency helping e-commerce brands grow through paid media, high-converting creative, CRO, and growth strategy.",
+    "Performance marketing, creative, websites and SEO for D2C brands. 100+ brands, ₹2.4 Cr+ ad spend managed, 8.6x average ROAS.",
 
   keywords: [
+    "Adfrenzy Media",
+    "full funnel growth partner",
     "performance marketing agency",
-    "creative marketing agency",
-    "ecommerce marketing agency",
-    "performance marketing",
+    "D2C growth partner",
+    "performance creative agency",
     "Meta ads agency",
     "Google ads agency",
-    "TikTok ads agency",
-    "performance creative",
     "UGC ads",
     "CRO agency",
     "landing page optimization",
     "Shopify marketing agency",
-    "ecommerce growth",
-    "paid media agency",
-    "digital marketing agency Pune",
-    "marketing agency Pune",
-    "SparkMedia",
+    "e-commerce growth agency",
+    "SEO agency for D2C",
   ],
 
-  authors: [{ name: "SparkMedia" }],
-  creator: "SparkMedia",
-  publisher: "SparkMedia",
+  authors: [{ name: "Adfrenzy Media" }],
+  creator: "Adfrenzy Media",
+  publisher: "Adfrenzy Media",
 
   alternates: {
-    canonical: "https://sparkmediabs.com",
+    canonical: "https://adfrenzymedia.com",
   },
 
   robots: {
@@ -74,26 +70,26 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://sparkmediabs.com",
-    siteName: "SparkMedia",
-    title: "SparkMedia | Performance Marketing & Creative Agency",
+    url: "https://adfrenzymedia.com",
+    siteName: "Adfrenzy Media",
+    title: "Adfrenzy Media | Full-Funnel Growth Partner for D2C Brands",
     description:
-      "Creative, performance marketing, CRO and growth strategy for ambitious e-commerce brands.",
+      "Performance marketing, creative, websites and SEO for D2C brands. 100+ brands, ₹2.4 Cr+ ad spend managed, 8.6x average ROAS.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "SparkMedia — Performance Marketing & Creative Agency",
+        alt: "Adfrenzy Media — Full-Funnel Growth Partner for D2C Brands",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "SparkMedia | Performance Marketing & Creative Agency",
+    title: "Adfrenzy Media | Full-Funnel Growth Partner for D2C Brands",
     description:
-      "Creative, performance marketing, CRO and growth strategy for ambitious e-commerce brands.",
+      "Performance marketing, creative, websites and SEO for D2C brands. 100+ brands, ₹2.4 Cr+ ad spend managed, 8.6x average ROAS.",
     images: ["/og-image.jpg"],
   },
 };
@@ -101,17 +97,17 @@ export const metadata: Metadata = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "@id": "https://sparkmediabs.com/#organization",
-  name: "SparkMedia",
-  url: "https://sparkmediabs.com/",
-  logo: "https://sparkmediabs.com/icon.png",
-  email: "Sparkmedia.bs@gmail.com",
+  "@id": "https://adfrenzymedia.com/#organization",
+  name: "Adfrenzy Media",
+  url: "https://adfrenzymedia.com/",
+  logo: "https://adfrenzymedia.com/icon.png",
+  email: "[email]",
   description:
-    "SparkMedia is a creative and performance marketing agency helping ambitious e-commerce brands grow through paid media, creative production, CRO and growth strategy.",
+    "Performance marketing, creative, websites and SEO for D2C brands. 100+ brands, ₹2.4 Cr+ ad spend managed, 8.6x average ROAS.",
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Pune",
-    addressRegion: "Maharashtra",
+    addressLocality: "Meerut",
+    addressRegion: "Uttar Pradesh",
     addressCountry: "IN",
   },
 };
@@ -119,37 +115,30 @@ const organizationSchema = {
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "@id": "https://sparkmediabs.com/#website",
-  name: "SparkMedia",
-  url: "https://sparkmediabs.com/",
+  "@id": "https://adfrenzymedia.com/#website",
+  name: "Adfrenzy Media",
+  url: "https://adfrenzymedia.com/",
   publisher: {
-    "@id": "https://sparkmediabs.com/#organization",
+    "@id": "https://adfrenzymedia.com/#organization",
   },
 };
+
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "@id": "https://sparkmediabs.com/#localbusiness",
-
-  name: "SparkMedia",
-
-  url: "https://sparkmediabs.com/",
-
-  logo: "https://sparkmediabs.com/icon.png",
-
-  image: "https://sparkmediabs.com/og-image.jpg",
-
-  email: "Sparkmedia.bs@gmail.com",
-
+  "@id": "https://adfrenzymedia.com/#localbusiness",
+  name: "Adfrenzy Media",
+  url: "https://adfrenzymedia.com/",
+  logo: "https://adfrenzymedia.com/icon.png",
+  image: "https://adfrenzymedia.com/og-image.jpg",
+  email: "[email]",
   description:
-    "SparkMedia is a creative and performance marketing agency helping ambitious e-commerce brands grow through paid media, creative production, CRO and growth strategy.",
-
+    "Performance marketing, creative, websites and SEO for D2C brands. 100+ brands, ₹2.4 Cr+ ad spend managed, 8.6x average ROAS.",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "REAL STREET ADDRESS",
-    addressLocality: "Pune",
-    addressRegion: "Maharashtra",
-    postalCode: "REAL PIN CODE",
+    streetAddress: "[Address]",
+    addressLocality: "Meerut",
+    addressRegion: "Uttar Pradesh",
     addressCountry: "IN"
   }
 };
@@ -163,24 +152,23 @@ export default function RootLayout({
     <html lang="en" className={`${plusJakartaSans.variable} ${playfairDisplay.variable} scroll-smooth`} data-scroll-behavior="smooth">
       <body className="bg-[#0A0A0A] text-white antialiased font-sans-primary selection:bg-[#FFE500] selection:text-black">
         <script
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{
-      __html: JSON.stringify(organizationSchema),
-    }}
-  />
-
-  <script
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{
-      __html: JSON.stringify(websiteSchema),
-    }}
-  />
-  <script
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{
-      __html: JSON.stringify(localBusinessSchema),
-    }}
-  />
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessSchema),
+          }}
+        />
         <Script
           src="https://cdn.jsdelivr.net/npm/dayschedule-widget@latest/dist/dayschedule-widget.min.js"
           strategy="beforeInteractive"

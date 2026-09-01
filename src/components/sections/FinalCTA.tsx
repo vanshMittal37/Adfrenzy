@@ -21,15 +21,15 @@ export function FinalCTA() {
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
         <h2 className="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
-          Let's build something that{" "}
+          Let&apos;s find what&apos;s actually holding the{" "}
           <span className="font-serif-italic font-normal italic text-accent underline decoration-accent/30 decoration-wavy decoration-2">
-            grows
+            growth back
           </span>
           .
         </h2>
 
         <p className="text-text-secondary text-base sm:text-xl max-w-2xl mx-auto font-normal leading-relaxed">
-          Whether you're trying to scale acquisition, improve creative performance or build a stronger growth system, let's find the next opportunity together.
+          Book a call and we&apos;ll go through your ad account, your site and your funnel. You get a 90 day roadmap out of it whether you work with us or not.
         </p>
 
         <div className="flex items-center justify-center pt-4">
@@ -37,7 +37,7 @@ export function FinalCTA() {
             onClick={openDaySchedule}
             className="w-full sm:w-auto btn-yellow px-8 py-4 text-base font-bold inline-flex items-center justify-center gap-3 cursor-pointer rounded-full"
           >
-            <span>Book a Strategy Call</span>
+            <span>Book a Growth Call</span>
             <ArrowRight className="w-5 h-5" />
           </button>
         </div>
@@ -45,3 +45,4 @@ export function FinalCTA() {
     </section>
   );
 }
+

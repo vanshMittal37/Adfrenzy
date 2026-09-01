@@ -4,9 +4,9 @@ import { FinalCTA } from "@/components/sections/FinalCTA";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Our Work | Performance Marketing Campaigns",
+  title: "Selected Work | Performance Marketing & D2C Growth",
   description:
-    "Explore SparkMedia's selected performance marketing campaigns, creative work, landing pages, e-commerce projects and growth campaigns.",
+    "Explore Adfrenzy Media's selected performance marketing campaigns, creative work, landing pages and D2C brand growth projects.",
 };
 
 export default function WorkPage() {

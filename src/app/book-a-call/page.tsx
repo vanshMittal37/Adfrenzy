@@ -3,9 +3,9 @@ import { DayScheduleEmbed } from "@/components/dayschedule/DayScheduleEmbed";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Book a Strategy Call",
+  title: "Book a Growth Call",
   description:
-    "Book a strategy call with SparkMedia to discuss your marketing, creative, conversion and e-commerce growth opportunities.",
+    "Book a growth call with Adfrenzy Media to discuss your marketing, creative, conversion and D2C brand growth opportunities.",
 };
 
 export default function BookACallPage() {

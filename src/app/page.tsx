@@ -1,38 +1,33 @@
 import { Hero } from "@/components/sections/Hero";
-import { CreativeMarquee } from "@/components/sections/CreativeMarquee";
 import { TrustBar } from "@/components/sections/TrustBar";
-import { MetricsTicker } from "@/components/sections/MetricsTicker";
-import { ProblemSection } from "@/components/sections/ProblemSection";
-import { GrowthLoop } from "@/components/sections/GrowthLoop";
-import { ComparisonTable } from "@/components/sections/ComparisonTable";
-import { ServicesGrid } from "@/components/sections/ServicesGrid";
-import { TwoGrowthProblems } from "@/components/sections/TwoGrowthProblems";
-import { PortfolioSection } from "@/components/sections/PortfolioSection";
-import { ResultsSection } from "@/components/sections/ResultsSection";
-import { Testimonials } from "@/components/sections/Testimonials";
 import { ClientLogoWall } from "@/components/sections/ClientLogoWall";
-import { AboutSection } from "@/components/sections/AboutSection";
-import { TeamGrid } from "@/components/sections/TeamGrid";
-import { PhilosophySection } from "@/components/sections/PhilosophySection";
+import { ProblemSection } from "@/components/sections/ProblemSection";
+import { TwoGrowthProblems } from "@/components/sections/TwoGrowthProblems";
+import { GrowthLoop } from "@/components/sections/GrowthLoop";
+import { ServicesGrid } from "@/components/sections/ServicesGrid";
+import { ResultsSection } from "@/components/sections/ResultsSection";
+import { PortfolioSection } from "@/components/sections/PortfolioSection";
+import { ComparisonTable } from "@/components/sections/ComparisonTable";
+import { Testimonials } from "@/components/sections/Testimonials";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { StrategyCallSection } from "@/components/sections/StrategyCallSection";
-import { FinalCTA } from "@/components/sections/FinalCTA";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
+      <TrustBar />
       <ClientLogoWall />
       <ProblemSection />
+      <TwoGrowthProblems />
       <GrowthLoop />
       <ServicesGrid />
       <ResultsSection />
       <PortfolioSection />
+      <ComparisonTable />
       <Testimonials />
-      <CreativeMarquee />
       <FAQAccordion />
       <StrategyCallSection />
-      <FinalCTA />
     </>
   );
 }

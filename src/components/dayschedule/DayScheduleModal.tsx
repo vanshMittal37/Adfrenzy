@@ -1,34 +1,33 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Script from "next/script";
 
-declare global {
-  interface Window {
-    daySchedule?: {
-      initPopupWidget: (options: { url: string }) => void;
-    };
-  }
-}
-
 export function DayScheduleModal() {
-  const dayScheduleUrl = process.env.NEXT_PUBLIC_DAYSCHEDULE_URL || "https://sparkmedia.dayschedule.com/discovery-call";
+  const [dayScheduleUrl, setDayScheduleUrl] = useState<string>("");
 
   useEffect(() => {
+    setDayScheduleUrl(process.env.NEXT_PUBLIC_DAYSCHEDULE_URL || "");
+
     const handleOpen = () => {
-      if (window.daySchedule && typeof window.daySchedule.initPopupWidget === "function") {
-        window.daySchedule.initPopupWidget({
-          url: dayScheduleUrl,
+      const url = process.env.NEXT_PUBLIC_DAYSCHEDULE_URL;
+      if (url && typeof (window as any).daySchedule === "object") {
+        (window as any).daySchedule.initPopupWidget({
+          url: url
         });
+      } else if (url) {
+        window.open(url, "_blank");
       } else {
-        console.warn("DaySchedule SDK not loaded yet. Retrying in 100ms...");
-        setTimeout(handleOpen, 100);
+        const el = document.getElementById("book-a-call");
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
       }
     };
 
     window.addEventListener("open-dayschedule", handleOpen);
     return () => window.removeEventListener("open-dayschedule", handleOpen);
-  }, [dayScheduleUrl]);
+  }, []);
 
   return null;
 }

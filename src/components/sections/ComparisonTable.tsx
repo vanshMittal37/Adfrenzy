@@ -2,87 +2,85 @@ import { Check, X } from "lucide-react";
 
 export function ComparisonTable() {
   const comparisonRows = [
-    { feature: "Creative + Performance Unified Loop", spark: true, media: false, creative: false },
-    { feature: "Full Growth Strategy & P&L Alignment", spark: true, media: false, creative: false },
-    { feature: "High-Volume Performance Creative & UGC", spark: true, media: false, creative: true },
-    { feature: "Paid Media Buying (Meta, Google, TikTok)", spark: true, media: true, creative: false },
-    { feature: "CRO & High-Converting Landing Pages", spark: true, media: false, creative: false },
-    { feature: "Email / SMS Retention & LTV Expansion", spark: true, media: false, creative: false },
-    { feature: "Social Content & Brand Campaigns", spark: true, media: false, creative: true },
-    { feature: "Embedded Senior Growth Team", spark: true, media: false, creative: false },
-    { feature: "Data-Driven Creative Feedback Loop", spark: true, media: false, creative: false },
+    { feature: "Ads, creative and site under one roof", adfrenzy: "Yes", agency: "No", freelancer: "No" },
+    { feature: "Owns the growth number, not the channel", adfrenzy: "Yes", agency: "Partial", freelancer: "No" },
+    { feature: "Creative volume every week", adfrenzy: "Yes", agency: "Partial", freelancer: "No" },
+    { feature: "CRO and website build", adfrenzy: "Yes", agency: "No", freelancer: "Rarely" },
+    { feature: "SEO and organic", adfrenzy: "Yes", agency: "No", freelancer: "Rarely" },
+    { feature: "Senior attention on your account", adfrenzy: "Yes", agency: "Rarely", freelancer: "Yes" },
+    { feature: "Works like part of your team", adfrenzy: "Yes", agency: "Partial", freelancer: "Partial" },
+  ];
+
+  const supportingCards = [
+    {
+      title: "8.6x average ROAS",
+      desc: "Not a best-month screenshot. The average across the accounts we run."
+    },
+    {
+      title: "Full access, always",
+      desc: "Your ad account, your pixel, your data. Real-time dashboard, weekly calls, nothing gatekept."
+    },
+    {
+      title: "Senior people on your account",
+      desc: "You talk to the person making the decisions, not an account manager relaying them."
+    },
+    {
+      title: "No lock-in",
+      desc: "We earn next month with this month's work. The results keep us in the room, not a clause."
+    }
   ];
 
   return (
     <section className="py-24 bg-background border-b border-border-subtle">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <span className="text-xs font-mono uppercase tracking-widest text-accent">
-            WHY SPARKMEDIA
+          <span className="text-xs font-mono uppercase tracking-widest text-accent font-bold">
+            WHY ADFRENZY
           </span>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-text-primary tracking-tight">
-            More than an agency. Your{" "}
+            A media agency runs your ads. A freelancer runs one channel.{" "}
             <span className="font-serif-italic font-normal italic text-accent">
-              growth team
+              We own the outcome
             </span>
             .
           </h2>
-          <p className="text-text-secondary text-base sm:text-lg">
-            Paid media agencies manage ads. Creative shops make assets. We own the entire growth loop.
-          </p>
         </div>
 
-        {/* Responsive Table Wrapper */}
-        <div className="glass-card overflow-x-auto border border-border-subtle rounded-2xl">
-          <table className="w-full text-left border-collapse min-w-[650px]">
+        {/* Comparison Table */}
+        <div className="glass-card overflow-x-auto border border-border-subtle rounded-2xl mb-12">
+          <table className="w-full text-left border-collapse min-w-[600px]">
             <thead>
               <tr className="border-b border-border-subtle bg-surface-secondary">
-                <th className="p-6 text-sm font-bold text-text-primary uppercase tracking-wider w-2/5">
+                <th className="p-5 sm:p-6 text-xs sm:text-sm font-bold text-text-primary uppercase tracking-wider w-2/5">
                   Capability / Approach
                 </th>
-                <th className="p-6 text-sm font-extrabold text-accent uppercase tracking-wider bg-accent/10 text-center w-1/5 border-x border-accent/20">
-                  SparkMedia.ad
+                <th className="p-5 sm:p-6 text-xs sm:text-sm font-extrabold text-accent uppercase tracking-wider bg-accent/10 text-center w-1/5 border-x border-accent/20">
+                  Adfrenzy
                 </th>
-                <th className="p-6 text-sm font-semibold text-text-secondary uppercase tracking-wider text-center w-1/5">
-                  Media Agency
+                <th className="p-5 sm:p-6 text-xs sm:text-sm font-semibold text-text-secondary uppercase tracking-wider text-center w-1/5">
+                  Media agency
                 </th>
-                <th className="p-6 text-sm font-semibold text-text-secondary uppercase tracking-wider text-center w-1/5">
-                  Creative Agency
+                <th className="p-5 sm:p-6 text-xs sm:text-sm font-semibold text-text-secondary uppercase tracking-wider text-center w-1/5">
+                  Freelancer
                 </th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-border-subtle text-sm">
+            <tbody className="divide-y divide-border-subtle text-xs sm:text-sm">
               {comparisonRows.map((row, idx) => (
                 <tr key={idx} className="hover:bg-text-primary/[0.02] transition-colors">
-                  <td className="p-5 font-medium text-text-primary">
+                  <td className="p-4 sm:p-5 font-medium text-text-primary">
                     {row.feature}
                   </td>
-                  <td className="p-5 text-center bg-accent/5 border-x border-accent/10">
-                    {row.spark ? (
-                      <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-accent text-[var(--btn-text-primary)]">
-                        <Check className="w-4 h-4 stroke-[3]" />
-                      </span>
-                    ) : (
-                      <X className="w-5 h-5 mx-auto text-text-secondary opacity-30" />
-                    )}
+                  <td className="p-4 sm:p-5 text-center font-bold text-accent bg-accent/5 border-x border-accent/10">
+                    {row.adfrenzy}
                   </td>
-                  <td className="p-5 text-center">
-                    {row.media ? (
-                      <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-border-subtle text-text-primary">
-                        <Check className="w-3.5 h-3.5" />
-                      </span>
-                    ) : (
-                      <X className="w-4 h-4 mx-auto text-text-secondary opacity-30" />
-                    )}
+                  <td className="p-4 sm:p-5 text-center text-text-secondary">
+                    {row.agency}
                   </td>
-                  <td className="p-5 text-center">
-                    {row.creative ? (
-                      <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-border-subtle text-text-primary">
-                        <Check className="w-3.5 h-3.5" />
-                      </span>
-                    ) : (
-                      <X className="w-4 h-4 mx-auto text-text-secondary opacity-30" />
-                    )}
+                  <td className="p-4 sm:p-5 text-center text-text-secondary">
+                    {row.freelancer}
                   </td>
                 </tr>
               ))}
@@ -90,9 +88,27 @@ export function ComparisonTable() {
           </table>
         </div>
 
-        <div className="text-center mt-8 font-mono text-xs text-text-secondary">
-          ⚡ One team. One strategy. One feedback loop.
+        <div className="text-center mb-16 font-mono text-xs sm:text-sm text-text-secondary">
+          Seven boxes. We're built to tick all seven.
         </div>
+
+        {/* 4 Supporting Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {supportingCards.map((card, idx) => (
+            <div
+              key={idx}
+              className="glass-card p-6 rounded-2xl border border-border-subtle space-y-3"
+            >
+              <h4 className="text-lg font-bold text-text-primary font-mono text-accent">
+                {card.title}
+              </h4>
+              <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
+                {card.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+
       </div>
     </section>
   );

@@ -28,7 +28,7 @@ export function TeamGrid() {
               <div className="relative aspect-square w-full bg-neutral-900 overflow-hidden">
                 <Image
                   src={member.photo}
-                  alt={`${member.name} - ${member.role} at SparkMedia`}
+                  alt={`${member.name} - ${member.role} at Adfrenzy Media`}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 33vw"

@@ -5,52 +5,65 @@ export interface FAQItem {
   category?: string;
 }
 
-export interface FAQItem {
-  id: string;
-  question: string;
-  answer: string;
-  category?: string;
-}
-
 export const faqData: FAQItem[] = [
   {
     id: "faq-1",
     question: "What do you actually do?",
-    answer: "SparkMedia.ad is a Creative + Performance Marketing Agency. We manage paid advertising campaigns (Meta, Google, and paid social channels), produce direct-response ad creatives, design landing pages, and optimize customer funnels to scale e-commerce brands profitably."
+    answer: "Full-funnel growth for D2C brands. Paid media on Meta and Google, performance creative and UGC, website design and development, CRO, and SEO. One team runs all of it so the pieces stop blaming each other."
   },
   {
     id: "faq-2",
-    question: "How are you different from a performance agency or creative agency?",
-    answer: "Most agencies operate in silos — creative agencies deliver assets without looking at media data, and performance agencies run campaigns without scaling creative production. We unite both: our performance data informs our creative decisions, and our high-velocity creative tests fuel our media scale."
+    question: "Do I have to buy everything?",
+    answer: "No. Start where it hurts. Some brands come in for media, some for a site rebuild. Most end up using more once they see how the parts feed each other."
   },
   {
     id: "faq-3",
-    question: "Do I have to buy everything, or can I start with one thing?",
-    answer: "You can start where your brand has the biggest bottleneck. Whether you need high-velocity ad creative production, media buying management, or conversion rate optimization (CRO) landers, we tailor our service scope to what you need right now."
+    question: "How fast will we see something?",
+    answer: "First few weeks we protect what's already working and fix the obvious leaks. Real signal in three to four weeks. Compounding by the end of the first quarter. Anyone promising results in week one is selling you something."
   },
   {
     id: "faq-4",
-    question: "How fast will we see results?",
-    answer: "Initial testing data and signal discovery on new creative hooks can be seen within the first 14 to 30 days. Compounding growth and target ROAS optimization typically take shape over 60 to 90 days as the loop collects performance metrics."
+    question: "What size brands do you work with?",
+    answer: "Brands already spending and serious about scaling. If you're pre-revenue and figuring out the product, we're not the right fit yet, and we'll tell you that on the call."
   },
   {
     id: "faq-5",
-    question: "What size brands do you work with?",
-    answer: "We work with ambitious e-commerce and D2C brands that have a validated product-market fit and are ready to scale their advertising budgets. Our growth loop is designed to support both rising challengers and established category leaders."
+    question: "Our numbers swing every month. Can you actually fix that?",
+    answer: "Usually yes, and usually it's structural. Swings come from one ad carrying the account, budgets moved in big jumps, and a creative pipeline that only refills after something dies. Fix those three and the graph flattens out. Not flat as in slow. Flat as in you can forecast it."
   },
   {
     id: "faq-6",
-    question: "How many creatives do we get?",
-    answer: "Creative output is customized and scaled according to your campaign requirements, ad spend, and creative testing roadmap. We build a high-velocity UGC and visual ad pipeline designed to combat ad fatigue."
+    question: "How do you handle creative fatigue?",
+    answer: "We replace ads before they die, not after. Every account runs on a hook bank and a weekly ship schedule, so there's always a tested backup ready when frequency climbs and CTR starts sliding."
   },
   {
     id: "faq-7",
-    question: "Are we locked into a long contract?",
-    answer: "No, we believe in earning your business month-to-month. Our agreements are flexible to ensure complete alignment on growth goals without locking you into long contracts."
+    question: "Will you build a funnel specific to my brand?",
+    answer: "That's the whole point. Your consideration cycle, your AOV and your margin decide the structure. A jewellery brand and a supplements brand should not be running the same funnel, and on our accounts they don't."
   },
   {
     id: "faq-8",
+    question: "How many creatives do we get?",
+    answer: "[X] a month, built to convert. Volume matters because you cannot predict the winner, you can only find it faster."
+  },
+  {
+    id: "faq-9",
+    question: "Am I locked into a contract?",
+    answer: "[Standard term is X months, then rolling.] No handcuffs after that. The work should keep us there."
+  },
+  {
+    id: "faq-10",
+    question: "Who actually works on my account?",
+    answer: "A senior strategist, a media buyer and a creative lead. No junior handoff after the pitch."
+  },
+  {
+    id: "faq-11",
     question: "How involved do I need to be?",
-    answer: "We act as your complete creative and performance department, handling assets and campaigns end-to-end. However, we maintain active lines of communication for brand guidelines, stock availability, and weekly performance reviews."
+    answer: "One call a week and quick answers on approvals. That's it. We run it like an operating partner, not a vendor waiting for instructions."
+  },
+  {
+    id: "faq-12",
+    question: "Do you work with brands outside India?",
+    answer: "Yes. We currently run accounts across [markets], and pricing is quoted in [currency] for international brands."
   }
 ];

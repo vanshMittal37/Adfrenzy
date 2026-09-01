@@ -1,270 +1,118 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Search, Sparkles, Rocket, BarChart3, RefreshCw, Target } from "lucide-react";
+import { useState } from "react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 export function GrowthLoop() {
-  const [activeStage, setActiveStage] = useState(0);
+  const [activeTab, setActiveTab] = useState(0);
 
-  const loopStages = [
+  const openDaySchedule = () => {
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(new CustomEvent("open-dayschedule"));
+    }
+  };
+
+  const pillars = [
     {
       num: "01",
-      title: "STRATEGY",
-      desc: "Deep dive audit of accounts, funnel, and creative to find conversion leaks.",
-      icon: Search
+      title: "A funnel built around your brand, not a template",
+      description: "A 499 rupee face wash and an 18,000 rupee bridal set do not get bought the same way. One converts on the first click. The other takes nine touches and a WhatsApp conversation before anyone pays.",
+      points: [
+        "Funnel mapped to your real consideration cycle",
+        "Separate journeys for cold, warm and returning buyers",
+        "Offers and landers matched to the stage, not to the brand average",
+        "Every stage judged on its own number, not on account ROAS"
+      ]
     },
     {
       num: "02",
-      title: "CREATIVE",
-      desc: "Produce high-velocity direct-response video ads, UGC, and static content.",
-      icon: Sparkles
+      title: "Creative fatigue handled before it lands",
+      description: "Fatigue isn't a creative problem. It's a supply problem. Accounts fall over because the replacement wasn't ready, not because the ad suddenly stopped working.",
+      points: [
+        "Creative ships weekly, on a schedule you can see",
+        "Tested hook bank ready to deploy, always",
+        "Winners refreshed as variants before they burn out",
+        "Fatigue caught by the numbers, not by a hunch"
+      ]
     },
     {
       num: "03",
-      title: "LAUNCH",
-      desc: "Deploy campaigns live across paid channels fast and efficiently.",
-      icon: Rocket
-    },
-    {
-      num: "04",
-      title: "LEARN",
-      desc: "Read performance signal, analyze customer metrics, and find winning hooks.",
-      icon: BarChart3
-    },
-    {
-      num: "05",
-      title: "OPTIMISE",
-      desc: "Cut failing assets immediately and double down on creative winners.",
-      icon: RefreshCw
-    },
-    {
-      num: "06",
-      title: "SCALE",
-      desc: "Scale media budget and compound winning concepts for profitable growth.",
-      icon: Target
+      title: "Fluctuation engineered out",
+      description: "Performance swings for boring, fixable reasons. One ad carrying 70% of revenue. Budgets doubled overnight and thrown straight back into learning. One audience quietly saturating. A structure that gets torn up every time somebody panics on a Monday.",
+      points: [
+        "No single ad allowed to carry the account",
+        "Budget changes in controlled steps",
+        "Stable structure, so the signal stays clean",
+        "Weekly review that ends in a decision"
+      ]
     }
   ];
 
-  // Auto-rotate every 3 seconds, reset timer if activeStage is changed manually
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveStage((prev) => (prev + 1) % loopStages.length);
-    }, 3000);
-    return () => clearInterval(timer);
-  }, [activeStage, loopStages.length]);
-
-  // Helper to generate coordinates for flow arcs
-  const getArcPath = (startAngle: number, endAngle: number, radius: number) => {
-    const startRad = (startAngle * Math.PI) / 180;
-    const endRad = (endAngle * Math.PI) / 180;
-    const x1 = (192 + radius * Math.cos(startRad)).toFixed(3);
-    const y1 = (192 + radius * Math.sin(startRad)).toFixed(3);
-    const x2 = (192 + radius * Math.cos(endRad)).toFixed(3);
-    const y2 = (192 + radius * Math.sin(endRad)).toFixed(3);
-    return `M ${x1} ${y1} A ${radius} ${radius} 0 0 1 ${x2} ${y2}`;
-  };
-
-  // Active stage coordinates for the dynamic connector line
-  const activeAngle = (activeStage * 360) / loopStages.length - 90;
-  const activeRad = (activeAngle * Math.PI) / 180;
-  const activeNodeX = 192 + 135 * Math.cos(activeRad);
-  const activeNodeY = 192 + 135 * Math.sin(activeRad);
-
   return (
     <section className="py-24 bg-background border-b border-border-subtle relative overflow-hidden" id="about">
-      {/* Background radial glow */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <span className="text-xs font-mono uppercase tracking-widest text-accent font-bold">
-            OUR APPROACH
+            THE PART NOBODY TALKS ABOUT
           </span>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-text-primary tracking-tight">
-            One team. One{" "}
+            A good month is easy. Twelve in a row is the{" "}
             <span className="font-serif-italic font-normal italic text-accent">
-              growth loop
+              job
             </span>
             .
           </h2>
-          <p className="text-text-secondary text-base sm:text-lg">
-            Creative creates the signal. Media generates the data. Data tells us what to improve. The winners get scaled.
+          <p className="text-text-secondary text-base sm:text-lg leading-relaxed">
+            Most brands don't have a performance problem. They have a consistency problem. One month is 6x, the next is 2.1x, and nobody can explain what changed. That isn't bad luck. It's three missing parts.
           </p>
         </div>
 
-        {/* Interactive Growth Loop Container */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center max-w-5xl mx-auto">
-          {/* Loop Diagram */}
-          <div className="lg:col-span-7 flex justify-center py-6 relative">
-            <div className="relative w-72 h-72 sm:w-96 sm:h-96 rounded-full border border-dashed border-accent/20 flex items-center justify-center">
-              
-              {/* Dynamic SVG Flow & Connector Overlays */}
-              <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ overflow: 'visible' }} viewBox="0 0 384 384">
-                <defs>
-                  <marker
-                    id="arrow"
-                    viewBox="0 0 10 10"
-                    refX="6"
-                    refY="5"
-                    markerWidth="6"
-                    markerHeight="6"
-                    orient="auto-start-reverse"
-                  >
-                    <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--accent)" />
-                  </marker>
-                  <marker
-                    id="connector-arrow"
-                    viewBox="0 0 10 10"
-                    refX="6"
-                    refY="5"
-                    markerWidth="8"
-                    markerHeight="8"
-                    orient="auto-start-reverse"
-                  >
-                    <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--accent)" />
-                  </marker>
-                </defs>
-
-                {/* Clockwise flow dotted arcs connecting the stages */}
-                {loopStages.map((_, idx) => {
-                  const startAngle = (idx * 360) / loopStages.length - 90 + 20;
-                  const endAngle = ((idx + 1) * 360) / loopStages.length - 90 - 20;
-                  const arcPath = getArcPath(startAngle, endAngle, 135);
-                  return (
-                    <path
-                      key={idx}
-                      d={arcPath}
-                      fill="none"
-                      stroke="var(--accent)"
-                      strokeWidth="1.5"
-                      strokeDasharray="4 4"
-                      markerEnd="url(#arrow)"
-                      className="opacity-50"
-                    />
-                  );
-                })}
-
-                {/* Desktop: Animated Dotted Connector Line pointing from active node to the card */}
-                <path
-                  d={`M ${activeNodeX.toFixed(3)} ${activeNodeY.toFixed(3)} C ${((activeNodeX + 480) / 2).toFixed(3)} ${activeNodeY.toFixed(3)}, ${((activeNodeX + 480) / 2).toFixed(3)} 192, 480 192`}
-                  fill="none"
-                  stroke="var(--accent)"
-                  strokeWidth="2"
-                  strokeDasharray="5 5"
-                  markerEnd="url(#connector-arrow)"
-                  className="hidden lg:block opacity-90 transition-all duration-500 ease-in-out"
-                  style={{
-                    strokeDashoffset: 0,
-                    animation: "dash 1.5s linear infinite"
-                  }}
-                />
-
-                {/* Mobile/Tablet: Animated Dotted Connector Line pointing from active node downwards to the card */}
-                <path
-                  d={`M ${activeNodeX.toFixed(3)} ${activeNodeY.toFixed(3)} C ${activeNodeX.toFixed(3)} ${((activeNodeY + 420) / 2).toFixed(3)}, 192 ${((activeNodeY + 420) / 2).toFixed(3)}, 192 420`}
-                  fill="none"
-                  stroke="var(--accent)"
-                  strokeWidth="2"
-                  strokeDasharray="5 5"
-                  markerEnd="url(#connector-arrow)"
-                  className="block lg:hidden opacity-90 transition-all duration-500 ease-in-out"
-                  style={{
-                    strokeDashoffset: 0,
-                    animation: "dash 1.5s linear infinite"
-                  }}
-                />
-              </svg>
-
-              {/* Center Core */}
-              <div className="w-34 h-34 sm:w-44 sm:h-44 rounded-full bg-surface border border-accent/40 flex flex-col items-center justify-center p-4 text-center shadow-2xl z-10">
-                <span className="text-[10px] sm:text-xs font-mono text-accent uppercase font-bold tracking-wider">
-                  SPARKMEDIA
+        {/* 3 Pillars Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+          {pillars.map((item, idx) => (
+            <div
+              key={idx}
+              className="glass-card p-6 sm:p-8 rounded-2xl border-l-4 border-l-accent flex flex-col justify-between space-y-6 shadow-md bg-[var(--card-bg)] border-[var(--card-border)]"
+            >
+              <div className="space-y-4">
+                <span className="font-mono text-2xl font-extrabold text-accent">
+                  {item.num}
                 </span>
-                <span className="text-xs sm:text-sm font-extrabold text-text-primary uppercase tracking-tight">
-                  GROWTH LOOP
-                </span>
-                <span className="text-[8px] sm:text-[10px] text-text-secondary mt-1 font-mono">
-                  ONE TEAM · NO SILOS
-                </span>
-              </div>
+                <h3 className="text-xl font-bold text-text-primary leading-snug">
+                  {item.title}
+                </h3>
+                <p className="text-text-secondary text-xs sm:text-sm leading-relaxed">
+                  {item.description}
+                </p>
 
-              {/* Node Buttons around Circle */}
-              {loopStages.map((stage, idx) => {
-                const angle = (idx * 360) / loopStages.length - 90;
-                const radius = 135; 
-                const x = (radius * Math.cos((angle * Math.PI) / 180)).toFixed(3);
-                const y = (radius * Math.sin((angle * Math.PI) / 180)).toFixed(3);
-                const isSelected = activeStage === idx;
-                const StageIcon = stage.icon;
-
-                return (
-                  <button
-                    key={idx}
-                    onClick={() => setActiveStage(idx)}
-                    style={{
-                      transform: `translate(${x}px, ${y}px)`
-                    }}
-                    className={`absolute w-12 h-12 sm:w-14 sm:h-14 rounded-full flex flex-col items-center justify-center text-[10px] sm:text-xs font-bold transition-all duration-300 z-20 cursor-pointer ${
-                      isSelected
-                        ? "bg-accent text-[var(--btn-text-primary)] shadow-lg shadow-accent/30 scale-110 border-2 border-surface"
-                        : "bg-surface text-text-secondary border border-border-subtle hover:border-accent"
-                    }`}
-                  >
-                    <StageIcon className={`w-3.5 h-3.5 sm:w-4 sm:h-4 mb-0.5 ${isSelected ? "text-[var(--btn-text-primary)]" : "text-accent"}`} />
-                    <span className="text-[8px] uppercase font-extrabold">{stage.title}</span>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Active Stage Card */}
-          <div className="lg:col-span-5">
-            <div className="glass-card p-5 sm:p-6 border-l-4 border-l-accent space-y-2.5 relative overflow-hidden transition-all duration-300">
-              <div className="absolute top-0 right-0 w-20 h-20 bg-accent/5 rounded-bl-full pointer-events-none" />
-              <div className="flex items-center justify-between">
-                <span className="text-[10px] font-mono text-accent font-extrabold">
-                  STAGE {loopStages[activeStage].num} OF 06
-                </span>
-                <span className="text-[9px] font-mono text-text-secondary">AUTO-ROTATING</span>
-              </div>
-              <h3 className="text-xl font-bold text-text-primary flex items-center gap-2">
-                <span>{loopStages[activeStage].title}</span>
-              </h3>
-              <p className="text-text-secondary text-xs sm:text-sm leading-relaxed min-h-[50px]">
-                {loopStages[activeStage].desc}
-              </p>
-              <div className="pt-2 flex gap-1.5">
-                {loopStages.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setActiveStage(idx)}
-                    className={`h-1.5 rounded-full transition-all cursor-pointer ${
-                      activeStage === idx ? "w-6 bg-accent" : "w-2.5 bg-border-subtle"
-                    }`}
-                  />
-                ))}
+                <div className="pt-4 border-t border border-border-subtle space-y-2">
+                  {item.points.map((pt, pIdx) => (
+                    <div key={pIdx} className="flex items-start gap-2.5 text-xs text-text-secondary">
+                      <CheckCircle2 className="w-4 h-4 text-accent shrink-0 mt-0.5" />
+                      <span>{pt}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
+          ))}
         </div>
 
-        {/* Mobile-Only Vertical arranged list for clarity */}
-        <div className="mt-16 block sm:hidden space-y-4">
-          <div className="p-4 rounded-xl border border-border-subtle bg-surface">
-            <h4 className="text-xs font-mono uppercase text-accent font-bold mb-3">Growth Loop Sequence</h4>
-            <div className="space-y-3">
-              {loopStages.map((stage, idx) => (
-                <div key={idx} className="flex gap-3 items-start">
-                  <span className="text-xs font-mono text-accent font-bold">{stage.num}</span>
-                  <div>
-                    <h5 className="text-sm font-bold text-text-primary">{stage.title}</h5>
-                    <p className="text-xs text-text-secondary">{stage.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+        {/* Closing & CTA */}
+        <div className="text-center space-y-6 max-w-xl mx-auto border-t border-border-subtle pt-12">
+          <p className="text-lg font-bold text-text-primary font-mono">
+            The goal isn't a screenshot month. It's a graph you can plan a business on.
+          </p>
+          <div>
+            <button
+              onClick={openDaySchedule}
+              className="btn-yellow px-8 py-3.5 text-sm font-extrabold inline-flex items-center justify-center gap-2.5 rounded-full cursor-pointer"
+            >
+              <span>Book a Growth Call</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
           </div>
         </div>
 

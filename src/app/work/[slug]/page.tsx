@@ -12,7 +12,6 @@ interface CaseStudyPageProps {
 }
 
 export async function generateStaticParams() {
-  // Combine all slugs from both datasets to generate static params
   const slugs = new Set([
     ...Object.keys(caseStudiesData),
     ...portfolioData.map((item) => item.slug)
@@ -20,7 +19,6 @@ export async function generateStaticParams() {
   return Array.from(slugs).map((slug) => ({ slug }));
 }
 
-// Map slug to screenshot path and descriptive section details
 const SCREENSHOT_MAP: Record<
   string,
   {
@@ -31,63 +29,46 @@ const SCREENSHOT_MAP: Record<
     alt: string;
   }
 > = {
-  "sales-performance-analytics": {
+  "brand-1": {
     src: "/assets/brand-analytics-sales.jpg",
     sectionEyebrow: "REVENUE PERFORMANCE",
     sectionTitle: "Sales & Performance Snapshot",
     sectionDesc: "A visual demonstration of campaign sales generation, scaling trajectory, and daily performance metrics.",
     alt: "Sales performance analytics dashboard"
   },
-  "customer-visitor-analytics": {
+  "brand-2": {
     src: "/assets/brand-analytics-visitors.jpg",
     sectionEyebrow: "TRAFFIC & VISITOR ANALYTICS",
     sectionTitle: "Visitor Acquisition Snapshot",
     sectionDesc: "A visual look at traffic distribution, daily active visitor counts, and source-level channels.",
     alt: "Customer and visitor analytics dashboard"
   },
-  "campaign-performance-overview": {
+  "brand-3": {
     src: "/assets/brand-meta-performance-01.jpg",
     sectionEyebrow: "CAMPAIGN PERFORMANCE",
     sectionTitle: "Performance Marketing Showcase",
     sectionDesc: "A snapshot illustrating ad creative response, engagement indices, and performance distribution.",
     alt: "Campaign performance analytics dashboard"
   },
-  "paid-media-performance": {
+  "brand-4": {
     src: "/assets/brand-meta-performance-02.jpg",
     sectionEyebrow: "PAID MEDIA PERFORMANCE",
     sectionTitle: "Paid Media Execution Snapshot",
     sectionDesc: "An execution benchmark demonstrating campaign ad delivery, reach structure, and optimization patterns.",
     alt: "Paid media campaign performance dashboard"
-  },
-  "catalog-campaign-strategy": {
-    src: "/assets/kaftanize-campaign.jpg",
-    sectionEyebrow: "CAMPAIGN ARCHITECTURE",
-    sectionTitle: "Catalog Campaign Performance",
-    sectionDesc: "An example overview of visual catalog setups, asset grouping, and campaign performance testing.",
-    alt: "Catalog campaign performance screenshot"
-  },
-  "performance-campaign-results": {
-    src: "/assets/kaftanize-performance-01.jpg",
-    sectionEyebrow: "CAMPAIGN OPTIMIZATION",
-    sectionTitle: "Performance Campaign Results",
-    sectionDesc: "A reference layout of direct response targeting setups and performance allocation.",
-    alt: "Performance campaign results screenshot"
   }
 };
 
 export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
   const { slug } = await params;
   
-  // 1. Try to find in detailed case studies
   let cs = caseStudiesData[slug];
   let portfolioItem = portfolioData.find((p) => p.slug === slug);
 
-  // If not found in either, return 404
   if (!cs && !portfolioItem) {
     notFound();
   }
 
-  // 2. If no detailed case study, build dynamic mock case study from portfolio item data
   if (!cs && portfolioItem) {
     cs = {
       slug: portfolioItem.slug,
@@ -126,14 +107,12 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
     };
   }
 
-  // Get screenshot info for the slug
   const screenshotInfo = SCREENSHOT_MAP[slug];
 
   return (
     <div className="pt-28 pb-16 bg-background border-b border-border-subtle text-text-primary transition-colors duration-300">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Back navigation link */}
         <Link
           href="/#work"
           className="inline-flex items-center gap-2 text-xs font-mono text-text-secondary hover:text-accent mb-8 transition-colors"
@@ -142,7 +121,6 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           <span>Back to All Work</span>
         </Link>
 
-        {/* Header */}
         <div className="space-y-4 mb-12">
           <div className="inline-block bg-accent/10 border border-accent/25 text-accent px-3.5 py-1 rounded-md text-xs font-mono font-bold uppercase">
             {cs.industry} Case Study
@@ -155,7 +133,6 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           </p>
         </div>
 
-        {/* Metrics Banner */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
           <div className="glass-card p-6 border-t-2 border-t-accent text-center space-y-1">
             <span className="text-xs font-mono text-text-secondary uppercase">{cs.results.metric1.label}</span>
@@ -171,7 +148,6 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           </div>
         </div>
 
-        {/* Hero Image / Video */}
         <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden border border-border-subtle mb-16 bg-surface-secondary shadow-md">
           {cs.videoUrl ? (
             <video
@@ -192,10 +168,8 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           )}
         </div>
 
-        {/* Content Breakdown */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
           <div className="lg:col-span-8 space-y-10">
-            {/* Challenge */}
             <div className="space-y-3">
               <h3 className="text-xs font-mono uppercase text-red-500 tracking-widest font-bold flex items-center gap-1.5">
                 <Zap className="w-3.5 h-3.5" /> THE CHALLENGE
@@ -204,7 +178,6 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               <p className="text-text-secondary text-sm sm:text-base leading-relaxed">{cs.challenge}</p>
             </div>
 
-            {/* Strategy */}
             <div className="space-y-4">
               <h3 className="text-xs font-mono uppercase text-accent tracking-widest font-bold flex items-center gap-1.5">
                 <TrendingUp className="w-3.5 h-3.5" /> THE STRATEGY
@@ -219,7 +192,6 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               </ul>
             </div>
 
-            {/* Execution */}
             <div className="space-y-4 pt-4 border-t border-border-subtle">
               <h3 className="text-xs font-mono uppercase text-text-secondary tracking-widest font-bold flex items-center gap-1.5">
                 <Sparkles className="w-3.5 h-3.5" /> THE EXECUTION
@@ -244,7 +216,6 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               </div>
             </div>
 
-            {/* Premium Campaign Performance Section */}
             {screenshotInfo && (
               <Lightbox
                 src={screenshotInfo.src}
@@ -256,12 +227,11 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             )}
           </div>
 
-          {/* Sidebar Testimonial */}
           <div className="lg:col-span-4">
             <div className="glass-card p-8 border-l-4 border-l-accent space-y-4 sticky top-28 shadow-sm">
               <h4 className="text-xs font-mono text-accent font-bold uppercase">Client Verdict</h4>
               <p className="text-text-secondary text-sm sm:text-base leading-relaxed italic">
-                "{cs.testimonialQuote || `SparkMedia delivers direct results with absolute clarity. They operate as a true extension of our growth team.`}"
+                "{cs.testimonialQuote || `Adfrenzy Media delivers direct results with absolute clarity. They operate as a true extension of our growth team.`}"
               </p>
               <div className="text-xs font-bold text-text-primary pt-2 border-t border-border-subtle font-mono">
                 {cs.testimonialAuthor || `${cs.clientName} Growth Partner`}

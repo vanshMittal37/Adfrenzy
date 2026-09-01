@@ -48,6 +48,14 @@ export function Header() {
     }
   };
 
+  const navLinks = [
+    { name: "Services", href: "#services" },
+    { name: "Work", href: "#work" },
+    { name: "Process", href: "#about" },
+    { name: "Results", href: "#results" },
+    { name: "FAQ", href: "#faq" }
+  ];
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background border-b border-border-subtle ${
@@ -58,27 +66,40 @@ export function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo - Using actual uploaded image logo */}
-          <Link href="/" className="flex items-center">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2">
             <img
               src="/Logo_SparkMedia_dark.png"
-              alt="SparkMedia logo"
-              className="logo-dark-theme w-[130px] sm:w-[155px] h-auto object-contain"
+              alt="Adfrenzy Media logo"
+              className="logo-dark-theme w-[140px] sm:w-[165px] h-auto object-contain"
             />
             <img
               src="/Logo_SparkMedia_light.png"
-              alt="SparkMedia logo"
-              className="logo-light-theme w-[130px] sm:w-[155px] h-auto object-contain"
+              alt="Adfrenzy Media logo"
+              className="logo-light-theme w-[140px] sm:w-[165px] h-auto object-contain"
             />
           </Link>
 
-          {/* Desktop Right Actions (CTA & Theme Toggle swapped) */}
+          {/* Navigation Links */}
+          <nav className="hidden lg:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-sm font-semibold text-text-secondary hover:text-accent transition-colors"
+              >
+                {link.name}
+              </a>
+            ))}
+          </nav>
+
+          {/* Right Actions */}
           <div className="hidden md:flex items-center gap-4">
             <button
               onClick={openDaySchedule}
-              className="btn-yellow px-5 py-2.5 text-sm inline-flex items-center gap-2 cursor-pointer"
+              className="btn-yellow px-5 py-2.5 text-sm font-extrabold inline-flex items-center gap-2 cursor-pointer rounded-full"
             >
-              <span>Book a Strategy Call</span>
+              <span>Book a Growth Call</span>
               <ArrowRight className="w-4 h-4" />
             </button>
             <button
@@ -90,7 +111,7 @@ export function Header() {
             </button>
           </div>
 
-          {/* Mobile Menu Toggle Button */}
+          {/* Mobile Toggle */}
           <div className="md:hidden flex items-center gap-3">
             <button
               onClick={toggleTheme}
@@ -110,18 +131,31 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile Drawer Navigation (Minimalistic, no middle links) */}
+      {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-background border-b border-border-subtle px-6 py-6 space-y-4 animate-in slide-in-from-top duration-200">
+          <nav className="flex flex-col gap-3">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-base font-semibold text-text-primary hover:text-accent transition-colors"
+              >
+                {link.name}
+              </a>
+            ))}
+          </nav>
+
           <div className="pt-2 flex flex-col gap-3">
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
                 openDaySchedule();
               }}
-              className="w-full btn-yellow py-3 text-center text-sm font-bold inline-flex items-center justify-center gap-2 cursor-pointer"
+              className="w-full btn-yellow py-3 text-center text-sm font-extrabold inline-flex items-center justify-center gap-2 cursor-pointer rounded-full"
             >
-              <span>Book a Strategy Call</span>
+              <span>Book a Growth Call</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>

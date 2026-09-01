@@ -12,7 +12,7 @@ export interface PortfolioItem {
     primaryLabel: string;
     secondaryValue?: string;
     secondaryLabel?: string;
-    bottomLabel?: string; // used for single-metric cards secondary label at the very bottom
+    bottomLabel?: string;
   };
   featured: boolean;
   shortDescription: string;
@@ -20,103 +20,67 @@ export interface PortfolioItem {
 
 export const portfolioData: PortfolioItem[] = [
   {
-    id: "sales-performance-analytics",
-    slug: "sales-performance-analytics",
-    title: "Sales Performance Analytics",
-    clientName: "E-Commerce Retailer",
-    category: "REVENUE ANALYTICS",
-    industry: "E-Commerce",
+    id: "brand-1",
+    slug: "brand-1",
+    title: "[Brand 1]",
+    clientName: "[Brand 1]",
+    category: "[CATEGORY]",
+    industry: "[Category]",
     thumbnail: "/assets/brand-analytics-sales.jpg",
     metrics: {
-      primaryValue: "₹14,208,972.14",
-      primaryLabel: "Gross Sales",
-      bottomLabel: "Revenue Analytics"
+      primaryValue: "8.6x ROAS",
+      primaryLabel: "At Scale",
+      bottomLabel: "[8.6x ROAS at scale]"
     },
     featured: true,
-    shortDescription: "A detailed view of sales performance, revenue trends, order activity, and overall commercial performance."
+    shortDescription: "[Brand 1] · [Category] · [8.6x ROAS at scale]"
   },
   {
-    id: "customer-visitor-analytics",
-    slug: "customer-visitor-analytics",
-    title: "Customer & Visitor Analytics",
-    clientName: "Direct-to-Consumer Brand",
-    category: "CUSTOMER ANALYTICS",
-    industry: "D2C Brand",
+    id: "brand-2",
+    slug: "brand-2",
+    title: "[Brand 2]",
+    clientName: "[Brand 2]",
+    category: "[CATEGORY]",
+    industry: "[Category]",
     thumbnail: "/assets/brand-analytics-visitors.jpg",
     metrics: {
-      primaryValue: "₹15,718,792.80",
-      primaryLabel: "Gross Sales",
-      bottomLabel: "Customer Analytics"
+      primaryValue: "29L to 1.2Cr",
+      primaryLabel: "Revenue Growth",
+      bottomLabel: "In 5 months"
     },
     featured: true,
-    shortDescription: "Performance insights covering visitor trends, customer behavior, sales activity, and overall store performance."
+    shortDescription: "[Brand 2] · [Category] · [Revenue 29L to 1.2Cr in 5 months]"
   },
   {
-    id: "campaign-performance-overview",
-    slug: "campaign-performance-overview",
-    title: "Campaign Performance Overview",
-    clientName: "Fashion & Lifestyle Brand",
-    category: "PERFORMANCE MARKETING",
-    industry: "Fashion Retailer",
+    id: "brand-3",
+    slug: "brand-3",
+    title: "[Brand 3]",
+    clientName: "[Brand 3]",
+    category: "[CATEGORY]",
+    industry: "[Category]",
     thumbnail: "/assets/brand-meta-performance-01.jpg",
     metrics: {
-      primaryValue: "6.94 ROAS",
-      primaryLabel: "Average Campaign ROAS",
-      secondaryValue: "₹7,812,933.35",
-      secondaryLabel: "Purchase Conversion Value"
+      primaryValue: "-38% CAC",
+      primaryLabel: "Acquisition Cost",
+      bottomLabel: "CAC down 38%"
     },
     featured: true,
-    shortDescription: "A performance marketing dashboard showing campaign spend, purchase value, ROAS, conversions, and acquisition efficiency."
+    shortDescription: "[Brand 3] · [Category] · [CAC down 38%]"
   },
   {
-    id: "paid-media-performance",
-    slug: "paid-media-performance",
-    title: "Paid Media Performance",
-    clientName: "Lifestyle Accessories Brand",
-    category: "PAID MEDIA",
-    industry: "Consumer Goods",
+    id: "brand-4",
+    slug: "brand-4",
+    title: "[Brand 4]",
+    clientName: "[Brand 4]",
+    category: "[CATEGORY]",
+    industry: "[Category]",
     thumbnail: "/assets/brand-meta-performance-02.jpg",
     metrics: {
-      primaryValue: "7.91 ROAS",
-      primaryLabel: "Average Campaign ROAS",
-      secondaryValue: "3,803,778.07",
-      secondaryLabel: "Purchase Conversion Value"
+      primaryValue: "[Metric]",
+      primaryLabel: "Performance Metric",
+      bottomLabel: "[Metric]"
     },
     featured: true,
-    shortDescription: "Campaign-level performance analysis focused on advertising spend, purchase value, ROAS, and cost efficiency."
-  },
-  {
-    id: "catalog-campaign-strategy",
-    slug: "catalog-campaign-strategy",
-    title: "Catalog Campaign Strategy",
-    clientName: "Apparel Brand",
-    category: "CATALOG CAMPAIGN",
-    industry: "Apparel & Fashion",
-    thumbnail: "/assets/kaftanize-campaign.jpg",
-    metrics: {
-      primaryValue: "8.09 ROAS",
-      primaryLabel: "Average Campaign ROAS",
-      secondaryValue: "₹11,851,822.97",
-      secondaryLabel: "Purchase Conversion Value"
-    },
-    featured: true,
-    shortDescription: "A visual showcase of catalog-driven campaign execution designed around product discovery, audience engagement, and purchase intent."
-  },
-  {
-    id: "performance-campaign-results",
-    slug: "performance-campaign-results",
-    title: "Performance Campaign Results",
-    clientName: "Activewear Brand",
-    category: "CAMPAIGN PERFORMANCE",
-    industry: "Athleisure",
-    thumbnail: "/assets/kaftanize-performance-01.jpg",
-    metrics: {
-      primaryValue: "8.14 ROAS",
-      primaryLabel: "Average Campaign ROAS",
-      secondaryValue: "₹507,909.66",
-      secondaryLabel: "Total Spent"
-    },
-    featured: true,
-    shortDescription: "A campaign performance view highlighting advertising investment, purchase outcomes, ROAS, and overall campaign efficiency."
+    shortDescription: "[Brand 4] · [Category] · [Metric]"
   }
 ];
