@@ -1,11 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 export function GrowthLoop() {
-  const [activeTab, setActiveTab] = useState(0);
-
   const openDaySchedule = () => {
     if (typeof window !== "undefined") {
       window.dispatchEvent(new CustomEvent("open-dayschedule"));
@@ -16,42 +13,48 @@ export function GrowthLoop() {
     {
       num: "01",
       title: "A funnel built around your brand, not a template",
-      description: "A 499 rupee face wash and an 18,000 rupee bridal set do not get bought the same way. One converts on the first click. The other takes nine touches and a WhatsApp conversation before anyone pays.",
+      description:
+        "A 499 rupee face wash and an 18,000 rupee bridal set do not get bought the same way. One converts on the first click. The other takes nine touches and a WhatsApp conversation before anyone pays.",
       points: [
         "Funnel mapped to your real consideration cycle",
         "Separate journeys for cold, warm and returning buyers",
         "Offers and landers matched to the stage, not to the brand average",
-        "Every stage judged on its own number, not on account ROAS"
-      ]
+        "Every stage judged on its own number, not on account ROAS",
+      ],
     },
     {
       num: "02",
       title: "Creative fatigue handled before it lands",
-      description: "Fatigue isn't a creative problem. It's a supply problem. Accounts fall over because the replacement wasn't ready, not because the ad suddenly stopped working.",
+      description:
+        "Fatigue isn&apos;t a creative problem. It&apos;s a supply problem. Accounts fall over because the replacement wasn&apos;t ready, not because the ad suddenly stopped working.",
       points: [
         "Creative ships weekly, on a schedule you can see",
         "Tested hook bank ready to deploy, always",
         "Winners refreshed as variants before they burn out",
-        "Fatigue caught by the numbers, not by a hunch"
-      ]
+        "Fatigue caught by the numbers, not by a hunch",
+      ],
     },
     {
       num: "03",
       title: "Fluctuation engineered out",
-      description: "Performance swings for boring, fixable reasons. One ad carrying 70% of revenue. Budgets doubled overnight and thrown straight back into learning. One audience quietly saturating. A structure that gets torn up every time somebody panics on a Monday.",
+      description:
+        "Performance swings for boring, fixable reasons. One ad carrying 70% of revenue. Budgets doubled overnight and thrown straight back into learning. One audience quietly saturating. A structure that gets torn up every time somebody panics on a Monday.",
       points: [
         "No single ad allowed to carry the account",
         "Budget changes in controlled steps",
         "Stable structure, so the signal stays clean",
-        "Weekly review that ends in a decision"
-      ]
-    }
+        "Weekly review that ends in a decision",
+      ],
+    },
   ];
 
   return (
-    <section className="py-24 bg-background border-b border-border-subtle relative overflow-hidden" id="about">
+    <section
+      className="py-24 bg-background border-b border-border-subtle relative overflow-hidden"
+      id="growth-loop"
+    >
+      <div id="about" className="absolute -top-24 left-0" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <span className="text-xs font-mono uppercase tracking-widest text-accent font-bold">
@@ -65,7 +68,7 @@ export function GrowthLoop() {
             .
           </h2>
           <p className="text-text-secondary text-base sm:text-lg leading-relaxed">
-            Most brands don't have a performance problem. They have a consistency problem. One month is 6x, the next is 2.1x, and nobody can explain what changed. That isn't bad luck. It's three missing parts.
+            Most brands don&apos;t have a performance problem. They have a consistency problem. One month is 6x, the next is 2.1x, and nobody can explain what changed. That isn&apos;t bad luck. It&apos;s three missing parts.
           </p>
         </div>
 
@@ -89,7 +92,10 @@ export function GrowthLoop() {
 
                 <div className="pt-4 border-t border border-border-subtle space-y-2">
                   {item.points.map((pt, pIdx) => (
-                    <div key={pIdx} className="flex items-start gap-2.5 text-xs text-text-secondary">
+                    <div
+                      key={pIdx}
+                      className="flex items-start gap-2.5 text-xs text-text-secondary"
+                    >
                       <CheckCircle2 className="w-4 h-4 text-accent shrink-0 mt-0.5" />
                       <span>{pt}</span>
                     </div>
@@ -103,7 +109,7 @@ export function GrowthLoop() {
         {/* Closing & CTA */}
         <div className="text-center space-y-6 max-w-xl mx-auto border-t border-border-subtle pt-12">
           <p className="text-lg font-bold text-text-primary font-mono">
-            The goal isn't a screenshot month. It's a graph you can plan a business on.
+            The goal isn&apos;t a screenshot month. It&apos;s a graph you can plan a business on.
           </p>
           <div>
             <button
@@ -115,8 +121,8 @@ export function GrowthLoop() {
             </button>
           </div>
         </div>
-
       </div>
     </section>
   );
 }
+

@@ -51,7 +51,7 @@ export function Header() {
   const navLinks = [
     { name: "Services", href: "#services" },
     { name: "Work", href: "#work" },
-    { name: "Process", href: "#about" },
+    { name: "Process", href: "#growth-loop" },
     { name: "Results", href: "#results" },
     { name: "FAQ", href: "#faq" }
   ];
