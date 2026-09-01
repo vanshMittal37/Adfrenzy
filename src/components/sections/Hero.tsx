@@ -121,8 +121,8 @@ export function Hero() {
           </div>
           
           {/* Right Column: Growth Engine Diagram */}
-          <div className="hidden lg:flex lg:col-span-6 justify-center items-center order-2 lg:order-2">
-            <div className="relative w-80 h-80 sm:w-96 sm:h-96 md:w-[480px] md:h-[480px] lg:w-[520px] lg:h-[520px] xl:w-[550px] xl:h-[550px] flex items-center justify-center">
+          <div className="flex lg:col-span-6 justify-center items-center order-2 my-8 lg:my-0">
+            <div className="relative w-[300px] h-[300px] sm:w-[420px] sm:h-[420px] md:w-[480px] md:h-[480px] lg:w-[520px] lg:h-[520px] xl:w-[550px] xl:h-[550px] flex items-center justify-center">
               
               <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" style={{ overflow: 'visible' }} viewBox="0 0 400 400">
                 <defs>
@@ -162,14 +162,14 @@ export function Hero() {
               </svg>
 
               {/* Center Core Title Panel */}
-              <div className="absolute w-32 h-32 sm:w-36 sm:h-36 rounded-full bg-surface border border-accent/30 flex flex-col items-center justify-center p-3 text-center shadow-xl z-10">
-                <span className="text-text-secondary font-mono text-[9px] sm:text-[10px] tracking-wider uppercase">
+              <div className="absolute w-28 h-28 sm:w-36 sm:h-36 rounded-full bg-surface border border-accent/30 flex flex-col items-center justify-center p-2 sm:p-3 text-center shadow-xl z-10">
+                <span className="text-text-secondary font-mono text-[8px] sm:text-[10px] tracking-wider uppercase">
                   ADFRENZY MEDIA
                 </span>
-                <span className="text-accent font-extrabold text-[11px] sm:text-[12px] md:text-[13px] tracking-wider uppercase block mt-1">
+                <span className="text-accent font-extrabold text-[10px] sm:text-[12px] md:text-[13px] tracking-wider uppercase block mt-0.5 sm:mt-1">
                   FULL-FUNNEL
                 </span>
-                <span className="text-text-primary font-bold text-[10px] sm:text-[11px] tracking-wider uppercase block">
+                <span className="text-text-primary font-bold text-[9px] sm:text-[11px] tracking-wider uppercase block">
                   GROWTH LOOP
                 </span>
               </div>
@@ -190,16 +190,16 @@ export function Hero() {
                       top: `calc(50% + ${y_pct}%)`,
                       transform: 'translate(-50%, -50%)',
                     }}
-                    className={`absolute z-20 flex flex-col text-left p-3 rounded-xl border transition-all duration-300 w-28 sm:w-32 md:w-36 shadow-lg bg-[var(--card-bg)] border-[var(--card-border)] shadow-[var(--card-shadow)] group ${
+                    className={`absolute z-20 flex flex-col text-left p-2 sm:p-3 rounded-xl border transition-all duration-300 w-24 sm:w-32 md:w-36 shadow-lg bg-[var(--card-bg)] border-[var(--card-border)] shadow-[var(--card-shadow)] group ${
                       isActive 
                         ? "border-accent scale-105 shadow-accent/15" 
                         : "hover:border-accent/60"
                     }`}
                   >
-                    <span className={`text-[9px] font-mono font-bold tracking-wider ${isActive ? "text-accent" : "text-text-secondary"}`}>
+                    <span className={`text-[8px] sm:text-[9px] font-mono font-bold tracking-wider ${isActive ? "text-accent" : "text-text-secondary"}`}>
                       {stage.num} {stage.title}
                     </span>
-                    <span className="text-[8px] sm:text-[9px] text-text-secondary mt-0.5 leading-tight font-medium">
+                    <span className="text-[7px] sm:text-[9px] text-text-secondary mt-0.5 leading-tight font-medium">
                       {stage.desc}
                     </span>
                   </div>
