@@ -18,9 +18,9 @@ export default function HomePage() {
       <Hero />
       <TrustBar />
       <ClientLogoWall />
+      <GrowthLoop />
       <ProblemSection />
       <TwoGrowthProblems />
-      <GrowthLoop />
       <ServicesGrid />
       <ResultsSection />
       <PortfolioSection />
