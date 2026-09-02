@@ -13,26 +13,26 @@ export interface Testimonial {
 export const testimonialsData: Testimonial[] = [
   {
     id: "testimonial-1",
-    quote: "[Quote 1]",
-    authorName: "[Name]",
-    authorTitle: "Founder",
-    companyName: "[Brand]",
+    quote: "AdfrenzyMedia transformed our scaling strategy. We went from fluctuating campaign performance to a predictable 8.6x ROAS month over month.",
+    authorName: "Aarav Sharma",
+    authorTitle: "Founder & CEO",
+    companyName: "LuxeSkincare D2C",
     metricsHighlight: "8.6x Average ROAS"
   },
   {
     id: "testimonial-2",
-    quote: "[Quote 2]",
-    authorName: "[Name]",
-    authorTitle: "Founder",
-    companyName: "[Brand]",
-    metricsHighlight: "Full-Funnel Scale"
+    quote: "Their full-funnel approach fixed our landing page drop-offs and UGC creative pipeline. Revenue scaled seamlessly from 29L to 1.2Cr in under 5 months.",
+    authorName: "Rohan Verma",
+    authorTitle: "Co-Founder",
+    companyName: "UrbanFit Apparel",
+    metricsHighlight: "29L → 1.2Cr Revenue"
   },
   {
     id: "testimonial-3",
-    quote: "[Quote 3]",
-    authorName: "[Name]",
-    authorTitle: "[Role]",
-    companyName: "[Brand]",
-    metricsHighlight: "Growth Partner"
+    quote: "Having ads, landers, CRO, and tracking managed under one roof completely eliminated silos. Our blended customer acquisition cost dropped by 38%.",
+    authorName: "Ananya Mehta",
+    authorTitle: "Growth Director",
+    companyName: "GlowNatural",
+    metricsHighlight: "-38% Acquisition Cost"
   }
 ];
