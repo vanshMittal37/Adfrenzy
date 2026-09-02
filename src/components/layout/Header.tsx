@@ -97,14 +97,14 @@ export function Header() {
           <div className="hidden md:flex items-center gap-4">
             <button
               onClick={openDaySchedule}
-              className="btn-yellow px-5 py-2.5 text-sm font-extrabold inline-flex items-center gap-2 cursor-pointer rounded-full"
+              className="bg-[#3b82f6] hover:bg-[#2563eb] text-white px-5 py-2.5 text-sm font-bold inline-flex items-center gap-2 cursor-pointer rounded-full shadow-[0_0_20px_rgba(59,130,246,0.4)] transition-all duration-300 hover:scale-[1.02]"
             >
               <span>Book a Growth Call</span>
               <ArrowRight className="w-4 h-4" />
             </button>
             <button
               onClick={toggleTheme}
-              className="p-2.5 text-text-secondary hover:text-text-primary transition-colors bg-white/5 hover:bg-white/10 rounded-lg border border-border-subtle cursor-pointer"
+              className="p-2.5 text-text-secondary hover:text-text-primary transition-colors bg-white/5 hover:bg-white/10 rounded-full border border-border-subtle cursor-pointer"
               aria-label="Toggle theme"
             >
               {theme === "dark" ? <Sun className="w-4 h-4 text-accent" /> : <Moon className="w-4 h-4 text-text-primary" />}
@@ -115,7 +115,7 @@ export function Header() {
           <div className="md:hidden flex items-center gap-3">
             <button
               onClick={toggleTheme}
-              className="p-2 text-text-secondary hover:text-text-primary transition-colors bg-white/5 rounded-lg border border-border-subtle cursor-pointer"
+              className="p-2 text-text-secondary hover:text-text-primary transition-colors bg-white/5 rounded-full border border-border-subtle cursor-pointer"
               aria-label="Toggle theme"
             >
               {theme === "dark" ? <Sun className="w-4.5 h-4.5 text-accent" /> : <Moon className="w-4.5 h-4.5 text-text-primary" />}
@@ -153,7 +153,7 @@ export function Header() {
                 setMobileMenuOpen(false);
                 openDaySchedule();
               }}
-              className="w-full btn-yellow py-3 text-center text-sm font-extrabold inline-flex items-center justify-center gap-2 cursor-pointer rounded-full"
+              className="w-full bg-[#3b82f6] hover:bg-[#2563eb] text-white py-3 text-center text-sm font-bold inline-flex items-center justify-center gap-2 cursor-pointer rounded-full shadow-[0_0_20px_rgba(59,130,246,0.4)]"
             >
               <span>Book a Growth Call</span>
               <ArrowRight className="w-4 h-4" />
