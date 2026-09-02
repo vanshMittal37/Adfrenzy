@@ -19,29 +19,29 @@
   }
 
   :root {
-    /* Dark Theme Tokens (Premium Yellow × Black) */
+    /* Dark Theme Tokens (Electric Blue × Black) */
     --background: #050505;
-    --surface: #141416;
-    --surface-secondary: #1C1C1E;
+    --surface: #0E1117;
+    --surface-secondary: #161B22;
     --text-primary: #FFFFFF;
-    --text-secondary: #A1A1A1;
-    --border: rgba(255, 255, 255, 0.25);
-    --accent: #FFC800;
-    --accent-hover: #FFB800;
-    --accent-soft: rgba(255, 200, 0, 0.12);
-    --accent-dark: #E5A900;
+    --text-secondary: #94A3B8;
+    --border: rgba(59, 130, 246, 0.25);
+    --accent: #3B82F6;
+    --accent-hover: #2563EB;
+    --accent-soft: rgba(59, 130, 246, 0.15);
+    --accent-dark: #1D4ED8;
 
     /* Card Specific design variables */
-    --card-bg: #141416;
-    --card-border: rgba(255, 200, 0, 0.20);
-    --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
-    --card-icon-bg: rgba(255, 200, 0, 0.10);
-    --card-icon-color: #FFC800;
+    --card-bg: #0E1117;
+    --card-border: rgba(59, 130, 246, 0.30);
+    --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    --card-icon-bg: rgba(59, 130, 246, 0.15);
+    --card-icon-color: #3B82F6;
 
     /* Button Specific design variables */
-    --btn-border: #E5A900;
-    --btn-shadow-color: rgba(255, 200, 0, 0.2);
-    --btn-text-primary: #050505;
+    --btn-border: #2563EB;
+    --btn-shadow-color: rgba(59, 130, 246, 0.35);
+    --btn-text-primary: #FFFFFF;
 
     /* Compatibility Mappings */
     --bg-main: var(--background);
@@ -55,29 +55,29 @@
   }
 
   html.light {
-    /* Light Theme Tokens (Tomato Red × Off-White) */
-    --background: #FAF8F4;
+    /* Light Theme Tokens (Electric Blue × Soft Light Canvas) */
+    --background: #F8FAFC;
     --surface: #FFFFFF;
-    --surface-secondary: #F4F0EA;
-    --text-primary: #171717;
-    --text-secondary: #57534E;
-    --border: #B8B0A8;
+    --surface-secondary: #F1F5F9;
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --border: #CBD5E1;
 
-    --accent: #E03E2D; /* Tomato color */
-    --accent-hover: #C62F20;
-    --accent-soft: #FCEEEA;
-    --accent-dark: #B22415;
+    --accent: #2563EB;
+    --accent-hover: #1D4ED8;
+    --accent-soft: #EFF6FF;
+    --accent-dark: #1E40AF;
 
     /* Card Specific design variables */
     --card-bg: #FFFFFF;
-    --card-border: #D8D0C8;
-    --card-shadow: 0 10px 30px rgba(60, 40, 30, 0.08);
-    --card-icon-bg: #FCEDEA;
-    --card-icon-color: #E03E2D;
+    --card-border: #93C5FD;
+    --card-shadow: 0 10px 30px rgba(37, 99, 235, 0.08);
+    --card-icon-bg: #EFF6FF;
+    --card-icon-color: #2563EB;
 
     /* Button Specific design variables */
-    --btn-border: #B22415;
-    --btn-shadow-color: rgba(224, 62, 45, 0.25);
+    --btn-border: #1D4ED8;
+    --btn-shadow-color: rgba(37, 99, 235, 0.25);
     --btn-text-primary: #FFFFFF;
 
     /* Compatibility Mappings */
@@ -88,7 +88,7 @@
     --accent-yellow: var(--accent);
     --accent-red: var(--accent);
     --border-subtle: var(--border);
-    --btn-shadow: #171717;
+    --btn-shadow: #0F172A;
   }
 
   body {
@@ -329,11 +329,11 @@ html.light input::placeholder, html.light textarea::placeholder {
 }
 
 .bg-\[\#FFE500\]\/10 {
-  background-color: rgba(255, 200, 0, 0.1) !important;
+  background-color: rgba(59, 130, 246, 0.1) !important;
 }
 
 .bg-\[\#FFE500\]\/5 {
-  background-color: rgba(255, 200, 0, 0.05) !important;
+  background-color: rgba(59, 130, 246, 0.05) !important;
 }
 
 html.light .bg-\[\#FFE500\]\/10 {
@@ -342,7 +342,7 @@ html.light .bg-\[\#FFE500\]\/10 {
 }
 
 html.light .bg-\[\#FFE500\]\/5 {
-  background-color: rgba(224, 62, 45, 0.05) !important;
+  background-color: rgba(37, 99, 235, 0.05) !important;
 }
 
 html.light .bg-\[\#FFE500\],

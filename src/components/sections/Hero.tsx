@@ -1,11 +1,21 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { ArrowRight, Sparkles } from "lucide-react";
+import {
+  ArrowRight,
+  Sparkles,
+  Search,
+  Target,
+  Megaphone,
+  Rocket,
+  BarChart3,
+  TrendingUp,
+} from "lucide-react";
 
 export function Hero() {
-  const [activeNode, setActiveNode] = useState(0);
+  const [activeStageIndex, setActiveStageIndex] = useState(0);
+  const [hoveredStageIndex, setHoveredStageIndex] = useState<number | null>(null);
 
   const openDaySchedule = () => {
     if (typeof window !== "undefined") {
@@ -14,14 +24,62 @@ export function Hero() {
   };
 
   const stages = [
-    { num: "01", title: "DEEP DIVE", desc: "Audit leaks before spend", angle: -90 },
-    { num: "02", title: "STRATEGY", desc: "Written growth thesis", angle: -30 },
-    { num: "03", title: "CREATIVE", desc: "Hooks & UGC from data", angle: 30 },
-    { num: "04", title: "LAUNCH", desc: "Clean live tracking", angle: 90 },
-    { num: "05", title: "SIGNAL", desc: "Weekly decisions", angle: 150 },
-    { num: "06", title: "SCALE", desc: "Push winning economics", angle: 210 },
+    {
+      num: "01",
+      title: "DEEP DIVE",
+      desc: "Audit leaks before spend",
+      icon: Search,
+      angle: -90,
+    },
+    {
+      num: "02",
+      title: "STRATEGY",
+      desc: "Written growth thesis",
+      icon: Target,
+      angle: -30,
+    },
+    {
+      num: "03",
+      title: "CREATIVE",
+      desc: "Hooks & UGC from data",
+      icon: Megaphone,
+      angle: 30,
+    },
+    {
+      num: "04",
+      title: "LAUNCH",
+      desc: "Clean live tracking",
+      icon: Rocket,
+      angle: 90,
+    },
+    {
+      num: "05",
+      title: "SIGNAL",
+      desc: "Weekly decisions",
+      icon: BarChart3,
+      angle: 150,
+    },
+    {
+      num: "06",
+      title: "SCALE",
+      desc: "Push winning economics",
+      icon: TrendingUp,
+      angle: 210,
+    },
   ];
 
+  // Stage-by-stage active state sequence switcher (2.5s per stage)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveStageIndex((prev) => (prev + 1) % stages.length);
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, [stages.length]);
+
+  const currentActiveIndex = hoveredStageIndex !== null ? hoveredStageIndex : activeStageIndex;
+
+  // Arc path generator for connecting segments between cards
   const getArcPath = (startAngle: number, endAngle: number, radius: number) => {
     const startRad = (startAngle * Math.PI) / 180;
     const endRad = (endAngle * Math.PI) / 180;
@@ -35,17 +93,26 @@ export function Hero() {
   return (
     <section className="relative min-h-[95vh] pt-32 pb-24 md:pt-36 md:pb-28 overflow-hidden bg-background border-b border-border-subtle flex items-center">
       
-      {/* Soft radial glow */}
-      <div className="absolute right-[-10%] top-[-10%] w-[80%] h-[80%] rounded-full bg-[radial-gradient(circle_at_center,var(--accent-soft)_0%,transparent_70%)] opacity-60 dark:opacity-40 blur-[90px] pointer-events-none z-0" />
-      <div className="absolute left-[-20%] bottom-[-20%] w-[60%] h-[60%] rounded-full bg-[radial-gradient(circle_at_center,var(--accent-soft)_0%,transparent_70%)] opacity-30 dark:opacity-20 blur-[100px] pointer-events-none z-0" />
+      {/* Background Ambient Animation (Soft radial glow, subtle waves, dot grid) */}
+      <div className="absolute right-[-10%] top-[-10%] w-[85%] h-[85%] rounded-full bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.15)_0%,transparent_70%)] opacity-70 blur-[100px] pointer-events-none z-0 animate-pulse" style={{ animationDuration: '8s' }} />
+      <div className="absolute left-[-20%] bottom-[-20%] w-[60%] h-[60%] rounded-full bg-[radial-gradient(circle_at_center,rgba(37,99,235,0.12)_0%,transparent_70%)] opacity-40 blur-[110px] pointer-events-none z-0" />
 
-      {/* Flowing abstract curves */}
+      {/* Subtle Dot Matrix Pattern */}
+      <div 
+        className="absolute inset-0 pointer-events-none opacity-[0.12] dark:opacity-[0.15] z-0" 
+        style={{
+          backgroundImage: `radial-gradient(circle, rgba(59, 130, 246, 0.5) 1px, transparent 1px)`,
+          backgroundSize: '24px 24px'
+        }}
+      />
+
+      {/* Flowing abstract background curves */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 opacity-40 dark:opacity-30">
         <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="hero-curve" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="var(--accent)" stopOpacity="0" />
-              <stop offset="40%" stopColor="var(--accent)" stopOpacity="0.45" />
+              <stop offset="40%" stopColor="var(--accent)" stopOpacity="0.4" />
               <stop offset="70%" stopColor="var(--accent-dark)" stopOpacity="0.15" />
               <stop offset="100%" stopColor="var(--accent-hover)" stopOpacity="0" />
             </linearGradient>
@@ -59,10 +126,10 @@ export function Hero() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
-          {/* Left Column: Headline and Actions */}
-          <div className="lg:col-span-6 space-y-8 order-1">
+          {/* Left Column: Headline and Actions with smooth entrance animation */}
+          <div className="lg:col-span-6 space-y-8 order-1 animate-in fade-in slide-in-from-bottom-4 duration-700">
             {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-accent-soft border border-accent/25 text-[10px] sm:text-[11px] font-mono tracking-widest text-accent uppercase font-bold">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-accent-soft border border-accent/30 text-[10px] sm:text-[11px] font-mono tracking-widest text-accent uppercase font-bold shadow-sm">
               <Sparkles className="w-3.5 h-3.5" />
               <span>PERFORMANCE · CREATIVE · CRO · SEO</span>
             </div>
@@ -120,12 +187,14 @@ export function Hero() {
 
           </div>
           
-          {/* Right Column: Growth Engine Diagram */}
+          {/* Right Column: Full-Funnel Growth Loop Animated Visualization */}
           <div className="flex lg:col-span-6 justify-center items-center order-2 my-8 lg:my-0">
-            <div className="relative w-[300px] h-[300px] sm:w-[420px] sm:h-[420px] md:w-[480px] md:h-[480px] lg:w-[520px] lg:h-[520px] xl:w-[550px] xl:h-[550px] flex items-center justify-center">
+            <div className="relative w-[320px] h-[320px] sm:w-[440px] sm:h-[440px] md:w-[500px] md:h-[500px] lg:w-[540px] lg:h-[540px] xl:w-[570px] xl:h-[570px] flex items-center justify-center">
               
+              {/* SVG Animated Flow System */}
               <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" style={{ overflow: 'visible' }} viewBox="0 0 400 400">
                 <defs>
+                  {/* Arrowhead marker */}
                   <marker
                     id="hero-arrow"
                     viewBox="0 0 10 10"
@@ -137,36 +206,106 @@ export function Hero() {
                   >
                     <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--accent)" />
                   </marker>
+
+                  {/* Gradient for active flow path */}
+                  <linearGradient id="activeArcGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="var(--accent)" stopOpacity="0.4" />
+                    <stop offset="50%" stopColor="var(--accent)" stopOpacity="1" />
+                    <stop offset="100%" stopColor="#60A5FA" stopOpacity="0.9" />
+                  </linearGradient>
+
+                  {/* Radial glow for central core */}
+                  <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stopColor="var(--accent)" stopOpacity="0.25" />
+                    <stop offset="100%" stopColor="var(--accent)" stopOpacity="0" />
+                  </radialGradient>
                 </defs>
 
-                <circle cx="200" cy="200" r="144" fill="none" stroke="var(--border)" strokeWidth="1.5" />
-                <circle cx="200" cy="200" r="115" fill="none" stroke="var(--border)" strokeWidth="1" strokeDasharray="3 6" className="animate-spin" style={{ animationDuration: '40s', animationTimingFunction: 'linear' }} />
+                {/* Subtle outer static guide circle */}
+                <circle cx="200" cy="200" r="144" fill="none" stroke="var(--border)" strokeWidth="1.5" className="opacity-40" />
 
+                {/* Rotating Inner Dash Ring (Central Hub Support) */}
+                <circle
+                  cx="200"
+                  cy="200"
+                  r="95"
+                  fill="none"
+                  stroke="var(--accent)"
+                  strokeWidth="1"
+                  strokeDasharray="4 8"
+                  className="opacity-30 motion-safe:animate-spin"
+                  style={{ animationDuration: '30s', animationTimingFunction: 'linear' }}
+                />
+
+                {/* Rotating Outer Dot Ring */}
+                <circle
+                  cx="200"
+                  cy="200"
+                  r="118"
+                  fill="none"
+                  stroke="var(--accent)"
+                  strokeWidth="1.5"
+                  strokeDasharray="2 10"
+                  className="opacity-40 motion-safe:animate-spin"
+                  style={{ animationDuration: '45s', animationTimingFunction: 'linear', animationDirection: 'reverse' }}
+                />
+
+                {/* Central Soft Pulse Backplate */}
+                <circle cx="200" cy="200" r="75" fill="url(#centerGlow)" className="motion-safe:animate-pulse" style={{ animationDuration: '3.5s' }} />
+
+                {/* 6 Arc Connectors & Directional Arrows */}
                 {stages.map((_, idx) => {
                   const startAngle = idx * 60 - 90 + 17;
                   const endAngle = (idx + 1) * 60 - 90 - 17;
                   const arcPath = getArcPath(startAngle, endAngle, 144);
+                  const isStageActive = currentActiveIndex === idx;
+
                   return (
-                    <path
-                      key={idx}
-                      d={arcPath}
-                      fill="none"
-                      stroke="var(--accent)"
-                      strokeWidth="2.5"
-                      strokeDasharray="6 6"
-                      markerEnd="url(#hero-arrow)"
-                      className="opacity-80"
-                    />
+                    <g key={idx}>
+                      {/* Base Path Arc */}
+                      <path
+                        d={arcPath}
+                        fill="none"
+                        stroke={isStageActive ? "url(#activeArcGrad)" : "var(--accent)"}
+                        strokeWidth={isStageActive ? "3.5" : "2"}
+                        strokeDasharray={isStageActive ? "none" : "6 6"}
+                        markerEnd="url(#hero-arrow)"
+                        className={`transition-all duration-500 ${isStageActive ? "opacity-100 drop-shadow-[0_0_10px_rgba(59,130,246,0.8)]" : "opacity-40"}`}
+                      />
+
+                      {/* Animated Flowing Line (Stroke Dash Offset) */}
+                      <path
+                        d={arcPath}
+                        fill="none"
+                        stroke={isStageActive ? "#93C5FD" : "var(--accent)"}
+                        strokeWidth={isStageActive ? "3" : "1.5"}
+                        strokeDasharray="4 8"
+                        style={{
+                          animation: 'dash 3s linear infinite',
+                        }}
+                        className="opacity-70"
+                      />
+                    </g>
                   );
                 })}
+
+                {/* Orbiting Flow Particle along the entire loop */}
+                <g className="motion-safe:animate-spin" style={{ transformOrigin: '200px 200px', animationDuration: '12s', animationTimingFunction: 'linear' }}>
+                  <circle cx="200" cy="56" r="4" fill="#60A5FA" className="drop-shadow-[0_0_8px_#3B82F6]" />
+                  <circle cx="324.7" cy="272" r="3" fill="#93C5FD" className="opacity-80" />
+                  <circle cx="75.3" cy="272" r="3" fill="#93C5FD" className="opacity-80" />
+                </g>
               </svg>
 
-              {/* Center Core Title Panel */}
-              <div className="absolute w-28 h-28 sm:w-36 sm:h-36 rounded-full bg-surface border border-accent/30 flex flex-col items-center justify-center p-2 sm:p-3 text-center shadow-xl z-10">
-                <span className="text-text-secondary font-mono text-[8px] sm:text-[10px] tracking-wider uppercase">
+              {/* Central Core Engine Panel */}
+              <div className="absolute w-28 h-28 sm:w-36 sm:h-36 rounded-full bg-surface/90 backdrop-blur-md border-2 border-accent/40 flex flex-col items-center justify-center p-2 sm:p-3 text-center shadow-[0_0_35px_rgba(59,130,246,0.25)] z-10 transition-transform duration-500 hover:scale-105">
+                {/* Central Soft Breathing Ring */}
+                <div className="absolute inset-0 rounded-full border border-accent/30 motion-safe:animate-ping opacity-25 pointer-events-none" style={{ animationDuration: '4s' }} />
+
+                <span className="text-text-secondary font-mono text-[8px] sm:text-[9.5px] tracking-wider uppercase font-semibold">
                   ADFRENZY MEDIA
                 </span>
-                <span className="text-accent font-extrabold text-[10px] sm:text-[12px] md:text-[13px] tracking-wider uppercase block mt-0.5 sm:mt-1">
+                <span className="text-accent font-extrabold text-[11px] sm:text-[13px] md:text-[14px] tracking-wider uppercase block mt-0.5 sm:mt-1 drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]">
                   FULL-FUNNEL
                 </span>
                 <span className="text-text-primary font-bold text-[9px] sm:text-[11px] tracking-wider uppercase block">
@@ -174,34 +313,49 @@ export function Hero() {
                 </span>
               </div>
 
-              {/* Orbiting HTML Node Cards */}
+              {/* 6 Stage Cards (HEX/Ring Positioned) */}
               {stages.map((stage, idx) => {
                 const rad = (stage.angle * Math.PI) / 180;
                 const R_pct = 36;
                 const x_pct = (R_pct * Math.cos(rad)).toFixed(3);
                 const y_pct = (R_pct * Math.sin(rad)).toFixed(3);
-                const isActive = activeNode === idx;
+                const isActive = currentActiveIndex === idx;
+                const IconComponent = stage.icon;
 
                 return (
                   <div
                     key={idx}
+                    onMouseEnter={() => setHoveredStageIndex(idx)}
+                    onMouseLeave={() => setHoveredStageIndex(null)}
                     style={{
                       left: `calc(50% + ${x_pct}%)`,
                       top: `calc(50% + ${y_pct}%)`,
                       transform: 'translate(-50%, -50%)',
                     }}
-                    className={`absolute z-20 flex flex-col text-left p-2 sm:p-3 rounded-xl border transition-all duration-300 w-24 sm:w-32 md:w-36 shadow-lg bg-[var(--card-bg)] border-[var(--card-border)] shadow-[var(--card-shadow)] group ${
+                    className={`absolute z-20 flex items-center gap-2.5 p-2 sm:p-3 rounded-xl border transition-all duration-500 w-28 sm:w-36 md:w-40 shadow-xl bg-surface/90 backdrop-blur-md cursor-pointer group select-none ${
                       isActive 
-                        ? "border-accent scale-105 shadow-accent/15" 
-                        : "hover:border-accent/60"
+                        ? "border-accent ring-2 ring-accent/40 scale-[1.04] shadow-[0_0_25px_rgba(59,130,246,0.35)]" 
+                        : "border-border-subtle hover:border-accent/60 opacity-90 hover:opacity-100 hover:scale-[1.02]"
                     }`}
                   >
-                    <span className={`text-[8px] sm:text-[9px] font-mono font-bold tracking-wider ${isActive ? "text-accent" : "text-text-secondary"}`}>
-                      {stage.num} {stage.title}
-                    </span>
-                    <span className="text-[7px] sm:text-[9px] text-text-secondary mt-0.5 leading-tight font-medium">
-                      {stage.desc}
-                    </span>
+                    {/* Icon with subtle pulse ring on active */}
+                    <div className={`relative shrink-0 p-1.5 sm:p-2 rounded-lg transition-colors ${
+                      isActive ? "bg-accent text-white shadow-md shadow-accent/30" : "bg-accent/10 text-accent group-hover:bg-accent/20"
+                    }`}>
+                      <IconComponent className="w-3.5 h-3.5 sm:w-4.5 sm:h-4.5" />
+                      {isActive && (
+                        <span className="absolute inset-0 rounded-lg border border-accent motion-safe:animate-ping opacity-50" />
+                      )}
+                    </div>
+
+                    <div className="flex flex-col text-left min-w-0">
+                      <span className={`text-[8.5px] sm:text-[10px] font-mono font-extrabold tracking-wider truncate ${isActive ? "text-accent" : "text-text-primary"}`}>
+                        {stage.num} {stage.title}
+                      </span>
+                      <span className="text-[7.5px] sm:text-[9px] text-text-secondary leading-tight font-medium line-clamp-1 mt-0.5">
+                        {stage.desc}
+                      </span>
+                    </div>
                   </div>
                 );
               })}

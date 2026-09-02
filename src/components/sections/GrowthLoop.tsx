@@ -14,11 +14,14 @@ import {
   BarChart2,
   RefreshCw,
   TrendingUp,
+  Zap,
 } from "lucide-react";
 
 export function GrowthLoop() {
   const [activeStep, setActiveStep] = useState(0);
+  const [hoveredStep, setHoveredStep] = useState<number | null>(null);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [mouseOffset, setMouseOffset] = useState({ x: 0, y: 0 });
 
   const openDaySchedule = () => {
     if (typeof window !== "undefined") {
@@ -49,7 +52,7 @@ export function GrowthLoop() {
       icon: Sparkles,
       tagline: "High-velocity direct response creative & UGC pipeline",
       description:
-        "Fatigue isn&apos;t a creative problem; it&apos;s a supply problem. We build a high-velocity production engine shipping tested video hooks, UGC, and static visuals on a weekly schedule before fatigue hits.",
+        "Fatigue isn't a creative problem; it's a supply problem. We build a high-velocity production engine shipping tested video hooks, UGC, and static visuals on a weekly schedule before fatigue hits.",
       highlights: [
         "User Generated Content (UGC) production engine",
         "Weekly hook testing & deployment schedule",
@@ -125,16 +128,30 @@ export function GrowthLoop() {
     },
   ];
 
-  // Auto-advance timer
+  // Auto-advance timer (3.0 seconds per stage)
   useEffect(() => {
-    if (!isPlaying) return;
+    if (!isPlaying || hoveredStep !== null) return;
     const interval = setInterval(() => {
       setActiveStep((prev) => (prev + 1) % steps.length);
-    }, 3800);
+    }, 3000);
     return () => clearInterval(interval);
-  }, [isPlaying, steps.length]);
+  }, [isPlaying, hoveredStep, steps.length]);
 
-  const current = steps[activeStep];
+  // Subtle Mouse Parallax shift calculation (max 4px offset)
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = (e.clientX - rect.left - rect.width / 2) / (rect.width / 2);
+    const y = (e.clientY - rect.top - rect.height / 2) / (rect.height / 2);
+    setMouseOffset({ x: x * 4, y: y * 4 });
+  };
+
+  const handleMouseLeave = () => {
+    setMouseOffset({ x: 0, y: 0 });
+    setHoveredStep(null);
+  };
+
+  const currentDisplayIndex = hoveredStep !== null ? hoveredStep : activeStep;
+  const current = steps[currentDisplayIndex];
 
   // Helper for arc paths in SVG
   const getArcPath = (startAngle: number, endAngle: number, radius: number) => {
@@ -149,13 +166,14 @@ export function GrowthLoop() {
 
   return (
     <section
-      className="py-24 bg-background border-b border-border-subtle relative overflow-hidden"
+      className="py-24 bg-background border-b border-border-subtle relative overflow-hidden select-none"
       id="growth-loop"
     >
       <div id="about" className="absolute -top-24 left-0" />
 
-      {/* Subtle Glow Backdrop */}
-      <div className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+      {/* Background Motion & Ambient Radial Glow */}
+      <div className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-accent/10 rounded-full blur-[120px] pointer-events-none animate-pulse" style={{ animationDuration: '6s' }} />
+      <div className="absolute right-[-10%] bottom-[-10%] w-[500px] h-[500px] bg-accent/5 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -176,228 +194,276 @@ export function GrowthLoop() {
           </p>
         </div>
 
-        {/* Circular Growth Engine Visualization */}
-        <div className="flex justify-center mb-16 relative">
-          <div className="relative w-[340px] h-[340px] sm:w-[460px] sm:h-[460px] md:w-[500px] md:h-[500px] flex items-center justify-center">
-            
-            {/* SVG Connecting Ring & Clockwise Arrows */}
-            <svg
-              className="absolute inset-0 w-full h-full pointer-events-none z-0"
-              style={{ overflow: "visible" }}
-              viewBox="0 0 400 400"
+        {/* Growth Loop Split Layout (Left: Animated Visualization | Right: Interactive Information Card) */}
+        <div 
+          className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-12"
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+        >
+          
+          {/* Left Column: Hexagonal / Circular Animated Engine (lg:col-span-7) */}
+          <div className="lg:col-span-7 flex justify-center items-center relative min-h-[380px] sm:min-h-[480px]">
+            <div 
+              className="relative w-[340px] h-[340px] sm:w-[460px] sm:h-[460px] md:w-[500px] md:h-[500px] flex items-center justify-center transition-transform duration-700 ease-out"
+              style={{
+                transform: `translate3d(${mouseOffset.x}px, ${mouseOffset.y}px, 0)`
+              }}
             >
-              <defs>
-                <marker
-                  id="loop-arrow"
-                  viewBox="0 0 10 10"
-                  refX="6"
-                  refY="5"
-                  markerWidth="5"
-                  markerHeight="5"
-                  orient="auto-start-reverse"
-                >
-                  <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--accent)" />
-                </marker>
-              </defs>
+              
+              {/* SVG Flow System, Orbiting Particles & Animated Arcs */}
+              <svg
+                className="absolute inset-0 w-full h-full pointer-events-none z-0"
+                style={{ overflow: "visible" }}
+                viewBox="0 0 400 400"
+              >
+                <defs>
+                  <marker
+                    id="loop-arrow-accent"
+                    viewBox="0 0 10 10"
+                    refX="6"
+                    refY="5"
+                    markerWidth="6"
+                    markerHeight="6"
+                    orient="auto-start-reverse"
+                  >
+                    <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--accent)" />
+                  </marker>
 
-              {/* Dotted outer ring */}
-              <circle
-                cx="200"
-                cy="200"
-                r="145"
-                fill="none"
-                stroke="var(--border)"
-                strokeWidth="1.5"
-                strokeDasharray="4 6"
-              />
+                  <linearGradient id="activePathGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="var(--accent)" stopOpacity="0.3" />
+                    <stop offset="50%" stopColor="var(--accent)" stopOpacity="1" />
+                    <stop offset="100%" stopColor="#60A5FA" stopOpacity="0.9" />
+                  </linearGradient>
+                </defs>
 
-              {/* Arc connectors with arrows between 6 nodes */}
-              {steps.map((_, idx) => {
-                const startAngle = idx * 60 - 90 + 20;
-                const endAngle = (idx + 1) * 60 - 90 - 20;
-                const arcPath = getArcPath(startAngle, endAngle, 145);
-                const isArcActive = activeStep === idx;
+                {/* Outer guide ring */}
+                <circle
+                  cx="200"
+                  cy="200"
+                  r="145"
+                  fill="none"
+                  stroke="var(--border)"
+                  strokeWidth="1.5"
+                  className="opacity-30"
+                />
+
+                {/* Rotating Outer Dot Ring */}
+                <circle
+                  cx="200"
+                  cy="200"
+                  r="120"
+                  fill="none"
+                  stroke="var(--accent)"
+                  strokeWidth="1.5"
+                  strokeDasharray="2 10"
+                  className="opacity-40 motion-safe:animate-spin"
+                  style={{ animationDuration: '28s', animationTimingFunction: 'linear' }}
+                />
+
+                {/* Animated Dash Path Segments with Flowing Dashes */}
+                {steps.map((_, idx) => {
+                  const startAngle = idx * 60 - 90 + 20;
+                  const endAngle = (idx + 1) * 60 - 90 - 20;
+                  const arcPath = getArcPath(startAngle, endAngle, 145);
+                  const isArcActive = currentDisplayIndex === idx;
+
+                  return (
+                    <g key={idx}>
+                      <path
+                        d={arcPath}
+                        fill="none"
+                        stroke={isArcActive ? "url(#activePathGradient)" : "var(--accent)"}
+                        strokeWidth={isArcActive ? "3.5" : "2"}
+                        strokeDasharray={isArcActive ? "none" : "6 6"}
+                        markerEnd="url(#loop-arrow-accent)"
+                        className={`transition-all duration-500 ${isArcActive ? "opacity-100 drop-shadow-[0_0_12px_rgba(59,130,246,0.8)]" : "opacity-35"}`}
+                      />
+                      {/* Flowing animated dash line overlay */}
+                      <path
+                        d={arcPath}
+                        fill="none"
+                        stroke={isArcActive ? "#93C5FD" : "var(--accent)"}
+                        strokeWidth={isArcActive ? "3" : "1.5"}
+                        strokeDasharray="4 8"
+                        style={{ animation: 'dash 3s linear infinite' }}
+                        className="opacity-60"
+                      />
+                    </g>
+                  );
+                })}
+
+                {/* Continuous Orbiting Data Particles around the path */}
+                <g className="motion-safe:animate-spin" style={{ transformOrigin: '200px 200px', animationDuration: '14s', animationTimingFunction: 'linear' }}>
+                  <circle cx="200" cy="55" r="4" fill="#60A5FA" className="drop-shadow-[0_0_10px_#3B82F6]" />
+                  <circle cx="325.5" cy="272.5" r="3" fill="#93C5FD" className="opacity-80" />
+                  <circle cx="74.5" cy="272.5" r="3" fill="#93C5FD" className="opacity-80" />
+                </g>
+
+                {/* Connecting Beam to Right Panel (Active Stage Data Beam) */}
+                <path
+                  d="M 330 200 L 410 200"
+                  fill="none"
+                  stroke="var(--accent)"
+                  strokeWidth="2"
+                  strokeDasharray="4 4"
+                  className="opacity-60 hidden lg:block"
+                />
+                <circle cx="370" cy="200" r="3.5" fill="#60A5FA" className="hidden lg:block motion-safe:animate-ping opacity-80" style={{ animationDuration: '2s' }} />
+              </svg>
+
+              {/* Central Core Breathing Hub */}
+              <div 
+                className="absolute w-32 h-32 sm:w-44 sm:h-44 rounded-full bg-surface/90 backdrop-blur-md border-2 border-accent/40 flex flex-col items-center justify-center p-3 text-center shadow-[0_0_35px_rgba(59,130,246,0.2)] z-10 transition-transform duration-700 hover:scale-[1.03]"
+                style={{
+                  animation: 'pulse 4s ease-in-out infinite'
+                }}
+              >
+                <div className="absolute inset-0 rounded-full border border-accent/30 motion-safe:animate-ping opacity-25 pointer-events-none" style={{ animationDuration: '3.5s' }} />
+                <Zap className="w-4 h-4 text-accent mb-1 animate-pulse" />
+                <span className="text-text-secondary font-mono text-[8px] sm:text-[9.5px] tracking-widest uppercase font-semibold">
+                  SPARKMEDIA
+                </span>
+                <span className="text-accent font-extrabold text-[11px] sm:text-[14px] tracking-wider uppercase block mt-0.5 drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]">
+                  GROWTH LOOP
+                </span>
+                <span className="text-text-secondary font-mono text-[7px] sm:text-[9px] tracking-widest uppercase block mt-1">
+                  ONE TEAM · NO SILOS
+                </span>
+              </div>
+
+              {/* 6 Stage Hexagonal / Circular Buttons */}
+              {steps.map((st, idx) => {
+                const rad = (st.angle * Math.PI) / 180;
+                const R_pct = 36;
+                const x_pct = (R_pct * Math.cos(rad)).toFixed(3);
+                const y_pct = (R_pct * Math.sin(rad)).toFixed(3);
+                const isActive = currentDisplayIndex === idx;
+                const IconComp = st.icon;
+
+                // Subtle float offset for each card based on index
+                const floatDelay = idx * 0.6;
 
                 return (
-                  <path
-                    key={idx}
-                    d={arcPath}
-                    fill="none"
-                    stroke={isArcActive ? "var(--accent)" : "var(--border)"}
-                    strokeWidth={isArcActive ? "3" : "1.5"}
-                    strokeDasharray={isArcActive ? "6 4" : "4 4"}
-                    markerEnd="url(#loop-arrow)"
-                    className="transition-all duration-500"
-                  />
+                  <div
+                    key={st.num}
+                    style={{
+                      left: `calc(50% + ${x_pct}%)`,
+                      top: `calc(50% + ${y_pct}%)`,
+                      transform: 'translate(-50%, -50%)',
+                    }}
+                    onMouseEnter={() => {
+                      setHoveredStep(idx);
+                      setIsPlaying(false);
+                    }}
+                    className="absolute z-20 flex flex-col items-center cursor-pointer group"
+                    onClick={() => {
+                      setActiveStep(idx);
+                      setIsPlaying(false);
+                    }}
+                  >
+                    <div
+                      style={{
+                        animation: `rise-up 6s ease-in-out infinite alternate`,
+                        animationDelay: `${floatDelay}s`
+                      }}
+                      className={`relative w-16 h-16 sm:w-22 sm:h-22 rounded-2xl flex flex-col items-center justify-center transition-all duration-500 shadow-xl border cursor-pointer backdrop-blur-md ${
+                        isActive
+                          ? "bg-accent text-white border-accent scale-110 ring-4 ring-accent/30 shadow-[0_0_30px_rgba(59,130,246,0.6)]"
+                          : "bg-surface/90 text-text-primary border-border-subtle hover:border-accent/70 hover:scale-105"
+                      }`}
+                    >
+                      {/* Active Pulse Ring */}
+                      {isActive && (
+                        <span className="absolute inset-0 rounded-2xl border border-accent motion-safe:animate-ping opacity-60 pointer-events-none" />
+                      )}
+
+                      <IconComp className={`w-4.5 h-4.5 sm:w-6 sm:h-6 transition-transform duration-300 ${isActive ? "text-white scale-110" : "text-accent group-hover:scale-110"}`} />
+                      <span className={`text-[8.5px] sm:text-[10px] font-mono font-extrabold tracking-wider uppercase mt-1 ${isActive ? "text-white" : "text-text-primary"}`}>
+                        {st.title}
+                      </span>
+                      <span className={`text-[7px] sm:text-[8px] font-mono font-medium ${isActive ? "text-white/80" : "text-text-secondary"}`}>
+                        {st.num}
+                      </span>
+                    </div>
+                  </div>
                 );
               })}
-            </svg>
 
-            {/* Central Core Circle */}
-            <div className="absolute w-32 h-32 sm:w-44 sm:h-44 rounded-full bg-surface border-2 border-accent/30 flex flex-col items-center justify-center p-3 text-center shadow-2xl z-10">
-              <span className="text-text-secondary font-mono text-[8px] sm:text-[10px] tracking-widest uppercase">
-                ADFRENZY MEDIA
-              </span>
-              <span className="text-accent font-extrabold text-[11px] sm:text-[14px] tracking-wider uppercase block mt-1">
-                GROWTH LOOP
-              </span>
-              <span className="text-text-secondary font-mono text-[7px] sm:text-[9px] tracking-widest uppercase block mt-0.5">
-                ONE TEAM · NO SILOS
-              </span>
             </div>
-
-            {/* 6 Circular Orbiting Node Buttons */}
-            {steps.map((st, idx) => {
-              const rad = (st.angle * Math.PI) / 180;
-              const R_pct = 36; // radius percentage from center
-              const x_pct = (R_pct * Math.cos(rad)).toFixed(3);
-              const y_pct = (R_pct * Math.sin(rad)).toFixed(3);
-              const isActive = activeStep === idx;
-              const IconComp = st.icon;
-
-              return (
-                <div
-                  key={st.num}
-                  style={{
-                    left: `calc(50% + ${x_pct}%)`,
-                    top: `calc(50% + ${y_pct}%)`,
-                    transform: "translate(-50%, -50%)",
-                  }}
-                  className="absolute z-20 flex flex-col items-center group cursor-pointer"
-                  onClick={() => {
-                    setActiveStep(idx);
-                    setIsPlaying(false);
-                  }}
-                >
-                  <button
-                    className={`relative w-14 h-14 sm:w-20 sm:h-20 rounded-full flex flex-col items-center justify-center transition-all duration-300 shadow-xl border cursor-pointer ${
-                      isActive
-                        ? "bg-accent text-btn-text-primary border-accent scale-110 shadow-[0_0_30px_rgba(255,200,0,0.55)]"
-                        : "bg-surface text-text-primary border-border-subtle hover:border-accent/60 hover:scale-105"
-                    }`}
-                  >
-                    <IconComp className={`w-4 h-4 sm:w-6 sm:h-6 ${isActive ? "text-btn-text-primary" : "text-accent"}`} />
-                    <span className={`text-[8px] sm:text-[10px] font-mono font-extrabold tracking-wider uppercase mt-1 ${isActive ? "text-btn-text-primary" : "text-text-primary"}`}>
-                      {st.title}
-                    </span>
-
-                    {/* Downward pointer triangle on active node */}
-                    {isActive && (
-                      <div className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[7px] border-l-transparent border-r-[7px] border-r-transparent border-t-[10px] border-t-accent drop-shadow-md animate-bounce" />
-                    )}
-                  </button>
-                </div>
-              );
-            })}
-
-          </div>
-        </div>
-
-        {/* Stage Status & Controls Bar */}
-        <div className="max-w-4xl mx-auto mb-4 flex items-center justify-between px-2 text-xs font-mono">
-          <div className="flex items-center gap-2 text-accent font-bold tracking-widest uppercase">
-            <span className="w-2 h-2 rounded-full bg-accent animate-ping" />
-            <span>STAGE 0{activeStep + 1} OF 06 — {current.title}</span>
           </div>
 
-          <div className="flex items-center gap-3 text-text-secondary">
-            <button
-              onClick={() => setIsPlaying(!isPlaying)}
-              className="hover:text-accent transition-colors flex items-center gap-1.5 cursor-pointer font-semibold"
-            >
-              {isPlaying ? (
-                <>
-                  <Pause className="w-3.5 h-3.5 text-accent" />
-                  <span>AUTO-ROTATING</span>
-                </>
-              ) : (
-                <>
-                  <Play className="w-3.5 h-3.5 text-accent" />
-                  <span>PAUSED</span>
-                </>
-              )}
-            </button>
-          </div>
-        </div>
-
-        {/* Stage Detail Card (Below Circle) */}
-        <div className="max-w-4xl mx-auto relative">
-          
-          {/* Glass Card for Stage Details */}
-          <div className="glass-card p-6 sm:p-10 rounded-2xl border-2 border-accent/40 bg-surface shadow-2xl relative overflow-hidden transition-all duration-300">
-            {/* Ambient Accent Radial Glow */}
-            <div className="absolute -top-12 -right-12 w-48 h-48 bg-accent/10 rounded-full blur-2xl pointer-events-none" />
-
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+          {/* Right Column: Information Panel Card (lg:col-span-5) */}
+          <div className="lg:col-span-5 relative">
+            <div className="glass-card p-6 sm:p-8 rounded-2xl border-2 border-accent/40 bg-surface/90 shadow-2xl relative overflow-hidden transition-all duration-500">
               
-              {/* Left Column: Tagline & Description */}
-              <div className="lg:col-span-7 space-y-5">
-                <div className="flex items-center gap-3">
-                  <span className="px-3 py-1 rounded-md bg-accent text-btn-text-primary text-xs font-mono font-extrabold uppercase">
-                    STAGE 0{activeStep + 1}
-                  </span>
-                  <span className="text-xs font-mono uppercase text-accent font-bold tracking-widest">
-                    {current.title}
-                  </span>
+              {/* Soft Ambient Inner Radial Glow */}
+              <div className="absolute -top-10 -right-10 w-44 h-44 bg-accent/15 rounded-full blur-2xl pointer-events-none" />
+
+              {/* Status Header */}
+              <div className="flex items-center justify-between pb-4 border-b border-border-subtle mb-6">
+                <div className="flex items-center gap-2 text-xs font-mono text-accent font-extrabold tracking-widest uppercase">
+                  <span className="w-2 h-2 rounded-full bg-accent animate-ping" />
+                  <span>STAGE {current.num} OF 06</span>
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-text-primary tracking-tight leading-tight">
-                  {current.tagline}
-                </h3>
+                <button
+                  onClick={() => setIsPlaying(!isPlaying)}
+                  className="px-3 py-1 rounded-full bg-surface-secondary border border-border-subtle text-[10px] font-mono text-text-secondary hover:text-accent transition-colors flex items-center gap-1.5 cursor-pointer font-bold uppercase"
+                >
+                  {isPlaying ? (
+                    <>
+                      <Pause className="w-3 h-3 text-accent" />
+                      <span>AUTO-ROTATING</span>
+                    </>
+                  ) : (
+                    <>
+                      <Play className="w-3 h-3 text-accent" />
+                      <span>PAUSED</span>
+                    </>
+                  )}
+                </button>
+              </div>
 
-                <p className="text-text-secondary text-sm sm:text-base leading-relaxed">
+              {/* Animated Stage Content Transition */}
+              <div key={currentDisplayIndex} className="space-y-4 animate-in fade-in slide-in-from-bottom-2 duration-400">
+                <h3 className="text-2xl sm:text-4xl font-extrabold text-text-primary tracking-tight leading-tight">
+                  {current.title}
+                </h3>
+                
+                <div className="w-12 h-1 bg-accent rounded-full" />
+
+                <p className="text-text-secondary text-sm sm:text-base leading-relaxed pt-2">
+                  {current.tagline}
+                </p>
+
+                <p className="text-text-secondary/90 text-xs sm:text-sm leading-relaxed">
                   {current.description}
                 </p>
 
+                {/* Key Deliverables Pill */}
                 <div className="pt-2">
-                  <span className="text-[11px] font-mono uppercase tracking-wider text-text-secondary font-bold block mb-1">
-                    KEY DELIVERABLES:
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-text-secondary font-bold block mb-1.5">
+                    DELIVERABLES:
                   </span>
-                  <div className="text-xs font-mono text-accent font-semibold bg-accent/10 px-3.5 py-2 rounded-lg border border-accent/20 inline-block">
+                  <div className="text-xs font-mono text-accent font-semibold bg-accent/10 px-3.5 py-2 rounded-lg border border-accent/25 inline-block">
                     {current.deliverables}
                   </div>
                 </div>
-              </div>
 
-              {/* Right Column: Key Stage Capabilities */}
-              <div className="lg:col-span-5 bg-surface-secondary/80 p-6 rounded-xl border border-border-subtle space-y-4">
-                <div className="flex items-center justify-between pb-3 border-b border-border-subtle">
-                  <span className="text-xs font-mono uppercase font-bold text-text-primary tracking-wider flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-accent" />
-                    <span>Stage Execution</span>
-                  </span>
-                  <span className="text-[10px] font-mono text-text-secondary">
-                    {activeStep + 1} / 6
-                  </span>
-                </div>
-
-                <div className="space-y-3">
-                  {current.highlights.map((item, idx) => (
-                    <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-text-secondary">
-                      <CheckCircle2 className="w-4.5 h-4.5 text-accent shrink-0 mt-0.5" />
+                {/* Execution Capabilities */}
+                <div className="pt-3 space-y-2">
+                  {current.highlights.slice(0, 3).map((item, idx) => (
+                    <div key={idx} className="flex items-start gap-2.5 text-xs text-text-secondary">
+                      <CheckCircle2 className="w-4 h-4 text-accent shrink-0 mt-0.5" />
                       <span className="leading-snug">{item}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-            </div>
-
-            {/* Bottom Controls & Action Callout */}
-            <div className="mt-8 pt-6 border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={() => {
-                    setActiveStep((prev) => (prev === 0 ? steps.length - 1 : prev - 1));
-                    setIsPlaying(false);
-                  }}
-                  className="p-2 rounded-lg bg-surface-secondary border border-border-subtle text-text-primary hover:border-accent/40 transition-colors cursor-pointer"
-                  aria-label="Previous step"
-                >
-                  <ChevronLeft className="w-4 h-4" />
-                </button>
-
-                <div className="flex items-center gap-1.5 px-3 py-1.5 bg-surface-secondary rounded-lg border border-border-subtle text-xs font-mono text-text-secondary">
+              {/* Progress Dot Indicators */}
+              <div className="mt-8 pt-6 border-t border-border-subtle flex items-center justify-between">
+                <div className="flex items-center gap-2">
                   {steps.map((_, i) => (
                     <button
                       key={i}
@@ -405,36 +471,26 @@ export function GrowthLoop() {
                         setActiveStep(i);
                         setIsPlaying(false);
                       }}
-                      className={`w-2 h-2 rounded-full transition-all cursor-pointer ${
-                        activeStep === i ? "bg-accent w-4" : "bg-text-secondary/40"
+                      className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                        currentDisplayIndex === i 
+                          ? "bg-accent w-6 shadow-[0_0_10px_rgba(59,130,246,0.8)]" 
+                          : "bg-border-subtle hover:bg-accent/40 w-2"
                       }`}
+                      aria-label={`Go to stage ${i + 1}`}
                     />
                   ))}
                 </div>
 
                 <button
-                  onClick={() => {
-                    setActiveStep((prev) => (prev + 1) % steps.length);
-                    setIsPlaying(false);
-                  }}
-                  className="p-2 rounded-lg bg-surface-secondary border border-border-subtle text-text-primary hover:border-accent/40 transition-colors cursor-pointer"
-                  aria-label="Next step"
-                >
-                  <ChevronRight className="w-4 h-4" />
-                </button>
-              </div>
-
-              <div>
-                <button
                   onClick={openDaySchedule}
-                  className="btn-yellow px-6 py-2.5 text-xs sm:text-sm font-extrabold inline-flex items-center justify-center gap-2 rounded-full cursor-pointer"
+                  className="btn-yellow px-5 py-2 text-xs font-extrabold inline-flex items-center justify-center gap-1.5 rounded-full cursor-pointer"
                 >
-                  <span>Book a Growth Call</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <span>Book a Call</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
-            </div>
 
+            </div>
           </div>
 
         </div>
