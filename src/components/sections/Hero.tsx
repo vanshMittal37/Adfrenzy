@@ -90,14 +90,14 @@ export function Hero() {
   };
 
   return (
-    <section className="relative min-h-[92vh] pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden bg-[#06080e] text-white flex items-center border-b border-blue-950/30">
+    <section id="hero" className="hero-section relative min-h-[92vh] pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden bg-[#06080e] text-white flex items-center border-b border-blue-950/30 transition-colors duration-500">
       
       {/* Background Radial Ambient Glows */}
-      <div className="absolute right-[-5%] top-[10%] w-[650px] h-[650px] rounded-full bg-[radial-gradient(circle_at_center,rgba(37,99,235,0.18)_0%,rgba(15,23,42,0)_70%)] blur-[100px] pointer-events-none z-0 animate-pulse" style={{ animationDuration: '6s' }} />
-      <div className="absolute left-[-10%] bottom-[-10%] w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.12)_0%,rgba(0,0,0,0)_70%)] blur-[120px] pointer-events-none z-0" />
+      <div className="hero-ambient-1 absolute right-[-5%] top-[10%] w-[650px] h-[650px] rounded-full bg-[radial-gradient(circle_at_center,rgba(37,99,235,0.18)_0%,rgba(15,23,42,0)_70%)] blur-[100px] pointer-events-none z-0 animate-pulse" style={{ animationDuration: '6s' }} />
+      <div className="hero-ambient-2 absolute left-[-10%] bottom-[-10%] w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.12)_0%,rgba(0,0,0,0)_70%)] blur-[120px] pointer-events-none z-0" />
 
       {/* Topographic Background Contour Wave SVG Lines (Matching the reference image flow) */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 opacity-40">
+      <div className="hero-topo-bg absolute inset-0 pointer-events-none overflow-hidden z-0 opacity-40">
         <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
           <defs>
             <linearGradient id="topo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -121,26 +121,26 @@ export function Hero() {
           {/* Left Column: Headline and Actions */}
           <div className="lg:col-span-5 space-y-7 order-1">
             {/* Pill Eyebrow */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0d1527] border border-blue-500/30 text-[10.5px] font-mono tracking-widest text-blue-400 uppercase font-bold shadow-[0_0_15px_rgba(59,130,246,0.15)]">
+            <div className="hero-eyebrow inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0d1527] border border-blue-500/30 text-[10.5px] font-mono tracking-widest text-blue-400 uppercase font-bold shadow-[0_0_15px_rgba(59,130,246,0.15)]">
               <Sparkles className="w-3.5 h-3.5 text-blue-400" />
               <span>PERFORMANCE · CREATIVE · CRO · SEO</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[64px] font-extrabold text-white tracking-tight leading-[1.08] font-sans">
+            <h1 className="hero-headline text-4xl sm:text-5xl md:text-6xl lg:text-[64px] font-extrabold text-white tracking-tight leading-[1.08] font-sans">
               Creative that{" "}
-              <span className="font-serif italic font-normal text-blue-500">
+              <span className="hero-highlight-1 font-serif italic font-normal text-blue-500">
                 converts.
               </span>
               <br />
               Funnels that keep{" "}
-              <span className="font-serif italic font-normal text-blue-500">
+              <span className="hero-highlight-2 font-serif italic font-normal text-blue-500">
                 converting.
               </span>
             </h1>
 
             {/* Description Subtitle */}
-            <p className="text-base sm:text-[17px] text-slate-300 max-w-lg font-normal leading-relaxed">
+            <p className="hero-subtext text-base sm:text-[17px] text-slate-300 max-w-lg font-normal leading-relaxed">
               Full-funnel growth for D2C brands. Ads, creative, website and search run by one team, so your numbers stop swinging and start compounding.
             </p>
 
@@ -155,7 +155,7 @@ export function Hero() {
               </button>
               <a
                 href="#work"
-                className="w-full sm:w-auto px-7 py-3.5 text-base font-bold inline-flex items-center justify-center gap-2 text-white border border-slate-800 hover:border-slate-700 bg-[#0c101c]/80 hover:bg-[#121829] rounded-full transition-all duration-300"
+                className="hero-secondary-btn w-full sm:w-auto px-7 py-3.5 text-base font-bold inline-flex items-center justify-center gap-2 text-white border border-slate-800 hover:border-slate-700 bg-[#0c101c]/80 hover:bg-[#121829] rounded-full transition-all duration-300"
               >
                 <span>See the Work</span>
               </a>
@@ -272,7 +272,7 @@ export function Hero() {
                       stroke={isActive ? "#3b82f6" : "#1e293b"}
                       strokeWidth={isActive ? "2" : "1.2"}
                       strokeDasharray={isActive ? "none" : "3 3"}
-                      className="transition-all duration-500"
+                      className={`hero-spoke-line transition-all duration-500 ${isActive ? "hero-spoke-active" : "hero-spoke-inactive"}`}
                     />
                   );
                 })}
@@ -293,7 +293,7 @@ export function Hero() {
                         stroke={isArcActive ? "url(#activeArcGrad)" : "#1e293b"}
                         strokeWidth={isArcActive ? "3" : "1.5"}
                         markerEnd="url(#orbit-arrow)"
-                        className="transition-all duration-500"
+                        className={`hero-arc-path transition-all duration-500 ${isArcActive ? "hero-arc-active" : "hero-arc-inactive"}`}
                       />
 
                       {/* Animated dash beam along active arc segment */}
@@ -358,17 +358,17 @@ export function Hero() {
               </svg>
 
               {/* Central Engine Hub Panel (Exact text stack from reference image) */}
-              <div className="absolute w-36 h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 rounded-full bg-[#080d1a]/95 backdrop-blur-md border border-blue-500/40 flex flex-col items-center justify-center p-3 text-center shadow-[0_0_40px_rgba(37,99,235,0.3)] z-10 transition-transform duration-500 hover:scale-105">
+              <div className="hero-center-hub absolute w-36 h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 rounded-full bg-[#080d1a]/95 backdrop-blur-md border border-blue-500/40 flex flex-col items-center justify-center p-3 text-center shadow-[0_0_40px_rgba(37,99,235,0.3)] z-10 transition-transform duration-500 hover:scale-105">
                 {/* Subtle Inner Accent Circle Ring */}
-                <div className="absolute inset-1.5 rounded-full border border-blue-500/20 pointer-events-none" />
+                <div className="absolute inset-1.5 rounded-full border border-blue-500/20 pointer-events-none hero-center-hub-ring" />
                 
-                <span className="text-slate-400 font-mono text-[9px] sm:text-[10px] tracking-[0.2em] uppercase font-semibold">
+                <span className="hero-center-subtext text-slate-400 font-mono text-[9px] sm:text-[10px] tracking-[0.2em] uppercase font-semibold">
                   ADFRENZY MEDIA
                 </span>
-                <span className="text-[#3b82f6] font-extrabold text-[13px] sm:text-[15px] md:text-[16px] tracking-wider uppercase block mt-1 drop-shadow-[0_0_10px_rgba(59,130,246,0.6)]">
+                <span className="hero-center-title1 text-[#3b82f6] font-extrabold text-[13px] sm:text-[15px] md:text-[16px] tracking-wider uppercase block mt-1 drop-shadow-[0_0_10px_rgba(59,130,246,0.6)]">
                   FULL-FUNNEL
                 </span>
-                <span className="text-white font-extrabold text-[11px] sm:text-[13px] md:text-[14px] tracking-wider uppercase block mt-0.5">
+                <span className="hero-center-title2 text-white font-extrabold text-[11px] sm:text-[13px] md:text-[14px] tracking-wider uppercase block mt-0.5">
                   GROWTH LOOP
                 </span>
               </div>
@@ -393,7 +393,7 @@ export function Hero() {
                       top: `calc(50% + ${y_pct}%)`,
                       transform: 'translate(-50%, -50%)',
                     }}
-                    className={`absolute z-20 w-[145px] sm:w-[175px] md:w-[185px] h-[58px] sm:h-[68px] flex items-center gap-2.5 px-3 sm:px-3.5 py-2 cursor-pointer transition-all duration-300 group select-none ${
+                    className={`hero-card-container absolute z-20 w-[145px] sm:w-[175px] md:w-[185px] h-[58px] sm:h-[68px] flex items-center gap-2.5 px-3 sm:px-3.5 py-2 cursor-pointer transition-all duration-300 group select-none ${
                       isActive ? "scale-[1.06] z-30" : "hover:scale-[1.03]"
                     }`}
                   >
@@ -405,7 +405,7 @@ export function Hero() {
                         fill={isActive ? "rgba(10, 16, 30, 0.95)" : "rgba(6, 10, 18, 0.88)"}
                         stroke={isActive ? "#3b82f6" : "#1e293b"}
                         strokeWidth={isActive ? "1.8" : "1.2"}
-                        className="transition-all duration-300"
+                        className={`hero-badge-path transition-all duration-300 ${isActive ? "hero-badge-active-path" : "hero-badge-inactive-path"}`}
                         style={{
                           filter: isActive ? 'drop-shadow(0 0 12px rgba(59, 130, 246, 0.4))' : 'none'
                         }}
@@ -414,31 +414,31 @@ export function Hero() {
                       {/* Chamfer Corner Tech Lines when Active */}
                       {isActive && (
                         <>
-                          <path d="M 0 14 L 0 12 L 12 0 L 14 0" fill="none" stroke="#60a5fa" strokeWidth="2" />
-                          <path d="M 171 0 L 173 0 L 185 12 L 185 14" fill="none" stroke="#60a5fa" strokeWidth="2" />
-                          <path d="M 185 54 L 185 56 L 173 68 L 171 68" fill="none" stroke="#60a5fa" strokeWidth="2" />
-                          <path d="M 14 68 L 12 68 L 0 56 L 0 54" fill="none" stroke="#60a5fa" strokeWidth="2" />
+                          <path d="M 0 14 L 0 12 L 12 0 L 14 0" fill="none" stroke="#60a5fa" strokeWidth="2" className="hero-corner-line" />
+                          <path d="M 171 0 L 173 0 L 185 12 L 185 14" fill="none" stroke="#60a5fa" strokeWidth="2" className="hero-corner-line" />
+                          <path d="M 185 54 L 185 56 L 173 68 L 171 68" fill="none" stroke="#60a5fa" strokeWidth="2" className="hero-corner-line" />
+                          <path d="M 14 68 L 12 68 L 0 56 L 0 54" fill="none" stroke="#60a5fa" strokeWidth="2" className="hero-corner-line" />
                         </>
                       )}
                     </svg>
 
                     {/* Circular Icon Container */}
-                    <div className={`relative shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center transition-all z-10 ${
+                    <div className={`hero-icon-box relative shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center transition-all z-10 ${
                       isActive 
-                        ? "bg-blue-600/25 text-blue-400 border border-blue-400 shadow-[0_0_12px_rgba(59,130,246,0.6)]" 
-                        : "bg-blue-950/40 text-blue-400/80 border border-blue-500/20 group-hover:border-blue-400/50 group-hover:text-blue-300"
+                        ? "hero-icon-box-active bg-blue-600/25 text-blue-400 border border-blue-400 shadow-[0_0_12px_rgba(59,130,246,0.6)]" 
+                        : "hero-icon-box-inactive bg-blue-950/40 text-blue-400/80 border border-blue-500/20 group-hover:border-blue-400/50 group-hover:text-blue-300"
                     }`}>
                       <IconComponent className="w-4 h-4 sm:w-4.5 sm:h-4.5" />
                     </div>
 
                     {/* Card Text Content */}
                     <div className="flex flex-col text-left min-w-0 z-10">
-                      <span className={`text-[10px] sm:text-[11.5px] font-mono font-extrabold tracking-wider uppercase truncate ${
-                        isActive ? "text-blue-400" : "text-slate-100"
+                      <span className={`hero-card-title text-[10px] sm:text-[11.5px] font-mono font-extrabold tracking-wider uppercase truncate ${
+                        isActive ? "hero-card-title-active text-blue-400" : "hero-card-title-inactive text-slate-100"
                       }`}>
                         {stage.num} {stage.title}
                       </span>
-                      <span className="text-[8.5px] sm:text-[9.5px] text-slate-400 leading-tight font-medium line-clamp-1 mt-0.5">
+                      <span className="hero-card-desc text-[8.5px] sm:text-[9.5px] text-slate-400 leading-tight font-medium line-clamp-1 mt-0.5">
                         {stage.desc}
                       </span>
                     </div>

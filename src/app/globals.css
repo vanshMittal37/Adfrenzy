@@ -413,18 +413,421 @@ html.light .font-serif-italic {
 }
 
 @keyframes marquee-rtl {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes marquee-ltr {
+  0% { transform: translate3d(-50%, 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
 }
 
 .animate-marquee-rtl {
-  display: flex;
-  width: max-content;
-  animation: marquee-rtl 40s linear infinite;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  width: max-content !important;
+  align-items: center !important;
+  animation: marquee-rtl 40s linear infinite !important;
+  will-change: transform;
 }
 
-.animate-marquee-rtl:hover {
-  animation-play-state: paused;
+.animate-marquee-row1 {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  width: max-content !important;
+  align-items: center !important;
+  animation: marquee-rtl 32s linear infinite !important;
+  will-change: transform;
+}
+
+.animate-marquee-row2 {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  width: max-content !important;
+  align-items: center !important;
+  animation: marquee-ltr 38s linear infinite !important;
+  will-change: transform;
+}
+
+.animate-marquee-rtl:hover,
+.animate-marquee-row1:hover,
+.animate-marquee-row2:hover {
+  animation-play-state: paused !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-rtl {
+    animation: marquee-rtl 90s linear infinite !important;
+    flex-wrap: nowrap !important;
+  }
+}
+
+/* Client logo cards & avatars styling for crisp visibility in both Light and Dark themes */
+.client-logo-card {
+  background-color: #0c101c !important;
+  border: 1px solid rgba(59, 130, 246, 0.25) !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3) !important;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.client-logo-card:hover {
+  border-color: rgba(59, 130, 246, 0.6) !important;
+  box-shadow: 0 6px 24px rgba(59, 130, 246, 0.3) !important;
+  transform: translateY(-2px) scale(1.02) !important;
+}
+
+html.light .client-logo-card {
+  background-color: #FFFFFF !important;
+  border: 1px solid #E2E8F0 !important;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.06), 0 1px 3px rgba(0, 0, 0, 0.02) !important;
+}
+
+html.light .client-logo-card:hover {
+  border-color: #3B82F6 !important;
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15) !important;
+}
+
+html.light .client-logo-card img {
+  filter: brightness(0) saturate(100%) !important;
+  opacity: 0.85 !important;
+}
+
+.testimonial-logo-avatar {
+  background-color: #090d16 !important;
+  border: 1px solid rgba(59, 130, 246, 0.3) !important;
+}
+
+html.light .testimonial-logo-avatar {
+  background-color: #FFFFFF !important;
+  border: 1px solid #E2E8F0 !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05) !important;
+}
+
+html.light .testimonial-logo-avatar img {
+  filter: brightness(0) saturate(100%) !important;
+  opacity: 0.85 !important;
+}
+
+/* ---------------------------------------------------- */
+/* Growth Loop Light Mode System (Matching Image 100%)  */
+/* ---------------------------------------------------- */
+html.light #growth-loop {
+  background-color: #FFFFFF !important;
+  background-image: 
+    radial-gradient(circle at 15% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 35%),
+    radial-gradient(circle at 85% 80%, rgba(99, 102, 241, 0.08) 0%, transparent 40%),
+    linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%) !important;
+  border-bottom: 1px solid #E2E8F0 !important;
+  color: #0F172A !important;
+}
+
+/* 1. Ambient Background Glows */
+html.light #growth-loop .growth-ambient-glow-1 {
+  opacity: 0.04 !important;
+}
+html.light #growth-loop .growth-ambient-glow-2 {
+  opacity: 0.04 !important;
+}
+html.light #growth-loop .growth-center-glow {
+  opacity: 0.15 !important;
+}
+
+/* 2. Central Control Hub (Pure White Circle with Blue Gradient Stroke matching Image) */
+html.light #growth-loop .growth-center-hub {
+  background: #FFFFFF !important;
+  border: 2.5px solid #3B82F6 !important;
+  box-shadow: 0 10px 40px rgba(59, 130, 246, 0.15), inset 0 0 15px rgba(59, 130, 246, 0.04) !important;
+}
+html.light #growth-loop .growth-center-hub-ring {
+  border-color: rgba(59, 130, 246, 0.2) !important;
+}
+html.light #growth-loop .growth-center-zap {
+  color: #2563EB !important;
+}
+html.light #growth-loop .growth-center-sparkmedia {
+  color: #2563EB !important;
+  font-weight: 700 !important;
+}
+html.light #growth-loop .growth-center-title {
+  color: #0F172A !important;
+  font-weight: 900 !important;
+  text-shadow: none !important;
+}
+html.light #growth-loop .growth-center-subtitle {
+  color: #64748B !important;
+  font-weight: 600 !important;
+}
+
+/* 3. Inactive Stage Hexagons (Pure White Floating Hexagon Cards) */
+html.light #growth-loop .growth-hex-inactive-path {
+  fill: #FFFFFF !important;
+  stroke: #E2E8F0 !important;
+  stroke-width: 1.5px !important;
+  filter: drop-shadow(0 8px 25px rgba(59, 130, 246, 0.08)) !important;
+}
+html.light #growth-loop .growth-hex-title-inactive {
+  color: #0F172A !important;
+  font-weight: 800 !important;
+}
+html.light #growth-loop .growth-hex-num-inactive {
+  color: #64748B !important;
+  font-weight: 700 !important;
+}
+html.light #growth-loop .growth-hex-icon-inactive {
+  color: #2563EB !important;
+}
+
+/* 4. Active Stage Hexagon (Vivid Blue Hero Card matching 01 STRATEGY in Image) */
+html.light #growth-loop .growth-hex-active-path {
+  fill: url(#activeHexGrad) !important;
+  stroke: #60A5FA !important;
+  stroke-width: 2px !important;
+  filter: drop-shadow(0 15px 35px rgba(37, 99, 235, 0.40)) !important;
+}
+html.light #growth-loop .growth-hex-title-active {
+  color: #FFFFFF !important;
+  font-weight: 800 !important;
+}
+html.light #growth-loop .growth-hex-num-active {
+  color: #DBEAFE !important;
+  font-weight: 700 !important;
+}
+html.light #growth-loop .growth-hex-icon-active {
+  color: #FFFFFF !important;
+}
+
+/* 5. Hexagon Hover State */
+html.light #growth-loop .growth-hex-card-inactive:hover .growth-hex-inactive-path {
+  fill: #FFFFFF !important;
+  stroke: #3B82F6 !important;
+  filter: drop-shadow(0 12px 30px rgba(37, 99, 235, 0.16)) !important;
+}
+
+/* 6. Orbital Ring & Connectors */
+html.light #growth-loop .growth-orbit-base {
+  stroke: #818CF8 !important;
+  opacity: 0.35 !important;
+}
+html.light #growth-loop .growth-tech-ring-1,
+html.light #growth-loop .growth-tech-ring-2 {
+  stroke: #60A5FA !important;
+  opacity: 0.25 !important;
+}
+html.light #growth-loop .growth-orbit-arc-inactive {
+  stroke: #818CF8 !important;
+  opacity: 0.4 !important;
+}
+html.light #growth-loop .growth-orbit-arc-active {
+  stroke: #2563EB !important;
+  stroke-width: 3px !important;
+}
+html.light #growth-loop #blue-orbit-arrow path {
+  fill: #2563EB !important;
+  filter: drop-shadow(0 0 4px rgba(37, 99, 235, 0.3)) !important;
+}
+html.light #growth-loop .growth-orbit-particle {
+  fill: #2563EB !important;
+  filter: drop-shadow(0 0 6px #2563eb) !important;
+}
+
+/* 7. Connecting Beam & 3D Arrow Marker */
+html.light #growth-loop .growth-connecting-beam {
+  stroke: #60A5FA !important;
+  stroke-dasharray: 4 4 !important;
+  opacity: 0.8 !important;
+  filter: none !important;
+}
+html.light #growth-loop #blue-beam-arrow path {
+  fill: #2563EB !important;
+  filter: drop-shadow(0 4px 10px rgba(37, 99, 235, 0.5)) !important;
+}
+html.light #growth-loop .growth-beam-particle-1,
+html.light #growth-loop .growth-beam-particle-2 {
+  fill: #2563EB !important;
+}
+
+/* 8. Right Information Card (Pure White Dashboard Card matching Reference Image) */
+html.light #growth-loop .growth-info-panel {
+  background: #FFFFFF !important;
+  border: 1px solid #E2E8F0 !important;
+  box-shadow: 0 20px 60px rgba(59, 130, 246, 0.08) !important;
+}
+html.light #growth-loop .growth-info-contour {
+  opacity: 0.7 !important;
+}
+html.light #growth-loop .growth-info-stage-badge {
+  color: #2563EB !important;
+  font-weight: 800 !important;
+}
+html.light #growth-loop .growth-info-status-badge {
+  background: #EFF6FF !important;
+  border: 1px solid #DBEAFE !important;
+  color: #2563EB !important;
+  font-weight: 700 !important;
+}
+html.light #growth-loop .growth-info-status-dot {
+  background-color: #2563EB !important;
+}
+html.light #growth-loop .growth-info-title {
+  color: #0F172A !important;
+  font-weight: 900 !important;
+}
+html.light #growth-loop .growth-info-accent-bar {
+  background-color: #2563EB !important;
+  height: 4px !important;
+  border-radius: 9999px !important;
+}
+html.light #growth-loop .growth-info-desc {
+  color: #475569 !important;
+  font-weight: 450 !important;
+}
+html.light #growth-loop .growth-info-dot-inactive {
+  background-color: #E2E8F0 !important;
+}
+html.light #growth-loop .growth-info-dot-active {
+  background-color: #2563EB !important;
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.4) !important;
+}
+html.light #growth-loop .growth-info-counter-badge {
+  background-color: #F1F5F9 !important;
+  border-color: #E2E8F0 !important;
+  color: #64748B !important;
+}
+
+/* ---------------------------------------------------- */
+/* Hero Section Light Mode System (Exact Image Match)   */
+/* ---------------------------------------------------- */
+html.light .hero-section {
+  background-color: #FFFFFF !important;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(99, 102, 241, 0.06) 0%, transparent 40%),
+    linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%) !important;
+  border-bottom: 1px solid #E2E8F0 !important;
+  color: #0F172A !important;
+}
+
+html.light .hero-section .hero-ambient-1,
+html.light .hero-section .hero-ambient-2 {
+  opacity: 0.04 !important;
+}
+
+html.light .hero-section .hero-topo-bg {
+  opacity: 0.25 !important;
+}
+
+html.light .hero-section .hero-eyebrow {
+  background-color: #EFF6FF !important;
+  border-color: #BFDBFE !important;
+  color: #2563EB !important;
+  box-shadow: none !important;
+}
+
+html.light .hero-section .hero-headline {
+  color: #0F172A !important;
+}
+
+html.light .hero-section .hero-highlight-1,
+html.light .hero-section .hero-highlight-2 {
+  color: #2563EB !important;
+}
+
+html.light .hero-section .hero-subtext {
+  color: #475569 !important;
+}
+
+html.light .hero-section .hero-secondary-btn {
+  background-color: #1E293B !important;
+  border-color: #1E293B !important;
+  color: #FFFFFF !important;
+}
+
+html.light .hero-section .hero-secondary-btn:hover {
+  background-color: #0F172A !important;
+}
+
+/* Hero Growth Loop Graphic Elements in Light Mode (White Card Fill & Hub) */
+html.light .hero-section .hero-center-hub {
+  background: #FFFFFF !important;
+  border: 2.5px solid #3B82F6 !important;
+  box-shadow: 0 10px 40px rgba(59, 130, 246, 0.15), inset 0 0 15px rgba(59, 130, 246, 0.04) !important;
+}
+
+html.light .hero-section .hero-center-hub-ring {
+  border-color: rgba(59, 130, 246, 0.2) !important;
+}
+
+html.light .hero-section .hero-center-subtext {
+  color: #2563EB !important;
+  font-weight: 700 !important;
+}
+
+html.light .hero-section .hero-center-title1 {
+  color: #2563EB !important;
+  font-weight: 800 !important;
+  text-shadow: none !important;
+}
+
+html.light .hero-section .hero-center-title2 {
+  color: #0F172A !important;
+  font-weight: 900 !important;
+}
+
+html.light .hero-section .hero-badge-inactive-path {
+  fill: #FFFFFF !important;
+  stroke: #E2E8F0 !important;
+  stroke-width: 1.5px !important;
+  filter: drop-shadow(0 8px 25px rgba(59, 130, 246, 0.08)) !important;
+}
+
+html.light .hero-section .hero-badge-active-path {
+  fill: #FFFFFF !important;
+  stroke: #3B82F6 !important;
+  stroke-width: 2.5px !important;
+  filter: drop-shadow(0 12px 30px rgba(37, 99, 235, 0.20)) !important;
+}
+
+html.light .hero-section .hero-icon-box-inactive {
+  background-color: #EFF6FF !important;
+  border-color: #DBEAFE !important;
+  color: #2563EB !important;
+}
+
+html.light .hero-section .hero-icon-box-active {
+  background-color: #2563EB !important;
+  border-color: #3B82F6 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 0 12px rgba(37, 99, 235, 0.4) !important;
+}
+
+html.light .hero-section .hero-card-title-inactive {
+  color: #0F172A !important;
+  font-weight: 800 !important;
+}
+
+html.light .hero-section .hero-card-title-active {
+  color: #2563EB !important;
+  font-weight: 800 !important;
+}
+
+html.light .hero-section .hero-card-desc {
+  color: #64748B !important;
+}
+
+html.light .hero-section .hero-spoke-inactive {
+  stroke: #CBD5E1 !important;
+}
+
+html.light .hero-section .hero-spoke-active {
+  stroke: #2563EB !important;
+}
+
+html.light .hero-section .hero-arc-inactive {
+  stroke: #818CF8 !important;
+  opacity: 0.35 !important;
 }
 
 /* Custom Scrollbar for horizontal scrolling zones */

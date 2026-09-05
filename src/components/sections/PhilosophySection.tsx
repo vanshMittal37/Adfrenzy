@@ -31,7 +31,7 @@ export function PhilosophySection() {
           </h2>
 
           <p className="text-text-secondary text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            That's why our creative strategists and media buyers work together in one loop instead of handing work off from one isolated department to another.
+            That&apos;s why our creative strategists and media buyers work together in one loop instead of handing work off from one isolated department to another.
           </p>
 
           {/* Linear Flow Diagram */}

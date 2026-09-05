@@ -9,12 +9,12 @@ export function Footer() {
           <div className="lg:col-span-2 space-y-4">
             <Link href="/" className="flex items-center">
               <img
-                src="/Logo_SparkMedia_dark.png"
+                src="/Logo_Adfrenzy_dark.png"
                 alt="Adfrenzy Media logo"
                 className="logo-dark-theme w-[140px] sm:w-[170px] h-auto object-contain"
               />
               <img
-                src="/Logo_SparkMedia_light.png"
+                src="/Logo_Adfrenzy_light.png"
                 alt="Adfrenzy Media logo"
                 className="logo-light-theme w-[140px] sm:w-[170px] h-auto object-contain"
               />

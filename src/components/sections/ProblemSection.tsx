@@ -41,7 +41,7 @@ export function ProblemSection() {
             THE REAL PROBLEM
           </span>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-text-primary tracking-tight leading-tight">
-            Growth doesn't break in the ad account. It breaks between the{" "}
+            Growth doesn&apos;t break in the ad account. It breaks between the{" "}
             <span className="font-serif-italic font-normal italic text-accent">
               pieces
             </span>

@@ -24,104 +24,164 @@ export interface CaseStudy {
 }
 
 export const caseStudiesData: Record<string, CaseStudy> = {
-  "brand-1": {
-    slug: "brand-1",
-    clientName: "[Brand 1]",
-    industry: "[Category]",
-    title: "[Brand 1]",
-    tagline: "[8.6x ROAS at scale]",
-    challenge: "Scaling account-level spend while preserving contribution margins.",
+  "iyka": {
+    slug: "iyka",
+    clientName: "IYKA",
+    industry: "Women's Ethnic Wear",
+    title: "IYKA — Scaling Ethnic Wear to 1 Cr with Sustained ROAS",
+    tagline: "Four months to 1 Cr while maintaining strict profit margin requirements.",
+    challenge: "Scaling paid ad budgets rapidly in competitive women's ethnic wear without encountering ad fatigue or diminishing return on ad spend.",
     strategy: [
-      "Integrated profit-first media buying structure across Meta and Google.",
-      "Shipped weekly UGC and static creative hooks to eliminate ad fatigue.",
-      "Optimized PDP landing pages for mobile checkout speed."
+      "Built a high-velocity UGC creative testing engine for kurti and co-ord drops.",
+      "Integrated full-funnel media buying across Meta and Google Shopping.",
+      "Streamlined storefront conversion pathways for mobile users."
     ],
     execution: {
-      creative: "Weekly hook testing and high-velocity UGC assets.",
-      media: "Controlled step budget increases aligned with P&L CAC.",
-      cro: "Mobile-first store optimization and friction removal.",
-      retention: "Post-purchase sequences to increase repeat order value."
+      creative: "Weekly static & video hook testing focused on texture, fit, and ethnic styling.",
+      media: "P&L-aligned capital allocation with strict bid ceiling controls.",
+      cro: "Mobile-first store speed optimization and quick-buy checkout flow.",
+      retention: "Automated repurchase and collection launch notifications."
     },
     results: {
-      metric1: { label: "Average ROAS", value: "8.6x" },
-      metric2: { label: "Scale Benchmark", value: "Sustained" },
-      metric3: { label: "Funnel Status", value: "Optimized" }
+      metric1: { label: "ROAS Benchmark", value: "8.0x+" },
+      metric2: { label: "Scaling Target", value: "1 Cr Scaled" },
+      metric3: { label: "Creative Pipeline", value: "Weekly Drops" }
     },
-    heroImage: "/assets/brand-analytics-sales.jpg"
+    testimonialQuote: "Four months. Zero to 1 crore, and ROAS never dropped below 8. What actually surprised me was how calm they stayed while scaling.",
+    testimonialAuthor: "Vishnu, Founder of IYKA",
+    heroImage: "/assets/iyka.jpeg"
   },
-  "brand-2": {
-    slug: "brand-2",
-    clientName: "[Brand 2]",
-    industry: "[Category]",
-    title: "[Brand 2]",
-    tagline: "[Revenue 29L to 1.2Cr in 5 months]",
-    challenge: "Overcoming revenue stagnancy and scaling across core acquisition channels.",
+  "kaftanize": {
+    slug: "kaftanize",
+    clientName: "Kaftanize",
+    industry: "Indo-Western & Kurta Sets",
+    title: "Kaftanize — Synchronized Creative & Storefront Optimization",
+    tagline: "Unifying ads and landing pages to unlock higher conversion rates.",
+    challenge: "High storefront drop-offs caused by disconnected ad messaging and unoptimized mobile product pages.",
     strategy: [
-      "Rebuilt core landing pages for direct purchase conversion.",
-      "Deployed high-velocity creative volume testing pipeline.",
-      "Optimized contribution margin tracking."
+      "Redesigned key product detail pages and landing page corridors.",
+      "Synchronized performance ad messaging directly with store landing pages.",
+      "Deployed automated retention flows for repeat orders."
     ],
     execution: {
-      creative: "Direct-response video hooks and UGC assets.",
-      media: "P&L-aligned capital allocation.",
-      cro: "PDP and checkout flow friction removal.",
-      retention: "Email & SMS flow optimization."
+      creative: "Aesthetic lifestyle showcases and feature-highlight static ads.",
+      media: "Consolidated Meta ad account structure with broad audience targeting.",
+      cro: "Simultaneous website layout and checkout friction fixes.",
+      retention: "Email & WhatsApp post-purchase review and repurchase triggers."
     },
     results: {
-      metric1: { label: "Revenue Scale", value: "29L to 1.2Cr" },
-      metric2: { label: "Timeframe", value: "5 Months" },
-      metric3: { label: "Growth Status", value: "Compounding" }
+      metric1: { label: "ROAS Benchmark", value: "8.3x" },
+      metric2: { label: "Funnel Status", value: "Synchronized" },
+      metric3: { label: "Conversion Rate", value: "Optimized" }
     },
-    heroImage: "/assets/brand-analytics-visitors.jpg"
+    testimonialQuote: "They fixed the website and the ads at the same time. Same traffic, much better conversion, and we're sitting at 8.3x now.",
+    testimonialAuthor: "Rahul Aggarwal, Founder of Kaftanize",
+    heroImage: "/assets/kaftanize.jpeg"
   },
-  "brand-3": {
-    slug: "brand-3",
-    clientName: "[Brand 3]",
-    industry: "[Category]",
-    title: "[Brand 3]",
-    tagline: "[CAC down 38%]",
-    challenge: "High customer acquisition costs on paid media channels.",
+  "the-emryo-store": {
+    slug: "the-emryo-store",
+    clientName: "The Emryo Store",
+    industry: "Anime Streetwear",
+    title: "The Emryo Store — High-Drop Streetwear Acquisition Engine",
+    tagline: "Tripled monthly revenue with continuous anime embroidery creative refreshes.",
+    challenge: "Anime embroidery streetwear relies on new collection drops; static ad creative quickly fatigues if not refreshed constantly.",
     strategy: [
-      "Engineered full-funnel CRO to increase baseline conversion rates.",
-      "Refreshed static and video ad creatives before fatigue.",
-      "Optimized paid search and shopping targeting."
+      "Deployed a rapid creative pipeline to mirror new drop schedules.",
+      "Targeted passionate anime sub-cultures with high-converting video hooks.",
+      "Optimized contribution margin tracking across all campaign tiers."
     ],
     execution: {
-      creative: "High-contrast catalog overlays and motion graphics.",
-      media: "Targeted media buying with strict bid controls.",
-      cro: "A/B testing PDP layouts and quick buy steps.",
-      retention: "Automated repurchase reminders."
+      creative: "High-volume video hooks highlighting detailed embroidery craftsmanship.",
+      media: "Dynamic product catalog ads combined with top-of-funnel video acquisition.",
+      cro: "Drop-specific collection pages designed for rapid mobile checkout.",
+      retention: "VIP drop alerts via SMS and email."
     },
     results: {
-      metric1: { label: "CAC Reduction", value: "-38%" },
-      metric2: { label: "Conversion Rate", value: "Improved" },
-      metric3: { label: "Blended ROAS", value: "Scaled" }
+      metric1: { label: "Revenue Scale", value: "3x Growth" },
+      metric2: { label: "ROAS Benchmark", value: "8.0x+" },
+      metric3: { label: "Ad Fatigue", value: "Eliminated" }
     },
-    heroImage: "/assets/brand-meta-performance-01.jpg"
+    testimonialQuote: "Anime streetwear lives on new drops, so the ads have to keep moving. They ship enough creative that nothing ever goes stale.",
+    testimonialAuthor: "Sajid, Founder of The Emryo Store",
+    heroImage: "/assets/theepisode.jpeg"
   },
-  "brand-4": {
-    slug: "brand-4",
-    clientName: "[Brand 4]",
-    industry: "[Category]",
-    title: "[Brand 4]",
-    tagline: "[Metric]",
-    challenge: "Establishing consistent acquisition loop across search and social.",
+  "etiquette-apparel": {
+    slug: "etiquette-apparel",
+    clientName: "Etiquette Apparel",
+    industry: "D2C Apparel",
+    title: "Etiquette Apparel — Profitable Scale & Transparent Reporting",
+    tagline: "Doubled brand revenue while maintaining rigid CAC benchmarks.",
+    challenge: "Uncertainty in previous agency reporting and rising customer acquisition costs.",
     strategy: [
-      "Unified performance marketing and creative execution.",
-      "Technical SEO and category page optimization.",
-      "Weekly performance review and decision framework."
+      "Implemented strict profit-first contribution margin tracking.",
+      "Replaced fatigued ad creatives with fresh direct-response angles.",
+      "Established weekly decision-driven reporting reviews."
     ],
     execution: {
-      creative: "Tested hook bank deployment.",
-      media: "Balanced acquisition budget allocation.",
-      cro: "Mobile-first store speed tuning.",
-      retention: "Customer LTV expansion."
+      creative: "Clean apparel detail overlays and lifestyle motion graphics.",
+      media: "Targeted scaling with controlled budget step increases.",
+      cro: "Landing page speed optimization and navigation refinement.",
+      retention: "Customer lifetime value expansion flows."
     },
     results: {
-      metric1: { label: "Performance Metric", value: "[Metric]" },
-      metric2: { label: "Account Signal", value: "Stable" },
-      metric3: { label: "Growth Loop", value: "Active" }
+      metric1: { label: "Revenue Growth", value: "2x Scale" },
+      metric2: { label: "ROAS Benchmark", value: "8.0x+" },
+      metric3: { label: "Reporting", value: "100% Clear" }
     },
-    heroImage: "/assets/brand-meta-performance-02.jpg"
+    testimonialQuote: "We've more than doubled since they came in, with ROAS above 8 the whole way. They also tell me what failed and why.",
+    testimonialAuthor: "Rupesh, Founder of Etiquette Apparel",
+    heroImage: "/assets/etiquetteapperel.jpeg"
+  },
+  "fig-living": {
+    slug: "fig-living",
+    clientName: "FIG Living",
+    industry: "D2C Brand",
+    title: "FIG Living — Storefront Architecture & Funnel Scaling",
+    tagline: "Rebuilt conversion corridors before expanding paid ad spend.",
+    challenge: "Paid media budget inefficiency due to unoptimized store conversion rates.",
+    strategy: [
+      "Rearchitected core product pages before scaling ad spend.",
+      "Launched direct-response creative assets tailored to high-intent shoppers.",
+      "Unified performance marketing with SEO category visibility."
+    ],
+    execution: {
+      creative: "Minimalist product highlight videos and high-contrast static images.",
+      media: "Balanced acquisition budget split across search and social.",
+      cro: "Full storefront UX overhaul for frictionless purchasing.",
+      retention: "Automated replenishment reminders."
+    },
+    results: {
+      metric1: { label: "ROAS Benchmark", value: "8.0x+" },
+      metric2: { label: "Conversion Rate", value: "Significantly Higher" },
+      metric3: { label: "Store Velocity", value: "Optimized" }
+    },
+    heroImage: "/assets/figLiving.jpeg"
+  },
+  "wild-cherry": {
+    slug: "wild-cherry",
+    clientName: "Wild Cherry",
+    industry: "D2C Brand",
+    title: "Wild Cherry — Agile Execution & High-Velocity Ad Testing",
+    tagline: "Fast creative iterations resulting in steady compounding growth.",
+    challenge: "Slow ad production turnarounds holding back account expansion.",
+    strategy: [
+      "Established same-day creative iteration workflows.",
+      "Monitored hourly performance metrics to protect contribution margins.",
+      "Expanded multi-channel ad reach across Meta and Google."
+    ],
+    execution: {
+      creative: "Agile static and short-form video creative variations.",
+      media: "Dynamic ad set scaling with strict performance kill rules.",
+      cro: "PDP mobile layout optimization.",
+      retention: "Re-engagement email workflows."
+    },
+    results: {
+      metric1: { label: "ROAS Benchmark", value: "8.0x+" },
+      metric2: { label: "Turnaround Time", value: "Same-Day" },
+      metric3: { label: "Growth Signal", value: "Steady" }
+    },
+    testimonialQuote: "Fastest team I've worked with. I flag something in the morning, it's fixed by evening. ROAS has stayed above 8 the whole time.",
+    testimonialAuthor: "Founder, Wild Cherry",
+    heroImage: "/assets/wildcherry.jpeg"
   }
 };

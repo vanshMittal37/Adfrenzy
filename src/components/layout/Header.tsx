@@ -69,12 +69,12 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <img
-              src="/Logo_SparkMedia_dark.png"
+              src="/Logo_Adfrenzy_dark.png"
               alt="Adfrenzy Media logo"
               className="logo-dark-theme w-[140px] sm:w-[165px] h-auto object-contain"
             />
             <img
-              src="/Logo_SparkMedia_light.png"
+              src="/Logo_Adfrenzy_light.png"
               alt="Adfrenzy Media logo"
               className="logo-light-theme w-[140px] sm:w-[165px] h-auto object-contain"
             />

@@ -16,14 +16,14 @@ export function StrategyCallSection() {
             READY WHEN YOU ARE
           </span>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-            Let's find what's actually holding the{" "}
+            Let&apos;s find what&apos;s actually holding the{" "}
             <span className="font-serif-italic font-normal italic text-slate-200">
               growth back
             </span>
             .
           </h2>
           <p className="text-neutral-300 text-base sm:text-lg">
-            Book a call and we'll go through your ad account, your site and your funnel. You get a 90 day roadmap out of it whether you work with us or not.
+            Book a call and we&apos;ll go through your ad account, your site and your funnel. You get a 90 day roadmap out of it whether you work with us or not.
           </p>
         </div>
 

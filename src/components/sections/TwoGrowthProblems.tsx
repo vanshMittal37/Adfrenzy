@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, AlertCircle, Sparkles } from "lucide-react";
+import { AlertCircle, Sparkles } from "lucide-react";
 
 export function TwoGrowthProblems() {
   const openDaySchedule = () => {
@@ -42,10 +42,10 @@ export function TwoGrowthProblems() {
                 <AlertCircle className="w-5 h-5 text-red-500" />
               </div>
               <h3 className="text-2xl font-extrabold text-text-primary leading-snug">
-                "We've hit a ceiling."
+                &quot;We&apos;ve hit a ceiling.&quot;
               </h3>
               <p className="text-text-secondary text-sm leading-relaxed">
-                You're spending. The revenue curve has gone flat.
+                You&apos;re spending. The revenue curve has gone flat.
               </p>
               
               <div className="space-y-2 pt-2 border-t border-border-subtle">
@@ -57,11 +57,11 @@ export function TwoGrowthProblems() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-red-500 mt-1.5 shrink-0" />
-                    <span>Your team can't think past the ad account</span>
+                    <span>Your team can&apos;t think past the ad account</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-red-500 mt-1.5 shrink-0" />
-                    <span>You've changed agencies twice and got the same graph</span>
+                    <span>You&apos;ve changed agencies twice and got the same graph</span>
                   </li>
                 </ul>
               </div>
@@ -89,10 +89,10 @@ export function TwoGrowthProblems() {
                 <Sparkles className="w-5 h-5 text-accent" />
               </div>
               <h3 className="text-2xl font-extrabold text-text-primary leading-snug">
-                "We're buying traffic we can't convert."
+                &quot;We&apos;re buying traffic we can&apos;t convert.&quot;
               </h3>
               <p className="text-text-secondary text-sm leading-relaxed">
-                The media is fine. The site, the pages and the creative can't carry it.
+                The media is fine. The site, the pages and the creative can&apos;t carry it.
               </p>
               
               <div className="space-y-2 pt-2 border-t border-border-subtle">

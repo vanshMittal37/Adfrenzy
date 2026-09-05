@@ -29,33 +29,47 @@ const SCREENSHOT_MAP: Record<
     alt: string;
   }
 > = {
-  "brand-1": {
-    src: "/assets/brand-analytics-sales.jpg",
+  "iyka": {
+    src: "/assets/iyka.jpeg",
     sectionEyebrow: "REVENUE PERFORMANCE",
     sectionTitle: "Sales & Performance Snapshot",
     sectionDesc: "A visual demonstration of campaign sales generation, scaling trajectory, and daily performance metrics.",
     alt: "Sales performance analytics dashboard"
   },
-  "brand-2": {
-    src: "/assets/brand-analytics-visitors.jpg",
-    sectionEyebrow: "TRAFFIC & VISITOR ANALYTICS",
-    sectionTitle: "Visitor Acquisition Snapshot",
+  "kaftanize": {
+    src: "/assets/kaftanize.jpeg",
+    sectionEyebrow: "STORE & MEDIA PERFORMANCE",
+    sectionTitle: "Storefront & Media Acquisition",
     sectionDesc: "A visual look at traffic distribution, daily active visitor counts, and source-level channels.",
     alt: "Customer and visitor analytics dashboard"
   },
-  "brand-3": {
-    src: "/assets/brand-meta-performance-01.jpg",
+  "the-emryo-store": {
+    src: "/assets/theepisode.jpeg",
     sectionEyebrow: "CAMPAIGN PERFORMANCE",
     sectionTitle: "Performance Marketing Showcase",
     sectionDesc: "A snapshot illustrating ad creative response, engagement indices, and performance distribution.",
     alt: "Campaign performance analytics dashboard"
   },
-  "brand-4": {
-    src: "/assets/brand-meta-performance-02.jpg",
+  "etiquette-apparel": {
+    src: "/assets/etiquetteapperel.jpeg",
     sectionEyebrow: "PAID MEDIA PERFORMANCE",
     sectionTitle: "Paid Media Execution Snapshot",
     sectionDesc: "An execution benchmark demonstrating campaign ad delivery, reach structure, and optimization patterns.",
     alt: "Paid media campaign performance dashboard"
+  },
+  "fig-living": {
+    src: "/assets/figLiving.jpeg",
+    sectionEyebrow: "STOREFRONT OPTIMIZATION",
+    sectionTitle: "UX & Conversion Snapshot",
+    sectionDesc: "Conversion rate optimization metrics and storefront corridor improvements.",
+    alt: "Storefront optimization analytics dashboard"
+  },
+  "wild-cherry": {
+    src: "/assets/wildcherry.jpeg",
+    sectionEyebrow: "CREATIVE TESTING",
+    sectionTitle: "High-Velocity Creative Snapshot",
+    sectionDesc: "Ad creative deployment and performance response analytics.",
+    alt: "Creative performance analytics dashboard"
   }
 };
 

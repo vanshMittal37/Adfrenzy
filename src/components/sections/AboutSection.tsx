@@ -9,7 +9,7 @@ export function AboutSection() {
               WHO WE ARE
             </span>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-text-primary tracking-tight leading-tight">
-              We're building the kind of agency we'd{" "}
+              We&apos;re building the kind of agency we&apos;d{" "}
               <span className="font-serif-italic font-normal italic text-slate-200 underline decoration-accent/30 decoration-wavy decoration-2">
                 want to work with
               </span>

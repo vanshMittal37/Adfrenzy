@@ -1,12 +1,25 @@
 import { MetaLogo, GoogleLogo, ShopifyLogo, GoKwikLogo } from "./PartnerLogos";
 
+export interface PartnerBadge {
+  name: string;
+  logo: React.ComponentType<{ className?: string }>;
+  color: string;
+  verified: boolean;
+}
+
 export function TrustBar() {
-  const partnerBadges = [
-    { name: "Meta Business Partner", logo: MetaLogo, color: "text-[#0668E1]" },
-    { name: "Google Partner", logo: GoogleLogo, color: "" },
-    { name: "Shopify Partner", logo: ShopifyLogo, color: "text-[#95BF47]" },
-    { name: "GoKwik Partner", logo: GoKwikLogo, color: "text-amber-400" }
+  const partnerBadges: PartnerBadge[] = [
+    { name: "Meta Business Partner", logo: MetaLogo, color: "text-[#0668E1]", verified: false },
+    { name: "Google Partner", logo: GoogleLogo, color: "", verified: false },
+    { name: "Shopify Partner", logo: ShopifyLogo, color: "text-[#95BF47]", verified: false },
+    { name: "GoKwik", logo: GoKwikLogo, color: "text-amber-400", verified: false }
   ];
+
+  const verifiedBadges = partnerBadges.filter((b) => b.verified);
+
+  if (verifiedBadges.length === 0) {
+    return null;
+  }
 
   return (
     <section className="py-12 bg-surface border-b border-border-subtle">
@@ -16,7 +29,7 @@ export function TrustBar() {
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
-          {partnerBadges.map((badge, idx) => {
+          {verifiedBadges.map((badge, idx) => {
             const LogoComponent = badge.logo;
             return (
               <div

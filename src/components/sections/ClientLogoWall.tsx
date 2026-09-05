@@ -1,58 +1,73 @@
 "use client";
 
-export interface ClientLogo {
-  name: string;
-  isPlaceholder?: boolean;
+import { useState } from "react";
+import Image from "next/image";
+import { getApprovedLogos, ClientBrand } from "@/data/clients";
+
+function LogoCard({ client }: { client: ClientBrand }) {
+  const [imgError, setImgError] = useState(false);
+
+  return (
+    <a
+      href={client.website}
+      target="_blank"
+      rel="noopener noreferrer"
+      title={`${client.name} — Official Website`}
+      className="client-logo-card flex items-center justify-center px-5 py-3.5 w-36 sm:w-44 h-16 sm:h-20 rounded-2xl flex-shrink-0 group cursor-pointer"
+    >
+      {!imgError ? (
+        <div className="relative w-full h-full flex items-center justify-center">
+          <Image
+            src={client.logo}
+            alt={client.logoAlt}
+            width={140}
+            height={48}
+            className="max-w-[130px] sm:max-w-[140px] max-h-[38px] sm:max-h-[44px] w-auto h-auto object-contain transition-all duration-300 opacity-90 group-hover:opacity-100 group-hover:scale-105"
+            onError={() => setImgError(true)}
+            unoptimized={client.logo.startsWith("http")}
+          />
+        </div>
+      ) : (
+        <span className="font-mono text-xs font-bold text-text-secondary group-hover:text-accent tracking-wider uppercase text-center truncate">
+          {client.name}
+        </span>
+      )}
+    </a>
+  );
 }
 
 export function ClientLogoWall() {
-  // Configurable data-driven client logo list as specified in section 8
-  const clientLogos: ClientLogo[] = [
-    { name: "Brand Logo 1", isPlaceholder: true },
-    { name: "Brand Logo 2", isPlaceholder: true },
-    { name: "Brand Logo 3", isPlaceholder: true },
-    { name: "Brand Logo 4", isPlaceholder: true },
-    { name: "Brand Logo 5", isPlaceholder: true },
-    { name: "Brand Logo 6", isPlaceholder: true },
-    { name: "Brand Logo 7", isPlaceholder: true },
-    { name: "Brand Logo 8", isPlaceholder: true },
-  ];
+  const allLogos = getApprovedLogos();
 
   return (
-    <section className="py-16 bg-background border-b border-border-subtle overflow-hidden" id="work">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-8">
-        <h3 className="text-sm sm:text-base font-mono uppercase tracking-widest text-text-secondary">
+    <section className="py-14 bg-background border-b border-border-subtle overflow-hidden" id="work">
+      {/* Section Header */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-8 space-y-2">
+        <span className="text-xs font-mono uppercase tracking-widest text-accent font-bold">
+          CLIENTS
+        </span>
+        <h2 className="text-2xl sm:text-4xl font-extrabold text-text-primary tracking-tight">
           Brands that scaled with us
-        </h3>
+        </h2>
+        <p className="text-sm sm:text-base text-text-secondary max-w-xl mx-auto">
+          Trusted by ambitious D2C brands building for the long term.
+        </p>
       </div>
 
-      {/* Data-driven Marquee Container */}
-      <div className="relative w-full overflow-hidden py-4">
-        <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-background to-background/0 z-10 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-background to-background/0 z-10 pointer-events-none" />
+      {/* Single Horizontal Strip Marquee Container (Scrolling Right to Left) */}
+      <div className="relative w-full overflow-hidden py-3">
+        {/* Edge gradient masks */}
+        <div className="absolute inset-y-0 left-0 w-16 sm:w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
 
-        <div className="animate-marquee-rtl flex gap-6">
-          {/* First loop set */}
-          {clientLogos.map((client, idx) => (
-            <div
-              key={`logo-1-${idx}`}
-              className="flex items-center justify-center p-4 w-44 h-20 rounded-2xl bg-surface border border-border-subtle flex-shrink-0"
-            >
-              <span className="font-mono text-xs font-bold text-text-secondary tracking-wider uppercase">
-                [{client.name}]
-              </span>
-            </div>
+        <div className="animate-marquee-rtl flex flex-nowrap items-center shrink-0 whitespace-nowrap gap-4 sm:gap-6" style={{ width: "max-content" }}>
+          {/* Main 20 unique client logos sequence */}
+          {allLogos.map((client, idx) => (
+            <LogoCard key={`logo-set1-${client.id}-${idx}`} client={client} />
           ))}
-          {/* Second loop set for continuous loop */}
-          {clientLogos.map((client, idx) => (
-            <div
-              key={`logo-2-${idx}`}
-              className="flex items-center justify-center p-4 w-44 h-20 rounded-2xl bg-surface border border-border-subtle flex-shrink-0"
-            >
-              <span className="font-mono text-xs font-bold text-text-secondary tracking-wider uppercase">
-                [{client.name}]
-              </span>
-            </div>
+          {/* Exact duplicate set for seamless infinite loop reset */}
+          {allLogos.map((client, idx) => (
+            <LogoCard key={`logo-set2-${client.id}-${idx}`} client={client} />
           ))}
         </div>
       </div>

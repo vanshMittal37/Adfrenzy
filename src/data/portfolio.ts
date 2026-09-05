@@ -6,6 +6,7 @@ export interface PortfolioItem {
   category: string;
   industry: string;
   thumbnail: string;
+  website: string;
   videoUrl?: string;
   metrics: {
     primaryValue: string;
@@ -20,67 +21,105 @@ export interface PortfolioItem {
 
 export const portfolioData: PortfolioItem[] = [
   {
-    id: "brand-1",
-    slug: "brand-1",
-    title: "[Brand 1]",
-    clientName: "[Brand 1]",
-    category: "[CATEGORY]",
-    industry: "[Category]",
-    thumbnail: "/assets/brand-analytics-sales.jpg",
+    id: "iyka",
+    slug: "iyka",
+    title: "IYKA",
+    clientName: "IYKA",
+    category: "Women's Ethnic Wear",
+    industry: "Women's Ethnic Wear",
+    thumbnail: "/assets/iyka.jpeg",
+    website: "https://iyka.co.in",
     metrics: {
-      primaryValue: "8.6x ROAS",
-      primaryLabel: "At Scale",
-      bottomLabel: "[8.6x ROAS at scale]"
+      primaryValue: "Full-Funnel Growth",
+      primaryLabel: "Ethnic Wear",
+      bottomLabel: "Performance & Creative"
     },
     featured: true,
-    shortDescription: "[Brand 1] · [Category] · [8.6x ROAS at scale]"
+    shortDescription: "Full-funnel ethnic wear acquisition & high-velocity creative testing."
   },
   {
-    id: "brand-2",
-    slug: "brand-2",
-    title: "[Brand 2]",
-    clientName: "[Brand 2]",
-    category: "[CATEGORY]",
-    industry: "[Category]",
-    thumbnail: "/assets/brand-analytics-visitors.jpg",
+    id: "kaftanize",
+    slug: "kaftanize",
+    title: "Kaftanize",
+    clientName: "Kaftanize",
+    category: "Indo-Western & Kurta Sets",
+    industry: "Indo-Western",
+    thumbnail: "/assets/kaftanize.jpeg",
+    website: "https://kaftanize.com",
     metrics: {
-      primaryValue: "29L to 1.2Cr",
-      primaryLabel: "Revenue Growth",
-      bottomLabel: "In 5 months"
+      primaryValue: "Creative & CRO",
+      primaryLabel: "Indo-Western",
+      bottomLabel: "Storefront & Media"
     },
     featured: true,
-    shortDescription: "[Brand 2] · [Category] · [Revenue 29L to 1.2Cr in 5 months]"
+    shortDescription: "Unified performance marketing and store conversion optimization."
   },
   {
-    id: "brand-3",
-    slug: "brand-3",
-    title: "[Brand 3]",
-    clientName: "[Brand 3]",
-    category: "[CATEGORY]",
-    industry: "[Category]",
-    thumbnail: "/assets/brand-meta-performance-01.jpg",
+    id: "the-emryo-store",
+    slug: "the-emryo-store",
+    title: "The Emryo Store",
+    clientName: "The Emryo Store",
+    category: "Anime Embroidery Streetwear",
+    industry: "Streetwear",
+    thumbnail: "/assets/theepisode.jpeg",
+    website: "https://theemryostore.com",
     metrics: {
-      primaryValue: "-38% CAC",
-      primaryLabel: "Acquisition Cost",
-      bottomLabel: "CAC down 38%"
+      primaryValue: "Performance Scaling",
+      primaryLabel: "Anime Streetwear",
+      bottomLabel: "Drop Creative Pipeline"
     },
     featured: true,
-    shortDescription: "[Brand 3] · [Category] · [CAC down 38%]"
+    shortDescription: "High-drop creative cadence and anime streetwear scaling."
   },
   {
-    id: "brand-4",
-    slug: "brand-4",
-    title: "[Brand 4]",
-    clientName: "[Brand 4]",
-    category: "[CATEGORY]",
-    industry: "[Category]",
-    thumbnail: "/assets/brand-meta-performance-02.jpg",
+    id: "etiquette-apparel",
+    slug: "etiquette-apparel",
+    title: "Etiquette Apparel",
+    clientName: "Etiquette Apparel",
+    category: "D2C Apparel",
+    industry: "Apparel",
+    thumbnail: "/assets/etiquetteapperel.jpeg",
+    website: "https://etiquetteapparel.com",
     metrics: {
-      primaryValue: "[Metric]",
-      primaryLabel: "Performance Metric",
-      bottomLabel: "[Metric]"
+      primaryValue: "D2C Growth",
+      primaryLabel: "Performance Marketing",
+      bottomLabel: "Profit-First Strategy"
     },
     featured: true,
-    shortDescription: "[Brand 4] · [Category] · [Metric]"
+    shortDescription: "Profitable scaling with P&L-aligned media buying frameworks."
+  },
+  {
+    id: "fig-living",
+    slug: "fig-living",
+    title: "FIG Living",
+    clientName: "FIG Living",
+    category: "D2C Brand",
+    industry: "Lifestyle",
+    thumbnail: "/assets/figLiving.jpeg",
+    website: "https://www.figliving.com",
+    metrics: {
+      primaryValue: "CRO & Performance",
+      primaryLabel: "D2C Growth",
+      bottomLabel: "Funnel Optimization"
+    },
+    featured: true,
+    shortDescription: "Direct-to-consumer storefront optimization and paid media execution."
+  },
+  {
+    id: "wild-cherry",
+    slug: "wild-cherry",
+    title: "Wild Cherry",
+    clientName: "Wild Cherry",
+    category: "D2C Brand",
+    industry: "Lifestyle",
+    thumbnail: "/assets/wildcherry.jpeg",
+    website: "https://wildcherry.in",
+    metrics: {
+      primaryValue: "Creative & Media",
+      primaryLabel: "Performance Growth",
+      bottomLabel: "Rapid Creative Iteration"
+    },
+    featured: true,
+    shortDescription: "Rapid ad creative deployment and multi-channel acquisition."
   }
 ];
