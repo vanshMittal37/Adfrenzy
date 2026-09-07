@@ -27,7 +27,7 @@ export const portfolioData: PortfolioItem[] = [
     clientName: "Wine Chateau",
     category: "D2C Wine & Spirits",
     industry: "Wine & Spirits",
-    thumbnail: "/assets/brand-meta-performance-01.jpg",
+    thumbnail: "/assets/wine-chateau-product.jpg",
     website: "https://winechateau.com",
     metrics: {
       primaryValue: "8.0x+ ROAS",
@@ -44,7 +44,7 @@ export const portfolioData: PortfolioItem[] = [
     clientName: "Rootz Organics",
     category: "Organic Fruits & Veggies",
     industry: "Organic Produce",
-    thumbnail: "/assets/brand-analytics-sales.jpg",
+    thumbnail: "/assets/rootz-organics-product.jpg",
     website: "https://www.rootzorganics.com/categories/veg-and-fruits",
     metrics: {
       primaryValue: "8.2x ROAS",
@@ -61,7 +61,7 @@ export const portfolioData: PortfolioItem[] = [
     clientName: "Label Pikake",
     category: "Ethnic & Designer Wear",
     industry: "Designer Fashion",
-    thumbnail: "/assets/brand-analytics-visitors.jpg",
+    thumbnail: "/assets/label-pikake-product.jpg",
     website: "https://www.labelpikake.com",
     metrics: {
       primaryValue: "8.5x ROAS",
@@ -78,7 +78,7 @@ export const portfolioData: PortfolioItem[] = [
     clientName: "AI by Prerna",
     category: "D2C Couture & Fashion",
     industry: "Couture & Fashion",
-    thumbnail: "/assets/brand-meta-performance-02.jpg",
+    thumbnail: "/assets/ai-by-prerna-product.jpg",
     website: "https://aibyprerna.com",
     metrics: {
       primaryValue: "8.4x ROAS",
@@ -95,7 +95,7 @@ export const portfolioData: PortfolioItem[] = [
     clientName: "Atulya Karigari",
     category: "Handcrafted Heritage Wear",
     industry: "Heritage Craft",
-    thumbnail: "/assets/kaftanize-performance-01.jpg",
+    thumbnail: "/assets/atulya-karigari-product.jpg",
     website: "https://www.atulyakarigari.com",
     metrics: {
       primaryValue: "8.5x ROAS",
@@ -112,7 +112,7 @@ export const portfolioData: PortfolioItem[] = [
     clientName: "Velviore",
     category: "Luxury D2C Apparel",
     industry: "Luxury Apparel",
-    thumbnail: "/assets/kaftanize-performance-02.jpg",
+    thumbnail: "/assets/velviore-product.jpg",
     website: "https://velviore.com",
     metrics: {
       primaryValue: "8.1x ROAS",
