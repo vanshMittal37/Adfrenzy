@@ -21,6 +21,110 @@ export interface PortfolioItem {
 
 export const portfolioData: PortfolioItem[] = [
   {
+    id: "wine-chateau",
+    slug: "wine-chateau",
+    title: "Wine Chateau",
+    clientName: "Wine Chateau",
+    category: "D2C Wine & Spirits",
+    industry: "Wine & Spirits",
+    thumbnail: "/assets/brand-meta-performance-01.jpg",
+    website: "https://winechateau.com",
+    metrics: {
+      primaryValue: "8.0x+ ROAS",
+      primaryLabel: "US Market Scale",
+      bottomLabel: "Performance & Creative"
+    },
+    featured: true,
+    shortDescription: "US market scale & profitable customer acquisition for premium wine catalog."
+  },
+  {
+    id: "rootz-organics",
+    slug: "rootz-organics",
+    title: "Rootz Organics",
+    clientName: "Rootz Organics",
+    category: "Organic Fruits & Veggies",
+    industry: "Organic Produce",
+    thumbnail: "/assets/brand-analytics-sales.jpg",
+    website: "https://www.rootzorganics.com/categories/veg-and-fruits",
+    metrics: {
+      primaryValue: "8.2x ROAS",
+      primaryLabel: "Fresh Organic Scale",
+      bottomLabel: "Retention & Acquisition"
+    },
+    featured: true,
+    shortDescription: "Fresh organic produce D2C performance scaling and recurring subscription loops."
+  },
+  {
+    id: "label-pikake",
+    slug: "label-pikake",
+    title: "Label Pikake",
+    clientName: "Label Pikake",
+    category: "Ethnic & Designer Wear",
+    industry: "Designer Fashion",
+    thumbnail: "/assets/brand-analytics-visitors.jpg",
+    website: "https://www.labelpikake.com",
+    metrics: {
+      primaryValue: "8.5x ROAS",
+      primaryLabel: "Monthly Growth",
+      bottomLabel: "Creative Pipeline"
+    },
+    featured: true,
+    shortDescription: "Consistent month-over-month ethnic apparel acquisition and high-converting ad funnels."
+  },
+  {
+    id: "ai-by-prerna",
+    slug: "ai-by-prerna",
+    title: "AI by Prerna",
+    clientName: "AI by Prerna",
+    category: "D2C Couture & Fashion",
+    industry: "Couture & Fashion",
+    thumbnail: "/assets/brand-meta-performance-02.jpg",
+    website: "https://aibyprerna.com",
+    metrics: {
+      primaryValue: "8.4x ROAS",
+      primaryLabel: "Revenue Doubled",
+      bottomLabel: "Full-Funnel Scaling"
+    },
+    featured: true,
+    shortDescription: "High-velocity creative testing pipeline and doubled revenue scale."
+  },
+  {
+    id: "atulya-karigari",
+    slug: "atulya-karigari",
+    title: "Atulya Karigari",
+    clientName: "Atulya Karigari",
+    category: "Handcrafted Heritage Wear",
+    industry: "Heritage Craft",
+    thumbnail: "/assets/kaftanize-performance-01.jpg",
+    website: "https://www.atulyakarigari.com",
+    metrics: {
+      primaryValue: "8.5x ROAS",
+      primaryLabel: "Heritage Scale",
+      bottomLabel: "Store & Performance"
+    },
+    featured: true,
+    shortDescription: "Craft-focused narrative marketing and high-intent customer acquisition."
+  },
+  {
+    id: "velviore",
+    slug: "velviore",
+    title: "Velviore",
+    clientName: "Velviore",
+    category: "Luxury D2C Apparel",
+    industry: "Luxury Apparel",
+    thumbnail: "/assets/kaftanize-performance-02.jpg",
+    website: "https://velviore.com",
+    metrics: {
+      primaryValue: "8.1x ROAS",
+      primaryLabel: "New Launch Scale",
+      bottomLabel: "Media & CRO"
+    },
+    featured: true,
+    shortDescription: "Rapid customer acquisition strategy for luxury apparel D2C storefront."
+  },
+
+  // ADDITIONAL WORK CARDS
+  {
     id: "iyka",
     slug: "iyka",
     title: "IYKA",

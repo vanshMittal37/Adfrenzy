@@ -16,7 +16,99 @@ export interface ClientBrand {
 }
 
 export const clients: ClientBrand[] = [
-  // MAIN 15 BRANDS
+  // FEATURED TOP 6 BRANDS
+  {
+    id: "wine-chateau",
+    name: "Wine Chateau",
+    website: "https://winechateau.com",
+    category: "D2C Wine & Spirits",
+    owner: "Som",
+    logo: "/clients/wine-chateau.svg",
+    logoAlt: "Wine Chateau",
+    approvedForLogo: true,
+    approvedForTestimonial: true,
+    metric: {
+      value: "8.0x+ ROAS",
+      label: "US Market Scale"
+    }
+  },
+  {
+    id: "rootz-organics",
+    name: "Rootz Organics",
+    website: "https://www.rootzorganics.com/categories/veg-and-fruits",
+    category: "D2C Organic Produce",
+    owner: "Founder",
+    logo: "/clients/rootz-organics.svg",
+    logoAlt: "Rootz Organics",
+    approvedForLogo: true,
+    approvedForTestimonial: true,
+    metric: {
+      value: "8.2x ROAS",
+      label: "Fresh Organic Scale"
+    }
+  },
+  {
+    id: "label-pikake",
+    name: "Label Pikake",
+    website: "https://www.labelpikake.com",
+    category: "D2C Designer Ethnic Wear",
+    owner: "Vandana",
+    logo: "/clients/label-pikake.svg",
+    logoAlt: "Label Pikake",
+    approvedForLogo: true,
+    approvedForTestimonial: true,
+    metric: {
+      value: "8.5x ROAS",
+      label: "Monthly Growth"
+    }
+  },
+  {
+    id: "ai-by-prerna",
+    name: "AI by Prerna",
+    website: "https://aibyprerna.com",
+    category: "D2C Couture & Apparel",
+    owner: "Prerna Khanna",
+    logo: "/clients/ai-by-prerna.svg",
+    logoAlt: "AI by Prerna",
+    approvedForLogo: true,
+    approvedForTestimonial: true,
+    metric: {
+      value: "8.4x ROAS",
+      label: "Revenue Doubled"
+    }
+  },
+  {
+    id: "atulya-karigari",
+    name: "Atulya Karigari",
+    website: "https://www.atulyakarigari.com",
+    category: "D2C Handcrafted Heritage",
+    owner: "Founder",
+    logo: "/clients/atulya-karigari.svg",
+    logoAlt: "Atulya Karigari",
+    approvedForLogo: true,
+    approvedForTestimonial: true,
+    metric: {
+      value: "8.5x ROAS",
+      label: "Heritage Scale"
+    }
+  },
+  {
+    id: "velviore",
+    name: "Velviore",
+    website: "https://velviore.com",
+    category: "D2C Luxury Apparel",
+    owner: "Founder",
+    logo: "/clients/velviore.svg",
+    logoAlt: "Velviore",
+    approvedForLogo: true,
+    approvedForTestimonial: true,
+    metric: {
+      value: "8.1x ROAS",
+      label: "New Launch Scale"
+    }
+  },
+
+  // ADDITIONAL BRANDS
   {
     id: "iyka",
     name: "IYKA",
@@ -165,26 +257,6 @@ export const clients: ClientBrand[] = [
     }
   },
   {
-    id: "velviore",
-    name: "Velviore",
-    website: "https://velviore.com",
-    category: "D2C Brand",
-    logo: "/clients/velviore.svg",
-    logoAlt: "Velviore",
-    approvedForLogo: true,
-    approvedForTestimonial: false
-  },
-  {
-    id: "atulya-karigari",
-    name: "Atulya Karigari",
-    website: "https://www.atulyakarigari.com",
-    category: "D2C Brand",
-    logo: "/clients/atulya-karigari.svg",
-    logoAlt: "Atulya Karigari",
-    approvedForLogo: true,
-    approvedForTestimonial: false
-  },
-  {
     id: "jabon",
     name: "Jabon",
     website: "https://www.jabon.co.in",
@@ -193,23 +265,6 @@ export const clients: ClientBrand[] = [
     logoAlt: "Jabon",
     approvedForLogo: true,
     approvedForTestimonial: false
-  },
-
-  // ADDITIONAL 5 BRANDS
-  {
-    id: "ai-by-prerna",
-    name: "AI by Prerna",
-    website: "https://aibyprerna.com",
-    category: "D2C Brand",
-    owner: "Prerna Khanna",
-    logo: "/clients/ai-by-prerna.svg",
-    logoAlt: "AI by Prerna",
-    approvedForLogo: true,
-    approvedForTestimonial: true,
-    metric: {
-      value: "8.4x ROAS",
-      label: "Revenue Doubled"
-    }
   },
   {
     id: "kri-chikankari",
@@ -227,21 +282,6 @@ export const clients: ClientBrand[] = [
     }
   },
   {
-    id: "label-pikake",
-    name: "Label Pikake",
-    website: "https://labelpikake.com",
-    category: "D2C Brand",
-    owner: "Vandana",
-    logo: "/clients/label-pikake.svg",
-    logoAlt: "Label Pikake",
-    approvedForLogo: true,
-    approvedForTestimonial: true,
-    metric: {
-      value: "8.5x ROAS",
-      label: "Monthly Growth"
-    }
-  },
-  {
     id: "leaf-ortho",
     name: "Leaf Ortho",
     website: "https://leafortho.com",
@@ -254,21 +294,6 @@ export const clients: ClientBrand[] = [
     metric: {
       value: "8.2x ROAS",
       label: "CAC Reduced"
-    }
-  },
-  {
-    id: "wine-chateau",
-    name: "Wine Chateau",
-    website: "https://winechateau.com",
-    category: "D2C Brand",
-    owner: "Som",
-    logo: "/clients/wine-chateau.svg",
-    logoAlt: "Wine Chateau",
-    approvedForLogo: true,
-    approvedForTestimonial: true,
-    metric: {
-      value: "8.0x+ ROAS",
-      label: "US Market Scale"
     }
   }
 ];

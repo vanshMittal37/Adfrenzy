@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function WorkPage() {
   return (
     <div className="pt-20">
-      <PortfolioSection />
+      <PortfolioSection showAllInitially={true} />
       <FinalCTA />
     </div>
   );

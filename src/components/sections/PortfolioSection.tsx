@@ -1,11 +1,16 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { portfolioData, PortfolioItem } from "@/data/portfolio";
 import { ArrowUpRight, ExternalLink } from "lucide-react";
 
-export function PortfolioSection() {
+export function PortfolioSection({ showAllInitially = false }: { showAllInitially?: boolean }) {
+  const [showAll, setShowAll] = useState(showAllInitially);
+
+  const displayedItems = showAll ? portfolioData : portfolioData.slice(0, 6);
+
   return (
     <section className="py-24 bg-background border-b border-border-subtle" id="work">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -25,7 +30,7 @@ export function PortfolioSection() {
 
         {/* Portfolio Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {portfolioData.map((item: PortfolioItem) => (
+          {displayedItems.map((item: PortfolioItem) => (
             <div
               key={item.id}
               className="glass-card flex flex-col rounded-2xl border border-border-subtle bg-surface shadow-lg transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/40 group overflow-hidden"
@@ -40,7 +45,7 @@ export function PortfolioSection() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
                 
-                <div className="absolute top-4 right-4 flex items-center gap-2">
+                <div className="absolute top-4 right-4 flex items-center gap-2 z-10">
                   <a
                     href={item.website}
                     target="_blank"
@@ -98,15 +103,17 @@ export function PortfolioSection() {
         </div>
 
         {/* See All Work Button */}
-        <div className="mt-16 text-center">
-          <Link
-            href="/work"
-            className="btn-yellow px-8 py-3.5 text-sm font-extrabold rounded-full inline-flex items-center gap-2 cursor-pointer shadow-md transition-all duration-300 hover:scale-105"
-          >
-            <span>See all work</span>
-            <ArrowUpRight className="w-4 h-4" />
-          </Link>
-        </div>
+        {!showAll && (
+          <div className="mt-16 text-center">
+            <button
+              onClick={() => setShowAll(true)}
+              className="btn-yellow px-8 py-3.5 text-sm font-extrabold rounded-full inline-flex items-center gap-2 cursor-pointer shadow-md transition-all duration-300 hover:scale-105"
+            >
+              <span>See all work</span>
+              <ArrowUpRight className="w-4 h-4" />
+            </button>
+          </div>
+        )}
 
       </div>
     </section>

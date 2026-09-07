@@ -11,7 +11,7 @@ export interface Testimonial {
 }
 
 export const testimonialsData: Testimonial[] = [
-  // FEATURED 6 APPROVED TESTIMONIALS
+  // FEATURED 6 APPROVED TESTIMONIALS (REQUESTED BRANDS)
   {
     id: "wine-chateau",
     brand: "Wine Chateau",
@@ -22,6 +22,28 @@ export const testimonialsData: Testimonial[] = [
     logo: "/clients/wine-chateau.svg",
     approvedForTestimonial: true,
     metricsHighlight: "8.0x+ ROAS (US)"
+  },
+  {
+    id: "rootz-organics",
+    brand: "Rootz Organics",
+    founder: "[Founder - TBD]",
+    role: "Founder",
+    location: "India",
+    quote: "Scaling fresh organic produce requires extremely sharp retention and customer acquisition funnels. They optimized our ad spend while holding an 8.2x ROAS consistently.",
+    logo: "/clients/rootz-organics.svg",
+    approvedForTestimonial: true,
+    metricsHighlight: "8.2x ROAS"
+  },
+  {
+    id: "label-pikake",
+    brand: "Label Pikake",
+    founder: "Vandana",
+    role: "Founder",
+    location: "Delhi",
+    quote: "We've grown every single month since they took over, and ROAS has stayed above 8.5 through all of it. New creative lands before I even remember to ask for it.",
+    logo: "/clients/label-pikake.svg",
+    approvedForTestimonial: true,
+    metricsHighlight: "8.5x ROAS"
   },
   {
     id: "ai-by-prerna",
@@ -35,48 +57,26 @@ export const testimonialsData: Testimonial[] = [
     metricsHighlight: "8.4x ROAS"
   },
   {
-    id: "the-emryo-store",
-    brand: "The Emryo Store",
-    founder: "Sajid",
+    id: "atulya-karigari",
+    brand: "Atulya Karigari",
+    founder: "[Founder - TBD]",
     role: "Founder",
-    location: "Hyderabad",
-    quote: "Anime streetwear lives on new drops, so the ads have to keep moving. They ship enough creative that nothing ever goes stale. Revenue has almost tripled and we're still above 8x.",
-    logo: "https://theemryostore.com/cdn/shop/files/dscfacaqcxax.png",
-    approvedForTestimonial: true,
-    metricsHighlight: "3x Revenue Scale"
-  },
-  {
-    id: "elayee",
-    brand: "Elayee",
-    founder: "Bharat",
-    role: "Founder",
-    location: "Gurgaon",
-    quote: "We've grown every month since they took over and held 8.6x while doing it. Nothing dramatic ever happened. They just showed up every week, fixed one thing, and it added up.",
-    logo: "/clients/elayee.svg",
-    approvedForTestimonial: true,
-    metricsHighlight: "8.6x ROAS"
-  },
-  {
-    id: "kri-chikankari",
-    brand: "Kri Chikankari",
-    founder: "Shubh",
-    role: "Founder",
-    location: "Delhi",
-    quote: "Chikankari is not an impulse buy. They understood that in the first week and built the funnel around it. We're running above 9x at a scale I didn't think was possible for this category. My last agency took a year and never got close.",
-    logo: "/clients/kri-chikankari.svg",
-    approvedForTestimonial: true,
-    metricsHighlight: "9.0x ROAS"
-  },
-  {
-    id: "label-pikake",
-    brand: "Label Pikake",
-    founder: "Vandana",
-    role: "Founder",
-    location: "Delhi",
-    quote: "We've grown every single month since they took over, and ROAS has stayed above 8.5 through all of it. New creative lands before I even remember to ask for it.",
-    logo: "/clients/label-pikake.svg",
+    location: "India",
+    quote: "They took time to understand the craft before writing a single ad. That showed in the creative and it showed in the numbers. 8.5x ROAS and steady revenue growth.",
+    logo: "/clients/atulya-karigari.svg",
     approvedForTestimonial: true,
     metricsHighlight: "8.5x ROAS"
+  },
+  {
+    id: "velviore",
+    brand: "Velviore",
+    founder: "[Founder - TBD]",
+    role: "Founder",
+    location: "India",
+    quote: "We started from zero brand awareness. They got the first winning ads inside three weeks and we've maintained an 8.1x ROAS while expanding inventory.",
+    logo: "/clients/velviore.svg",
+    approvedForTestimonial: true,
+    metricsHighlight: "8.1x ROAS"
   },
 
   // PENDING APPROVAL SPARE TESTIMONIALS (KEPT IN CENTRAL DATA, HIDDEN PUBLICLY)
