@@ -129,18 +129,18 @@ export function Hero() {
             {/* Main Headline */}
             <h1 className="hero-headline text-4xl sm:text-5xl md:text-6xl lg:text-[64px] font-extrabold text-white tracking-tight leading-[1.08] font-sans">
               Creative that{" "}
-              <span className="hero-highlight-1 font-serif italic font-normal text-blue-500">
+              <span className="hero-highlight-1 font-serif italic font-normal text-blue-400">
                 converts.
               </span>
               <br />
               Funnels that keep{" "}
-              <span className="hero-highlight-2 font-serif italic font-normal text-blue-500">
+              <span className="hero-highlight-2 font-serif italic font-normal text-blue-400">
                 converting.
               </span>
             </h1>
 
             {/* Description Subtitle */}
-            <p className="hero-subtext text-base sm:text-[17px] text-slate-300 max-w-lg font-normal leading-relaxed">
+            <p className="hero-subtext text-base sm:text-[17px] text-slate-200 max-w-lg font-normal leading-relaxed">
               Full-funnel growth for D2C brands. Ads, creative, website and search run by one team, so your numbers stop swinging and start compounding.
             </p>
 
@@ -148,6 +148,7 @@ export function Hero() {
             <div className="flex flex-col sm:flex-row items-center gap-4 pt-2">
               <button
                 onClick={openDaySchedule}
+                aria-label="Book a Growth Call with Adfrenzy Media"
                 className="w-full sm:w-auto bg-[#3b82f6] hover:bg-[#2563eb] text-white px-7 py-3.5 text-base font-bold inline-flex items-center justify-center gap-2.5 rounded-full shadow-[0_0_30px_rgba(59,130,246,0.5)] transition-all duration-300 hover:scale-[1.02] cursor-pointer"
               >
                 <span>Book a Growth Call</span>
@@ -155,6 +156,7 @@ export function Hero() {
               </button>
               <a
                 href="#work"
+                aria-label="See client work portfolio"
                 className="hero-secondary-btn w-full sm:w-auto px-7 py-3.5 text-base font-bold inline-flex items-center justify-center gap-2 text-white border border-slate-800 hover:border-slate-700 bg-[#0c101c]/80 hover:bg-[#121829] rounded-full transition-all duration-300"
               >
                 <span>See the Work</span>
@@ -235,7 +237,7 @@ export function Hero() {
                   stroke="#2563eb"
                   strokeWidth="1"
                   strokeDasharray="3 9"
-                  className="opacity-40 animate-spin"
+                  className="opacity-40 animate-spin will-change-transform transform-gpu"
                   style={{ animationDuration: '40s', animationTimingFunction: 'linear' }}
                 />
 
@@ -247,7 +249,7 @@ export function Hero() {
                   stroke="#3b82f6"
                   strokeWidth="1.5"
                   strokeDasharray="1 12"
-                  className="opacity-50 animate-spin"
+                  className="opacity-50 animate-spin will-change-transform transform-gpu"
                   style={{ animationDuration: '50s', animationTimingFunction: 'linear', animationDirection: 'reverse' }}
                 />
 
@@ -351,7 +353,7 @@ export function Hero() {
                 })}
 
                 {/* Orbiting Flow Light Beam Particle moving continuously around orbit */}
-                <g className="animate-spin" style={{ transformOrigin: '250px 250px', animationDuration: '14s', animationTimingFunction: 'linear' }}>
+                <g className="animate-spin will-change-transform transform-gpu" style={{ transformOrigin: '250px 250px', animationDuration: '14s', animationTimingFunction: 'linear' }}>
                   <circle cx="250" cy="75" r="4.5" fill="#93c5fd" className="drop-shadow-[0_0_12px_#3b82f6]" />
                   <circle cx="250" cy="75" r="8" fill="none" stroke="#60a5fa" strokeWidth="1" className="opacity-60" />
                 </g>

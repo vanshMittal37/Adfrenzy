@@ -237,7 +237,7 @@ export function GrowthLoop() {
                   stroke="#1d4ed8"
                   strokeWidth="1"
                   strokeDasharray="3 9"
-                  className="growth-tech-ring-1 opacity-40 animate-spin"
+                  className="growth-tech-ring-1 opacity-40 animate-spin will-change-transform transform-gpu"
                   style={{ animationDuration: '36s', animationTimingFunction: 'linear' }}
                 />
 
@@ -249,7 +249,7 @@ export function GrowthLoop() {
                   stroke="#3b82f6"
                   strokeWidth="1.5"
                   strokeDasharray="1 10"
-                  className="growth-tech-ring-2 opacity-50 animate-spin"
+                  className="growth-tech-ring-2 opacity-50 animate-spin will-change-transform transform-gpu"
                   style={{ animationDuration: '48s', animationTimingFunction: 'linear', animationDirection: 'reverse' }}
                 />
 

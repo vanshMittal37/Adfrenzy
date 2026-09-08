@@ -7,15 +7,19 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-16">
           {/* Brand Info Column */}
           <div className="lg:col-span-2 space-y-4">
-            <Link href="/" className="flex items-center">
+            <Link href="/" className="flex items-center" aria-label="Adfrenzy Media Homepage">
               <img
                 src="/Logo_Adfrenzy_dark.png"
                 alt="Adfrenzy Media logo"
+                width={170}
+                height={42}
                 className="logo-dark-theme w-[140px] sm:w-[170px] h-auto object-contain"
               />
               <img
                 src="/Logo_Adfrenzy_light.png"
                 alt="Adfrenzy Media logo"
+                width={170}
+                height={42}
                 className="logo-light-theme w-[140px] sm:w-[170px] h-auto object-contain"
               />
             </Link>
@@ -29,7 +33,7 @@ export function Footer() {
 
           {/* Services Column */}
           <div className="space-y-3">
-            <h4 className="text-white text-sm font-bold uppercase tracking-wider">Services</h4>
+            <h3 className="text-white text-sm font-bold uppercase tracking-wider">Services</h3>
             <ul className="space-y-2 text-sm text-neutral-400">
               <li><a href="#services" className="hover:text-white transition-colors">Performance Marketing</a></li>
               <li><a href="#services" className="hover:text-white transition-colors">Creative & UGC</a></li>

@@ -67,15 +67,19 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2" aria-label="Adfrenzy Media Homepage">
             <img
               src="/Logo_Adfrenzy_dark.png"
               alt="Adfrenzy Media logo"
+              width={165}
+              height={40}
               className="logo-dark-theme w-[140px] sm:w-[165px] h-auto object-contain"
             />
             <img
               src="/Logo_Adfrenzy_light.png"
               alt="Adfrenzy Media logo"
+              width={165}
+              height={40}
               className="logo-light-theme w-[140px] sm:w-[165px] h-auto object-contain"
             />
           </Link>

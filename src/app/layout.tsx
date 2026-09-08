@@ -10,14 +10,16 @@ import Script from "next/script";
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["500", "700", "800"],
+  display: "swap",
 });
 
 const playfairDisplay = Playfair_Display({
   variable: "--font-serif",
   subsets: ["latin"],
   style: ["normal", "italic"],
-  weight: ["400", "600", "700"],
+  weight: ["400", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -171,11 +173,13 @@ export default function RootLayout({
         />
         <Script
           src="https://cdn.jsdelivr.net/npm/dayschedule-widget@latest/dist/dayschedule-widget.min.js"
-          strategy="beforeInteractive"
+          strategy="lazyOnload"
         />
         <link
           href="https://cdn.jsdelivr.net/npm/dayschedule-widget@latest/dist/dayschedule-popup.css"
           rel="stylesheet"
+          media="print"
+          onLoad={(e) => { (e.target as HTMLLinkElement).media = 'all'; }}
         />
         <Header />
         <main className="min-h-screen">{children}</main>

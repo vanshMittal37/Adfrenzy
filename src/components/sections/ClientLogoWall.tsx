@@ -15,6 +15,7 @@ function LogoCard({ client }: { client: ClientBrand }) {
       target="_blank"
       rel="noopener noreferrer"
       title={`${client.name} — Official Website`}
+      aria-label={`${client.name} website`}
       className="client-logo-card flex items-center justify-center px-6 py-4 w-44 sm:w-56 h-20 sm:h-24 rounded-2xl flex-shrink-0 group cursor-pointer bg-[#0e1628]/70 hover:bg-[#131d35] border border-slate-800/80 hover:border-blue-500/40 transition-all duration-300 shadow-md hover:shadow-blue-500/10"
     >
       {!imgError ? (
