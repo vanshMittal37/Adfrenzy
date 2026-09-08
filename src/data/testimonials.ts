@@ -26,7 +26,7 @@ export const testimonialsData: Testimonial[] = [
   {
     id: "rootz-organics",
     brand: "Rootz Organics",
-    founder: "[Founder - TBD]",
+    founder: "Ashwini Khatavate",
     role: "Founder",
     location: "India",
     quote: "Scaling fresh organic produce requires extremely sharp retention and customer acquisition funnels. They optimized our ad spend while holding an 8.2x ROAS consistently.",

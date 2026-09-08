@@ -77,7 +77,7 @@ export const metadata: Metadata = {
       "Performance marketing, creative, websites and SEO for D2C brands. 100+ brands, ₹2.4 Cr+ ad spend managed, 8.6x average ROAS.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "https://adfrenzymedia.com/og-image.png",
         width: 1200,
         height: 630,
         alt: "Adfrenzy Media — Full-Funnel Growth Partner for D2C Brands",
@@ -90,7 +90,7 @@ export const metadata: Metadata = {
     title: "Adfrenzy Media | Full-Funnel Growth Partner for D2C Brands",
     description:
       "Performance marketing, creative, websites and SEO for D2C brands. 100+ brands, ₹2.4 Cr+ ad spend managed, 8.6x average ROAS.",
-    images: ["/og-image.jpg"],
+    images: ["https://adfrenzymedia.com/og-image.png"],
   },
 };
 
@@ -130,13 +130,13 @@ const localBusinessSchema = {
   name: "Adfrenzy Media",
   url: "https://adfrenzymedia.com/",
   logo: "https://adfrenzymedia.com/icon.png",
-  image: "https://adfrenzymedia.com/og-image.jpg",
-  email: "[email]",
+  image: "https://adfrenzymedia.com/og-image.png",
+  email: "hello@adfrenzymedia.com",
   description:
     "Performance marketing, creative, websites and SEO for D2C brands. 100+ brands, ₹2.4 Cr+ ad spend managed, 8.6x average ROAS.",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "[Address]",
+    streetAddress: "India",
     addressLocality: "Meerut",
     addressRegion: "Uttar Pradesh",
     addressCountry: "IN"

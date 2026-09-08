@@ -23,9 +23,7 @@ export function Footer() {
               Full-funnel growth partner for D2C brands.
             </p>
             <div className="pt-2 text-xs text-neutral-400 font-mono space-y-1">
-              <div>[Address], Meerut, Uttar Pradesh</div>
-              <div>E: [email]</div>
-              <div>P: [phone]</div>
+              <div>cyber city phase 2 , Gurugram</div>
             </div>
           </div>
 
