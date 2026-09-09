@@ -81,15 +81,6 @@ export const testimonialsData: Testimonial[] = [
 
   // PENDING APPROVAL SPARE TESTIMONIALS (KEPT IN CENTRAL DATA, HIDDEN PUBLICLY)
   {
-    id: "iyka",
-    brand: "IYKA",
-    founder: "Vishnu",
-    role: "Founder",
-    quote: "Four months. Zero to 1 crore, and ROAS never dropped below 8. What actually surprised me was how calm they stayed while scaling. No panic, no giant budget jumps. Just steady pushing every week.",
-    logo: "https://iyka.co.in/cdn/shop/files/logo.png",
-    approvedForTestimonial: false
-  },
-  {
     id: "leaf-ortho",
     brand: "Leaf Ortho",
     founder: "Dhruv",
@@ -98,26 +89,8 @@ export const testimonialsData: Testimonial[] = [
     logo: "/clients/leaf-ortho.svg",
     approvedForTestimonial: false
   },
-  {
-    id: "kaftanize",
-    brand: "Kaftanize",
-    founder: "Rahul Aggarwal",
-    role: "Founder",
-    quote: "They fixed the website and the ads at the same time. Same traffic, much better conversion, and we're sitting at 8.3x now. It finally feels like the whole thing is working together.",
-    logo: "/clients/kaftanize.svg",
-    approvedForTestimonial: false
-  },
-  {
-    id: "etiquette-apparel",
-    brand: "Etiquette Apparel",
-    founder: "Rupesh",
-    role: "Founder",
-    quote: "We've more than doubled since they came in, with ROAS above 8 the whole way. They also tell me what failed and why, which is the reason I believe the good numbers.",
-    logo: "/clients/etiquette-apparel.svg",
-    approvedForTestimonial: false
-  },
 
-  // ADDITIONAL 10 PENDING TESTIMONIALS
+  // ADDITIONAL PENDING TESTIMONIALS
   {
     id: "valkyre-clothing",
     brand: "Valkyre Clothing",
@@ -137,30 +110,12 @@ export const testimonialsData: Testimonial[] = [
     approvedForTestimonial: false
   },
   {
-    id: "fig-living",
-    brand: "FIG Living",
-    founder: "[Pending]",
-    role: "Founder",
-    quote: "They rebuilt our pages before touching the budget. Same spend, much better conversion, and we're running above 8x consistently.",
-    logo: "/clients/fig-living.svg",
-    approvedForTestimonial: false
-  },
-  {
     id: "alankaara",
     brand: "Alankaara",
     founder: "[Pending]",
     role: "Founder",
     quote: "Ours is a considered purchase and they built the funnel around that. Nobody buys on the first click, so they stopped trying to make them. Holding 8.9x.",
     logo: "/clients/alankaara.svg",
-    approvedForTestimonial: false
-  },
-  {
-    id: "wild-cherry",
-    brand: "Wild Cherry",
-    founder: "[Pending]",
-    role: "Founder",
-    quote: "Fastest team I've worked with. I flag something in the morning, it's fixed by evening. ROAS has stayed above 8 the whole time.",
-    logo: "/clients/wild-cherry.svg",
     approvedForTestimonial: false
   },
   {

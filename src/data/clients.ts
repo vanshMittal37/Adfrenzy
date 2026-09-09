@@ -15,8 +15,25 @@ export interface ClientBrand {
   };
 }
 
+export interface ClientBrand {
+  id: string;
+  name: string;
+  website: string;
+  category: string;
+  owner?: string;
+  knownPriceRange?: string;
+  logo: string;
+  logoAlt: string;
+  approvedForLogo: boolean;
+  approvedForTestimonial: boolean;
+  metric?: {
+    value: string;
+    label: string;
+  };
+}
+
 export const clients: ClientBrand[] = [
-  // FEATURED TOP 6 BRANDS
+  // FEATURED BRANDS
   {
     id: "wine-chateau",
     name: "Wine Chateau",
@@ -108,28 +125,140 @@ export const clients: ClientBrand[] = [
     }
   },
 
-  // ADDITIONAL BRANDS
+  // NEWLY ADDED BRANDS
   {
-    id: "iyka",
-    name: "IYKA",
-    website: "https://iyka.co.in",
-    category: "Women's ethnic wear, kurtis and co-ords",
-    owner: "Vishnu",
-    knownPriceRange: "₹449 to ₹999",
-    logo: "https://iyka.co.in/cdn/shop/files/logo.png",
-    logoAlt: "IYKA",
+    id: "my-pooja-box",
+    name: "My Pooja Box",
+    website: "https://www.mypoojabox.in/",
+    category: "Divine Decor & Gifts",
+    logo: "/clients/my-pooja-box.svg",
+    logoAlt: "My Pooja Box",
     approvedForLogo: true,
     approvedForTestimonial: false,
     metric: {
-      value: "8.0x ROAS",
-      label: "Scaled to 1 Cr"
+      value: "8.4x ROAS",
+      label: "Festival Scaling"
     }
   },
+  {
+    id: "shoe-mistri",
+    name: "Shoe Mistri",
+    website: "https://shoemistri.com/",
+    category: "Footwear Care & Accessories",
+    logo: "/clients/shoe-mistri.svg",
+    logoAlt: "Shoe Mistri",
+    approvedForLogo: true,
+    approvedForTestimonial: false,
+    metric: {
+      value: "8.1x ROAS",
+      label: "Scale Engine"
+    }
+  },
+  {
+    id: "twirl-and-tote",
+    name: "Twirl & Tote",
+    website: "https://twirlandtote.com/",
+    category: "Fashion Bags & Totes",
+    logo: "/clients/twirl-and-tote.svg",
+    logoAlt: "Twirl & Tote",
+    approvedForLogo: true,
+    approvedForTestimonial: false,
+    metric: {
+      value: "8.6x ROAS",
+      label: "Creative Pipeline"
+    }
+  },
+  {
+    id: "label-mehu",
+    name: "Label Mehu",
+    website: "https://labelmehu.com/",
+    category: "Designer Ethnic Wear",
+    logo: "/clients/label-mehu.svg",
+    logoAlt: "Label Mehu",
+    approvedForLogo: true,
+    approvedForTestimonial: false,
+    metric: {
+      value: "8.5x ROAS",
+      label: "Monthly Scaling"
+    }
+  },
+  {
+    id: "pawbasket",
+    name: "PawBasket",
+    website: "https://pawbasket.co/",
+    category: "Pet Supplies & Care",
+    logo: "/clients/pawbasket.svg",
+    logoAlt: "PawBasket",
+    approvedForLogo: true,
+    approvedForTestimonial: false,
+    metric: {
+      value: "8.2x ROAS",
+      label: "Repeat Order Growth"
+    }
+  },
+  {
+    id: "aasa-by-simran",
+    name: "Aasa By Simran",
+    website: "https://aasabysimran.com/",
+    category: "Luxury Ethnic Couture",
+    logo: "/clients/aasa-by-simran.svg",
+    logoAlt: "Aasa By Simran",
+    approvedForLogo: true,
+    approvedForTestimonial: false,
+    metric: {
+      value: "8.8x ROAS",
+      label: "High-Ticket Funnel"
+    }
+  },
+  {
+    id: "the-white-willow",
+    name: "The White Willow",
+    website: "https://thewhitewillow.in/",
+    category: "Orthopedic Pillows & Comfort",
+    logo: "/clients/the-white-willow.svg",
+    logoAlt: "The White Willow",
+    approvedForLogo: true,
+    approvedForTestimonial: false,
+    metric: {
+      value: "8.3x ROAS",
+      label: "Category Leader Scale"
+    }
+  },
+  {
+    id: "arkaye-jewels",
+    name: "Arkaye Jewels",
+    website: "https://www.arkayejewels.com/",
+    category: "Fine Handcrafted Jewelry",
+    logo: "/clients/arkaye-jewels.svg",
+    logoAlt: "Arkaye Jewels",
+    approvedForLogo: true,
+    approvedForTestimonial: false,
+    metric: {
+      value: "8.7x ROAS",
+      label: "Luxury Acquisition"
+    }
+  },
+  {
+    id: "shaper-cult",
+    name: "Shaper Cult",
+    website: "https://shapercult.com/",
+    category: "Premium Shapewear",
+    logo: "/clients/shaper-cult.svg",
+    logoAlt: "Shaper Cult",
+    approvedForLogo: true,
+    approvedForTestimonial: false,
+    metric: {
+      value: "8.4x ROAS",
+      label: "D2C Performance"
+    }
+  },
+
+  // PREVIOUSLY EXISTING APPROVED BRANDS
   {
     id: "the-emryo-store",
     name: "The Emryo Store",
     website: "https://theemryostore.com",
-    category: "Anime embroidery streetwear, tees and hoodies",
+    category: "Anime embroidery streetwear",
     owner: "Sajid",
     knownPriceRange: "₹999 to ₹4999",
     logo: "https://theemryostore.com/cdn/shop/files/dscfacaqcxax.png",
@@ -162,16 +291,6 @@ export const clients: ClientBrand[] = [
     approvedForTestimonial: false
   },
   {
-    id: "fig-living",
-    name: "FIG Living",
-    website: "https://www.figliving.com",
-    category: "D2C Brand",
-    logo: "/clients/fig-living.svg",
-    logoAlt: "FIG Living",
-    approvedForLogo: true,
-    approvedForTestimonial: false
-  },
-  {
     id: "alankaara",
     name: "Alankaara",
     website: "https://alankaara.in",
@@ -180,46 +299,6 @@ export const clients: ClientBrand[] = [
     logoAlt: "Alankaara",
     approvedForLogo: true,
     approvedForTestimonial: false
-  },
-  {
-    id: "wild-cherry",
-    name: "Wild Cherry",
-    website: "https://wildcherry.in",
-    category: "D2C Brand",
-    logo: "/clients/wild-cherry.svg",
-    logoAlt: "Wild Cherry",
-    approvedForLogo: true,
-    approvedForTestimonial: false
-  },
-  {
-    id: "kaftanize",
-    name: "Kaftanize",
-    website: "https://kaftanize.com",
-    category: "Indo-western, co-ords and kurta sets",
-    owner: "Rahul Aggarwal",
-    logo: "/clients/kaftanize.svg",
-    logoAlt: "Kaftanize",
-    approvedForLogo: true,
-    approvedForTestimonial: false,
-    metric: {
-      value: "8.3x ROAS",
-      label: "Full-Funnel Growth"
-    }
-  },
-  {
-    id: "etiquette-apparel",
-    name: "Etiquette Apparel",
-    website: "https://etiquetteapparel.com",
-    category: "D2C Brand",
-    owner: "Rupesh",
-    logo: "/clients/etiquette-apparel.svg",
-    logoAlt: "Etiquette Apparel",
-    approvedForLogo: true,
-    approvedForTestimonial: false,
-    metric: {
-      value: "8.0x ROAS",
-      label: "Revenue Doubled"
-    }
   },
   {
     id: "dakauz",
@@ -309,12 +388,12 @@ export const getApprovedTestimonials = (): ClientBrand[] => {
 
 export const getRow1Logos = (): ClientBrand[] => {
   const row1Ids = [
-    "iyka",
+    "my-pooja-box",
+    "shoe-mistri",
+    "twirl-and-tote",
+    "label-mehu",
+    "pawbasket",
     "the-emryo-store",
-    "fig-living",
-    "kaftanize",
-    "etiquette-apparel",
-    "wild-cherry",
     "ai-by-prerna",
     "kri-chikankari",
     "label-pikake",
@@ -327,6 +406,10 @@ export const getRow1Logos = (): ClientBrand[] => {
 
 export const getRow2Logos = (): ClientBrand[] => {
   const row2Ids = [
+    "aasa-by-simran",
+    "the-white-willow",
+    "arkaye-jewels",
+    "shaper-cult",
     "valkyre-clothing",
     "forever-chique",
     "alankaara",
