@@ -178,8 +178,6 @@ export default function RootLayout({
         <link
           href="https://cdn.jsdelivr.net/npm/dayschedule-widget@latest/dist/dayschedule-popup.css"
           rel="stylesheet"
-          media="print"
-          onLoad={(e) => { (e.target as HTMLLinkElement).media = 'all'; }}
         />
         <Header />
         <main className="min-h-screen">{children}</main>
