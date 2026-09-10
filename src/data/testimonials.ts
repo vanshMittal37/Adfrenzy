@@ -59,7 +59,7 @@ export const testimonialsData: Testimonial[] = [
   {
     id: "atulya-karigari",
     brand: "Atulya Karigari",
-    founder: "[Founder - TBD]",
+    founder: "Annapurna",
     role: "Founder",
     location: "India",
     quote: "They took time to understand the craft before writing a single ad. That showed in the creative and it showed in the numbers. 8.5x ROAS and steady revenue growth.",
@@ -70,7 +70,7 @@ export const testimonialsData: Testimonial[] = [
   {
     id: "velviore",
     brand: "Velviore",
-    founder: "[Founder - TBD]",
+    founder: "Abhay",
     role: "Founder",
     location: "India",
     quote: "We started from zero brand awareness. They got the first winning ads inside three weeks and we've maintained an 8.1x ROAS while expanding inventory.",

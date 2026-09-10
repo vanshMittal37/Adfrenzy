@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Instagram, Linkedin, Mail } from "lucide-react";
 
 export function Footer() {
   return (
@@ -26,8 +27,17 @@ export function Footer() {
             <p className="text-neutral-400 text-sm leading-relaxed max-w-sm">
               Full-funnel growth partner for D2C brands.
             </p>
-            <div className="pt-2 text-xs text-neutral-400 font-mono space-y-1">
+            <div className="pt-2 text-xs text-neutral-400 font-mono space-y-1.5">
               <div>cyber city phase 2 , Gurugram</div>
+              <div>
+                <a
+                  href="mailto:hello.adfrenzymedia@gmail.com"
+                  className="hover:text-white transition-colors inline-flex items-center gap-1.5 text-neutral-400"
+                >
+                  <Mail className="w-3.5 h-3.5 shrink-0" />
+                  <span>hello.adfrenzymedia@gmail.com</span>
+                </a>
+              </div>
             </div>
           </div>
 
@@ -58,9 +68,38 @@ export function Footer() {
           {/* Connect Column */}
           <div className="space-y-3">
             <h4 className="text-white text-sm font-bold uppercase tracking-wider">Connect</h4>
-            <ul className="space-y-2 text-sm text-neutral-400">
-              <li><a href="#" className="hover:text-white transition-colors">Instagram</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">LinkedIn</a></li>
+            <ul className="space-y-2.5 text-sm text-neutral-400">
+              <li>
+                <a
+                  href="https://www.instagram.com/adfrenzymedia?igsi=OWRpdHFwOXZpdGs1&utm_source=qr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors inline-flex items-center gap-2"
+                >
+                  <Instagram className="w-4 h-4 shrink-0" />
+                  <span>Instagram</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/company/ad-frenzy-media/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors inline-flex items-center gap-2"
+                >
+                  <Linkedin className="w-4 h-4 shrink-0" />
+                  <span>LinkedIn</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:hello.adfrenzymedia@gmail.com"
+                  className="hover:text-white transition-colors inline-flex items-center gap-2"
+                >
+                  <Mail className="w-4 h-4 shrink-0" />
+                  <span>Email Us</span>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
