@@ -26,17 +26,17 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://adfrenzymedia.com"),
 
   title: {
-    default: "Adfrenzy Media | Full-Funnel Growth Partner for D2C Brands",
+    default: "Adfrenzy Media | Performance Marketing Agency for D2C Brands",
     template: "%s | Adfrenzy Media",
   },
 
   description:
-    "Performance marketing, creative, websites and SEO for D2C brands. 100+ brands, ₹2.4 Cr+ ad spend managed, 8.6x average ROAS.",
+    "Adfrenzy Media helps D2C brands grow through performance marketing, creative, websites and SEO. 100+ brands, ₹2.4 Cr+ ad spend managed, 8.6x average ROAS.",
 
   keywords: [
     "Adfrenzy Media",
-    "full funnel growth partner",
     "performance marketing agency",
+    "full funnel growth partner",
     "D2C growth partner",
     "performance creative agency",
     "Meta ads agency",
@@ -74,24 +74,24 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: "https://adfrenzymedia.com",
     siteName: "Adfrenzy Media",
-    title: "Adfrenzy Media | Full-Funnel Growth Partner for D2C Brands",
+    title: "Adfrenzy Media | Performance Marketing Agency for D2C Brands",
     description:
-      "Performance marketing, creative, websites and SEO for D2C brands. 100+ brands, ₹2.4 Cr+ ad spend managed, 8.6x average ROAS.",
+      "Adfrenzy Media helps D2C brands grow through performance marketing, creative, websites and SEO. 100+ brands, ₹2.4 Cr+ ad spend managed, 8.6x average ROAS.",
     images: [
       {
         url: "https://adfrenzymedia.com/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Adfrenzy Media — Full-Funnel Growth Partner for D2C Brands",
+        alt: "Adfrenzy Media — Performance Marketing Agency for D2C Brands",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Adfrenzy Media | Full-Funnel Growth Partner for D2C Brands",
+    title: "Adfrenzy Media | Performance Marketing Agency for D2C Brands",
     description:
-      "Performance marketing, creative, websites and SEO for D2C brands. 100+ brands, ₹2.4 Cr+ ad spend managed, 8.6x average ROAS.",
+      "Adfrenzy Media helps D2C brands grow through performance marketing, creative, websites and SEO. 100+ brands, ₹2.4 Cr+ ad spend managed, 8.6x average ROAS.",
     images: ["https://adfrenzymedia.com/og-image.png"],
   },
 };
@@ -102,14 +102,19 @@ const organizationSchema = {
   "@id": "https://adfrenzymedia.com/#organization",
   name: "Adfrenzy Media",
   url: "https://adfrenzymedia.com/",
-  logo: "https://adfrenzymedia.com/icon.png",
-  email: "[email]",
+  logo: "https://adfrenzymedia.com/Logo_Adfrenzy_dark.png",
+  email: "hello.adfrenzymedia@gmail.com",
   description:
-    "Performance marketing, creative, websites and SEO for D2C brands. 100+ brands, ₹2.4 Cr+ ad spend managed, 8.6x average ROAS.",
+    "Adfrenzy Media helps D2C brands grow through performance marketing, creative, websites and SEO. 100+ brands, ₹2.4 Cr+ ad spend managed, 8.6x average ROAS.",
+  sameAs: [
+    "https://www.instagram.com/adfrenzymedia?igsi=OWRpdHFwOXZpdGs1&utm_source=qr",
+    "https://www.linkedin.com/company/ad-frenzy-media/"
+  ],
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Meerut",
-    addressRegion: "Uttar Pradesh",
+    streetAddress: "Cyber City Phase 2",
+    addressLocality: "Gurugram",
+    addressRegion: "Haryana",
     addressCountry: "IN",
   },
 };
@@ -131,16 +136,20 @@ const localBusinessSchema = {
   "@id": "https://adfrenzymedia.com/#localbusiness",
   name: "Adfrenzy Media",
   url: "https://adfrenzymedia.com/",
-  logo: "https://adfrenzymedia.com/icon.png",
+  logo: "https://adfrenzymedia.com/Logo_Adfrenzy_dark.png",
   image: "https://adfrenzymedia.com/og-image.png",
-  email: "hello@adfrenzymedia.com",
+  email: "hello.adfrenzymedia@gmail.com",
   description:
-    "Performance marketing, creative, websites and SEO for D2C brands. 100+ brands, ₹2.4 Cr+ ad spend managed, 8.6x average ROAS.",
+    "Adfrenzy Media helps D2C brands grow through performance marketing, creative, websites and SEO. 100+ brands, ₹2.4 Cr+ ad spend managed, 8.6x average ROAS.",
+  sameAs: [
+    "https://www.instagram.com/adfrenzymedia?igsi=OWRpdHFwOXZpdGs1&utm_source=qr",
+    "https://www.linkedin.com/company/ad-frenzy-media/"
+  ],
   address: {
     "@type": "PostalAddress",
-    streetAddress: "India",
-    addressLocality: "Meerut",
-    addressRegion: "Uttar Pradesh",
+    streetAddress: "Cyber City Phase 2",
+    addressLocality: "Gurugram",
+    addressRegion: "Haryana",
     addressCountry: "IN"
   }
 };

@@ -1,6 +1,11 @@
-export const metadata = {
-  title: "Cookie Policy — Adfrenzy Media",
-  description: "Cookie policy and tracking details for Adfrenzy Media."
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Cookie Policy",
+  description: "Cookie policy and tracking details for Adfrenzy Media.",
+  alternates: {
+    canonical: "https://adfrenzymedia.com/cookie-policy",
+  },
 };
 
 export default function CookiePolicyPage() {

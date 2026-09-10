@@ -6,9 +6,18 @@ import { FinalCTA } from "@/components/sections/FinalCTA";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Marketing Results & Selected Work",
+  title: "D2C Growth Results",
   description:
     "See Adfrenzy Media's marketing results, campaign performance, ROAS, D2C brand growth and selected client work.",
+  alternates: {
+    canonical: "https://adfrenzymedia.com/results",
+  },
+  openGraph: {
+    title: "D2C Growth Results | Adfrenzy Media",
+    description:
+      "See Adfrenzy Media's marketing results, campaign performance, ROAS, D2C brand growth and selected client work.",
+    url: "https://adfrenzymedia.com/results",
+  },
 };
 
 export default function ResultsPage() {

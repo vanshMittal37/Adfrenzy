@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   title: "Book a Growth Call",
   description:
     "Book a growth call with Adfrenzy Media to discuss your marketing, creative, conversion and D2C brand growth opportunities.",
+  alternates: {
+    canonical: "https://adfrenzymedia.com/book-a-call",
+  },
+  openGraph: {
+    title: "Book a Growth Call | Adfrenzy Media",
+    description:
+      "Book a growth call with Adfrenzy Media to discuss your marketing, creative, conversion and D2C brand growth opportunities.",
+    url: "https://adfrenzymedia.com/book-a-call",
+  },
 };
 
 export default function BookACallPage() {

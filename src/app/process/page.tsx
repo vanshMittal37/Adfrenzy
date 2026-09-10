@@ -5,9 +5,18 @@ import { FinalCTA } from "@/components/sections/FinalCTA";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Our Growth Process",
+  title: "D2C Growth Process",
   description:
     "Discover Adfrenzy Media's growth process covering deep dive, strategy, creative, launch, reading signals and scaling.",
+  alternates: {
+    canonical: "https://adfrenzymedia.com/process",
+  },
+  openGraph: {
+    title: "D2C Growth Process | Adfrenzy Media",
+    description:
+      "Discover Adfrenzy Media's growth process covering deep dive, strategy, creative, launch, reading signals and scaling.",
+    url: "https://adfrenzymedia.com/process",
+  },
 };
 
 export default function ProcessPage() {

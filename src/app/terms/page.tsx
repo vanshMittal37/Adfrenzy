@@ -1,6 +1,11 @@
-export const metadata = {
-  title: "Terms & Conditions — Adfrenzy Media",
-  description: "Terms and conditions of service for Adfrenzy Media."
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms & Conditions",
+  description: "Terms and conditions of service for Adfrenzy Media.",
+  alternates: {
+    canonical: "https://adfrenzymedia.com/terms",
+  },
 };
 
 export default function TermsPage() {

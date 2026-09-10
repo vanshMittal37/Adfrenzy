@@ -6,6 +6,7 @@ import { portfolioData, PortfolioItem } from "@/data/portfolio";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { Lightbox } from "@/components/sections/Lightbox";
 import { ArrowLeft, CheckCircle2, TrendingUp, Sparkles, Zap } from "lucide-react";
+import type { Metadata } from "next";
 
 interface CaseStudyPageProps {
   params: Promise<{ slug: string }>;
@@ -17,6 +18,45 @@ export async function generateStaticParams() {
     ...portfolioData.map((item) => item.slug)
   ]);
   return Array.from(slugs).map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({ params }: CaseStudyPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const cs = caseStudiesData[slug];
+  const portfolioItem = portfolioData.find((p) => p.slug === slug);
+
+  const title = cs ? `${cs.clientName} Case Study | Adfrenzy Media` : portfolioItem ? `${portfolioItem.clientName} Case Study | Adfrenzy Media` : "Case Study | Adfrenzy Media";
+  const description = cs ? cs.tagline : portfolioItem ? portfolioItem.shortDescription : "D2C growth case study and performance marketing results by Adfrenzy Media.";
+  const url = `https://adfrenzymedia.com/work/${slug}`;
+  const heroImg = cs?.heroImage || portfolioItem?.thumbnail;
+  const ogImg = heroImg ? (heroImg.startsWith("http") ? heroImg : `https://adfrenzymedia.com${heroImg}`) : "https://adfrenzymedia.com/og-image.png";
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title,
+      description,
+      url,
+      type: "article",
+      siteName: "Adfrenzy Media",
+      images: [
+        {
+          url: ogImg,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImg],
+    },
+  };
 }
 
 const SCREENSHOT_MAP: Record<
@@ -123,8 +163,55 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
 
   const screenshotInfo = SCREENSHOT_MAP[slug];
 
+  const caseStudySchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": cs.title,
+    "description": cs.tagline,
+    "publisher": {
+      "@type": "Organization",
+      "name": "Adfrenzy Media",
+      "url": "https://adfrenzymedia.com/"
+    },
+    "mainEntityOfPage": `https://adfrenzymedia.com/work/${slug}`,
+    "image": cs.heroImage ? (cs.heroImage.startsWith("http") ? cs.heroImage : `https://adfrenzymedia.com${cs.heroImage}`) : "https://adfrenzymedia.com/og-image.png"
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://adfrenzymedia.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Work",
+        "item": "https://adfrenzymedia.com/work"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": cs.clientName,
+        "item": `https://adfrenzymedia.com/work/${slug}`
+      }
+    ]
+  };
+
   return (
     <div className="pt-28 pb-16 bg-background border-b border-border-subtle text-text-primary transition-colors duration-300">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(caseStudySchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <Link

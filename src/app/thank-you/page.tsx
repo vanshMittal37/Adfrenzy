@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Thank You — Booking Confirmed",
   description:
     "Your growth call with Adfrenzy Media has been successfully scheduled. We look forward to speaking with you.",
+  alternates: {
+    canonical: "https://adfrenzymedia.com/thank-you",
+  },
   robots: {
     index: false,
     follow: false,

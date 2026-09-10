@@ -3,13 +3,67 @@ import { notFound } from "next/navigation";
 import { servicesData } from "@/data/services";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
+import type { Metadata } from "next";
 
 interface ServicePageProps {
   params: Promise<{ slug: string }>;
 }
 
+const TITLE_MAP: Record<string, string> = {
+  "seo": "SEO Services for D2C Brands | Adfrenzy Media",
+  "strategy": "Performance Marketing Strategy for D2C Brands | Adfrenzy Media",
+  "performance-marketing": "Performance Marketing Strategy for D2C Brands | Adfrenzy Media",
+  "creative": "D2C Creative & UGC Services | Adfrenzy Media",
+  "web-design": "D2C Website & CRO Services | Adfrenzy Media",
+  "cro": "D2C Website & CRO Services | Adfrenzy Media",
+};
+
+const DESC_MAP: Record<string, string> = {
+  "seo": "SEO services for D2C brands focused on improving organic visibility, qualified traffic and sustainable growth with Adfrenzy Media.",
+  "strategy": "Performance marketing strategy for D2C brands covering creative, paid media, funnels, measurement and growth opportunities.",
+  "performance-marketing": "Performance marketing strategy for D2C brands covering creative, paid media, funnels, measurement and growth opportunities.",
+  "creative": "D2C creative and UGC services producing direct-response video ads, static hooks, and motion graphics built to scale revenue.",
+  "web-design": "Shopify storefront design and development engineered for high-volume conversion and mobile shopping speed.",
+  "cro": "Direct response landing pages, PDP rebuilds, and checkout flow optimization to convert existing traffic into revenue.",
+};
+
 export async function generateStaticParams() {
   return servicesData.map((svc) => ({ slug: svc.slug }));
+}
+
+export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const service = servicesData.find((s) => s.slug === slug);
+
+  if (!service) {
+    return {
+      title: "Service Not Found",
+    };
+  }
+
+  const title = TITLE_MAP[slug] || `${service.title} | Adfrenzy Media`;
+  const description = DESC_MAP[slug] || service.description;
+  const url = `https://adfrenzymedia.com/services/${slug}`;
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title,
+      description,
+      url,
+      type: "website",
+      siteName: "Adfrenzy Media",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+  };
 }
 
 export default async function ServiceDetailPage({ params }: ServicePageProps) {
@@ -20,8 +74,54 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
     notFound();
   }
 
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": service.title,
+    "provider": {
+      "@type": "Organization",
+      "name": "Adfrenzy Media",
+      "url": "https://adfrenzymedia.com/"
+    },
+    "description": service.description,
+    "url": `https://adfrenzymedia.com/services/${slug}`
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://adfrenzymedia.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://adfrenzymedia.com/services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": service.title,
+        "item": `https://adfrenzymedia.com/services/${slug}`
+      }
+    ]
+  };
+
   return (
     <div className="pt-28 pb-16 bg-[#0A0A0A]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link
           href="/services"

@@ -4,9 +4,18 @@ import { FinalCTA } from "@/components/sections/FinalCTA";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Performance Marketing & Creative Services",
+  title: "D2C Performance Marketing Services",
   description:
-    "Explore Adfrenzy Media's performance marketing, performance creative, CRO, website design, SEO and growth consultation services for D2C brands.",
+    "Explore Adfrenzy Media's performance marketing, creative, website, CRO and SEO services for D2C brands.",
+  alternates: {
+    canonical: "https://adfrenzymedia.com/services",
+  },
+  openGraph: {
+    title: "D2C Performance Marketing Services | Adfrenzy Media",
+    description:
+      "Explore Adfrenzy Media's performance marketing, creative, website, CRO and SEO services for D2C brands.",
+    url: "https://adfrenzymedia.com/services",
+  },
 };
 
 export default function ServicesPage() {

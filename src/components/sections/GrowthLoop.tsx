@@ -315,7 +315,7 @@ export function GrowthLoop() {
                 <div className="absolute inset-1.5 rounded-full border border-blue-500/20 pointer-events-none growth-center-hub-ring" />
                 
                 <Zap className="w-4.5 h-4.5 sm:w-5 sm:h-5 text-blue-400 mb-1 animate-pulse growth-center-zap" />
-                <span className="growth-center-sparkmedia text-[#60a5fa] font-mono text-[8.5px] sm:text-[9.5px] tracking-[0.22em] uppercase font-semibold">
+                <span className="growth-center-adfrenzymedia text-[#60a5fa] font-mono text-[8.5px] sm:text-[9.5px] tracking-[0.22em] uppercase font-semibold">
                   ADFRENZY MEDIA
                 </span>
                 <span className="growth-center-title text-white font-extrabold text-[13px] sm:text-[15px] md:text-[16px] tracking-wider uppercase block mt-0.5 drop-shadow-[0_0_10px_rgba(59,130,246,0.6)]">

@@ -3,9 +3,18 @@ import { StrategyCallSection } from "@/components/sections/StrategyCallSection";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Adfrenzy Media",
+  title: "Book a Growth Call",
   description:
-    "Contact Adfrenzy Media to discuss performance marketing, creative, CRO, web development and D2C brand growth.",
+    "Book a growth call with Adfrenzy Media to discuss your performance marketing, creative, conversion and growth goals.",
+  alternates: {
+    canonical: "https://adfrenzymedia.com/contact",
+  },
+  openGraph: {
+    title: "Book a Growth Call | Adfrenzy Media",
+    description:
+      "Book a growth call with Adfrenzy Media to discuss your performance marketing, creative, conversion and growth goals.",
+    url: "https://adfrenzymedia.com/contact",
+  },
 };
 
 export default function ContactPage() {

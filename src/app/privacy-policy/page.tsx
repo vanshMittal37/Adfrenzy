@@ -1,6 +1,11 @@
-export const metadata = {
-  title: "Privacy Policy — Adfrenzy Media",
-  description: "Privacy policy and data protection practices at Adfrenzy Media."
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description: "Privacy policy and data protection practices at Adfrenzy Media.",
+  alternates: {
+    canonical: "https://adfrenzymedia.com/privacy-policy",
+  },
 };
 
 export default function PrivacyPolicyPage() {
