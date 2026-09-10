@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Instagram, Linkedin, Mail } from "lucide-react";
 
 export function Footer() {
   return (
@@ -34,7 +33,10 @@ export function Footer() {
                   href="mailto:hello.adfrenzymedia@gmail.com"
                   className="hover:text-white transition-colors inline-flex items-center gap-1.5 text-neutral-400"
                 >
-                  <Mail className="w-3.5 h-3.5 shrink-0" />
+                  <svg className="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                    <rect width="20" height="16" x="2" y="4" rx="2"/>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                  </svg>
                   <span>hello.adfrenzymedia@gmail.com</span>
                 </a>
               </div>
@@ -76,7 +78,11 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors inline-flex items-center gap-2"
                 >
-                  <Instagram className="w-4 h-4 shrink-0" />
+                  <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                  </svg>
                   <span>Instagram</span>
                 </a>
               </li>
@@ -87,7 +93,11 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors inline-flex items-center gap-2"
                 >
-                  <Linkedin className="w-4 h-4 shrink-0" />
+                  <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                    <rect width="4" height="12" x="2" y="9"/>
+                    <circle cx="4" cy="4" r="2"/>
+                  </svg>
                   <span>LinkedIn</span>
                 </a>
               </li>
@@ -96,7 +106,10 @@ export function Footer() {
                   href="mailto:hello.adfrenzymedia@gmail.com"
                   className="hover:text-white transition-colors inline-flex items-center gap-2"
                 >
-                  <Mail className="w-4 h-4 shrink-0" />
+                  <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                    <rect width="20" height="16" x="2" y="4" rx="2"/>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                  </svg>
                   <span>Email Us</span>
                 </a>
               </li>
