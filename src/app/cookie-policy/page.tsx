@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Cookie Policy",
   description: "Cookie policy and tracking details for Adfrenzy Media.",
   alternates: {
-    canonical: "https://adfrenzymedia.com/cookie-policy",
+    canonical: "https://www.adfrenzymedia.com/cookie-policy",
   },
 };
 

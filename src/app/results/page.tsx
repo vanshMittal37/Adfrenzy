@@ -10,13 +10,13 @@ export const metadata: Metadata = {
   description:
     "See Adfrenzy Media's marketing results, campaign performance, ROAS, D2C brand growth and selected client work.",
   alternates: {
-    canonical: "https://adfrenzymedia.com/results",
+    canonical: "https://www.adfrenzymedia.com/results",
   },
   openGraph: {
     title: "D2C Growth Results | Adfrenzy Media",
     description:
       "See Adfrenzy Media's marketing results, campaign performance, ROAS, D2C brand growth and selected client work.",
-    url: "https://adfrenzymedia.com/results",
+    url: "https://www.adfrenzymedia.com/results",
   },
 };
 

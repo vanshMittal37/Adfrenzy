@@ -8,13 +8,13 @@ export const metadata: Metadata = {
   description:
     "Explore Adfrenzy Media's D2C growth case studies, selected work, creative and performance marketing results.",
   alternates: {
-    canonical: "https://adfrenzymedia.com/work",
+    canonical: "https://www.adfrenzymedia.com/work",
   },
   openGraph: {
     title: "D2C Growth Case Studies & Portfolio | Adfrenzy Media",
     description:
       "Explore Adfrenzy Media's D2C growth case studies, selected work, creative and performance marketing results.",
-    url: "https://adfrenzymedia.com/work",
+    url: "https://www.adfrenzymedia.com/work",
   },
 };
 

@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "Privacy policy and data protection practices at Adfrenzy Media.",
   alternates: {
-    canonical: "https://adfrenzymedia.com/privacy-policy",
+    canonical: "https://www.adfrenzymedia.com/privacy-policy",
   },
 };
 

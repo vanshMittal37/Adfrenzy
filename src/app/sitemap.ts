@@ -4,7 +4,7 @@ import { caseStudiesData } from "@/data/caseStudies";
 import { portfolioData } from "@/data/portfolio";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://adfrenzymedia.com";
+  const baseUrl = "https://www.adfrenzymedia.com";
 
   const staticPages: MetadataRoute.Sitemap = [
     {

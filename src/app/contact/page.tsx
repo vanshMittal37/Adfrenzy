@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     "Book a growth call with Adfrenzy Media to discuss your performance marketing, creative, conversion and growth goals.",
   alternates: {
-    canonical: "https://adfrenzymedia.com/contact",
+    canonical: "https://www.adfrenzymedia.com/contact",
   },
   openGraph: {
     title: "Book a Growth Call | Adfrenzy Media",
     description:
       "Book a growth call with Adfrenzy Media to discuss your performance marketing, creative, conversion and growth goals.",
-    url: "https://adfrenzymedia.com/contact",
+    url: "https://www.adfrenzymedia.com/contact",
   },
 };
 

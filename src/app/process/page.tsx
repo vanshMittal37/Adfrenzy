@@ -9,13 +9,13 @@ export const metadata: Metadata = {
   description:
     "Discover Adfrenzy Media's growth process covering deep dive, strategy, creative, launch, reading signals and scaling.",
   alternates: {
-    canonical: "https://adfrenzymedia.com/process",
+    canonical: "https://www.adfrenzymedia.com/process",
   },
   openGraph: {
     title: "D2C Growth Process | Adfrenzy Media",
     description:
       "Discover Adfrenzy Media's growth process covering deep dive, strategy, creative, launch, reading signals and scaling.",
-    url: "https://adfrenzymedia.com/process",
+    url: "https://www.adfrenzymedia.com/process",
   },
 };
 

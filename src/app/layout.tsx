@@ -23,7 +23,7 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://adfrenzymedia.com"),
+  metadataBase: new URL("https://www.adfrenzymedia.com"),
 
   title: {
     default: "Adfrenzy Media | Performance Marketing Agency for D2C Brands",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   publisher: "Adfrenzy Media",
 
   alternates: {
-    canonical: "https://adfrenzymedia.com",
+    canonical: "https://www.adfrenzymedia.com",
   },
 
   robots: {
@@ -72,14 +72,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://adfrenzymedia.com",
+    url: "https://www.adfrenzymedia.com",
     siteName: "Adfrenzy Media",
     title: "Adfrenzy Media | Performance Marketing Agency for D2C Brands",
     description:
       "Adfrenzy Media helps D2C brands grow through performance marketing, creative, websites and SEO. 100+ brands, ₹2.4 Cr+ ad spend managed, 8.6x average ROAS.",
     images: [
       {
-        url: "https://adfrenzymedia.com/og-image.png",
+        url: "https://www.adfrenzymedia.com/og-image.png",
         width: 1200,
         height: 630,
         alt: "Adfrenzy Media — Performance Marketing Agency for D2C Brands",
@@ -92,17 +92,17 @@ export const metadata: Metadata = {
     title: "Adfrenzy Media | Performance Marketing Agency for D2C Brands",
     description:
       "Adfrenzy Media helps D2C brands grow through performance marketing, creative, websites and SEO. 100+ brands, ₹2.4 Cr+ ad spend managed, 8.6x average ROAS.",
-    images: ["https://adfrenzymedia.com/og-image.png"],
+    images: ["https://www.adfrenzymedia.com/og-image.png"],
   },
 };
 
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "@id": "https://adfrenzymedia.com/#organization",
+  "@id": "https://www.adfrenzymedia.com/#organization",
   name: "Adfrenzy Media",
-  url: "https://adfrenzymedia.com/",
-  logo: "https://adfrenzymedia.com/Logo_Adfrenzy_dark.png",
+  url: "https://www.adfrenzymedia.com/",
+  logo: "https://www.adfrenzymedia.com/Logo_Adfrenzy_dark.png",
   email: "hello.adfrenzymedia@gmail.com",
   description:
     "Adfrenzy Media helps D2C brands grow through performance marketing, creative, websites and SEO. 100+ brands, ₹2.4 Cr+ ad spend managed, 8.6x average ROAS.",
@@ -122,22 +122,22 @@ const organizationSchema = {
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "@id": "https://adfrenzymedia.com/#website",
+  "@id": "https://www.adfrenzymedia.com/#website",
   name: "Adfrenzy Media",
-  url: "https://adfrenzymedia.com/",
+  url: "https://www.adfrenzymedia.com/",
   publisher: {
-    "@id": "https://adfrenzymedia.com/#organization",
+    "@id": "https://www.adfrenzymedia.com/#organization",
   },
 };
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "@id": "https://adfrenzymedia.com/#localbusiness",
+  "@id": "https://www.adfrenzymedia.com/#localbusiness",
   name: "Adfrenzy Media",
-  url: "https://adfrenzymedia.com/",
-  logo: "https://adfrenzymedia.com/Logo_Adfrenzy_dark.png",
-  image: "https://adfrenzymedia.com/og-image.png",
+  url: "https://www.adfrenzymedia.com/",
+  logo: "https://www.adfrenzymedia.com/Logo_Adfrenzy_dark.png",
+  image: "https://www.adfrenzymedia.com/og-image.png",
   email: "hello.adfrenzymedia@gmail.com",
   description:
     "Adfrenzy Media helps D2C brands grow through performance marketing, creative, websites and SEO. 100+ brands, ₹2.4 Cr+ ad spend managed, 8.6x average ROAS.",

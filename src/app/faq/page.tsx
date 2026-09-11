@@ -9,13 +9,13 @@ export const metadata: Metadata = {
   description:
     "Find answers to common questions about Adfrenzy Media's performance marketing, creative production, CRO, web development and SEO services.",
   alternates: {
-    canonical: "https://adfrenzymedia.com/faq",
+    canonical: "https://www.adfrenzymedia.com/faq",
   },
   openGraph: {
     title: "Frequently Asked Questions | Adfrenzy Media",
     description:
       "Find answers to common questions about Adfrenzy Media's performance marketing, creative production, CRO, web development and SEO services.",
-    url: "https://adfrenzymedia.com/faq",
+    url: "https://www.adfrenzymedia.com/faq",
   },
 };
 

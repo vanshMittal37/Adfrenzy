@@ -27,9 +27,9 @@ export async function generateMetadata({ params }: CaseStudyPageProps): Promise<
 
   const title = cs ? `${cs.clientName} Case Study | Adfrenzy Media` : portfolioItem ? `${portfolioItem.clientName} Case Study | Adfrenzy Media` : "Case Study | Adfrenzy Media";
   const description = cs ? cs.tagline : portfolioItem ? portfolioItem.shortDescription : "D2C growth case study and performance marketing results by Adfrenzy Media.";
-  const url = `https://adfrenzymedia.com/work/${slug}`;
+  const url = `https://www.adfrenzymedia.com/work/${slug}`;
   const heroImg = cs?.heroImage || portfolioItem?.thumbnail;
-  const ogImg = heroImg ? (heroImg.startsWith("http") ? heroImg : `https://adfrenzymedia.com${heroImg}`) : "https://adfrenzymedia.com/og-image.png";
+  const ogImg = heroImg ? (heroImg.startsWith("http") ? heroImg : `https://www.adfrenzymedia.com${heroImg}`) : "https://www.adfrenzymedia.com/og-image.png";
 
   return {
     title,
@@ -171,10 +171,10 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
     "publisher": {
       "@type": "Organization",
       "name": "Adfrenzy Media",
-      "url": "https://adfrenzymedia.com/"
+      "url": "https://www.adfrenzymedia.com/"
     },
-    "mainEntityOfPage": `https://adfrenzymedia.com/work/${slug}`,
-    "image": cs.heroImage ? (cs.heroImage.startsWith("http") ? cs.heroImage : `https://adfrenzymedia.com${cs.heroImage}`) : "https://adfrenzymedia.com/og-image.png"
+    "mainEntityOfPage": `https://www.adfrenzymedia.com/work/${slug}`,
+    "image": cs.heroImage ? (cs.heroImage.startsWith("http") ? cs.heroImage : `https://www.adfrenzymedia.com${cs.heroImage}`) : "https://www.adfrenzymedia.com/og-image.png"
   };
 
   const breadcrumbSchema = {
@@ -185,19 +185,19 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://adfrenzymedia.com/"
+        "item": "https://www.adfrenzymedia.com/"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Work",
-        "item": "https://adfrenzymedia.com/work"
+        "item": "https://www.adfrenzymedia.com/work"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": cs.clientName,
-        "item": `https://adfrenzymedia.com/work/${slug}`
+        "item": `https://www.adfrenzymedia.com/work/${slug}`
       }
     ]
   };

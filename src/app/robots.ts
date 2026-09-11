@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://adfrenzymedia.com/sitemap.xml",
+    sitemap: "https://www.adfrenzymedia.com/sitemap.xml",
   };
 }

@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
 
   const title = TITLE_MAP[slug] || `${service.title} | Adfrenzy Media`;
   const description = DESC_MAP[slug] || service.description;
-  const url = `https://adfrenzymedia.com/services/${slug}`;
+  const url = `https://www.adfrenzymedia.com/services/${slug}`;
 
   return {
     title,
@@ -81,10 +81,10 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
     "provider": {
       "@type": "Organization",
       "name": "Adfrenzy Media",
-      "url": "https://adfrenzymedia.com/"
+      "url": "https://www.adfrenzymedia.com/"
     },
     "description": service.description,
-    "url": `https://adfrenzymedia.com/services/${slug}`
+    "url": `https://www.adfrenzymedia.com/services/${slug}`
   };
 
   const breadcrumbSchema = {
@@ -95,19 +95,19 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://adfrenzymedia.com/"
+        "item": "https://www.adfrenzymedia.com/"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Services",
-        "item": "https://adfrenzymedia.com/services"
+        "item": "https://www.adfrenzymedia.com/services"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": service.title,
-        "item": `https://adfrenzymedia.com/services/${slug}`
+        "item": `https://www.adfrenzymedia.com/services/${slug}`
       }
     ]
   };

@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Terms & Conditions",
   description: "Terms and conditions of service for Adfrenzy Media.",
   alternates: {
-    canonical: "https://adfrenzymedia.com/terms",
+    canonical: "https://www.adfrenzymedia.com/terms",
   },
 };
 
