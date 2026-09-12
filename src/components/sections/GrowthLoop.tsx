@@ -290,9 +290,9 @@ export function GrowthLoop() {
                   <circle cx="250" cy="75" r="4.5" fill="#93c5fd" className="growth-orbit-particle drop-shadow-[0_0_12px_#3b82f6]" />
                 </g>
 
-                {/* Horizontal Connecting Beam to Right Card with Arrow */}
-                <g>
-                  {/* Outer glowing beam stroke */}
+                {/* Connecting Beams to Information Card */}
+                {/* 1. Desktop Horizontal Beam (Points right towards side info card) */}
+                <g className="hidden lg:block">
                   <line
                     x1="250"
                     y1="250"
@@ -304,9 +304,25 @@ export function GrowthLoop() {
                     markerEnd="url(#blue-beam-arrow)"
                     className="growth-connecting-beam opacity-90 drop-shadow-[0_0_12px_rgba(59,130,246,0.9)]"
                   />
-                  {/* Flowing beam particle */}
                   <circle cx="360" cy="250" r="4" fill="#bfdbfe" className="growth-beam-particle-1 animate-ping opacity-75" style={{ animationDuration: '1.5s' }} />
                   <circle cx="430" cy="250" r="3" fill="#93c5fd" className="growth-beam-particle-2" style={{ filter: "drop-shadow(0 0 10px rgba(59, 130, 246, 0.65))" }} />
+                </g>
+
+                {/* 2. Mobile & Tablet Vertical Beam (Points downward towards stacked info card underneath) */}
+                <g className="block lg:hidden">
+                  <line
+                    x1="250"
+                    y1="250"
+                    x2="250"
+                    y2="475"
+                    stroke="#3b82f6"
+                    strokeWidth="3"
+                    strokeDasharray="6 6"
+                    markerEnd="url(#blue-beam-arrow)"
+                    className="growth-connecting-beam opacity-90 drop-shadow-[0_0_12px_rgba(59,130,246,0.9)]"
+                  />
+                  <circle cx="250" cy="350" r="4" fill="#bfdbfe" className="growth-beam-particle-1 animate-ping opacity-75" style={{ animationDuration: '1.5s' }} />
+                  <circle cx="250" cy="420" r="3" fill="#93c5fd" className="growth-beam-particle-2" style={{ filter: "drop-shadow(0 0 10px rgba(59, 130, 246, 0.65))" }} />
                 </g>
               </svg>
 

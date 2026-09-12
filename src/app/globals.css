@@ -270,6 +270,27 @@ html.light .bg-\[\#151515\] {
   background-color: var(--surface) !important;
 }
 
+/* Trusted Scale Partners Light Mode System */
+html.light #partners {
+  background-color: #F8FAFC !important;
+  border-bottom-color: #E2E8F0 !important;
+}
+
+html.light #partners .partner-badge {
+  background-color: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+  color: #0F172A !important;
+  box-shadow: 0 2px 10px rgba(59, 130, 246, 0.06) !important;
+}
+
+html.light #partners .partner-badge span {
+  color: #0F172A !important;
+}
+
+html.light #partners .partner-badge:hover span {
+  color: #2563EB !important;
+}
+
 /* Glass card overrides */
 html.light .glass-card {
   background-color: var(--surface) !important;
