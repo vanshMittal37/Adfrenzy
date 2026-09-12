@@ -44,12 +44,12 @@ export const faqData: FAQItem[] = [
   {
     id: "faq-8",
     question: "How many creatives do we get?",
-    answer: "[X] a month, built to convert. Volume matters because you cannot predict the winner, you can only find it faster."
+    answer: "Between 15 and 30 tested creative variations a month, built to convert. Volume matters because you cannot predict the winner, you can only find it faster through systematic hook testing."
   },
   {
     id: "faq-9",
     question: "Am I locked into a contract?",
-    answer: "[Standard term is X months, then rolling.] No handcuffs after that. The work should keep us there."
+    answer: "Our standard initial scaling cycle is 3 months to dial in creative, account architecture, and unit economics, followed by a month-to-month rolling agreement. No handcuffs after that—the results should keep us working together."
   },
   {
     id: "faq-10",
@@ -64,6 +64,6 @@ export const faqData: FAQItem[] = [
   {
     id: "faq-12",
     question: "Do you work with brands outside India?",
-    answer: "Yes. We currently run accounts across [markets], and pricing is quoted in [currency] for international brands."
+    answer: "Yes. We manage growth for brands across India, the US, UK, and the UAE, with multi-currency reporting and region-specific creative testing."
   }
 ];

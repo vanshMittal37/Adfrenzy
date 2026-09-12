@@ -47,12 +47,12 @@ export function Footer() {
           <div className="space-y-3">
             <h3 className="text-white text-sm font-bold uppercase tracking-wider">Services</h3>
             <ul className="space-y-2 text-sm text-neutral-400">
-              <li><a href="#services" className="hover:text-white transition-colors">Performance Marketing</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">Creative & UGC</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">Website Design</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">CRO</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">SEO</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">Growth Consultation</a></li>
+              <li><Link href="/services/performance-marketing" className="hover:text-white transition-colors">Performance Marketing</Link></li>
+              <li><Link href="/services/creative" className="hover:text-white transition-colors">Creative & UGC</Link></li>
+              <li><Link href="/services/web-design" className="hover:text-white transition-colors">Website Design</Link></li>
+              <li><Link href="/services/cro" className="hover:text-white transition-colors">CRO & Landers</Link></li>
+              <li><Link href="/services/seo" className="hover:text-white transition-colors">SEO & Organic</Link></li>
+              <li><Link href="/services/strategy" className="hover:text-white transition-colors">Growth Consultation</Link></li>
             </ul>
           </div>
 
@@ -60,10 +60,12 @@ export function Footer() {
           <div className="space-y-3">
             <h4 className="text-white text-sm font-bold uppercase tracking-wider">Company</h4>
             <ul className="space-y-2 text-sm text-neutral-400">
-              <li><a href="#work" className="hover:text-white transition-colors">Work</a></li>
-              <li><a href="#about" className="hover:text-white transition-colors">Process</a></li>
-              <li><a href="#results" className="hover:text-white transition-colors">Results</a></li>
-              <li><a href="#book-a-call" className="hover:text-white transition-colors">Contact</a></li>
+              <li><Link href="/work" className="hover:text-white transition-colors">Work & Case Studies</Link></li>
+              <li><Link href="/insights" className="hover:text-white transition-colors">Insights & Guides</Link></li>
+              <li><Link href="/process" className="hover:text-white transition-colors">Our Process</Link></li>
+              <li><Link href="/results" className="hover:text-white transition-colors">Proven Results</Link></li>
+              <li><Link href="/faq" className="hover:text-white transition-colors">FAQs</Link></li>
+              <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
 

@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { servicesData } from "@/data/services";
 import { caseStudiesData } from "@/data/caseStudies";
 import { portfolioData } from "@/data/portfolio";
+import { insightsData } from "@/data/insights";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.adfrenzymedia.com";
@@ -21,6 +22,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/work`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/insights`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
@@ -79,7 +86,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}/services/${svc.slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly",
-    priority: 0.8,
+    priority: 0.85,
   }));
 
   const workSlugs = Array.from(
@@ -93,8 +100,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}/work/${slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly",
+    priority: 0.85,
+  }));
+
+  const insightPages: MetadataRoute.Sitemap = insightsData.map((article) => ({
+    url: `${baseUrl}/insights/${article.slug}`,
+    lastModified: new Date(article.publishDate),
+    changeFrequency: "monthly",
     priority: 0.8,
   }));
 
-  return [...staticPages, ...servicePages, ...workPages];
+  return [...staticPages, ...servicePages, ...workPages, ...insightPages];
 }

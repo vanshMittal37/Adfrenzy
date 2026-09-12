@@ -49,11 +49,12 @@ export function Header() {
   };
 
   const navLinks = [
-    { name: "Services", href: "#services" },
-    { name: "Work", href: "#work" },
-    { name: "Process", href: "#growth-loop" },
-    { name: "Results", href: "#results" },
-    { name: "FAQ", href: "#faq" }
+    { name: "Services", href: "/services" },
+    { name: "Work", href: "/work" },
+    { name: "Insights", href: "/insights" },
+    { name: "Process", href: "/process" },
+    { name: "Results", href: "/results" },
+    { name: "FAQ", href: "/faq" }
   ];
 
   return (
@@ -87,13 +88,13 @@ export function Header() {
           {/* Navigation Links */}
           <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
                 href={link.href}
                 className="text-sm font-semibold text-text-secondary hover:text-accent transition-colors"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -140,14 +141,14 @@ export function Header() {
         <div className="md:hidden bg-background border-b border-border-subtle px-6 py-6 space-y-4 animate-in slide-in-from-top duration-200">
           <nav className="flex flex-col gap-3">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
                 className="text-base font-semibold text-text-primary hover:text-accent transition-colors"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </nav>
 

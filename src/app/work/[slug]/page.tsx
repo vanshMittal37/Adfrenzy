@@ -215,7 +215,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <Link
-          href="/#work"
+          href="/work"
           className="inline-flex items-center gap-2 text-xs font-mono text-text-secondary hover:text-accent mb-8 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
@@ -328,8 +328,8 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             )}
           </div>
 
-          <div className="lg:col-span-4">
-            <div className="glass-card p-8 border-l-4 border-l-accent space-y-4 sticky top-28 shadow-sm">
+          <div className="lg:col-span-4 space-y-6">
+            <div className="glass-card p-8 border-l-4 border-l-accent space-y-4 shadow-sm">
               <h4 className="text-xs font-mono text-accent font-bold uppercase">Client Verdict</h4>
               <p className="text-text-secondary text-sm sm:text-base leading-relaxed italic">
                 "{cs.testimonialQuote || `Adfrenzy Media delivers direct results with absolute clarity. They operate as a true extension of our growth team.`}"
@@ -338,6 +338,28 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                 {cs.testimonialAuthor || `${cs.clientName} Growth Partner`}
               </div>
             </div>
+
+            {cs.servicesUsed && cs.servicesUsed.length > 0 && (
+              <div className="glass-card p-6 border border-border-subtle space-y-4 shadow-sm">
+                <h4 className="text-xs font-mono text-text-primary font-bold uppercase tracking-wider">
+                  Services Deployed
+                </h4>
+                <div className="space-y-2.5">
+                  {cs.servicesUsed.map((svc, idx) => (
+                    <Link
+                      key={idx}
+                      href={`/services/${svc.slug}`}
+                      className="block p-3 rounded-lg bg-surface-secondary/60 hover:bg-accent/10 border border-border-subtle hover:border-accent/40 transition-all text-sm font-semibold text-text-primary hover:text-accent group"
+                    >
+                      <div className="flex items-center justify-between">
+                        <span>{svc.title}</span>
+                        <span className="text-xs text-text-secondary group-hover:text-accent font-mono">Explore →</span>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

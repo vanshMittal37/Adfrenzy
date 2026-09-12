@@ -21,9 +21,42 @@ export interface CaseStudy {
   testimonialAuthor?: string;
   heroImage: string;
   videoUrl?: string;
+  servicesUsed?: { title: string; slug: string }[];
 }
 
 export const caseStudiesData: Record<string, CaseStudy> = {
+  "iyka": {
+    slug: "iyka",
+    clientName: "IYKA",
+    industry: "D2C Contemporary Apparel & Fashion",
+    title: "IYKA — Omnichannel Apparel Scaling & Conversion Overhaul",
+    tagline: "Consolidated Meta ad architecture, weekly UGC hook testing, and storefront conversion rate optimization.",
+    challenge: "Rising CPMs across seasonal fashion campaigns, rapid creative fatigue on single lookbook ads, and high drop-offs on mobile product detail pages.",
+    strategy: [
+      "Transitioned from fragmented interest targeting to consolidated broad Advantage+ campaign structures.",
+      "Shipped 15+ weekly direct-response UGC hooks highlighting fabric flow, fit, and styling.",
+      "Rebuilt mobile storefront PDP with sticky CTA, variant swatches, and frictionless 1-click checkout corridor."
+    ],
+    execution: {
+      creative: "Aesthetic lifestyle reels, real-body sizing demonstrations, and high-contrast fabric drape close-ups.",
+      media: "P&L-aligned budget scaling with contribution margin floors and Advantage+ catalog integration.",
+      cro: "Mobile-first PDP architecture, instant size recommendation widget, and 1-click checkout corridor.",
+      retention: "VIP early access WhatsApp drops for seasonal collection releases."
+    },
+    results: {
+      metric1: { label: "Blended ROAS", value: "8.2x" },
+      metric2: { label: "Conversion Lift", value: "+42%" },
+      metric3: { label: "Revenue Scale", value: "3.1x Monthly" }
+    },
+    testimonialQuote: "Adfrenzy completely revamped how we scale. Our creative pipeline never runs out, and our store converts cold traffic far better than ever.",
+    testimonialAuthor: "Founder, IYKA",
+    heroImage: "/assets/iyka.jpeg",
+    servicesUsed: [
+      { title: "Performance Marketing", slug: "performance-marketing" },
+      { title: "Performance Creative & UGC", slug: "creative" },
+      { title: "CRO & Landing Pages", slug: "cro" }
+    ]
+  },
   "my-pooja-box": {
     slug: "my-pooja-box",
     clientName: "My Pooja Box",
@@ -47,7 +80,12 @@ export const caseStudiesData: Record<string, CaseStudy> = {
       metric2: { label: "Category Rank", value: "#1 Festive Gift" },
       metric3: { label: "Creative Pipeline", value: "Weekly Drops" }
     },
-    heroImage: "/assets/my-pooja-box.jpg"
+    heroImage: "/assets/my-pooja-box.jpg",
+    servicesUsed: [
+      { title: "Performance Marketing", slug: "performance-marketing" },
+      { title: "SEO & Organic Growth", slug: "seo" },
+      { title: "CRO & Landing Pages", slug: "cro" }
+    ]
   },
   "shoe-mistri": {
     slug: "shoe-mistri",
@@ -72,7 +110,12 @@ export const caseStudiesData: Record<string, CaseStudy> = {
       metric2: { label: "CAC Reduction", value: "32% Lower" },
       metric3: { label: "Repeat Sales", value: "Continuous" }
     },
-    heroImage: "/assets/shoe-mistri.jpg"
+    heroImage: "/assets/shoe-mistri.jpg",
+    servicesUsed: [
+      { title: "Performance Marketing", slug: "performance-marketing" },
+      { title: "Performance Creative & UGC", slug: "creative" },
+      { title: "CRO & Landing Pages", slug: "cro" }
+    ]
   },
   "twirl-and-tote": {
     slug: "twirl-and-tote",
@@ -97,7 +140,12 @@ export const caseStudiesData: Record<string, CaseStudy> = {
       metric2: { label: "Creative Turnaround", value: "Same-Week" },
       metric3: { label: "Scale Target", value: "Multi-Crore" }
     },
-    heroImage: "/assets/twirl-and-tote.jpg"
+    heroImage: "/assets/twirl-and-tote.jpg",
+    servicesUsed: [
+      { title: "Performance Creative & UGC", slug: "creative" },
+      { title: "Performance Marketing", slug: "performance-marketing" },
+      { title: "CRO & Landing Pages", slug: "cro" }
+    ]
   },
   "label-mehu": {
     slug: "label-mehu",
@@ -122,7 +170,12 @@ export const caseStudiesData: Record<string, CaseStudy> = {
       metric2: { label: "Conversion Rate", value: "+45% Lift" },
       metric3: { label: "ROAS Floor", value: "8.0x Minimum" }
     },
-    heroImage: "/assets/label-mehu.jpg"
+    heroImage: "/assets/label-mehu.jpg",
+    servicesUsed: [
+      { title: "CRO & Landing Pages", slug: "cro" },
+      { title: "Performance Marketing", slug: "performance-marketing" },
+      { title: "Website Design & Development", slug: "web-design" }
+    ]
   },
   "pawbasket": {
     slug: "pawbasket",
@@ -147,7 +200,12 @@ export const caseStudiesData: Record<string, CaseStudy> = {
       metric2: { label: "Repeat Rate", value: "Strong LTV" },
       metric3: { label: "Growth Signal", value: "Compounding" }
     },
-    heroImage: "/assets/pawbasket.jpg"
+    heroImage: "/assets/pawbasket.jpg",
+    servicesUsed: [
+      { title: "Performance Marketing", slug: "performance-marketing" },
+      { title: "SEO & Organic Growth", slug: "seo" },
+      { title: "Growth Consultation", slug: "strategy" }
+    ]
   },
   "aasa-by-simran": {
     slug: "aasa-by-simran",
@@ -172,7 +230,12 @@ export const caseStudiesData: Record<string, CaseStudy> = {
       metric2: { label: "AOV Growth", value: "High Ticket" },
       metric3: { label: "Brand Scale", value: "Sustained" }
     },
-    heroImage: "/assets/aasa-by-simran.jpg"
+    heroImage: "/assets/aasa-by-simran.jpg",
+    servicesUsed: [
+      { title: "Performance Marketing", slug: "performance-marketing" },
+      { title: "Performance Creative & UGC", slug: "creative" },
+      { title: "Website Design & Development", slug: "web-design" }
+    ]
   },
   "the-white-willow": {
     slug: "the-white-willow",
@@ -197,7 +260,12 @@ export const caseStudiesData: Record<string, CaseStudy> = {
       metric2: { label: "Category Rank", value: "Top Sleep D2C" },
       metric3: { label: "Conversion Lift", value: "+38%" }
     },
-    heroImage: "/assets/the-white-willow.jpg"
+    heroImage: "/assets/the-white-willow.jpg",
+    servicesUsed: [
+      { title: "Performance Marketing", slug: "performance-marketing" },
+      { title: "SEO & Organic Growth", slug: "seo" },
+      { title: "CRO & Landing Pages", slug: "cro" }
+    ]
   },
   "arkaye-jewels": {
     slug: "arkaye-jewels",
@@ -222,7 +290,12 @@ export const caseStudiesData: Record<string, CaseStudy> = {
       metric2: { label: "Ad Turnaround", value: "Agile Production" },
       metric3: { label: "ROAS Floor", value: "8.0x Minimum" }
     },
-    heroImage: "/assets/arkaye-jewels.jpg"
+    heroImage: "/assets/arkaye-jewels.jpg",
+    servicesUsed: [
+      { title: "Performance Creative & UGC", slug: "creative" },
+      { title: "Performance Marketing", slug: "performance-marketing" },
+      { title: "CRO & Landing Pages", slug: "cro" }
+    ]
   },
   "shaper-cult": {
     slug: "shaper-cult",
@@ -247,6 +320,11 @@ export const caseStudiesData: Record<string, CaseStudy> = {
       metric2: { label: "Return Rate", value: "Reduced 25%" },
       metric3: { label: "Growth Signal", value: "Scaling Rapidly" }
     },
-    heroImage: "/assets/shaper-cult.jpg"
+    heroImage: "/assets/shaper-cult.jpg",
+    servicesUsed: [
+      { title: "CRO & Landing Pages", slug: "cro" },
+      { title: "Performance Marketing", slug: "performance-marketing" },
+      { title: "Performance Creative & UGC", slug: "creative" }
+    ]
   }
 };
