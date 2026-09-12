@@ -25,7 +25,9 @@ export async function generateMetadata({ params }: CaseStudyPageProps): Promise<
   const cs = caseStudiesData[slug];
   const portfolioItem = portfolioData.find((p) => p.slug === slug);
 
-  const title = cs ? `${cs.clientName} Case Study | Adfrenzy Media` : portfolioItem ? `${portfolioItem.clientName} Case Study | Adfrenzy Media` : "Case Study | Adfrenzy Media";
+  const clientName = cs?.clientName || portfolioItem?.clientName || "Case Study";
+  const title = `${clientName} Case Study`;
+  const fullTitle = `${title} | Adfrenzy Media`;
   const description = cs ? cs.tagline : portfolioItem ? portfolioItem.shortDescription : "D2C growth case study and performance marketing results by Adfrenzy Media.";
   const url = `https://www.adfrenzymedia.com/work/${slug}`;
   const heroImg = cs?.heroImage || portfolioItem?.thumbnail;
@@ -38,7 +40,7 @@ export async function generateMetadata({ params }: CaseStudyPageProps): Promise<
       canonical: url,
     },
     openGraph: {
-      title,
+      title: fullTitle,
       description,
       url,
       type: "article",

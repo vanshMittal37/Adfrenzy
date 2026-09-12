@@ -19,12 +19,12 @@ interface ServicePageProps {
 }
 
 const TITLE_MAP: Record<string, string> = {
-  "seo": "D2C SEO Agency & eCommerce Organic Growth | Adfrenzy Media",
-  "performance-marketing": "Performance Marketing & Meta Ads Agency for D2C | Adfrenzy Media",
-  "creative": "Performance Creative Agency & UGC Ads for D2C | Adfrenzy Media",
-  "cro": "eCommerce CRO Agency & Landing Page Optimization | Adfrenzy Media",
-  "web-design": "Shopify Web Design & Custom eCommerce Development | Adfrenzy Media",
-  "strategy": "D2C Growth Strategy & Marketing Advisory | Adfrenzy Media",
+  "seo": "D2C SEO Agency & eCommerce Organic Growth",
+  "performance-marketing": "Performance Marketing & Meta Ads Agency for D2C",
+  "creative": "Performance Creative Agency & UGC Ads for D2C",
+  "cro": "eCommerce CRO Agency & Landing Page Optimization",
+  "web-design": "Shopify Web Design & Custom eCommerce Development",
+  "strategy": "D2C Growth Strategy & Marketing Advisory",
 };
 
 const DESC_MAP: Record<string, string> = {
@@ -50,7 +50,8 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
     };
   }
 
-  const title = TITLE_MAP[slug] || `${service.title} | Adfrenzy Media`;
+  const title = TITLE_MAP[slug] || service.title;
+  const fullTitle = `${title} | Adfrenzy Media`;
   const description = DESC_MAP[slug] || service.description;
   const url = `https://www.adfrenzymedia.com/services/${slug}`;
 
@@ -61,7 +62,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
       canonical: url,
     },
     openGraph: {
-      title,
+      title: fullTitle,
       description,
       url,
       type: "website",
@@ -71,13 +72,13 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
           url: "https://www.adfrenzymedia.com/og-image.png",
           width: 1200,
           height: 630,
-          alt: title,
+          alt: fullTitle,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: fullTitle,
       description,
       images: ["https://www.adfrenzymedia.com/og-image.png"],
     },

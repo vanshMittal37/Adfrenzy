@@ -35,7 +35,8 @@ export async function generateMetadata({ params }: InsightPageProps): Promise<Me
     };
   }
 
-  const title = `${article.title} | Adfrenzy Media`;
+  const title = article.title;
+  const fullTitle = `${article.title} | Adfrenzy Media`;
   const description = article.excerpt;
   const url = `https://www.adfrenzymedia.com/insights/${slug}`;
 
@@ -47,7 +48,7 @@ export async function generateMetadata({ params }: InsightPageProps): Promise<Me
       canonical: url,
     },
     openGraph: {
-      title,
+      title: fullTitle,
       description,
       url,
       type: "article",
@@ -59,13 +60,13 @@ export async function generateMetadata({ params }: InsightPageProps): Promise<Me
           url: "https://www.adfrenzymedia.com/og-image.png",
           width: 1200,
           height: 630,
-          alt: article.title,
+          alt: fullTitle,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: fullTitle,
       description,
       images: ["https://www.adfrenzymedia.com/og-image.png"],
     },
