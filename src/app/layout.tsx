@@ -35,6 +35,9 @@ export const metadata: Metadata = {
 
   keywords: [
     "Adfrenzy Media",
+    "Ad Frenzy Media",
+    "Ad Frenzy",
+    "Adfrenzy",
     "performance marketing agency",
     "full funnel growth partner",
     "D2C growth partner",
@@ -101,6 +104,7 @@ const organizationSchema = {
   "@type": "Organization",
   "@id": "https://www.adfrenzymedia.com/#organization",
   name: "Adfrenzy Media",
+  alternateName: ["Ad Frenzy Media", "Ad Frenzy", "Adfrenzy", "AdfrenzyMedia"],
   url: "https://www.adfrenzymedia.com/",
   logo: "https://www.adfrenzymedia.com/Logo_Adfrenzy_dark.png",
   email: "hello.adfrenzymedia@gmail.com",
@@ -110,11 +114,28 @@ const organizationSchema = {
     "https://www.instagram.com/adfrenzymedia?igsi=OWRpdHFwOXZpdGs1&utm_source=qr",
     "https://www.linkedin.com/company/ad-frenzy-media/"
   ],
+  knowsAbout: [
+    "Performance Marketing",
+    "Meta Ads",
+    "Google Ads",
+    "Performance Creative & UGC",
+    "Conversion Rate Optimization",
+    "Shopify Web Design",
+    "D2C eCommerce SEO",
+    "Unit Economics Modeling"
+  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "customer service",
+    email: "hello.adfrenzymedia@gmail.com",
+    availableLanguage: ["English", "Hindi"]
+  },
   address: {
     "@type": "PostalAddress",
     streetAddress: "Cyber City Phase 2",
     addressLocality: "Gurugram",
     addressRegion: "Haryana",
+    postalCode: "122002",
     addressCountry: "IN",
   },
 };
@@ -124,6 +145,7 @@ const websiteSchema = {
   "@type": "WebSite",
   "@id": "https://www.adfrenzymedia.com/#website",
   name: "Adfrenzy Media",
+  alternateName: ["Ad Frenzy Media", "Adfrenzy"],
   url: "https://www.adfrenzymedia.com/",
   publisher: {
     "@id": "https://www.adfrenzymedia.com/#organization",
@@ -135,10 +157,12 @@ const localBusinessSchema = {
   "@type": "ProfessionalService",
   "@id": "https://www.adfrenzymedia.com/#localbusiness",
   name: "Adfrenzy Media",
+  alternateName: ["Ad Frenzy Media", "Ad Frenzy", "Adfrenzy"],
   url: "https://www.adfrenzymedia.com/",
   logo: "https://www.adfrenzymedia.com/Logo_Adfrenzy_dark.png",
   image: "https://www.adfrenzymedia.com/og-image.png",
   email: "hello.adfrenzymedia@gmail.com",
+  priceRange: "₹₹₹",
   description:
     "Adfrenzy Media helps D2C brands grow through performance marketing, creative, websites and SEO. 100+ brands, ₹2.4 Cr+ ad spend managed, 8.6x average ROAS.",
   sameAs: [
@@ -150,6 +174,7 @@ const localBusinessSchema = {
     streetAddress: "Cyber City Phase 2",
     addressLocality: "Gurugram",
     addressRegion: "Haryana",
+    postalCode: "122002",
     addressCountry: "IN"
   }
 };
