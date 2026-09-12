@@ -270,17 +270,44 @@ html.light .bg-\[\#151515\] {
   background-color: var(--surface) !important;
 }
 
-/* Trusted Scale Partners Light Mode System */
+/* Trusted Scale Partners System (Dark Mode Default + Light Mode Override) */
+#partners {
+  background-color: #080c16 !important;
+  border-bottom-color: rgba(59, 130, 246, 0.2) !important;
+}
+
+#partners .partner-badge {
+  background-color: rgba(15, 23, 42, 0.9) !important;
+  border-color: rgba(30, 41, 59, 0.8) !important;
+  color: #FFFFFF !important;
+}
+
+#partners .partner-badge span {
+  color: #FFFFFF !important;
+}
+
 html.light #partners {
   background-color: #F8FAFC !important;
   border-bottom-color: #E2E8F0 !important;
+}
+
+html.light #partners .partner-title {
+  color: #2563EB !important;
+}
+
+html.light #partners .partner-edge-gradient-left {
+  background-image: linear-gradient(to right, #F8FAFC, transparent) !important;
+}
+
+html.light #partners .partner-edge-gradient-right {
+  background-image: linear-gradient(to left, #F8FAFC, transparent) !important;
 }
 
 html.light #partners .partner-badge {
   background-color: #FFFFFF !important;
   border-color: #E2E8F0 !important;
   color: #0F172A !important;
-  box-shadow: 0 2px 10px rgba(59, 130, 246, 0.06) !important;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.06), 0 1px 3px rgba(0, 0, 0, 0.02) !important;
 }
 
 html.light #partners .partner-badge span {
