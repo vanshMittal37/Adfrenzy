@@ -15,22 +15,6 @@ export interface ClientBrand {
   };
 }
 
-export interface ClientBrand {
-  id: string;
-  name: string;
-  website: string;
-  category: string;
-  owner?: string;
-  knownPriceRange?: string;
-  logo: string;
-  logoAlt: string;
-  approvedForLogo: boolean;
-  approvedForTestimonial: boolean;
-  metric?: {
-    value: string;
-    label: string;
-  };
-}
 
 export const clients: ClientBrand[] = [
   // FEATURED BRANDS

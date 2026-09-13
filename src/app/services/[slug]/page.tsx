@@ -19,12 +19,12 @@ interface ServicePageProps {
 }
 
 const TITLE_MAP: Record<string, string> = {
-  "seo": "D2C SEO Agency & eCommerce Organic Growth",
-  "performance-marketing": "Performance Marketing & Meta Ads Agency for D2C",
-  "creative": "Performance Creative Agency & UGC Ads for D2C",
-  "cro": "eCommerce CRO Agency & Landing Page Optimization",
-  "web-design": "Shopify Web Design & Custom eCommerce Development",
-  "strategy": "D2C Growth Strategy & Marketing Advisory",
+  "seo": "D2C SEO Services",
+  "performance-marketing": "D2C Performance Marketing",
+  "creative": "Performance Creative & UGC Ads",
+  "cro": "eCommerce CRO & Landing Page Optimization",
+  "web-design": "Shopify Web Design & eCommerce Development",
+  "strategy": "D2C Growth Strategy",
 };
 
 const DESC_MAP: Record<string, string> = {

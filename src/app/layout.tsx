@@ -26,20 +26,20 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.adfrenzymedia.com"),
 
   title: {
-    default: "Adfrenzy Media | Performance Marketing Agency for D2C Brands",
+    default: "Adfrenzy Media | Full-Funnel Growth Partner for D2C Brands",
     template: "%s | Adfrenzy Media",
   },
 
   description:
-    "Adfrenzy Media helps D2C brands grow through performance marketing, creative, websites and SEO. 100+ brands, ₹2.4 Cr+ ad spend managed, 8.6x average ROAS.",
+    "Performance marketing, creative, websites and SEO for D2C brands. 100+ brands, ₹2.4 Cr+ ad spend managed, 8.6x average ROAS.",
 
   keywords: [
     "Adfrenzy Media",
     "Ad Frenzy Media",
     "Ad Frenzy",
     "Adfrenzy",
+    "full-funnel growth partner",
     "performance marketing agency",
-    "full funnel growth partner",
     "D2C growth partner",
     "performance creative agency",
     "Meta ads agency",
@@ -77,24 +77,24 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: "https://www.adfrenzymedia.com",
     siteName: "Adfrenzy Media",
-    title: "Adfrenzy Media | Performance Marketing Agency for D2C Brands",
+    title: "Adfrenzy Media | Full-Funnel Growth Partner for D2C Brands",
     description:
-      "Adfrenzy Media helps D2C brands grow through performance marketing, creative, websites and SEO. 100+ brands, ₹2.4 Cr+ ad spend managed, 8.6x average ROAS.",
+      "Performance marketing, creative, websites and SEO for D2C brands. 100+ brands, ₹2.4 Cr+ ad spend managed, 8.6x average ROAS.",
     images: [
       {
         url: "https://www.adfrenzymedia.com/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Adfrenzy Media — Performance Marketing Agency for D2C Brands",
+        alt: "Adfrenzy Media — Full-Funnel Growth Partner for D2C Brands",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Adfrenzy Media | Performance Marketing Agency for D2C Brands",
+    title: "Adfrenzy Media | Full-Funnel Growth Partner for D2C Brands",
     description:
-      "Adfrenzy Media helps D2C brands grow through performance marketing, creative, websites and SEO. 100+ brands, ₹2.4 Cr+ ad spend managed, 8.6x average ROAS.",
+      "Performance marketing, creative, websites and SEO for D2C brands. 100+ brands, ₹2.4 Cr+ ad spend managed, 8.6x average ROAS.",
     images: ["https://www.adfrenzymedia.com/og-image.png"],
   },
 };
