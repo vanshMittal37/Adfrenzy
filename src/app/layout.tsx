@@ -31,13 +31,14 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Adfrenzy Media helps D2C brands grow through performance marketing, creative, websites and SEO. 100+ brands, ₹2.4 Cr+ ad spend managed, 8.6x average ROAS.",
+    "Adfrenzy Media (Ad Frenzy Media) is a premier performance marketing and D2C growth agency. Specializing in Meta ads, Google ads, performance creative, UGC, CRO, and SEO. 100+ brands, ₹2.4 Cr+ ad spend managed, 8.6x average ROAS.",
 
   keywords: [
     "Adfrenzy Media",
     "Ad Frenzy Media",
     "Ad Frenzy",
     "Adfrenzy",
+    "AD FRENZY MEDIA LLP",
     "performance marketing agency",
     "full funnel growth partner",
     "D2C growth partner",
@@ -79,7 +80,7 @@ export const metadata: Metadata = {
     siteName: "Adfrenzy Media",
     title: "Adfrenzy Media | Performance Marketing Agency for D2C Brands",
     description:
-      "Adfrenzy Media helps D2C brands grow through performance marketing, creative, websites and SEO. 100+ brands, ₹2.4 Cr+ ad spend managed, 8.6x average ROAS.",
+      "Adfrenzy Media (Ad Frenzy Media) is a premier performance marketing agency helping D2C brands scale profitably through ads, creative, websites and SEO.",
     images: [
       {
         url: "https://www.adfrenzymedia.com/og-image.png",
@@ -94,7 +95,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Adfrenzy Media | Performance Marketing Agency for D2C Brands",
     description:
-      "Adfrenzy Media helps D2C brands grow through performance marketing, creative, websites and SEO. 100+ brands, ₹2.4 Cr+ ad spend managed, 8.6x average ROAS.",
+      "Adfrenzy Media (Ad Frenzy Media) is a premier performance marketing agency helping D2C brands scale profitably through ads, creative, websites and SEO.",
     images: ["https://www.adfrenzymedia.com/og-image.png"],
   },
 };
@@ -104,15 +105,18 @@ const organizationSchema = {
   "@type": "Organization",
   "@id": "https://www.adfrenzymedia.com/#organization",
   name: "Adfrenzy Media",
-  alternateName: ["Ad Frenzy Media", "Ad Frenzy", "Adfrenzy", "AdfrenzyMedia"],
+  legalName: "AD FRENZY MEDIA LLP",
+  alternateName: ["Ad Frenzy Media", "Ad Frenzy", "Adfrenzy", "AdfrenzyMedia", "AD FRENZY MEDIA LLP"],
   url: "https://www.adfrenzymedia.com/",
   logo: "https://www.adfrenzymedia.com/Logo_Adfrenzy_dark.png",
   email: "hello.adfrenzymedia@gmail.com",
   description:
     "Adfrenzy Media helps D2C brands grow through performance marketing, creative, websites and SEO. 100+ brands, ₹2.4 Cr+ ad spend managed, 8.6x average ROAS.",
   sameAs: [
+    "https://www.instagram.com/adfrenzymedia/",
     "https://www.instagram.com/adfrenzymedia?igsi=OWRpdHFwOXZpdGs1&utm_source=qr",
-    "https://www.linkedin.com/company/ad-frenzy-media/"
+    "https://www.linkedin.com/company/ad-frenzy-media/",
+    "https://www.zaubacorp.com/company/AD-FRENZY-MEDIA-LLP/ACL-8874"
   ],
   knowsAbout: [
     "Performance Marketing",
@@ -145,7 +149,7 @@ const websiteSchema = {
   "@type": "WebSite",
   "@id": "https://www.adfrenzymedia.com/#website",
   name: "Adfrenzy Media",
-  alternateName: ["Ad Frenzy Media", "Adfrenzy"],
+  alternateName: ["Ad Frenzy Media", "Ad Frenzy", "Adfrenzy"],
   url: "https://www.adfrenzymedia.com/",
   publisher: {
     "@id": "https://www.adfrenzymedia.com/#organization",
@@ -157,7 +161,8 @@ const localBusinessSchema = {
   "@type": "ProfessionalService",
   "@id": "https://www.adfrenzymedia.com/#localbusiness",
   name: "Adfrenzy Media",
-  alternateName: ["Ad Frenzy Media", "Ad Frenzy", "Adfrenzy"],
+  legalName: "AD FRENZY MEDIA LLP",
+  alternateName: ["Ad Frenzy Media", "Ad Frenzy", "Adfrenzy", "AD FRENZY MEDIA LLP"],
   url: "https://www.adfrenzymedia.com/",
   logo: "https://www.adfrenzymedia.com/Logo_Adfrenzy_dark.png",
   image: "https://www.adfrenzymedia.com/og-image.png",
@@ -166,8 +171,9 @@ const localBusinessSchema = {
   description:
     "Adfrenzy Media helps D2C brands grow through performance marketing, creative, websites and SEO. 100+ brands, ₹2.4 Cr+ ad spend managed, 8.6x average ROAS.",
   sameAs: [
-    "https://www.instagram.com/adfrenzymedia?igsi=OWRpdHFwOXZpdGs1&utm_source=qr",
-    "https://www.linkedin.com/company/ad-frenzy-media/"
+    "https://www.instagram.com/adfrenzymedia/",
+    "https://www.linkedin.com/company/ad-frenzy-media/",
+    "https://www.zaubacorp.com/company/AD-FRENZY-MEDIA-LLP/ACL-8874"
   ],
   address: {
     "@type": "PostalAddress",
