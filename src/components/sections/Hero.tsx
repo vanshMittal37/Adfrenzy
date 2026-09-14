@@ -123,11 +123,12 @@ export function Hero() {
             {/* Pill Eyebrow */}
             <div className="hero-eyebrow inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0d1527] border border-blue-500/30 text-[10.5px] font-mono tracking-widest text-blue-400 uppercase font-bold shadow-[0_0_15px_rgba(59,130,246,0.15)]">
               <Sparkles className="w-3.5 h-3.5 text-blue-400" />
-              <span>PERFORMANCE · CREATIVE · CRO · SEO</span>
+              <span>ADFRENZY MEDIA · D2C PERFORMANCE & GROWTH</span>
             </div>
 
             {/* Main Headline */}
             <h1 className="hero-headline text-4xl sm:text-5xl md:text-6xl lg:text-[64px] font-extrabold text-white tracking-tight leading-[1.08] font-sans">
+              <span className="sr-only">Adfrenzy Media (Ad Frenzy Media) — </span>
               Creative that{" "}
               <span className="hero-highlight-1 font-serif italic font-normal text-blue-400">
                 converts.
@@ -141,7 +142,7 @@ export function Hero() {
 
             {/* Description Subtitle */}
             <p className="hero-subtext text-base sm:text-[17px] text-slate-200 max-w-lg font-normal leading-relaxed">
-              Full-funnel growth for D2C brands. Ads, creative, website and search run by one team, so your numbers stop swinging and start compounding.
+              <strong className="font-semibold text-white">Adfrenzy Media</strong> is a full-funnel growth partner for D2C brands. Ads, creative, website and search run by one team, so your numbers stop swinging and start compounding.
             </p>
 
             {/* Action Buttons */}
