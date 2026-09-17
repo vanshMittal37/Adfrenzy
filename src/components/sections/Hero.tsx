@@ -67,14 +67,13 @@ export function Hero() {
     },
   ];
 
-  // Auto-cycle through stages every 2.5s
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveStageIndex((prev) => (prev + 1) % stages.length);
-    }, 2500);
+      setActiveStageIndex((prev) => (prev + 1) % 6);
+    }, 3000);
 
     return () => clearInterval(interval);
-  }, [stages.length]);
+  }, []);
 
   const currentActiveIndex = hoveredStageIndex !== null ? hoveredStageIndex : activeStageIndex;
 

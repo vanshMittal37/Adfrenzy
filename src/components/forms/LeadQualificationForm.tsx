@@ -140,10 +140,12 @@ export function LeadQualificationForm() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-[10px] font-extrabold text-text-secondary uppercase mb-1">
+              <label htmlFor="monthly-revenue" className="block text-[10px] font-extrabold text-text-secondary uppercase mb-1">
                 Monthly revenue
               </label>
               <select
+                id="monthly-revenue"
+                aria-label="Monthly revenue"
                 value={formData.revenue}
                 onChange={(e) => setFormData({ ...formData, revenue: e.target.value })}
                 className="w-full bg-surface-secondary border border-border-subtle rounded-xl px-3.5 py-2 text-xs sm:text-sm text-text-primary focus:border-accent focus:outline-none"
@@ -155,10 +157,12 @@ export function LeadQualificationForm() {
               </select>
             </div>
             <div>
-              <label className="block text-[10px] font-extrabold text-text-secondary uppercase mb-1">
+              <label htmlFor="monthly-ad-spend" className="block text-[10px] font-extrabold text-text-secondary uppercase mb-1">
                 Monthly ad spend
               </label>
               <select
+                id="monthly-ad-spend"
+                aria-label="Monthly ad spend"
                 value={formData.spend}
                 onChange={(e) => setFormData({ ...formData, spend: e.target.value })}
                 className="w-full bg-surface-secondary border border-border-subtle rounded-xl px-3.5 py-2 text-xs sm:text-sm text-text-primary focus:border-accent focus:outline-none"

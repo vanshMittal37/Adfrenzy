@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -8,14 +9,14 @@ export function Footer() {
           {/* Brand Info Column */}
           <div className="lg:col-span-2 space-y-4">
             <Link href="/" className="flex items-center" aria-label="Adfrenzy Media Homepage">
-              <img
+              <Image
                 src="/Logo_Adfrenzy_dark.png"
                 alt="Adfrenzy Media logo"
                 width={170}
                 height={42}
                 className="logo-dark-theme w-[140px] sm:w-[170px] h-auto object-contain"
               />
-              <img
+              <Image
                 src="/Logo_Adfrenzy_light.png"
                 alt="Adfrenzy Media logo"
                 width={170}

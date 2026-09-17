@@ -63,6 +63,7 @@ export function PortfolioSection({ showAllInitially = false }: { showAllInitiall
                     {hasCaseStudy && (
                       <Link
                         href={`/work/${item.slug}`}
+                        aria-label={`View ${item.title} case study`}
                         className="bg-accent text-background p-2 rounded-full opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300 shadow-md"
                       >
                         <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />

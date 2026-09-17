@@ -101,8 +101,6 @@ const websiteSchema = {
   },
 };
 
-
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -110,6 +108,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${plusJakartaSans.variable} ${playfairDisplay.variable} scroll-smooth`} data-scroll-behavior="smooth">
+      <head>
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+      </head>
       <body className="bg-[#0A0A0A] text-white antialiased font-sans-primary selection:bg-[#FFE500] selection:text-black">
         <script
           type="application/ld+json"
@@ -127,10 +129,6 @@ export default function RootLayout({
         <Script
           src="https://cdn.jsdelivr.net/npm/dayschedule-widget@latest/dist/dayschedule-widget.min.js"
           strategy="lazyOnload"
-        />
-        <link
-          href="https://cdn.jsdelivr.net/npm/dayschedule-widget@latest/dist/dayschedule-popup.css"
-          rel="stylesheet"
         />
         <Header />
         <main className="min-h-screen">{children}</main>

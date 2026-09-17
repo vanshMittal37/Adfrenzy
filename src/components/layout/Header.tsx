@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Menu, X, Sun, Moon } from "lucide-react";
 
 export function Header() {
@@ -69,18 +70,20 @@ export function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2" aria-label="Adfrenzy Media Homepage">
-            <img
+            <Image
               src="/Logo_Adfrenzy_dark.png"
               alt="Adfrenzy Media logo"
               width={165}
               height={40}
+              priority
               className="logo-dark-theme w-[140px] sm:w-[165px] h-auto object-contain"
             />
-            <img
+            <Image
               src="/Logo_Adfrenzy_light.png"
               alt="Adfrenzy Media logo"
               width={165}
               height={40}
+              priority
               className="logo-light-theme w-[140px] sm:w-[165px] h-auto object-contain"
             />
           </Link>

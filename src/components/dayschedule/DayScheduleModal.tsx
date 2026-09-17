@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Script from "next/script";
 
 export function DayScheduleModal() {
   const [dayScheduleUrl, setDayScheduleUrl] = useState<string>("");
@@ -9,7 +8,19 @@ export function DayScheduleModal() {
   useEffect(() => {
     setDayScheduleUrl(process.env.NEXT_PUBLIC_DAYSCHEDULE_URL || "");
 
+    const ensureCSS = () => {
+      const cssId = "dayschedule-popup-css";
+      if (!document.getElementById(cssId)) {
+        const link = document.createElement("link");
+        link.id = cssId;
+        link.rel = "stylesheet";
+        link.href = "https://cdn.jsdelivr.net/npm/dayschedule-widget@latest/dist/dayschedule-popup.css";
+        document.head.appendChild(link);
+      }
+    };
+
     const handleOpen = () => {
+      ensureCSS();
       const url = process.env.NEXT_PUBLIC_DAYSCHEDULE_URL;
       if (url && typeof (window as any).daySchedule === "object") {
         (window as any).daySchedule.initPopupWidget({
