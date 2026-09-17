@@ -27,7 +27,6 @@ export function Footer() {
               Full-funnel growth partner for D2C brands.
             </p>
             <div className="pt-2 text-xs text-neutral-400 font-mono space-y-1.5">
-              <div>cyber city phase 2 , Gurugram</div>
               <div>
                 <a
                   href="mailto:hello.adfrenzymedia@gmail.com"

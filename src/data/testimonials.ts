@@ -11,7 +11,7 @@ export interface Testimonial {
 }
 
 export const testimonialsData: Testimonial[] = [
-  // FEATURED 6 APPROVED TESTIMONIALS (REQUESTED BRANDS)
+  // FEATURED APPROVED TESTIMONIALS (VERIFIED BRANDS)
   {
     id: "wine-chateau",
     brand: "Wine Chateau",
@@ -22,17 +22,6 @@ export const testimonialsData: Testimonial[] = [
     logo: "/clients/wine-chateau.svg",
     approvedForTestimonial: true,
     metricsHighlight: "8.0x+ ROAS (US)"
-  },
-  {
-    id: "rootz-organics",
-    brand: "Rootz Organics",
-    founder: "Ashwini Khatavate",
-    role: "Founder",
-    location: "India",
-    quote: "Scaling fresh organic produce requires extremely sharp retention and customer acquisition funnels. They optimized our ad spend while holding an 8.2x ROAS consistently.",
-    logo: "/clients/rootz-organics.svg",
-    approvedForTestimonial: true,
-    metricsHighlight: "8.2x ROAS"
   },
   {
     id: "label-pikake",
@@ -79,7 +68,18 @@ export const testimonialsData: Testimonial[] = [
     metricsHighlight: "8.1x ROAS"
   },
 
-  // PENDING APPROVAL SPARE TESTIMONIALS (KEPT IN CENTRAL DATA, HIDDEN PUBLICLY)
+  // UNAPPROVED / PENDING TESTIMONIALS (HIDDEN PUBLICLY)
+  {
+    id: "rootz-organics",
+    brand: "Rootz Organics",
+    founder: "Ashwini Khatavate",
+    role: "Founder",
+    location: "India",
+    quote: "Scaling fresh organic produce requires extremely sharp retention and customer acquisition funnels. They optimized our ad spend while holding an 8.2x ROAS consistently.",
+    logo: "/clients/rootz-organics.svg",
+    approvedForTestimonial: false,
+    metricsHighlight: "8.2x ROAS"
+  },
   {
     id: "leaf-ortho",
     brand: "Leaf Ortho",
@@ -89,8 +89,6 @@ export const testimonialsData: Testimonial[] = [
     logo: "/clients/leaf-ortho.svg",
     approvedForTestimonial: false
   },
-
-  // ADDITIONAL PENDING TESTIMONIALS
   {
     id: "valkyre-clothing",
     brand: "Valkyre Clothing",
@@ -137,24 +135,6 @@ export const testimonialsData: Testimonial[] = [
     approvedForTestimonial: false
   },
   {
-    id: "velviore",
-    brand: "Velviore",
-    founder: "[Pending]",
-    role: "Founder",
-    quote: "We started from nothing. They got the first winning ads inside three weeks and we've been above 8x since.",
-    logo: "/clients/velviore.svg",
-    approvedForTestimonial: false
-  },
-  {
-    id: "atulya-karigari",
-    brand: "Atulya Karigari",
-    founder: "[Pending]",
-    role: "Founder",
-    quote: "They took time to understand the craft before writing a single ad. That showed in the creative and it showed in the numbers. 8.5x.",
-    logo: "/clients/atulya-karigari.svg",
-    approvedForTestimonial: false
-  },
-  {
     id: "jabon",
     brand: "Jabon",
     founder: "[Pending]",
@@ -166,5 +146,5 @@ export const testimonialsData: Testimonial[] = [
 ];
 
 export const getPublicTestimonials = (): Testimonial[] => {
-  return testimonialsData.filter((t) => t.approvedForTestimonial);
+  return testimonialsData.filter((t) => t.approvedForTestimonial && t.founder !== "[Pending]");
 };

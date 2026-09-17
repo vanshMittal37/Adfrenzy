@@ -1,114 +1,42 @@
 import type { MetadataRoute } from "next";
-import { servicesData } from "@/data/services";
-import { caseStudiesData } from "@/data/caseStudies";
-import { portfolioData } from "@/data/portfolio";
 import { insightsData } from "@/data/insights";
+import { caseStudiesData } from "@/data/caseStudies";
+
+const BASE_URL = "https://www.adfrenzymedia.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://www.adfrenzymedia.com";
-
-  const staticPages: MetadataRoute.Sitemap = [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/services`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/work`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/insights`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/process`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/results`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/faq`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/book-a-call`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/privacy-policy`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/terms`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/cookie-policy`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
+  const staticRoutes = [
+    "",
+    "/services",
+    "/services/performance-marketing",
+    "/services/creative",
+    "/services/cro",
+    "/services/web-design",
+    "/services/seo",
+    "/services/strategy",
+    "/work",
+    "/results",
+    "/process",
+    "/faq",
+    "/insights",
+    "/contact",
+    "/book-a-call",
+    "/privacy-policy",
+    "/terms",
+    "/cookie-policy",
   ];
 
-  const servicePages: MetadataRoute.Sitemap = servicesData.map((svc) => ({
-    url: `${baseUrl}/services/${svc.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly",
-    priority: 0.85,
+  const staticEntries: MetadataRoute.Sitemap = staticRoutes.map((route) => ({
+    url: `${BASE_URL}${route}`,
   }));
 
-  const workSlugs = Array.from(
-    new Set([
-      ...Object.keys(caseStudiesData),
-      ...portfolioData.map((item) => item.slug),
-    ])
-  );
-
-  const workPages: MetadataRoute.Sitemap = workSlugs.map((slug) => ({
-    url: `${baseUrl}/work/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly",
-    priority: 0.85,
+  const insightEntries: MetadataRoute.Sitemap = insightsData.map((article) => ({
+    url: `${BASE_URL}/insights/${article.slug}`,
   }));
 
-  const insightPages: MetadataRoute.Sitemap = insightsData.map((article) => ({
-    url: `${baseUrl}/insights/${article.slug}`,
-    lastModified: new Date(article.publishDate),
-    changeFrequency: "monthly",
-    priority: 0.8,
+  const caseStudyEntries: MetadataRoute.Sitemap = Object.keys(caseStudiesData).map((slug) => ({
+    url: `${BASE_URL}/work/${slug}`,
   }));
 
-  return [...staticPages, ...servicePages, ...workPages, ...insightPages];
+  return [...staticEntries, ...insightEntries, ...caseStudyEntries];
 }

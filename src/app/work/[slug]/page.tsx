@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { caseStudiesData, CaseStudy } from "@/data/caseStudies";
-import { portfolioData, PortfolioItem } from "@/data/portfolio";
+import { caseStudiesData } from "@/data/caseStudies";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { Lightbox } from "@/components/sections/Lightbox";
 import { ArrowLeft, CheckCircle2, TrendingUp, Sparkles, Zap } from "lucide-react";
@@ -13,25 +12,28 @@ interface CaseStudyPageProps {
 }
 
 export async function generateStaticParams() {
-  const slugs = new Set([
-    ...Object.keys(caseStudiesData),
-    ...portfolioData.map((item) => item.slug)
-  ]);
-  return Array.from(slugs).map((slug) => ({ slug }));
+  return Object.keys(caseStudiesData).map((slug) => ({
+    slug,
+  }));
 }
 
 export async function generateMetadata({ params }: CaseStudyPageProps): Promise<Metadata> {
   const { slug } = await params;
   const cs = caseStudiesData[slug];
-  const portfolioItem = portfolioData.find((p) => p.slug === slug);
 
-  const clientName = cs?.clientName || portfolioItem?.clientName || "Case Study";
-  const title = `${clientName} Case Study`;
+  if (!cs) {
+    return {
+      title: "Case Study Not Found",
+    };
+  }
+
+  const title = `${cs.clientName} Case Study`;
   const fullTitle = `${title} | Adfrenzy Media`;
-  const description = cs ? cs.tagline : portfolioItem ? portfolioItem.shortDescription : "D2C growth case study and performance marketing results by Adfrenzy Media.";
+  const description = cs.tagline;
   const url = `https://www.adfrenzymedia.com/work/${slug}`;
-  const heroImg = cs?.heroImage || portfolioItem?.thumbnail;
-  const ogImg = heroImg ? (heroImg.startsWith("http") ? heroImg : `https://www.adfrenzymedia.com${heroImg}`) : "https://www.adfrenzymedia.com/og-image.png";
+  const ogImg = cs.heroImage.startsWith("http")
+    ? cs.heroImage
+    : `https://www.adfrenzymedia.com${cs.heroImage}`;
 
   return {
     title,
@@ -54,7 +56,7 @@ export async function generateMetadata({ params }: CaseStudyPageProps): Promise<
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: fullTitle,
       description,
       images: [ogImg],
     },
@@ -77,90 +79,15 @@ const SCREENSHOT_MAP: Record<
     sectionTitle: "Sales & Performance Snapshot",
     sectionDesc: "A visual demonstration of campaign sales generation, scaling trajectory, and daily performance metrics.",
     alt: "Sales performance analytics dashboard"
-  },
-  "kaftanize": {
-    src: "/assets/kaftanize.jpeg",
-    sectionEyebrow: "STORE & MEDIA PERFORMANCE",
-    sectionTitle: "Storefront & Media Acquisition",
-    sectionDesc: "A visual look at traffic distribution, daily active visitor counts, and source-level channels.",
-    alt: "Customer and visitor analytics dashboard"
-  },
-  "the-emryo-store": {
-    src: "/assets/theepisode.jpeg",
-    sectionEyebrow: "CAMPAIGN PERFORMANCE",
-    sectionTitle: "Performance Marketing Showcase",
-    sectionDesc: "A snapshot illustrating ad creative response, engagement indices, and performance distribution.",
-    alt: "Campaign performance analytics dashboard"
-  },
-  "etiquette-apparel": {
-    src: "/assets/etiquetteapperel.jpeg",
-    sectionEyebrow: "PAID MEDIA PERFORMANCE",
-    sectionTitle: "Paid Media Execution Snapshot",
-    sectionDesc: "An execution benchmark demonstrating campaign ad delivery, reach structure, and optimization patterns.",
-    alt: "Paid media campaign performance dashboard"
-  },
-  "fig-living": {
-    src: "/assets/figLiving.jpeg",
-    sectionEyebrow: "STOREFRONT OPTIMIZATION",
-    sectionTitle: "UX & Conversion Snapshot",
-    sectionDesc: "Conversion rate optimization metrics and storefront corridor improvements.",
-    alt: "Storefront optimization analytics dashboard"
-  },
-  "wild-cherry": {
-    src: "/assets/wildcherry.jpeg",
-    sectionEyebrow: "CREATIVE TESTING",
-    sectionTitle: "High-Velocity Creative Snapshot",
-    sectionDesc: "Ad creative deployment and performance response analytics.",
-    alt: "Creative performance analytics dashboard"
   }
 };
 
 export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
   const { slug } = await params;
-  
-  let cs = caseStudiesData[slug];
-  let portfolioItem = portfolioData.find((p) => p.slug === slug);
+  const cs = caseStudiesData[slug];
 
-  if (!cs && !portfolioItem) {
+  if (!cs) {
     notFound();
-  }
-
-  if (!cs && portfolioItem) {
-    cs = {
-      slug: portfolioItem.slug,
-      clientName: portfolioItem.clientName,
-      industry: portfolioItem.industry,
-      title: portfolioItem.title,
-      tagline: portfolioItem.shortDescription,
-      challenge: `Expanding digital presence and scaling purchase volumes. ${portfolioItem.clientName} required custom creatives and strategic media buying structures to acquire customers efficiently and lower overall acquisition costs.`,
-      strategy: [
-        "Conducted detailed funnel mapping and audience research to define target demographics.",
-        "Launched high-performance catalog placements and custom collection formats.",
-        "Monitored retention loops to encourage customer lifetime value improvements."
-      ],
-      execution: {
-        creative: "Optimized direct response layouts, visual storytelling, and platform-specific formats.",
-        media: "Structured ad accounts for scale with segmented test budgets and unified broad targeting.",
-        cro: "Streamlined storefront entry corridors, layout navigation, and landing page pathways.",
-        retention: "Established email engagement runs and custom automated follow-up sequences."
-      },
-      results: {
-        metric1: { 
-          label: portfolioItem.metrics.primaryLabel || "Performance Metric", 
-          value: portfolioItem.metrics.primaryValue || "Scale Enabled" 
-        },
-        metric2: { 
-          label: portfolioItem.metrics.secondaryLabel || "Strategy Focus", 
-          value: portfolioItem.metrics.secondaryValue || "Optimized" 
-        },
-        metric3: { 
-          label: "Tracking Scope", 
-          value: "Fully Monitored" 
-        }
-      },
-      heroImage: portfolioItem.thumbnail,
-      videoUrl: portfolioItem.videoUrl
-    };
   }
 
   const screenshotInfo = SCREENSHOT_MAP[slug];
@@ -176,7 +103,9 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
       "url": "https://www.adfrenzymedia.com/"
     },
     "mainEntityOfPage": `https://www.adfrenzymedia.com/work/${slug}`,
-    "image": cs.heroImage ? (cs.heroImage.startsWith("http") ? cs.heroImage : `https://www.adfrenzymedia.com${cs.heroImage}`) : "https://www.adfrenzymedia.com/og-image.png"
+    "image": cs.heroImage.startsWith("http")
+      ? cs.heroImage
+      : `https://www.adfrenzymedia.com${cs.heroImage}`
   };
 
   const breadcrumbSchema = {

@@ -43,7 +43,6 @@ export async function generateMetadata({ params }: InsightPageProps): Promise<Me
   return {
     title,
     description,
-    keywords: [article.primaryKeyword, ...article.secondaryKeywords],
     alternates: {
       canonical: url,
     },
@@ -58,8 +57,8 @@ export async function generateMetadata({ params }: InsightPageProps): Promise<Me
       images: [
         {
           url: "https://www.adfrenzymedia.com/og-image.png",
-          width: 1200,
-          height: 630,
+          width: 1024,
+          height: 1024,
           alt: fullTitle,
         },
       ],
@@ -87,7 +86,6 @@ export default async function InsightDetailPage({ params }: InsightPageProps) {
     "headline": article.title,
     "description": article.excerpt,
     "datePublished": article.publishDate,
-    "dateModified": article.publishDate,
     "author": {
       "@type": "Organization",
       "name": "Adfrenzy Media",

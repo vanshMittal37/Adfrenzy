@@ -114,7 +114,7 @@ export function Testimonials() {
             WHAT FOUNDERS SAY
           </span>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-text-primary tracking-tight">
-            Six founders. Same story.
+            {testimonials.length > 0 ? `${testimonials.length} founders. Same story.` : "What founders say"}
           </h2>
         </div>
 

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { portfolioData, PortfolioItem } from "@/data/portfolio";
+import { caseStudiesData } from "@/data/caseStudies";
 import { ArrowUpRight, ExternalLink } from "lucide-react";
 
 export function PortfolioSection({ showAllInitially = false }: { showAllInitially?: boolean }) {
@@ -30,76 +31,84 @@ export function PortfolioSection({ showAllInitially = false }: { showAllInitiall
 
         {/* Portfolio Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {displayedItems.map((item: PortfolioItem) => (
-            <div
-              key={item.id}
-              className="glass-card flex flex-col rounded-2xl border border-border-subtle bg-surface shadow-lg transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/40 group overflow-hidden"
-            >
-              {/* Media Container */}
-              <div className="relative w-full h-60 bg-neutral-900 border-b border-border-subtle overflow-hidden">
-                <Image
-                  src={item.thumbnail}
-                  alt={item.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-                
-                <div className="absolute top-4 right-4 flex items-center gap-2 z-10">
-                  <a
-                    href={item.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title={`Visit ${item.clientName} official website`}
-                    className="bg-background/80 backdrop-blur-md text-text-secondary hover:text-white p-2 rounded-full border border-border-subtle transition-all duration-300 hover:scale-110"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
-                  <Link
-                    href={`/work/${item.slug}`}
-                    className="bg-accent text-background p-2 rounded-full opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300 shadow-md"
-                  >
-                    <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
-                  </Link>
-                </div>
-              </div>
+          {displayedItems.map((item: PortfolioItem) => {
+            const hasCaseStudy = Boolean(caseStudiesData[item.slug]);
 
-              {/* Card Content */}
-              <div className="p-6 flex flex-col justify-between flex-1 space-y-5">
-                <div className="space-y-2">
-                  <div className="text-xs font-mono font-bold text-accent uppercase tracking-wider">
-                    {item.clientName} · {item.category}
+            return (
+              <div
+                key={item.id}
+                className="glass-card flex flex-col rounded-2xl border border-border-subtle bg-surface shadow-lg transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/40 group overflow-hidden"
+              >
+                {/* Media Container */}
+                <div className="relative w-full h-60 bg-neutral-900 border-b border-border-subtle overflow-hidden">
+                  <Image
+                    src={item.thumbnail}
+                    alt={item.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                  
+                  <div className="absolute top-4 right-4 flex items-center gap-2 z-10">
+                    <a
+                      href={item.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title={`Visit ${item.clientName} official website`}
+                      className="bg-background/80 backdrop-blur-md text-text-secondary hover:text-white p-2 rounded-full border border-border-subtle transition-all duration-300 hover:scale-110"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                    {hasCaseStudy && (
+                      <Link
+                        href={`/work/${item.slug}`}
+                        className="bg-accent text-background p-2 rounded-full opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300 shadow-md"
+                      >
+                        <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
+                      </Link>
+                    )}
                   </div>
-                  <h3 className="text-xl font-extrabold text-text-primary group-hover:text-accent transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-text-secondary leading-relaxed">
-                    {item.shortDescription}
-                  </p>
                 </div>
 
-                <div className="pt-4 border-t border-border-subtle flex items-center justify-between">
-                  <div>
-                    <div className="text-base font-extrabold font-mono text-accent">
-                      {item.metrics.primaryValue}
+                {/* Card Content */}
+                <div className="p-6 flex flex-col justify-between flex-1 space-y-5">
+                  <div className="space-y-2">
+                    <div className="text-xs font-mono font-bold text-accent uppercase tracking-wider">
+                      {item.clientName} · {item.category}
                     </div>
-                    <div className="text-[11px] font-mono text-text-secondary">
-                      {item.metrics.primaryLabel}
-                    </div>
+                    <h3 className="text-xl font-extrabold text-text-primary group-hover:text-accent transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-text-secondary leading-relaxed">
+                      {item.shortDescription}
+                    </p>
                   </div>
 
-                  <Link
-                    href={`/work/${item.slug}`}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-accent hover:underline font-mono"
-                  >
-                    <span>View Case Study</span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
-                  </Link>
+                  <div className="pt-4 border-t border-border-subtle flex items-center justify-between">
+                    <div>
+                      <div className="text-base font-extrabold font-mono text-accent">
+                        {item.metrics.primaryValue}
+                      </div>
+                      <div className="text-[11px] font-mono text-text-secondary">
+                        {item.metrics.primaryLabel}
+                      </div>
+                    </div>
+
+                    {hasCaseStudy && (
+                      <Link
+                        href={`/work/${item.slug}`}
+                        className="inline-flex items-center gap-1.5 text-xs font-bold text-accent hover:underline font-mono"
+                      >
+                        <span>View Case Study</span>
+                        <ArrowUpRight className="w-3.5 h-3.5" />
+                      </Link>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* See All Work Button */}

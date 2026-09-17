@@ -32,8 +32,8 @@ export function AboutSection() {
                 Performance & Creative
               </div>
               <div className="p-3 bg-surface rounded border border-border-subtle">
-                <span className="text-accent font-bold block">HQ:</span>
-                Meerut, UP
+                <span className="text-accent font-bold block">FOCUS:</span>
+                D2C Scale & Growth
               </div>
               <div className="p-3 bg-surface rounded border border-border-subtle">
                 <span className="text-accent font-bold block">FOCUS:</span>

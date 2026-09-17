@@ -1,4 +1,4 @@
-import { MetaLogo, GoogleLogo, ShopifyLogo, GoKwikLogo, BiteSpeedLogo } from "./PartnerLogos";
+import { MetaLogo, GoogleLogo, ShopifyLogo, GoKwikLogo } from "./PartnerLogos";
 
 export interface PartnerBadge {
   id: string;
@@ -14,8 +14,7 @@ export function TrustBar() {
     { id: "meta", name: "Meta Business Partner", logo: MetaLogo, color: "text-[#0668E1]", badgeBg: "hover:border-[#0668E1]/50 hover:shadow-[#0668E1]/15", verified: true },
     { id: "google", name: "Google Partner", logo: GoogleLogo, color: "", badgeBg: "hover:border-blue-400/50 hover:shadow-blue-500/15", verified: true },
     { id: "shopify", name: "Shopify Partner", logo: ShopifyLogo, color: "text-[#95BF47]", badgeBg: "hover:border-[#95BF47]/50 hover:shadow-[#95BF47]/15", verified: true },
-    { id: "gokwik", name: "GoKwik Partner", logo: GoKwikLogo, color: "text-amber-400", badgeBg: "hover:border-amber-400/50 hover:shadow-amber-500/15", verified: true },
-    { id: "bitespeed", name: "BiteSpeed Partner", logo: BiteSpeedLogo, color: "text-purple-400", badgeBg: "hover:border-purple-400/50 hover:shadow-purple-500/15", verified: true }
+    { id: "gokwik", name: "GoKwik Partner", logo: GoKwikLogo, color: "text-amber-400", badgeBg: "hover:border-amber-400/50 hover:shadow-amber-500/15", verified: true }
   ];
 
   return (
@@ -52,6 +51,3 @@ export function TrustBar() {
     </section>
   );
 }
-
-
-

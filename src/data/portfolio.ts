@@ -21,6 +21,23 @@ export interface PortfolioItem {
 
 export const portfolioData: PortfolioItem[] = [
   {
+    id: "iyka",
+    slug: "iyka",
+    title: "IYKA",
+    clientName: "IYKA",
+    category: "D2C Contemporary Apparel",
+    industry: "Apparel & Fashion",
+    thumbnail: "/assets/iyka.jpeg",
+    website: "https://iyka.in",
+    metrics: {
+      primaryValue: "8.2x ROAS",
+      primaryLabel: "Blended ROAS",
+      bottomLabel: "Performance & Creative"
+    },
+    featured: true,
+    shortDescription: "Omnichannel apparel scaling, Advantage+ consolidated ad structure, and conversion rate optimization."
+  },
+  {
     id: "wine-chateau",
     slug: "wine-chateau",
     title: "Wine Chateau",
@@ -36,23 +53,6 @@ export const portfolioData: PortfolioItem[] = [
     },
     featured: true,
     shortDescription: "US market scale & profitable customer acquisition for premium wine catalog."
-  },
-  {
-    id: "rootz-organics",
-    slug: "rootz-organics",
-    title: "Rootz Organics",
-    clientName: "Rootz Organics",
-    category: "Organic Fruits & Veggies",
-    industry: "Organic Produce",
-    thumbnail: "/assets/rootz-organics-product.jpg",
-    website: "https://www.rootzorganics.com/categories/veg-and-fruits",
-    metrics: {
-      primaryValue: "8.2x ROAS",
-      primaryLabel: "Fresh Organic Scale",
-      bottomLabel: "Retention & Acquisition"
-    },
-    featured: true,
-    shortDescription: "Fresh organic produce D2C performance scaling and recurring subscription loops."
   },
   {
     id: "label-pikake",
@@ -122,159 +122,38 @@ export const portfolioData: PortfolioItem[] = [
     featured: true,
     shortDescription: "Rapid customer acquisition strategy for luxury apparel D2C storefront."
   },
-
-  // ADDITIONAL WORK CARDS
   {
-    id: "my-pooja-box",
-    slug: "my-pooja-box",
-    title: "My Pooja Box",
-    clientName: "My Pooja Box",
-    category: "Divine Decor & Gifts",
-    industry: "Divine Decor",
-    thumbnail: "/assets/my-pooja-box.jpg",
-    website: "https://www.mypoojabox.in/",
+    id: "the-emryo-store",
+    slug: "the-emryo-store",
+    title: "The Emryo Store",
+    clientName: "The Emryo Store",
+    category: "Anime Embroidery Streetwear",
+    industry: "Apparel & Streetwear",
+    thumbnail: "/clients/the-emryo-store.svg",
+    website: "https://theemryostore.com",
     metrics: {
-      primaryValue: "8.4x ROAS",
-      primaryLabel: "Festive Scaling",
-      bottomLabel: "Performance & Direct Response"
+      primaryValue: "8.0x ROAS",
+      primaryLabel: "Revenue Tripled",
+      bottomLabel: "Media & CRO"
     },
     featured: true,
-    shortDescription: "Festive decor scaling, catalog ads, and omnichannel customer acquisition."
+    shortDescription: "Targeted anime fanbase acquisition and high-converting streetwear drops."
   },
   {
-    id: "shoe-mistri",
-    slug: "shoe-mistri",
-    title: "Shoe Mistri",
-    clientName: "Shoe Mistri",
-    category: "Footwear Care & Accessories",
-    industry: "Footwear Care",
-    thumbnail: "/assets/shoe-mistri.jpg",
-    website: "https://shoemistri.com/",
+    id: "kri-chikankari",
+    slug: "kri-chikankari",
+    title: "Kri Chikankari",
+    clientName: "Kri Chikankari",
+    category: "Ethnic Wear",
+    industry: "Ethnic Wear",
+    thumbnail: "/clients/kri-chikankari.svg",
+    website: "https://krichikankari.com",
     metrics: {
-      primaryValue: "8.1x ROAS",
-      primaryLabel: "Scale Engine",
-      bottomLabel: "Creative & Media Buying"
+      primaryValue: "9.0x ROAS",
+      primaryLabel: "High Scale Funnel",
+      bottomLabel: "Media Acquisition"
     },
     featured: true,
-    shortDescription: "High-velocity problem-solving creative hooks and footwear care scaling."
-  },
-  {
-    id: "twirl-and-tote",
-    slug: "twirl-and-tote",
-    title: "Twirl & Tote",
-    clientName: "Twirl & Tote",
-    category: "Fashion Bags & Accessories",
-    industry: "Fashion Bags",
-    thumbnail: "/assets/twirl-and-tote.jpg",
-    website: "https://twirlandtote.com/",
-    metrics: {
-      primaryValue: "8.6x ROAS",
-      primaryLabel: "Creative Pipeline",
-      bottomLabel: "Full-Funnel Scaling"
-    },
-    featured: true,
-    shortDescription: "Aesthetic lifestyle handbag drops and rapid creative iteration engine."
-  },
-  {
-    id: "label-mehu",
-    slug: "label-mehu",
-    title: "Label Mehu",
-    clientName: "Label Mehu",
-    category: "Designer Ethnic Wear",
-    industry: "Designer Ethnic Wear",
-    thumbnail: "/assets/label-mehu.jpg",
-    website: "https://labelmehu.com/",
-    metrics: {
-      primaryValue: "8.5x ROAS",
-      primaryLabel: "Monthly Scaling",
-      bottomLabel: "CRO & Performance"
-    },
-    featured: true,
-    shortDescription: "High-intent ethnic wear customer acquisition and PDP conversion optimization."
-  },
-  {
-    id: "pawbasket",
-    slug: "pawbasket",
-    title: "PawBasket",
-    clientName: "PawBasket",
-    category: "Pet Supplies & Care",
-    industry: "Pet Care",
-    thumbnail: "/assets/pawbasket.jpg",
-    website: "https://pawbasket.co/",
-    metrics: {
-      primaryValue: "8.2x ROAS",
-      primaryLabel: "Repeat Order Growth",
-      bottomLabel: "Retention & Acquisition"
-    },
-    featured: true,
-    shortDescription: "Pet parent customer acquisition and automated recurring order retention loops."
-  },
-  {
-    id: "aasa-by-simran",
-    slug: "aasa-by-simran",
-    title: "Aasa By Simran",
-    clientName: "Aasa By Simran",
-    category: "Luxury Ethnic Couture",
-    industry: "Luxury Couture",
-    thumbnail: "/assets/aasa-by-simran.jpg",
-    website: "https://aasabysimran.com/",
-    metrics: {
-      primaryValue: "8.8x ROAS",
-      primaryLabel: "High-Ticket Funnel",
-      bottomLabel: "Luxury Positioning"
-    },
-    featured: true,
-    shortDescription: "High average order value luxury ethnic apparel scaling & artisanal branding."
-  },
-  {
-    id: "the-white-willow",
-    slug: "the-white-willow",
-    title: "The White Willow",
-    clientName: "The White Willow",
-    category: "Orthopedic Pillows & Comfort",
-    industry: "Sleep & Home",
-    thumbnail: "/assets/the-white-willow.jpg",
-    website: "https://thewhitewillow.in/",
-    metrics: {
-      primaryValue: "8.3x ROAS",
-      primaryLabel: "Category Leader Scale",
-      bottomLabel: "Omnichannel Acquisition"
-    },
-    featured: true,
-    shortDescription: "Ergonomic sleep product acquisition and PMax search dominance."
-  },
-  {
-    id: "arkaye-jewels",
-    slug: "arkaye-jewels",
-    title: "Arkaye Jewels",
-    clientName: "Arkaye Jewels",
-    category: "Fine Handcrafted Jewelry",
-    industry: "Fine Jewelry",
-    thumbnail: "/assets/arkaye-jewels.jpg",
-    website: "https://www.arkayejewels.com/",
-    metrics: {
-      primaryValue: "8.7x ROAS",
-      primaryLabel: "Luxury Acquisition",
-      bottomLabel: "Macro Visual Ads"
-    },
-    featured: true,
-    shortDescription: "Fine handcrafted jewelry marketing and high-converting retargeting."
-  },
-  {
-    id: "shaper-cult",
-    slug: "shaper-cult",
-    title: "Shaper Cult",
-    clientName: "Shaper Cult",
-    category: "Premium Shapewear",
-    industry: "Active Shapewear",
-    thumbnail: "/assets/shaper-cult.jpg",
-    website: "https://shapercult.com/",
-    metrics: {
-      primaryValue: "8.4x ROAS",
-      primaryLabel: "D2C Performance",
-      bottomLabel: "P&L Media Buying"
-    },
-    featured: true,
-    shortDescription: "Direct-response shapewear ad testing and size-guide conversion optimization."
+    shortDescription: "High-scale ethnic apparel media acquisition and conversion optimization."
   }
 ];

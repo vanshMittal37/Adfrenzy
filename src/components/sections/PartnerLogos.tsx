@@ -34,12 +34,3 @@ export function GoKwikLogo(props: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
-
-export function BiteSpeedLogo(props: SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
-      <path d="M13 2L3 14h7v8l10-12h-7z" fill="currentColor" />
-    </svg>
-  );
-}
-
