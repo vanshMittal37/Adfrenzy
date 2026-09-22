@@ -129,7 +129,7 @@ export const portfolioData: PortfolioItem[] = [
     clientName: "The Emryo Store",
     category: "Anime Embroidery Streetwear",
     industry: "Apparel & Streetwear",
-    thumbnail: "/clients/the-emryo-store.svg",
+    thumbnail: "/assets/the-emryo-store-product.png",
     website: "https://theemryostore.com",
     metrics: {
       primaryValue: "8.0x ROAS",
@@ -146,7 +146,7 @@ export const portfolioData: PortfolioItem[] = [
     clientName: "Kri Chikankari",
     category: "Ethnic Wear",
     industry: "Ethnic Wear",
-    thumbnail: "/clients/kri-chikankari.svg",
+    thumbnail: "/assets/kri-chikankari-product.png",
     website: "https://krichikankari.com",
     metrics: {
       primaryValue: "9.0x ROAS",

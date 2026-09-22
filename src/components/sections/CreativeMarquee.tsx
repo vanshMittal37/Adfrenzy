@@ -1,22 +1,21 @@
 import Image from "next/image";
 
 const marqueeItemsCol1 = [
-  { type: "image", url: "/assets/kaftanize.jpeg", title: "Kaftanize Fashion Campaign" },
+  { type: "image", url: "/assets/ai-by-prerna-product.jpg", title: "AI by Prerna Couture" },
   { type: "image", url: "/assets/fashionfloorindia.jpeg", title: "Fashion Floor India Catalog" },
-  { type: "image", url: "/assets/figLiving.jpeg", title: "FIG Living Design Curation" },
-  { type: "image", url: "/assets/iyka.jpeg", title: "IYKA Minimalist Apparel" },
+  { type: "image", url: "/assets/atulya-karigari-product.jpg", title: "Atulya Karigari Heritage" },
 ];
 
 const marqueeItemsCol2 = [
   { type: "image", url: "/assets/panillafashion.jpeg", title: "Panilla Fashion Visual Ad" },
   { type: "image", url: "/assets/sanctuaryliving.jpeg", title: "Sanctuary Living Portfolio" },
   { type: "image", url: "/assets/theepisode.jpeg", title: "The Episode Brand Motion" },
-  { type: "image", url: "/assets/wildcherry.jpeg", title: "Wild Cherry Direct Response" },
+  { type: "image", url: "/assets/label-pikake-product.jpg", title: "Label Pikake Designer Ethnic" },
 ];
 
 const marqueeItemsCol3 = [
   { type: "image", url: "/assets/muddnme.jpeg", title: "MuddnMe Lifestyle Web" },
-  { type: "image", url: "/assets/etiquetteapperel.jpeg", title: "Etiquette Apparel Strategy" },
+  { type: "image", url: "/assets/velviore-product.jpg", title: "Velviore Luxury Launch" },
   { type: "image", url: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=600", title: "Aura Premium Watch" },
   { type: "image", url: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=600", title: "Sonic Over-Ear Headphones" },
 ];

@@ -38,21 +38,7 @@ export interface ClientBrand {
 // 20. Wine Chateau
 
 export const clients: ClientBrand[] = [
-  // 1. IYKA
-  {
-    id: "iyka",
-    name: "IYKA",
-    website: "https://iyka.in",
-    category: "D2C Contemporary Apparel",
-    logo: "/clients/iyka.svg",
-    logoAlt: "IYKA",
-    approvedForLogo: true,
-    approvedForTestimonial: false,
-    metric: {
-      value: "8.2x ROAS",
-      label: "Blended ROAS"
-    }
-  },
+  
   // 2. The Emryo Store
   {
     id: "the-emryo-store",
@@ -92,17 +78,7 @@ export const clients: ClientBrand[] = [
     approvedForLogo: true,
     approvedForTestimonial: false
   },
-  // 5. FIG Living
-  {
-    id: "fig-living",
-    name: "FIG Living",
-    website: "https://figliving.com",
-    category: "D2C Home & Living",
-    logo: "/clients/fig-living.svg",
-    logoAlt: "FIG Living",
-    approvedForLogo: true,
-    approvedForTestimonial: false
-  },
+  
   // 6. Alankaara
   {
     id: "alankaara",
@@ -114,39 +90,9 @@ export const clients: ClientBrand[] = [
     approvedForLogo: true,
     approvedForTestimonial: false
   },
-  // 7. Wild Cherry
-  {
-    id: "wild-cherry",
-    name: "Wild Cherry",
-    website: "https://wildcherry.in",
-    category: "D2C Fashion & Apparel",
-    logo: "/clients/wild-cherry.svg",
-    logoAlt: "Wild Cherry",
-    approvedForLogo: true,
-    approvedForTestimonial: false
-  },
-  // 8. Kaftanize
-  {
-    id: "kaftanize",
-    name: "Kaftanize",
-    website: "https://kaftanize.com",
-    category: "D2C Resortwear & Kaftans",
-    logo: "/clients/kaftanize.svg",
-    logoAlt: "Kaftanize",
-    approvedForLogo: true,
-    approvedForTestimonial: false
-  },
-  // 9. Etiquette Apparel
-  {
-    id: "etiquette-apparel",
-    name: "Etiquette Apparel",
-    website: "https://etiquetteapparel.com",
-    category: "D2C Contemporary Fashion",
-    logo: "/clients/etiquette-apparel.svg",
-    logoAlt: "Etiquette Apparel",
-    approvedForLogo: true,
-    approvedForTestimonial: false
-  },
+  
+ 
+
   // 10. Dakauz
   {
     id: "dakauz",
